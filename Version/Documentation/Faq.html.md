@@ -1,10 +1,19 @@
-﻿## Showing Run/Back as Buttons
+﻿```
+title: SQLViewPro - Faq
+layout: page
+tags: ['faq','page']
+topNav: false
+topNavOrder: 1
+
+```
+
+## Showing Run/Back as Buttons
 
 Each command including Run/Back/Export etc. are all rendered as anchor tags or ```<a />``` tags.
 
 If you would rather they look like buttons you can easily achieve this by defining your own styling to a special class that is attached to each anchor tag, named **SQLViewProButton**
 
-To override this, it is best to do so in your site.css by either editing it directly in /portals/[yourportalid]/site.css or going into Admin|Site Settings and choosing the Stylesheet Editor tab.
+To override this, it is best to do so in your portal.css by either editing it directly in /portals/[yourportalid]/portal.css or going into Admin|Site Settings and choosing the Stylesheet Editor tab.
 
 At the bottom of the css stylesheet, just add a new style such as the following. Feel free to change the colors, sizing etc. to suit your needs.
 
