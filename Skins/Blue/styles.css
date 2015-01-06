@@ -1,0 +1,115 @@
+
+/* sample grid sets */
+.Blue_ReportSet
+{
+}
+
+.Blue_Parameter
+{
+   
+}
+
+
+.Blue_Report
+{
+}
+
+.Blue_Grid
+{
+    font-family: Arial, Sans-Serif;
+    font-size:small;
+    table-layout: auto;
+    border-collapse: collapse;
+    border: #538ee9 3px solid;
+	margin-top:4px;
+}
+.Blue_GridHeader, .Blue_Pager
+{
+    background-image: url(Images/HeaderGlass.jpg);
+    background-position:center;
+    background-repeat:repeat-x;
+    background-color:#538ee9;
+}
+.Blue_GridHeader td
+{
+    padding: 5px;
+    color: #ffffff;
+}
+.Blue_GridHeader a
+{
+    text-decoration:none;
+    color:#ffffff;
+    display:block;
+    text-align:left;
+    font-weight:normal;
+}
+
+.Blue_Pager table
+{
+    text-align:center;
+    margin:auto;
+}
+.Blue_Pager table td
+{
+    border:0px;
+    padding:5px;
+}
+.Blue_Pager td
+{
+    border-top: #538ee9 3px solid;
+}
+.Blue_Pager a
+{
+    color:#ffffff;
+    text-decoration:none;
+    padding:2px 10px 2px 10px;
+    border-top:solid 1px #777777;
+    border-right:solid 1px #333333;
+    border-bottom:solid 1px #333333;
+    border-left:solid 1px #777777;
+}
+.Blue_Pager span
+{
+    font-weight:bold;
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:2px 10px 2px 10px;
+}
+
+.Blue_GridItem
+{
+	background: lightyellow;
+}
+.Blue_GridItem td, .Blue_GridAlternatingItem td
+{
+    padding: 5px;
+    border-right: solid 1px #538ee9;
+}
+.Blue_GridItem td
+{
+    background-color: #fff;
+}
+.Blue_GridAlternatingItem td
+{
+    background-color: #9abff8;
+}
+
+.Blue_Debug
+{
+	border: 1px dashed black;
+	background: black;
+	font: smallcaption;
+	display: block;
+	color: white;
+}
+.Blue_Header
+{
+	color: Black;
+	font-weight: bold;
+}
+.Blue_Footer
+{
+	color: Black;
+	font-weight: bold;
+}
+

@@ -1,0 +1,1 @@
+<%@ Control language="vb" Inherits="DNNStuff.SQLViewPro.StandardReports.FusionChartReportControl" CodeBehind="FusionChartReportControl.ascx.vb" AutoEventWireup="false" Explicit="True" targetSchema="http://schemas.microsoft.com/intellisense/ie5" %>

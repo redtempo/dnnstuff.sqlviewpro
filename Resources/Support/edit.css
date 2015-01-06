@@ -1,0 +1,169 @@
+﻿/* module specific */
+#token-panel
+{
+    border: 1px solid silver;
+	margin: 1em;
+	padding: 2px;
+	
+}
+
+/* dnn overrides */
+.dnnForm .dnnNoMinWidth
+{
+min-width:0 !important;
+}
+
+.dnnFormItem label, .dnnFormItem .dnnFormLabel, .dnnFormItem .dnnTooltip {width: 20%;}
+
+.dnnForm .col5 { min-width: 5% !important;}
+.dnnForm .col10 { min-width: 10% !important;}
+.dnnForm .col20 { min-width: 20% !important;}
+.dnnForm .col30 { min-width: 30% !important;}
+.dnnForm .col40 { min-width: 40% !important;}
+.dnnForm .col50 { min-width: 50% !important;}
+.dnnForm .col60 { min-width: 60% !important;}
+.dnnForm .col70 { min-width: 70% !important;}
+.dnnForm .col80 { min-width: 80% !important;}
+.dnnForm .col90 { min-width: 90% !important;}
+.dnnForm .col100 { min-width: 100% !important;}
+
+
+.dnnMaxWidth {width:75% !important;}
+
+.dnnCheckBoxes {
+    display: block;
+    min-width: 450px;
+}
+
+.dnnCheckBoxes label {
+    font-weight: normal;
+    margin-top: 0;
+    width: auto;
+}
+
+/* messages */
+.disclaimer
+{
+    border-top: solid 2px #FED626;
+    border-bottom: solid 2px #FED626;
+    padding: 4px 4px 4px 36px;
+    vertical-align: middle;
+    background-color: #FFF7C0;
+    background-image: url(alert.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+/* tabs */
+div.tabslayout
+{
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+
+ul.tabslayout
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+    float: left;
+    background: url(pixel.gif) bottom left repeat-x;
+}
+
+ul.tabslayout li
+{
+    list-style-type: none;
+    margin: 0 2px 0 0;
+    float: left;
+}
+
+ul.tabslayout a
+{
+    float: left;
+    display: block;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    background: #eee;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul.tabslayout a:hover
+{
+    background: #fff;
+}
+
+ul.tabslayout a.active
+{
+    background: #fff;
+    padding-bottom: 5px;
+    cursor: default;
+}
+
+.tabs-container
+{
+    clear: left;
+    border: 1px solid #ccc;
+    border-top: 0;
+    padding: 10px 8px 8px 8px;
+    background-color: white;
+}
+
+.tabs-container div
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#editsettings-nav
+{
+    padding: 0;
+}
+
+/* grid settings */
+.Grid table
+{
+	border: solid 1px #000000;
+}
+
+.Grid td
+{
+	border: solid 1px #d0d0d0;
+	margin: 3px 3px 3px 3px;
+	font-family: Arial;
+	padding: 2px 2px 2px 2px;
+	text-align: left;
+}
+
+.GridHeader td
+{
+ padding:0.5em 1em;  
+ text-align:left;
+ font-size:90%;
+ background-color:#000000;
+ vertical-align:top;
+ color:#ffffff;
+}
+
+.GridItem td, .GridAltItem td
+{
+	font-size: smaller;	 
+}
+
+.GridItem tr
+{
+	background-color:#e5e5e5;
+}
+
+.GridAltItem tr
+{
+	background-color:#eee; color:#222
+}
+
+.GridPager
+{
+	font-size: small;
+	background-color: #000000;
+}

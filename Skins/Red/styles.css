@@ -1,0 +1,114 @@
+
+/* sample grid sets */
+.Red_ReportSet
+{
+}
+
+.Red_Parameter
+{
+   
+}
+
+.Red_Report
+{
+}
+
+.Red_Grid
+{
+    font-family: Arial, Sans-Serif;
+    font-size:small;
+    table-layout: auto;
+    border-collapse: collapse;
+    border: #7F0000 2px solid;
+	margin-top:4px;
+}
+.Red_GridHeader, .Red_Pager
+{
+    background-image: url(Images/HeaderGlass.jpg);
+    background-position:center;
+    background-repeat:repeat-x;
+    background-color:#7F0000;
+}
+.Red_GridHeader td
+{
+    padding: 5px;
+    color: #ffffff;
+}
+.Red_GridHeader a
+{
+    text-decoration:none;
+    color:#ffffff;
+    display:block;
+    text-align:left;
+    font-weight:normal;
+}
+
+.Red_Pager table
+{
+    text-align:center;
+    margin:auto;
+}
+.Red_Pager table td
+{
+    border:0px;
+    padding:5px;
+}
+.Red_Pager td
+{
+    border-top: #7F0000 3px solid;
+}
+.Red_Pager a
+{
+    color:#ffffff;
+    text-decoration:none;
+    padding:2px 10px 2px 10px;
+    border-top:solid 1px #777777;
+    border-right:solid 1px #333333;
+    border-bottom:solid 1px #333333;
+    border-left:solid 1px #777777;
+}
+.Red_Pager span
+{
+    font-weight:bold;
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:2px 10px 2px 10px;
+}
+
+.Red_GridItem
+{
+	background: lightyellow;
+}
+.Red_GridItem td, .Red_GridAlternatingItem td
+{
+    padding: 5px;
+    border-right: solid 1px #7F0000;
+}
+.Red_GridItem td
+{
+    background-color: #fff;
+}
+.Red_GridAlternatingItem td
+{
+    background-color: #E2E2E2;
+}
+
+.Red_Debug
+{
+	border: 1px dashed black;
+	background: black;
+	font: smallcaption;
+	display: block;
+	color: white;
+}
+.Red_Header
+{
+	color: Black;
+	font-weight: bold;
+}
+.Red_Footer
+{
+	color: Black;
+	font-weight: bold;
+}
+

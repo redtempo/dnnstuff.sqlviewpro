@@ -1,0 +1,114 @@
+
+/* sample grid sets */
+.Gray_ReportSet
+{
+}
+
+.Gray_Parameter
+{
+   
+}
+
+.Gray_Report
+{
+}
+
+.Gray_Grid
+{
+    font-family: Arial, Sans-Serif;
+    font-size:small;
+    table-layout: auto;
+    border-collapse: collapse;
+    border: #1d1d1d 3px solid;
+	margin-top:4px;
+}
+.Gray_GridHeader, .Gray_Pager
+{
+    background-image: url(Images/HeaderGlass.jpg);
+    background-position:center;
+    background-repeat:repeat-x;
+    background-color:#1d1d1d;
+}
+.Gray_GridHeader td
+{
+    padding: 5px;
+    color: #ffffff;
+}
+.Gray_GridHeader a
+{
+    text-decoration:none;
+    color:#ffffff;
+    display:block;
+    text-align:left;
+    font-weight:normal;
+}
+
+.Gray_Pager table
+{
+    text-align:center;
+    margin:auto;
+}
+.Gray_Pager table td
+{
+    border:0px;
+    padding:5px;
+}
+.Gray_Pager td
+{
+    border-top: #1d1d1d 3px solid;
+}
+.Gray_Pager a
+{
+    color:#ffffff;
+    text-decoration:none;
+    padding:2px 10px 2px 10px;
+    border-top:solid 1px #777777;
+    border-right:solid 1px #333333;
+    border-bottom:solid 1px #333333;
+    border-left:solid 1px #777777;
+}
+.Gray_Pager span
+{
+    font-weight:bold;
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:2px 10px 2px 10px;
+}
+
+.Gray_GridItem
+{
+	background: lightyellow;
+}
+.Gray_GridItem td, .Gray_GridAlternatingItem td
+{
+    padding: 5px;
+    border-right: solid 1px #1d1d1d;
+}
+.Gray_GridItem td
+{
+    background-color: #c9c9c9;
+}
+.Gray_GridAlternatingItem td
+{
+    background-color: #f0f0f0;
+}
+
+.Gray_Debug
+{
+	border: 1px dashed black;
+	background: black;
+	font: smallcaption;
+	display: block;
+	color: white;
+}
+.Gray_Header
+{
+	color: Black;
+	font-weight: bold;
+}
+.Gray_Footer
+{
+	color: Black;
+	font-weight: bold;
+}
+

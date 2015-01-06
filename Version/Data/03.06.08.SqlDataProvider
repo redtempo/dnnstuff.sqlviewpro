@@ -1,0 +1,7 @@
+﻿UPDATE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ParameterType] 
+	SET 
+		ParameterTypeSettingsControlSrc = 'Parameters/Standard/Settings/TextBoxParameterSettingsControl.ascx',
+		ParameterTypeControlSrc = 'Parameters/Standard/Parameter/TextBoxParameterControl.ascx'
+	WHERE ParameterTypeId = 'TEXTBOX'
+
+GO

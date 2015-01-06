@@ -1,0 +1,9 @@
+﻿INSERT INTO {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_ParameterType (
+	[ParameterTypeId],
+	[ParameterTypeName],
+	[ParameterTypeSettingsControlSrc],
+	[ParameterTypeControlSrc]
+)
+	SELECT 'GEOLOCATION', 'Geo Location', 'Parameters/Standard/Settings/GeoLocationParameterSettingsControl.ascx', 'Parameters/Standard/Parameter/GeoLocationParameterControl.ascx'
+
+GO

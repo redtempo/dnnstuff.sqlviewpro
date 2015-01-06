@@ -1,0 +1,19 @@
+﻿-- MODULE         : DNNStuff - SQLViewPro - DNN4
+-- VERSION        : 03.01.01
+
+/*
+ADD TEMPLATE TO REPORT TYPES
+*/
+
+INSERT INTO {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportType (
+	[ReportTypeId],
+	[ReportTypeName],
+	[ReportTypeControlSrc],
+	[ReportTypeSettingsControlSrc]
+)
+	SELECT 'TEMPLATE', 'Template', 'Reports/Standard/Report/TemplateReportControl.ascx', 'Reports/Standard/Settings/TemplateReportSettingsControl.ascx' 
+
+GO
+
+
+

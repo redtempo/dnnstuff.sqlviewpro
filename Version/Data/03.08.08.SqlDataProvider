@@ -1,0 +1,42 @@
+﻿/*
+ADD SSRS TO REPORT TYPES
+*/
+
+INSERT INTO {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportType (
+	[ReportTypeId],
+	[ReportTypeName],
+	[ReportTypeControlSrc],
+	[ReportTypeSettingsControlSrc],
+	[ReportTypeSupportsDrilldown]
+)
+	SELECT 'SSRS', 'SSRS', 'Reports/SSRS/Report/SSRSReportControl.ascx', 'Reports/SSRS/Settings/SSRSReportSettingsControl.ascx', 0
+
+GO
+
+DELETE FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportType
+WHERE ReportTypeId = 'EXCELTEMPLATE'
+GO
+
+INSERT INTO {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportType (
+	[ReportTypeId],
+	[ReportTypeName],
+	[ReportTypeControlSrc],
+	[ReportTypeSettingsControlSrc],
+	[ReportTypeSupportsDrilldown]
+)
+	SELECT 'EXCELTEMPLATE', 'Excel Template', 'Reports/Excel/Report/ExcelTemplate/ExcelTemplateReportControl.ascx', 'Reports/Excel/Settings/ExcelTemplateReportSettingsControl.ascx', 0
+GO
+
+DELETE FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ParameterType
+WHERE ParameterTypeId = 'MOBISCROLL'
+GO
+
+INSERT INTO {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_ParameterType (
+	[ParameterTypeId],
+	[ParameterTypeName],
+	[ParameterTypeSettingsControlSrc],
+	[ParameterTypeControlSrc]
+)
+	SELECT 'MOBISCROLL', 'Mobiscroll Datetime', 'Parameters/Mobile/Settings/MobiscrollParameterSettingsControl.ascx', 'Parameters/Mobile/Parameter/Mobiscroll/MobiscrollParameterControl.ascx'
+GO
+

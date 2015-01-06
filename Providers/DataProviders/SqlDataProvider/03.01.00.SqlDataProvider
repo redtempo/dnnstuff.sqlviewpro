@@ -1,0 +1,19 @@
+﻿-- MODULE         : DNNStuff - SQLViewPro - DNN4
+-- VERSION        : 03.01.00
+
+/*
+POPULATE TABLES
+*/
+
+SET IDENTITY_INSERT {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_ParameterType ON
+
+INSERT INTO {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_ParameterType (
+	[ParameterTypeId],
+	[ParameterTypeName],
+	[ParameterTypeSettingsControlSrc],
+	[ParameterTypeControlSrc]
+)
+	SELECT 7, 'Calendar', 'Parameters/StandardParameters/ParameterSettings/DefaultParameterSettingsControl.ascx', 'Parameters/StandardParameters/Parameter/CalendarParameterControl.ascx'
+
+SET IDENTITY_INSERT {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_ParameterType OFF
+GO

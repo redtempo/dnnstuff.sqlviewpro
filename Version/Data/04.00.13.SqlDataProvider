@@ -1,0 +1,3 @@
+﻿ALTER TABLE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_Report]
+ALTER COLUMN ReportMetaDescription nvarchar(4000)
+GO

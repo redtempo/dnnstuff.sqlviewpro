@@ -1,0 +1,50 @@
+
+/* sample grid sets */
+.Report1_ReportSet
+{
+}
+
+.Report1_Parameter
+{
+   
+}
+
+.Report1_Report
+{
+}
+
+.Report1_Grid
+{
+	margin: 2px;
+}
+.Report1_GridHeader
+{
+	background: cornflowerblue;
+}
+.Report1_GridItem
+{
+	background: lightyellow;
+}
+.Report1_GridAlternatingItem
+{
+	background: aliceblue;
+}
+.Report1_Debug
+{
+	border: 1px dashed black;
+	background: black;
+	font: smallcaption;
+	display: block;
+	color: white;
+}
+.Report1_Header
+{
+	color: Black;
+	font-weight: bold;
+}
+.Report1_Footer
+{
+	color: Black;
+	font-weight: bold;
+}
+

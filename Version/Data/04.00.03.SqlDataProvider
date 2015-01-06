@@ -1,0 +1,83 @@
+﻿ALTER TABLE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportSet]
+ADD RenderMode nvarchar(20) NOT NULL DEFAULT ('Default')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportSet]
+SET RenderMode = 'Popup' WHERE ShowFullScreen = 1
+GO
+
+DECLARE @Command nvarchar(1000)
+
+select @Command = 'ALTER TABLE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportSet] drop constraint ' + d.name
+ from sys.tables t   
+  join    sys.default_constraints d       
+   on d.parent_object_id = t.object_id  
+  join    sys.columns c      
+   on c.object_id = t.object_id      
+    and c.column_id = d.parent_column_id
+ where t.name = '{objectQualifier}DNNStuff_SqlViewPro_ReportSet'
+  and c.name = 'ShowFullScreen'
+
+execute (@Command)
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportSet]
+DROP COLUMN ShowFullScreen
+GO
+
+ALTER PROCEDURE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_UpdateReportSet]
+(
+@ModuleId int,
+@ReportSetId int,
+@ReportSetName nvarchar(100),
+@ReportSetTheme nvarchar(50),
+@ReportSetConnectionId int,
+@ReportSetHeaderText nvarchar(4000),
+@ReportSetFooterText nvarchar(4000),
+@ReportSetDebug bit,
+@RunCaption nvarchar(200),
+@BackCaption nvarchar(200),
+@ParameterLayout nvarchar(4000),
+@AlwaysShowParameters bit,
+@RenderMode nvarchar(20),
+@AutoRun bit,
+@ReportSetConfig ntext
+)
+
+AS
+
+if exists(select ReportSetId from {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportSet] where ReportSetId = @ReportSetId)
+
+	begin
+		update {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportSet] SET 
+			ModuleId = @ModuleId,
+			ReportSetName = @ReportSetName,
+			ReportSetTheme = @ReportSetTheme,
+			ReportSetConnectionId = @ReportSetConnectionId,
+			ReportSetHeaderText = @ReportSetHeaderText,
+			ReportSetFooterText = @ReportSetFooterText,
+			ReportSetDebug = @ReportSetDebug,
+			RunCaption = @RunCaption,
+			BackCaption = @BackCaption,
+			ParameterLayout = @ParameterLayout,
+			AlwaysShowParameters = @AlwaysShowParameters,
+			RenderMode = @RenderMode,
+			AutoRun = @AutoRun,
+			ReportSetConfig = @ReportSetConfig
+		where ReportSetId = @ReportSetId
+	
+		select @ReportSetId
+	end
+
+else
+
+begin
+
+	insert into {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportSet]
+		(ModuleId, ReportSetName, ReportSetTheme, ReportSetConnectionId, ReportSetHeaderText, ReportSetFooterText, ReportSetDebug, RunCaption, BackCaption, ParameterLayout, AlwaysShowParameters, RenderMode, AutoRun, ReportSetConfig)
+	values
+		(@ModuleId, @ReportSetName, @ReportSetTheme, @ReportSetConnectionId, @ReportSetHeaderText, @ReportSetFooterText, @ReportSetDebug, @RunCaption, @BackCaption, @ParameterLayout, @AlwaysShowParameters, @RenderMode, @AutoRun, @ReportSetConfig)
+
+	select SCOPE_IDENTITY()
+end
+GO

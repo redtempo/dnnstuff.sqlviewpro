@@ -1,0 +1,114 @@
+
+/* sample grid sets */
+.Green_ReportSet
+{
+}
+
+.Green_Parameter
+{
+   
+}
+
+.Green_Report
+{
+}
+
+.Green_Grid
+{
+    font-family: Arial, Sans-Serif;
+    font-size:small;
+    table-layout: auto;
+    border-collapse: collapse;
+    border: #007F0E 2px solid;
+	margin-top:4px;
+}
+.Green_GridHeader, .Green_Pager
+{
+    background-image: url(Images/HeaderGlass.jpg);
+    background-position:center;
+    background-repeat:repeat-x;
+    background-color:#007F0E;
+}
+.Green_GridHeader td
+{
+    padding: 5px;
+    color: #ffffff;
+}
+.Green_GridHeader a
+{
+    text-decoration:none;
+    color:#ffffff;
+    display:block;
+    text-align:left;
+    font-weight:normal;
+}
+
+.Green_Pager table
+{
+    text-align:center;
+    margin:auto;
+}
+.Green_Pager table td
+{
+    border:0px;
+    padding:5px;
+}
+.Green_Pager td
+{
+    border-top: #007F0E 3px solid;
+}
+.Green_Pager a
+{
+    color:#ffffff;
+    text-decoration:none;
+    padding:2px 10px 2px 10px;
+    border-top:solid 1px #777777;
+    border-right:solid 1px #333333;
+    border-bottom:solid 1px #333333;
+    border-left:solid 1px #777777;
+}
+.Green_Pager span
+{
+    font-weight:bold;
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:2px 10px 2px 10px;
+}
+
+.Green_GridItem
+{
+	background: lightyellow;
+}
+.Green_GridItem td, .Green_GridAlternatingItem td
+{
+    padding: 5px;
+    border-right: solid 1px #007F0E;
+}
+.Green_GridItem td
+{
+    background-color: #fff;
+}
+.Green_GridAlternatingItem td
+{
+    background-color: #E2E2E2;
+}
+
+.Green_Debug
+{
+	border: 1px dashed black;
+	background: black;
+	font: smallcaption;
+	display: block;
+	color: white;
+}
+.Green_Header
+{
+	color: Black;
+	font-weight: bold;
+}
+.Green_Footer
+{
+	color: Black;
+	font-weight: bold;
+}
+

@@ -1,0 +1,77 @@
+﻿-- MODULE         : DNNStuff - SQLViewPro
+-- VERSION        : 03.05.00
+
+/*
+ADD EXCEL TO REPORT TYPES
+*/
+
+INSERT INTO {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportType (
+	[ReportTypeId],
+	[ReportTypeName],
+	[ReportTypeControlSrc],
+	[ReportTypeSettingsControlSrc]
+)
+	SELECT 'EXCEL', 'Excel', 'Reports/Standard/Report/Excel/ExcelReportControl.ascx', 'Reports/Standard/Settings/NoReportSettingsControl.ascx' 
+
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportSet]
+ADD [AlwaysShowParameters] [bit] NOT NULL DEFAULT ((0))
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportSet]
+ADD [ShowFullScreen] [bit] NOT NULL DEFAULT ((0))
+GO
+
+ALTER PROCEDURE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_UpdateReportSet]
+(
+@ModuleId int,
+@ReportSetId int,
+@ReportSetName nvarchar(100),
+@ReportSetTheme nvarchar(50),
+@ReportSetConnectionId int,
+@ReportSetHeaderText nvarchar(4000),
+@ReportSetFooterText nvarchar(4000),
+@ReportSetDebug bit,
+@RunCaption nvarchar(200),
+@BackCaption nvarchar(200),
+@ParameterLayout nvarchar(4000),
+@AlwaysShowParameters bit,
+@ShowFullScreen bit
+)
+
+AS
+
+if exists(select ReportSetId from {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportSet] where ReportSetId = @ReportSetId)
+
+	begin
+		update {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportSet] SET 
+			ModuleId = @ModuleId,
+			ReportSetName = @ReportSetName,
+			ReportSetTheme = @ReportSetTheme,
+			ReportSetConnectionId = @ReportSetConnectionId,
+			ReportSetHeaderText = @ReportSetHeaderText,
+			ReportSetFooterText = @ReportSetFooterText,
+			ReportSetDebug = @ReportSetDebug,
+			RunCaption = @RunCaption,
+			BackCaption = @BackCaption,
+			ParameterLayout = @ParameterLayout,
+			AlwaysShowParameters = @AlwaysShowParameters,
+			ShowFullScreen = @ShowFullScreen
+		where ReportSetId = @ReportSetId
+	
+		select @ReportSetId
+	end
+
+else
+
+begin
+
+	insert into {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportSet]
+		(ModuleId, ReportSetName, ReportSetTheme, ReportSetConnectionId, ReportSetHeaderText, ReportSetFooterText, ReportSetDebug, RunCaption, BackCaption, ParameterLayout, AlwaysShowParameters, ShowFullScreen)
+	values
+		(@ModuleId, @ReportSetName, @ReportSetTheme, @ReportSetConnectionId, @ReportSetHeaderText, @ReportSetFooterText, @ReportSetDebug, @RunCaption, @BackCaption, @ParameterLayout, @AlwaysShowParameters, @ShowFullScreen)
+
+	select SCOPE_IDENTITY()
+end
+

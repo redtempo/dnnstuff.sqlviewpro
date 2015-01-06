@@ -1,0 +1,114 @@
+
+/* sample grid sets */
+.Black_ReportSet
+{
+}
+
+.Black_Parameter
+{
+   
+}
+
+.Black_Report
+{
+}
+
+.Black_Grid
+{
+    font-family: Arial, Sans-Serif;
+    font-size:small;
+    table-layout: auto;
+    border-collapse: collapse;
+    border: #1d1d1d 3px solid;
+	margin-top:4px;
+}
+.Black_GridHeader, .Black_Pager
+{
+    background-image: url(Images/HeaderGlass.jpg);
+    background-position:center;
+    background-repeat:repeat-x;
+    background-color:#1d1d1d;
+}
+.Black_GridHeader td
+{
+    padding: 5px;
+    color: #ffffff;
+}
+.Black_GridHeader a
+{
+    text-decoration:none;
+    color:#ffffff;
+    display:block;
+    text-align:left;
+    font-weight:normal;
+}
+
+.Black_Pager table
+{
+    text-align:center;
+    margin:auto;
+}
+.Black_Pager table td
+{
+    border:0px;
+    padding:5px;
+}
+.Black_Pager td
+{
+    border-top: #1d1d1d 3px solid;
+}
+.Black_Pager a
+{
+    color:#ffffff;
+    text-decoration:none;
+    padding:2px 10px 2px 10px;
+    border-top:solid 1px #777777;
+    border-right:solid 1px #333333;
+    border-bottom:solid 1px #333333;
+    border-left:solid 1px #777777;
+}
+.Black_Pager span
+{
+    font-weight:bold;
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:2px 10px 2px 10px;
+}
+
+.Black_GridItem
+{
+	background: lightyellow;
+}
+.Black_GridItem td, .Black_GridAlternatingItem td
+{
+    padding: 5px;
+    border-right: solid 1px #1d1d1d;
+}
+.Black_GridItem td
+{
+    background-color: #c9c9c9;
+}
+.Black_GridAlternatingItem td
+{
+    background-color: #f0f0f0;
+}
+
+.Black_Debug
+{
+	border: 1px dashed black;
+	background: black;
+	font: smallcaption;
+	display: block;
+	color: white;
+}
+.Black_Header
+{
+	color: Black;
+	font-weight: bold;
+}
+.Black_Footer
+{
+	color: Black;
+	font-weight: bold;
+}
+

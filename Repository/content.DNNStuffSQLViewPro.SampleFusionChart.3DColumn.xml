@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<content type="DNNStuffSQLViewPro" version="03.01.03">
+  <sqlviewpro>
+    <reportset>
+      <id><![CDATA[87]]></id>
+      <name><![CDATA[Sample - Yearly Budget Chart]]></name>
+      <theme><![CDATA[Default]]></theme>
+      <debug><![CDATA[False]]></debug>
+      <runcaption><![CDATA[]]></runcaption>
+      <backcaption><![CDATA[]]></backcaption>
+      <connectionid><![CDATA[-1]]></connectionid>
+      <connectionstring><![CDATA[]]></connectionstring>
+      <footertext><![CDATA[]]></footertext>
+      <headertext><![CDATA[]]></headertext>
+      <parameterlayout><![CDATA[]]></parameterlayout>
+      <alwaysshowparameters><![CDATA[False]]></alwaysshowparameters>
+      <showfullscreen><![CDATA[False]]></showfullscreen>
+      <reportsetconfig><![CDATA[<?xml version="1.0" encoding="utf-8"?><ReportSetConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />]]></reportsetconfig>
+    </reportset>
+    <reports>
+      <report>
+        <id><![CDATA[83]]></id>
+        <reportsetid><![CDATA[87]]></reportsetid>
+        <name><![CDATA[Yearly Budgets]]></name>
+        <theme><![CDATA[]]></theme>
+        <command>
+          <![CDATA[SELECT Year, SUM(Amount) [Total Budget] FROM {oq}DNNStuff_SQLViewPro_Sample_Budgets
+GROUP BY Year]]>
+        </command>
+        <reporttype><![CDATA[FUSIONCHART]]></reporttype>
+        <config><![CDATA[<?xml version="1.0" encoding="utf-8"?><Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><ChartType>Column3D</ChartType><ColorSet>990000,CC9933,339933,339999,333399,CC6623</ColorSet><CustomColorSet /><ChartHeight>400</ChartHeight><ChartWidth>600</ChartWidth><BgColor /><BgAlpha /><BgSWF /><CanvasBgColor /><CanvasBgAlpha /><CanvasBorderColor>000000</CanvasBorderColor><CanvasBorderThickness>1</CanvasBorderThickness><CanvasBaseColor /><CanvasBaseDepth /><CanvasBgDepth /><ShowCanvasBg>false</ShowCanvasBg><ShowCanvasBase>true</ShowCanvasBase><Caption>Total Budget By Year</Caption><SubCaption /><XAxisName>Year</XAxisName><YAxisName>Budget ($)</YAxisName><YAxisMinValue /><YAxisMaxValue /><ShowNames>true</ShowNames><ShowValues>true</ShowValues><ShowLimits>true</ShowLimits><RotateNames>false</RotateNames><Animation>true</Animation><ShowColumnShadow>false</ShowColumnShadow><ShowPercentageValues>false</ShowPercentageValues><ShowPercentageInLabel>false</ShowPercentageInLabel><ShowBarShadow>false</ShowBarShadow><ShowLegend>false</ShowLegend><BaseFont /><BaseFontSize /><BaseFontColor /><OutCnvBaseFont /><OutCnvBaseFontColor /><NumberPrefix>$</NumberPrefix><NumberSuffix /><FormatNumber>true</FormatNumber><FormatNumberScale>1</FormatNumberScale><DecimalSeparator /><ThousandSeparator>,</ThousandSeparator><DecimalPrecision /><DivLineDecimalPrecision /><LimitsDecimalPrecision /><ZeroPlaneThickness /><ZeroPlaneColor /><ZeroPlaneAlpha /><ZeroPlaneShowBorder>false</ZeroPlaneShowBorder><ZeroPlaneBorderColor /><NumDivLines /><DivLineThickness /><DivLineAlpha /><ShowDivLineValue>false</ShowDivLineValue><ShowAlternateHGridColor>false</ShowAlternateHGridColor><AlternateHGridColor /><AlternateHGridAlpha /><NumHDivLines /><HDivLineThickness /><HDivLineAlpha /><ShowAlternateVGridColor>false</ShowAlternateVGridColor><AlternateVGridColor /><AlternateVGridAlpha /><NumVDivLines /><VDivLineThickness /><VDivLineAlpha /><ShowHoverCap>false</ShowHoverCap><HoverCapBgColor /><HoverCapBorderColor /><HoverCapSepChar /><ChartLeftMargin>20</ChartLeftMargin><ChartRightMargin>20</ChartRightMargin><ChartTopMargin>20</ChartTopMargin><ChartBottomMargin>20</ChartBottomMargin><PieRadius /><PieBorderThickness /><PieBorderAlpha /><PieFillAlpha /><PieSliceDepth /><PieYScale /><SlicingDistance /><NameTBDistance /><LineColor /><LineThickness /><LineAlpha /><ShowShadow>false</ShowShadow><ShadowColor /><ShadowAlpha /><ShadowXShift /><ShadowYShift /><ShadowThickness /><ShowAnchors>false</ShowAnchors><AnchorSides /><AnchorRadius /><AnchorBorderColor /><AnchorBorderThickness /><AnchorBgColor /><AnchorBgAlpha /><AnchorAlpha /><ShowAreaBorder>false</ShowAreaBorder><AreaBorderThickness /><AreaBorderColor /><AreaBgColor /><AreaAlpha /></Settings>]]></config>
+        <connectionid><![CDATA[-2]]></connectionid>
+        <connectionstring><![CDATA[]]></connectionstring>
+        <footertext><![CDATA[]]></footertext>
+        <headertext><![CDATA[]]></headertext>
+        <order><![CDATA[0]]></order>
+        <drilldownreportid><![CDATA[-1]]></drilldownreportid>
+        <drilldownfieldname><![CDATA[]]></drilldownfieldname>
+        <noitemstext><![CDATA[]]></noitemstext>
+      </report>
+    </reports>
+    <parameters></parameters>
+  </sqlviewpro>
+</content>

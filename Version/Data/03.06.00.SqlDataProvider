@@ -1,0 +1,68 @@
+﻿ALTER PROCEDURE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_UpdateReport]
+(
+@ReportSetId int,
+@ReportId int,
+@ReportTypeId nvarchar(20),
+@ReportName nvarchar(100),
+@ReportTheme nvarchar(50),
+@ReportConnectionId int,
+@ReportHeaderText nvarchar(4000),
+@ReportFooterText nvarchar(4000),
+@ReportCommand ntext,
+@ReportConfig ntext,
+@ReportOrder int,
+@ReportDrilldownReportId int,
+@ReportDrilldownFieldname nvarchar(100),
+@ReportNoItemsText nvarchar(500)
+)
+
+AS
+
+DECLARE @MaxOrder int
+
+if exists(select ReportId from {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_Report] where ReportId = @ReportId)
+
+begin
+	update {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_Report] SET 
+		ReportSetId = @ReportSetId,
+		ReportTypeId = @ReportTypeId,
+		ReportName = @ReportName,
+		ReportTheme = @ReportTheme,
+		ReportConnectionId = @ReportConnectionId,
+		ReportHeaderText = @ReportHeaderText,
+		ReportFooterText = @ReportFooterText,
+		ReportCommand = @ReportCommand,
+		ReportConfig = @ReportConfig,
+		ReportDrilldownReportId = @ReportDrilldownReportId,
+		ReportDrilldownFieldname = @ReportDrilldownFieldname,
+		ReportNoItemsText = @ReportNoItemsText
+
+	where ReportId = @ReportId
+
+	select @ReportId
+end
+
+else
+
+begin
+
+	-- grab order
+	SET @MaxOrder = (SELECT IsNull(Max(ReportOrder),0) FROM {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_Report] WHERE ReportSetId = @ReportSetId)
+
+	insert into {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_Report]
+		(ReportSetId, ReportTypeId, ReportName, ReportTheme, ReportConnectionId, ReportHeaderText, ReportFooterText, ReportCommand, ReportConfig, ReportOrder, ReportDrilldownReportId, ReportDrilldownFieldname, ReportNoItemsText)
+	values
+		(@ReportSetId, @ReportTypeId, @ReportName, @ReportTheme, @ReportConnectionId, @ReportHeaderText, @ReportFooterText, @ReportCommand, @ReportConfig, @MaxOrder+1, @ReportDrilldownReportId, @ReportDrilldownFieldname, @ReportNoItemsText)
+
+	select SCOPE_IDENTITY()
+end
+GO
+
+INSERT INTO {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportType (
+	[ReportTypeId],
+	[ReportTypeName],
+	[ReportTypeControlSrc],
+	[ReportTypeSettingsControlSrc]
+)
+	SELECT 'FUSIONCHART', 'Chart (Fusion)', 'Reports/Standard/Report/FusionChart/FusionChartReportControl.ascx', 'Reports/Standard/Settings/FusionChartReportSettingsControl.ascx'
+GO

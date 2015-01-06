@@ -1,0 +1,377 @@
+﻿-- MODULE         : DNNSTUFF - SQLVIEWPRO - DNN3
+-- VERSION        : 03.01.03
+-- 8/JAN/2010     : CHANGING REPORTSET VISIBILITY TO MODULE LEVEL
+
+/*
+TABLES - ALTERED
+*/
+
+ALTER TABLE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet
+ADD ModuleId int DEFAULT (0)
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Parameter
+DROP COLUMN ParameterConnectionId
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Parameter
+DROP COLUMN ParameterCommand
+GO
+
+-- update moduleid with the moduleid based on previous module settings value
+UPDATE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet
+SET ModuleId = (SELECT TOP 1 ModuleID FROM {databaseOwner}{objectQualifier}ModuleSettings WHERE SettingName = 'reportSet' AND SettingValue = {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet.ReportSetId)
+GO
+
+
+/*
+PROCS
+*/
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_GetReportSetByModule
+(
+@ModuleId int
+)
+
+AS
+
+SELECT RS.*, C.ConnectionString ReportSetConnectionString FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet RS
+LEFT JOIN {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Connection C ON C.ConnectionId = RS.ReportSetConnectionId
+ WHERE ModuleId = @ModuleId
+
+GO
+
+
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ListReportSet
+(
+@PortalId int
+)
+
+AS
+
+SELECT *, 
+(SELECT COUNT(*) FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Report WHERE ReportSetId = RS.ReportSetId) AS ReportCount ,
+(SELECT COUNT(*) FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Parameter WHERE ReportSetId = RS.ReportSetId) AS ParameterCount 
+FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet RS
+INNER JOIN {databaseOwner}{objectQualifier}Modules M ON RS.ModuleId = M.ModuleId
+	WHERE M.PortalId = @PortalId
+
+GO
+
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_UpdateReportSet
+(
+@ModuleId int,
+@ReportSetId int,
+@ReportSetName nvarchar(100),
+@ReportSetTheme nvarchar(50),
+@ReportSetConnectionId int,
+@ReportSetHeaderText nvarchar(200),
+@ReportSetFooterText nvarchar(200),
+@ReportSetDebug bit
+)
+
+AS
+
+if exists(select ReportSetId from {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet where ReportSetId = @ReportSetId)
+
+	begin
+		update {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet SET 
+			ModuleId = @ModuleId,
+			ReportSetName = @ReportSetName,
+			ReportSetTheme = @ReportSetTheme,
+			ReportSetConnectionId = @ReportSetConnectionId,
+			ReportSetHeaderText = @ReportSetHeaderText,
+			ReportSetFooterText = @ReportSetFooterText,
+			ReportSetDebug = @ReportSetDebug
+		where ReportSetId = @ReportSetId
+	
+		select @ReportSetId
+	end
+
+else
+
+begin
+
+	insert into {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet
+		(ModuleId, ReportSetName, ReportSetTheme, ReportSetConnectionId, ReportSetHeaderText, ReportSetFooterText, ReportSetDebug)
+	values
+		(@ModuleId, @ReportSetName, @ReportSetTheme, @ReportSetConnectionId, @ReportSetHeaderText, @ReportSetFooterText, @ReportSetDebug)
+
+	select SCOPE_IDENTITY()
+end
+
+GO
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_DeleteReportSet
+(
+@ModuleId int
+)
+
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet WHERE ModuleId = @ModuleId
+
+GO
+
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ListReport
+(
+@PortalId int
+)
+
+AS
+
+SELECT R.*, RT.ReportTypeName, RT.ReportTypeSettingsControlSrc, RT.ReportTypeControlSrc, C.ConnectionString ReportConnectionString FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Report R 
+INNER JOIN {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportType RT ON RT.ReportTypeId = R.ReportTypeId
+LEFT JOIN {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Connection C ON C.ConnectionId = R.ReportConnectionId
+INNER JOIN {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet RS ON RS.ReportSetId = R.ReportSetId
+INNER JOIN {databaseOwner}{objectQualifier}Modules M ON RS.ModuleId = M.ModuleId
+	WHERE M.PortalId = @PortalId
+
+GO
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ListParameter
+(
+@ReportSetId int
+)
+
+AS
+
+SELECT P.*, PT.ParameterTypeName, PT.ParameterTypeSettingsControlSrc, PT.ParameterTypeControlSrc FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Parameter P 
+INNER JOIN {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ParameterType PT ON PT.ParameterTypeId = P.ParameterTypeId
+INNER JOIN {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet RS ON RS.ReportSetId = P.ReportSetId
+WHERE RS.ReportSetId = @ReportSetId
+
+GO
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ListReport
+(
+@ReportSetId int
+)
+
+AS
+
+SELECT R.*, RT.ReportTypeName, RT.ReportTypeSettingsControlSrc, RT.ReportTypeControlSrc, C.ConnectionString ReportConnectionString FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Report R 
+INNER JOIN {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportType RT ON RT.ReportTypeId = R.ReportTypeId
+LEFT JOIN {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Connection C ON C.ConnectionId = R.ReportConnectionId
+INNER JOIN {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet RS ON RS.ReportSetId = R.ReportSetId
+WHERE RS.ReportSetId = @ReportSetId
+
+GO
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_UpdateParameter
+(
+@ReportSetId int,
+@ParameterId int,
+@ParameterName nvarchar(50),
+@ParameterCaption nvarchar(100),
+@ParameterTypeId nvarchar(20),
+@ParameterConfig ntext,
+@ParameterOrder int
+)
+
+AS
+
+DECLARE @MaxOrder int
+
+if exists(select ParameterId from {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Parameter where ParameterId = @ParameterId)
+
+begin
+	update {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Parameter SET 
+		ReportSetId = @ReportSetId,
+		ParameterName = @ParameterName,
+		ParameterCaption = @ParameterCaption,
+		ParameterTypeId = @ParameterTypeId,
+		ParameterConfig = @ParameterConfig
+	where ParameterId = @ParameterId
+
+	select @ParameterId
+end
+
+else
+
+begin
+		-- grab order
+		SET @MaxOrder = (SELECT IsNull(Max(ParameterOrder),0) FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Parameter WHERE ReportSetId = @ReportSetId)
+
+		insert into {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Parameter
+			(ReportSetId, ParameterName, ParameterCaption, ParameterTypeId, ParameterConfig, ParameterOrder)
+		values
+			(@ReportSetId, @ParameterName, @ParameterCaption, @ParameterTypeId, @ParameterConfig, @MaxOrder+1)
+
+		select SCOPE_IDENTITY()
+end
+
+GO
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_GetParameter
+(
+@ParameterId int
+)
+
+AS
+
+SELECT P.*, PT.ParameterTypeName, PT.ParameterTypeSettingsControlSrc, PT.ParameterTypeControlSrc FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Parameter P 
+INNER JOIN {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ParameterType PT ON PT.ParameterTypeId = P.ParameterTypeId
+
+WHERE P.ParameterId = @ParameterId
+
+GO
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_GetReportSetParameter
+(
+@ReportSetId int
+)
+
+AS
+
+SELECT P.*, PT.ParameterTypeName, PT.ParameterTypeSettingsControlSrc, PT.ParameterTypeControlSrc FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Parameter P 
+INNER JOIN {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ParameterType PT ON PT.ParameterTypeId = P.ParameterTypeId
+
+WHERE P.ReportSetId = @ReportSetId
+ORDER BY P.ParameterOrder
+
+GO
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ListConnection
+(
+@PortalId As int
+)
+AS
+
+SELECT *,
+
+(SELECT COUNT(*) FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Report WHERE ReportConnectionId = ConnectionId) UsedInReportCount,
+(SELECT COUNT(*) FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet WHERE ReportSetConnectionId = ConnectionId) UsedInReportSetCount
+ FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Connection where PortalId = @PortalId
+
+GO
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_UpdateConnection
+(
+@PortalId int,
+@ConnectionId int,
+@ConnectionName nvarchar(100),
+@ConnectionString nvarchar(2000)
+)
+
+AS
+
+if exists(select ConnectionId from {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Connection where ConnectionId = @ConnectionId)
+
+begin
+	update {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Connection SET 
+		PortalId = @PortalId,
+		ConnectionName = @ConnectionName,
+		ConnectionString = @ConnectionString
+	where ConnectionId = @ConnectionId
+
+	select @ConnectionId
+end
+
+else
+begin
+	insert into {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Connection
+		(PortalId, ConnectionName, ConnectionString)
+	values
+		(@PortalId, @ConnectionName, @ConnectionString)
+
+	select SCOPE_IDENTITY()
+end
+GO
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_UpdateReport
+(
+@ReportSetId int,
+@ReportId int,
+@ReportTypeId nvarchar(20),
+@ReportName nvarchar(100),
+@ReportTheme nvarchar(50),
+@ReportConnectionId int,
+@ReportHeaderText nvarchar(200),
+@ReportFooterText nvarchar(200),
+@ReportCommand text,
+@ReportConfig text,
+@ReportOrder int,
+@ReportDrilldownReportId int,
+@ReportDrilldownFieldname nvarchar(100)
+)
+
+AS
+
+DECLARE @MaxOrder int
+
+if exists(select ReportId from {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Report where ReportId = @ReportId)
+
+begin
+	update {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Report SET 
+		ReportSetId = @ReportSetId,
+		ReportTypeId = @ReportTypeId,
+		ReportName = @ReportName,
+		ReportTheme = @ReportTheme,
+		ReportConnectionId = @ReportConnectionId,
+		ReportHeaderText = @ReportHeaderText,
+		ReportFooterText = @ReportFooterText,
+		ReportCommand = @ReportCommand,
+		ReportConfig = @ReportConfig,
+		ReportDrilldownReportId = @ReportDrilldownReportId,
+		ReportDrilldownFieldname = @ReportDrilldownFieldname
+
+	where ReportId = @ReportId
+
+	select @ReportId
+end
+
+else
+
+begin
+
+	-- grab order
+	SET @MaxOrder = (SELECT IsNull(Max(ReportOrder),0) FROM {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Report WHERE ReportSetId = @ReportSetId)
+
+	insert into {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_Report
+		(ReportSetId, ReportTypeId, ReportName, ReportTheme, ReportConnectionId, ReportHeaderText, ReportFooterText, ReportCommand, ReportConfig, ReportOrder, ReportDrilldownReportId, ReportDrilldownFieldname)
+	values
+		(@ReportSetId, @ReportTypeId, @ReportName, @ReportTheme, @ReportConnectionId, @ReportHeaderText, @ReportFooterText, @ReportCommand, @ReportConfig, @MaxOrder, @ReportDrilldownReportId, @ReportDrilldownFieldname)
+
+	select SCOPE_IDENTITY()
+end
+
+GO
+
+/*
+REMOVE PORTALID
+*/
+ALTER TABLE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet
+DROP COLUMN PortalId
+GO
+
+/*
+REFERENCES
+*/
+ALTER TABLE {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_ReportSet  WITH CHECK ADD CONSTRAINT [FK_DNNStuff_SQLViewPro_ReportSet_Modules] FOREIGN KEY([ModuleID])
+REFERENCES {databaseOwner}{objectQualifier}Modules ([ModuleID])
+ON DELETE CASCADE
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_Report  WITH CHECK ADD CONSTRAINT [FK_DNNStuff_SQLViewPro_ReportSet_Report] FOREIGN KEY([ReportSetId])
+REFERENCES {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_ReportSet ([ReportSetId])
+ON DELETE CASCADE
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_Parameter  WITH CHECK ADD CONSTRAINT [FK_DNNStuff_SQLViewPro_ReportSet_Parameter] FOREIGN KEY([ReportSetId])
+REFERENCES {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_ReportSet ([ReportSetId])
+ON DELETE CASCADE
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_ReportSet CHECK CONSTRAINT [FK_DNNStuff_SQLViewPro_ReportSet_Modules]
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_Report CHECK CONSTRAINT [FK_DNNStuff_SQLViewPro_ReportSet_Report]
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_Parameter CHECK CONSTRAINT [FK_DNNStuff_SQLViewPro_ReportSet_Parameter]
+GO
+

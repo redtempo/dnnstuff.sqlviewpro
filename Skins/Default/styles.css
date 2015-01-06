@@ -1,0 +1,50 @@
+
+/* sample grid sets */
+.Default_ReportSet
+{
+}
+
+.Default_Parameter
+{
+   
+}
+
+.Default_Report
+{
+}
+
+.Default_Grid
+{
+	margin: 2px;
+}
+.Default_GridHeader
+{
+	background: cornflowerblue;
+}
+.Default_GridItem
+{
+	background: lightyellow;
+}
+.Default_GridAlternatingItem
+{
+	background: aliceblue;
+}
+.Default_Debug
+{
+	border: 1px dashed black;
+	background: black;
+	font: smallcaption;
+	display: block;
+	color: white;
+}
+.Default_Header
+{
+	color: Black;
+	font-weight: bold;
+}
+.Default_Footer
+{
+	color: Black;
+	font-weight: bold;
+}
+

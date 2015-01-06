@@ -1,0 +1,65 @@
+﻿INSERT INTO {databaseOwner}{objectQualifier}DNNStuff_SQLViewPro_ParameterType (
+	[ParameterTypeId],
+	[ParameterTypeName],
+	[ParameterTypeSettingsControlSrc],
+	[ParameterTypeControlSrc]
+)
+	SELECT 'EMPTY', 'Empty', 'Parameters/Standard/Settings/EmptyParameterSettingsControl.ascx', 'Parameters/Standard/Parameter/EmptyParameterControl.ascx'
+
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet
+ADD RunCaption nvarchar(200) DEFAULT (N'Run')
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet
+ADD BackCaption nvarchar(200) DEFAULT (N'< Back')
+GO
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_UpdateReportSet
+(
+@ModuleId int,
+@ReportSetId int,
+@ReportSetName nvarchar(100),
+@ReportSetTheme nvarchar(50),
+@ReportSetConnectionId int,
+@ReportSetHeaderText nvarchar(200),
+@ReportSetFooterText nvarchar(200),
+@ReportSetDebug bit,
+@RunCaption nvarchar(200),
+@BackCaption nvarchar(200)
+)
+
+AS
+
+if exists(select ReportSetId from {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet where ReportSetId = @ReportSetId)
+
+	begin
+		update {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet SET 
+			ModuleId = @ModuleId,
+			ReportSetName = @ReportSetName,
+			ReportSetTheme = @ReportSetTheme,
+			ReportSetConnectionId = @ReportSetConnectionId,
+			ReportSetHeaderText = @ReportSetHeaderText,
+			ReportSetFooterText = @ReportSetFooterText,
+			ReportSetDebug = @ReportSetDebug,
+			RunCaption = @RunCaption,
+			BackCaption = @BackCaption
+		where ReportSetId = @ReportSetId
+	
+		select @ReportSetId
+	end
+
+else
+
+begin
+
+	insert into {databaseOwner}{objectQualifier}DNNStuff_SqlViewPro_ReportSet
+		(ModuleId, ReportSetName, ReportSetTheme, ReportSetConnectionId, ReportSetHeaderText, ReportSetFooterText, ReportSetDebug, RunCaption, BackCaption)
+	values
+		(@ModuleId, @ReportSetName, @ReportSetTheme, @ReportSetConnectionId, @ReportSetHeaderText, @ReportSetFooterText, @ReportSetDebug, @RunCaption, @BackCaption)
+
+	select SCOPE_IDENTITY()
+end
+go
+

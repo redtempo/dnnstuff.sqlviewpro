@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?><content type="DNNStuffSQLViewPro" version="03.01.03"><sqlviewpro><reportset><id><![CDATA[76]]></id><name><![CDATA[Sample - Employees by Department, Filter by Seniority]]></name><theme><![CDATA[Default]]></theme><debug><![CDATA[False]]></debug><runcaption><![CDATA[]]></runcaption><backcaption><![CDATA[]]></backcaption><connectionid><![CDATA[-1]]></connectionid><connectionstring><![CDATA[]]></connectionstring><footertext><![CDATA[]]></footertext><headertext><![CDATA[]]></headertext><parameterlayout><![CDATA[<table width="100%">
+<tr><td><b>[Department_Caption]</b></td><td><b>[MinSeniority_Caption]</b></td></tr>
+<tr><td>[Department_Prompt]</td><td>[MinSeniority_Prompt]</td></tr>
+</table>]]></parameterlayout></reportset><reports><report><id><![CDATA[70]]></id><reportsetid><![CDATA[76]]></reportsetid><name><![CDATA[Employees for a Department]]></name><theme><![CDATA[Report1]]></theme><command><![CDATA[SELECT E.FirstName, E.LastName, DATEDIFF(year,E.HireDate,getDate()) [Seniority Years], E.City, D.Name Department  
+FROM {oq}DNNStuff_SQLViewPro_Sample_Employees E INNER JOIN  {oq}DNNStuff_SQLViewPro_Sample_Departments D 
+ON E.DepartmentId = D.DepartmentId 
+WHERE (E.DepartmentId = [PARAMETER:Department] OR [PARAMETER:Department] = -1) 
+AND DATEDIFF(year,E.HireDate,getDate()) >= [PARAMETER:MinSeniority]
+ORDER BY HireDate DESC]]></command><reporttype><![CDATA[GRID]]></reporttype><config><![CDATA[<?xml version="1.0" encoding="utf-8"?><Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><AllowSorting>false</AllowSorting><OrderBy /><AllowPaging>true</AllowPaging><PageSize>10</PageSize><PagerMode>NumericPages</PagerMode><PrevPageText /><NextPageText /><PagerPosition>Top</PagerPosition><EnableExcelExport>false</EnableExcelExport><ExcelExportButtonCaption /><HideColumnHeaders>false</HideColumnHeaders><HideColumns /></Settings>]]></config><connectionid><![CDATA[-2]]></connectionid><connectionstring><![CDATA[]]></connectionstring><footertext><![CDATA[]]></footertext><headertext><![CDATA[Employees with a minimum seniority of [PARAMETER:MinSeniority] years]]></headertext><order><![CDATA[0]]></order><drilldownreportid><![CDATA[-1]]></drilldownreportid><drilldownfieldname><![CDATA[]]></drilldownfieldname><noitemstext><![CDATA[No items meet your criteria]]></noitemstext></report></reports><parameters><parameter><id><![CDATA[33]]></id><reportsetid><![CDATA[76]]></reportsetid><name><![CDATA[Department]]></name><parametertype><![CDATA[DROPDOWNLIST]]></parametertype><config><![CDATA[<?xml version="1.0" encoding="utf-8"?><Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><ConnectionId>-2</ConnectionId><Command>SELECT DepartmentId,Name FROM {oq}DNNStuff_SQLViewPro_Sample_Departments</Command><List>-1|All</List><Default /></Settings>]]></config><caption><![CDATA[Department]]></caption><order><![CDATA[1]]></order></parameter><parameter><id><![CDATA[34]]></id><reportsetid><![CDATA[76]]></reportsetid><name><![CDATA[MinSeniority]]></name><parametertype><![CDATA[DROPDOWNLIST]]></parametertype><config><![CDATA[<?xml version="1.0" encoding="utf-8"?><Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><ConnectionId>-2</ConnectionId><Command /><List>1
+2
+3
+4
+5
+6
+7
+8
+9
+10</List><Default>1</Default></Settings>]]></config><caption><![CDATA[Minimum Seniority]]></caption><order><![CDATA[2]]></order></parameter></parameters></sqlviewpro></content>

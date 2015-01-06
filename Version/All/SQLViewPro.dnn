@@ -1,0 +1,289 @@
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="DNNStuff - SQLViewPro" type="Module" version="">
+      <friendlyName>DNNStuff - SQLViewPro</friendlyName>
+      <description>SQLView Pro displays data from any database into grids, charts or anything else you can dream up</description>
+      <owner>
+        <name>Richard Edwards</name>
+        <organization>DNNStuff</organization>
+        <url>
+          <![CDATA[Web: <a href="http://www.dnnstuff.com/" target="_blank">www.dnnstuff.com</a>, Twitter: <a href="http://www.twitter.com/dnnstuff" target="_blank">http://www.twitter.com/dnnstuff</a>, Facebook: <a href="https://www.facebook.com/pages/DNNStuff/206502112775818" target="_blank">http://www.facebook.com/dnnstuff</a><br /><i><strong>(All links open in a new window and won't interupt your install!)</strong></i>]]>
+        </url>
+        <email>
+          <![CDATA[<a href="mailto:support@dnnstuff.com">support@dnnstuff.com</a>]]>
+        </email>
+      </owner>
+      <license src="License.html" />
+      <releaseNotes src="Version_Current.html" />
+	  <azureCompatible>true</azureCompatible>
+      <dependencies>
+        <dependency type="CoreVersion">06.00.03</dependency>
+      </dependencies>
+      <components>
+        <component type="Module">
+          <desktopModule>
+            <moduleName>DNNStuff - SQLViewPro</moduleName>
+            <foldername>DNNStuff - SQLViewPro</foldername>
+            <businessControllerClass>DNNStuff.SQLViewPro.SQLViewProController, DNNStuff.SQLViewPro</businessControllerClass>
+            <supportedFeatures>
+              <supportedFeature type="Portable" />
+              <supportedFeature type="Upgradeable" />
+            </supportedFeatures>
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>DNNStuff - SQLViewPro</friendlyName>
+                <defaultCacheTime>0</defaultCacheTime>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey></controlKey>
+                    <controlSrc>DesktopModules/DNNStuff - SQLViewPro/SQLViewPro.ascx</controlSrc>
+                    <controlType>View</controlType>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>EditConnection</controlKey>
+                    <controlTitle>Edit Connection</controlTitle>
+                    <controlSrc>DesktopModules/DNNStuff - SQLViewPro/EditConnection.ascx</controlSrc>
+                    <controlType>Edit</controlType>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>EditConnections</controlKey>
+                    <controlTitle>Edit Connections</controlTitle>
+                    <controlSrc>DesktopModules/DNNStuff - SQLViewPro/EditConnections.ascx</controlSrc>
+                    <controlType>Edit</controlType>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>EditParameter</controlKey>
+                    <controlTitle>Edit Parameter</controlTitle>
+                    <controlSrc>DesktopModules/DNNStuff - SQLViewPro/EditParameter.ascx</controlSrc>
+                    <controlType>Edit</controlType>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>EditReport</controlKey>
+                    <controlTitle>Edit Report</controlTitle>
+                    <controlSrc>DesktopModules/DNNStuff - SQLViewPro/EditReport.ascx</controlSrc>
+                    <controlType>Edit</controlType>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>EditReportSet</controlKey>
+                    <controlTitle>Edit Report Set</controlTitle>
+                    <controlSrc>DesktopModules/DNNStuff - SQLViewPro/EditReportSet.ascx</controlSrc>
+                    <controlType>Edit</controlType>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>BrowseRepository</controlKey>
+                    <controlTitle>Browse Repository</controlTitle>
+                    <controlSrc>DesktopModules/DNNStuff - SQLViewPro/BrowseRepository.ascx</controlSrc>
+                    <controlType>Edit</controlType>
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <basePath>bin</basePath>
+            <assembly>
+              <name>DNNStuff.SQLViewPro.dll</name>
+              <sourceFileName>DNNStuff.SQLViewPro.dll</sourceFileName>
+            </assembly>
+            <assembly>
+              <name>DNNStuff.SQLViewPro.StandardReports.dll</name>
+              <sourceFileName>DNNStuff.SQLViewPro.StandardReports.dll</sourceFileName>
+            </assembly>
+            <assembly>
+              <name>DNNStuff.SQLViewPro.StandardParameters.dll</name>
+              <sourceFileName>DNNStuff.SQLViewPro.StandardParameters.dll</sourceFileName>
+            </assembly>
+            <assembly>
+              <name>DNNStuff.SQLViewPro.ExcelReports.dll</name>
+              <sourceFileName>DNNStuff.SQLViewPro.ExcelReports.dll</sourceFileName>
+            </assembly>
+            <assembly>
+              <name>DNNStuff.SQLViewPro.MobileParameters.dll</name>
+              <sourceFileName>DNNStuff.SQLViewPro.MobileParameters.dll</sourceFileName>
+            </assembly>
+            <assembly>
+              <name>DNNStuff.SQLViewPro.SSRSReports.dll</name>
+              <sourceFileName>DNNStuff.SQLViewPro.SSRSReports.dll</sourceFileName>
+            </assembly>
+            <assembly>
+              <name>DNNStuff.SQLViewPro.SqlDataProvider.dll</name>
+              <sourceFileName>DNNStuff.SQLViewPro.SqlDataProvider.dll</sourceFileName>
+            </assembly>
+            <assembly>
+              <name>DNNStuff.Utilities.dll</name>
+              <sourceFileName>DNNStuff.Utilities.dll</sourceFileName>
+            </assembly>
+            <assembly>
+              <name>Ciloci.Flee.dll</name>
+              <sourceFileName>Ciloci.Flee.dll</sourceFileName>
+            </assembly>
+            <assembly>
+              <name>FlexCel.dll</name>
+              <sourceFileName>FlexCel.dll</sourceFileName>
+            </assembly>
+            <assembly>
+              <name>Microsoft.ReportViewer.WebForms.dll</name>
+              <sourceFileName>Microsoft.ReportViewer.WebForms.dll</sourceFileName>
+            </assembly>
+          </assemblies>
+        </component>
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules\DNNStuff - SQLViewPro</basePath>
+            <resourceFile>
+              <name>resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules\DNNStuff - SQLViewPro</basePath>
+            <script type="Install">
+              <name>03.00.00.SqlDataProvider</name>
+              <version>03.00.00</version>
+            </script>
+            <script type="Install">
+              <name>03.00.03.SqlDataProvider</name>
+              <version>03.00.03</version>
+            </script>
+            <script type="Install">
+              <name>03.01.00.SqlDataProvider</name>
+              <version>03.01.00</version>
+            </script>
+            <script type="Install">
+              <name>03.01.01.SqlDataProvider</name>
+              <version>03.01.01</version>
+            </script>
+            <script type="Install">
+              <name>03.01.02.SqlDataProvider</name>
+              <version>03.01.02</version>
+            </script>
+            <script type="Install">
+              <name>03.01.03.SqlDataProvider</name>
+              <version>03.01.03</version>
+            </script>
+            <script type="Install">
+              <name>03.01.07.SqlDataProvider</name>
+              <version>03.01.07</version>
+            </script>
+            <script type="Install">
+              <name>03.03.00.SqlDataProvider</name>
+              <version>03.03.00</version>
+            </script>
+            <script type="Install">
+              <name>03.04.00.SqlDataProvider</name>
+              <version>03.04.00</version>
+            </script>
+            <script type="Install">
+              <name>03.05.00.SqlDataProvider</name>
+              <version>03.05.00</version>
+            </script>
+            <script type="Install">
+              <name>03.05.01.SqlDataProvider</name>
+              <version>03.05.01</version>
+            </script>
+            <script type="Install">
+              <name>03.06.00.SqlDataProvider</name>
+              <version>03.06.00</version>
+            </script>
+            <script type="Install">
+              <name>03.06.01.SqlDataProvider</name>
+              <version>03.06.01</version>
+            </script>
+            <script type="Install">
+              <name>03.06.08.SqlDataProvider</name>
+              <version>03.06.08</version>
+            </script>
+            <script type="Install">
+              <name>03.07.01.SqlDataProvider</name>
+              <version>03.07.01</version>
+            </script>
+            <script type="Install">
+              <name>03.08.01.SqlDataProvider</name>
+              <version>03.08.01</version>
+            </script>
+            <script type="Install">
+              <name>03.08.03.SqlDataProvider</name>
+              <version>03.08.03</version>
+            </script>
+            <script type="Install">
+              <name>03.08.05.SqlDataProvider</name>
+              <version>03.08.05</version>
+            </script>
+            <script type="Install">
+              <name>03.08.07.SqlDataProvider</name>
+              <version>03.08.07</version>
+            </script>
+            <script type="Install">
+              <name>03.08.08.SqlDataProvider</name>
+              <version>03.08.08</version>
+            </script>
+            <script type="Install">
+              <name>03.09.03.SqlDataProvider</name>
+              <version>03.09.03</version>
+            </script>
+            <script type="Install">
+              <name>04.00.03.SqlDataProvider</name>
+              <version>04.00.03</version>
+            </script>
+            <script type="Install">
+              <name>04.00.04.SqlDataProvider</name>
+              <version>04.00.04</version>
+            </script>
+            <script type="Install">
+              <name>04.00.09.SqlDataProvider</name>
+              <version>04.00.09</version>
+            </script>
+            <script type="Install">
+              <name>04.00.13.SqlDataProvider</name>
+              <version>04.00.13</version>
+            </script>
+            <script type="UnInstall">
+              <name>Uninstall.SqlDataProvider</name>
+            </script>
+          </scripts>
+        </component>
+        <component type="Config">
+          <config>
+            <configFile>web.config</configFile>
+            <install>
+              <configuration>
+                <nodes>
+                  <node path="/configuration/system.webServer/handlers" action="update" key="name" collision="overwrite">
+                    <add name="ReportViewerWebControlHandler" preCondition="integratedMode" verb="*" path="Reserved.ReportViewerWebControl.axd" type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+                  </node>
+                </nodes>
+              </configuration>
+            </install>
+            <uninstall>
+              <configuration>
+                <nodes />
+              </configuration>
+            </uninstall>
+          </config>
+        </component>
+        <component type="Config">
+          <config>
+            <configFile>web.config</configFile>
+            <install>
+              <configuration>
+                <nodes>
+                  <node path="/configuration/system.web/httpHandlers" action="update" key="path" collision="overwrite">
+                    <add path="Reserved.ReportViewerWebControl.axd" verb="*" type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" validate="false" />
+                  </node>
+                </nodes>
+              </configuration>
+            </install>
+            <uninstall>
+              <configuration>
+                <nodes />
+              </configuration>
+            </uninstall>
+          </config>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>
