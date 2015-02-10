@@ -4,6 +4,16 @@
 
 <!-- insert-newversion -->
 
+## 04.00.15
+
+10/Feb/2015
+
+* Fixes
+	* Fixed error that occured in MySql connections with ORDER BY
+
+
+
+
 ## 04.00.14
 
 02/May/2014

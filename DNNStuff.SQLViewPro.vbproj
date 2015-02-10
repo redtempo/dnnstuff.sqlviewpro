@@ -276,7 +276,6 @@
     <Content Include="EditReport.ascx" />
     <Content Include="EditReportSet.ascx" />
     <Content Include="Export.aspx" />
-    <Content Include="module.css" />
     <Content Include="Report.aspx" />
     <Content Include="Repository\content.DNNStuffSQLViewPro.SampleDrilldownYearlyBudgets.xml" />
     <Content Include="Repository\content.DNNStuffSQLViewPro.SampleEmployeesbyDepartment.xml" />
@@ -473,6 +472,7 @@
     <Content Include="Version\Documentation\SSRS.html.md" />
     <Content Include="Version\Documentation\Template.html.md" />
     <Content Include="Version\Documentation\Tokens.html.md" />
+    <Content Include="Version\Documentation\Faq.html.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="My Project\" />

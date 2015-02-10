@@ -131,6 +131,22 @@ Namespace DNNStuff.SQLViewPro
             End Get
         End Property
 
+        Public ReadOnly Property ReportIdentifierQuoteStartCharacter() As String
+            Get
+                If ReportConnectionString.Contains("mysql") Then
+                    Return "`"
+                End If
+                Return "["
+            End Get
+        End Property
+        Public ReadOnly Property ReportIdentifierQuoteEndCharacter() As String
+            Get
+                If ReportConnectionString.Contains("mysql") Then
+                    Return "`"
+                End If
+                Return "]"
+            End Get
+        End Property
     End Class
 
     Public Class ReportController

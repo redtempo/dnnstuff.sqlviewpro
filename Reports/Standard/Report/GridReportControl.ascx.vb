@@ -218,7 +218,9 @@ Namespace DNNStuff.SQLViewPro.StandardReports
                         query = query.Replace("[SORTEXPRESSION]", SortExpression).Replace("[SORTDIRECTION]", SortDirection)
                     Else
                         If SortExpression <> "" Then
-                            query = query & " ORDER BY [" & SortExpression & "] " & SortDirection
+                            If Not query.Contains("ORDER BY") Then
+                                query = query & String.Format(" ORDER BY {0}{1}{2} {3}", Report.ReportIdentifierQuoteStartCharacter, SortExpression, Report.ReportIdentifierQuoteEndCharacter, SortDirection)
+                            End If
                         End If
                     End If
                 End If

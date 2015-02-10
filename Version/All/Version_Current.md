@@ -1,11 +1,11 @@
 
-## 04.00.14
+## 04.00.15
 
-02/May/2014
+10/Feb/2015
 
 * Fixes
-	* Fusion chart settings were causing another object reference error
-	* Sql install script error in 04.00.07 when using non standard database owner
+	* Fixed error that occured in MySql connections with ORDER BY
+
 
 
 For additional release history please visit the [documentation](http://docs.dnnstuff.com/pages/sqlviewpro).
