@@ -133,7 +133,7 @@ Namespace DNNStuff.SQLViewPro
 
         Public ReadOnly Property ReportIdentifierQuoteStartCharacter() As String
             Get
-                If ReportConnectionString.Contains("mysql") Then
+                If ReportConnectionString.ToLower().Contains("mysql") Then
                     Return "`"
                 End If
                 Return "["
@@ -141,7 +141,7 @@ Namespace DNNStuff.SQLViewPro
         End Property
         Public ReadOnly Property ReportIdentifierQuoteEndCharacter() As String
             Get
-                If ReportConnectionString.Contains("mysql") Then
+                If ReportConnectionString.ToLower().Contains("mysql") Then
                     Return "`"
                 End If
                 Return "]"
