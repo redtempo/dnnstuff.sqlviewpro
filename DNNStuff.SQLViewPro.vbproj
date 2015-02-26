@@ -337,6 +337,7 @@
     <Content Include="Skins\Report2\styles.css" />
     <Content Include="Skins\Set1\styles.css" />
     <Content Include="SQLViewPro.ascx" />
+    <Content Include="Version\All\Version_Append.md" />
     <None Include="Version\All\Version_Current.md" />
     <Content Include="Version\All\icon_sqlviewpro_32px.gif" />
     <Content Include="Version\All\License.html" />
