@@ -117,6 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblAllowPaging.Help" xml:space="preserve">
+    <value>Select to allow paging</value>
+  </data>
+  <data name="lblAllowPaging.Text" xml:space="preserve">
+    <value>Allow Paging</value>
+  </data>
+  <data name="lblPageSize.Help" xml:space="preserve">
+    <value>A number indicating how many items in each page of data</value>
+  </data>
+  <data name="lblPageSize.Text" xml:space="preserve">
+    <value>Page Size</value>
+  </data>
+  <data name="lblPagingHeader.Help" xml:space="preserve">
+    <value>Paging Settings</value>
+  </data>
+  <data name="lblPagingHeader.Text" xml:space="preserve">
+    <value>Paging</value>
+  </data>
+  <data name="lblPagingType.Help" xml:space="preserve">
+    <value>Choose the paging type to implement, querystring uses a querystring parameter 'pg' for better SEO</value>
+  </data>
+  <data name="lblPagingType.Text" xml:space="preserve">
+    <value>Paging Type</value>
+  </data>
+  <data name="lblPrevNext.Help" xml:space="preserve">
+    <value>The wording used for prev and next buttons when pager type is PrevNext</value>
+  </data>
+  <data name="lblPrevNext.Text" xml:space="preserve">
+    <value>Prev/Next Wording</value>
+  </data>
   <data name="lblTemplateHeader.Text" xml:space="preserve">
     <value>Common</value>
   </data>

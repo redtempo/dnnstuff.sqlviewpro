@@ -48,10 +48,19 @@ Namespace DNNStuff.SQLViewPro.StandardReports
         End Property
 
         Public Overrides Function UpdateSettings() As String
-
+            Dim PageSize As Integer = 5
             Dim obj As TemplateReportSettings = New TemplateReportSettings
             With obj
                 .TemplateText = txtTemplateText.Text
+                .AllowPaging = chkAllowPaging.Checked
+                .PagingType = ddPagingType.SelectedValue
+                If Integer.TryParse(txtPageSize.Text, PageSize) Then
+                    .PageSize = PageSize
+                Else
+                    .PageSize = 5
+                End If
+                .PrevPageText = txtPrevPageText.Text
+                .NextPageText = txtNextPageText.Text
             End With
 
             Return SerializeObject(obj, GetType(TemplateReportSettings))
@@ -66,6 +75,11 @@ Namespace DNNStuff.SQLViewPro.StandardReports
 
             With obj
                 txtTemplateText.Text = obj.TemplateText
+                chkAllowPaging.Checked = .AllowPaging
+                ddPagingType.SelectedValue = .PagingType
+                txtPageSize.Text = .PageSize.ToString
+                txtPrevPageText.Text = .PrevPageText
+                txtNextPageText.Text = .NextPageText
             End With
         End Sub
 
@@ -77,6 +91,12 @@ Namespace DNNStuff.SQLViewPro.StandardReports
     <XmlRootAttribute(ElementName:="Settings", IsNullable:=False)> _
     Public Class TemplateReportSettings
         Public Property TemplateText() As String = "[EACHROW][StringCol][/EACHROW]"
+        Public Property AllowPaging() As Boolean = False
+        Public Property PagingType() As String = "Internal"
+        Public Property PageSize() As Integer = 10
+        Public Property PrevPageText() As String = "Prev"
+        Public Property NextPageText() As String = "Next"
+        Public Property PagerPosition() As String = "Bottom"
     End Class
 #End Region
 

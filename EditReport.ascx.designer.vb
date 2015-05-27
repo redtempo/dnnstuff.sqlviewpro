@@ -60,15 +60,6 @@ Namespace DNNStuff.SQLViewPro
         Protected WithEvents lblQuery As Global.DotNetNuke.UI.UserControls.LabelControl
 
         '''<summary>
-        '''cmdQueryTest control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents cmdQueryTest As Global.System.Web.UI.WebControls.LinkButton
-
-        '''<summary>
         '''txtQuery control.
         '''</summary>
         '''<remarks>
@@ -85,6 +76,15 @@ Namespace DNNStuff.SQLViewPro
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents vldQuery As Global.System.Web.UI.WebControls.CustomValidator
+
+        '''<summary>
+        '''cmdQueryTest control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents cmdQueryTest As Global.System.Web.UI.WebControls.LinkButton
 
         '''<summary>
         '''lblQueryTestResults control.

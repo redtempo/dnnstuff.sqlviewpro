@@ -42,7 +42,9 @@ Namespace DNNStuff.SQLViewPro
             InitializeComponent()
 
             Try
+#If TRIAL Then
 
+#End If
 #If CONFIG = "Trial" Then
                 Common.AddTrialNotice(Me)
 #End If

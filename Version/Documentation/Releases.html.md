@@ -4,6 +4,18 @@
 
 <!-- insert-newversion -->
 
+## 04.01.00
+
+02/Mar/2015
+
+* Enhancements
+    * Added paging support to Template report
+
+
+
+For additional release history please visit the [documentation](http://docs.dnnstuff.com/pages/sqlviewpro).
+
+
 ## 04.00.15
 
 10/Feb/2015

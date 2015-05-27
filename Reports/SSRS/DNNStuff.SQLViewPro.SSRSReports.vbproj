@@ -127,7 +127,7 @@
     </Reference>
     <Reference Include="DotNetNuke">
       <Name>DotNetNuke</Name>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke700\DotNetNuke.dll</HintPath>
       <HintPath Condition=" '$(DNNVERSION)' == 'DNN5' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke5\DotNetNuke.dll</HintPath>
       <HintPath Condition=" '$(DNNVERSION)' == 'DNN6' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke6\DotNetNuke.dll</HintPath>
       <Private>False</Private>
