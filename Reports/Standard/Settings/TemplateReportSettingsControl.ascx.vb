@@ -61,6 +61,9 @@ Namespace DNNStuff.SQLViewPro.StandardReports
                 End If
                 .PrevPageText = txtPrevPageText.Text
                 .NextPageText = txtNextPageText.Text
+                .FirstPageText = txtFirstPageText.Text
+                .LastPageText = txtLastPageText.Text
+                .PageTemplate = txtPageTemplate.Text
             End With
 
             Return SerializeObject(obj, GetType(TemplateReportSettings))
@@ -80,6 +83,9 @@ Namespace DNNStuff.SQLViewPro.StandardReports
                 txtPageSize.Text = .PageSize.ToString
                 txtPrevPageText.Text = .PrevPageText
                 txtNextPageText.Text = .NextPageText
+                txtFirstPageText.Text = .FirstPageText
+                txtLastPageText.Text = .LastPageText
+                txtPageTemplate.Text = .PageTemplate
             End With
         End Sub
 
@@ -96,7 +102,9 @@ Namespace DNNStuff.SQLViewPro.StandardReports
         Public Property PageSize() As Integer = 10
         Public Property PrevPageText() As String = "Prev"
         Public Property NextPageText() As String = "Next"
-        Public Property PagerPosition() As String = "Bottom"
+        Public Property FirstPageText() As String = "First"
+        Public Property LastPageText() As String = "Last"
+        Public Property PageTemplate() As String = "<a href=""[URL]"">[TEXT]</a>"
     End Class
 #End Region
 

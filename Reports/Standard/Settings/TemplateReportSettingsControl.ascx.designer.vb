@@ -112,5 +112,50 @@ Namespace DNNStuff.SQLViewPro.StandardReports
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtNextPageText As Global.System.Web.UI.WebControls.TextBox
+
+        '''<summary>
+        '''lblFirstLast control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents lblFirstLast As Global.DotNetNuke.UI.UserControls.LabelControl
+
+        '''<summary>
+        '''txtFirstPageText control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtFirstPageText As Global.System.Web.UI.WebControls.TextBox
+
+        '''<summary>
+        '''txtLastPageText control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtLastPageText As Global.System.Web.UI.WebControls.TextBox
+
+        '''<summary>
+        '''lblPageTemplate control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents lblPageTemplate As Global.DotNetNuke.UI.UserControls.LabelControl
+
+        '''<summary>
+        '''txtPageTemplate control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtPageTemplate As Global.System.Web.UI.WebControls.TextBox
     End Class
 End Namespace

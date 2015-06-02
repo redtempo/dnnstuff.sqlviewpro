@@ -23,8 +23,8 @@
 		<div class="dnnFormItem">
 			<dnn:Label ID="lblPagingType" runat="server" ControlName="ddPagingType" Suffix=":" />
 			<asp:DropDownList ID="ddPagingType" runat="server" CssClass="NormalTextBox">
-				<asp:ListItem Value="NumericPages">Internale</asp:ListItem>
-				<asp:ListItem Value="NextPrev">Querystring</asp:ListItem>
+				<asp:ListItem Value="Internal">Internal</asp:ListItem>
+				<asp:ListItem Value="Querystring">Querystring</asp:ListItem>
 			</asp:DropDownList>
 		</div>
 		<div class="dnnFormItem">
@@ -36,8 +36,31 @@
 			<asp:TextBox ID="txtPrevPageText" runat="server" CssClass="NormalTextBox" Rows="1" Columns="10" />
 			<asp:TextBox ID="txtNextPageText" runat="server" CssClass="NormalTextBox" Rows="1" Columns="10" />
 		</div>
-        <div class="dnnFormMessage dnnFormInfo">Pager tokens include:<br/><strong>[PAGER]</strong> - inserts the pager (if it isn't found it will be added to the end)<br/><strong>[PAGENUMBER]</strong> - the current page number<br/><strong>[PAGECOUNT]</strong> - the number of pages available<div>
-	</fieldset>
+		<div class="dnnFormItem">
+			<dnn:Label ID="lblFirstLast" runat="server" ControlName="txtFirstLastPageText" Suffix=":" />
+			<asp:TextBox ID="txtFirstPageText" runat="server" CssClass="NormalTextBox" Rows="1" Columns="10" />
+			<asp:TextBox ID="txtLastPageText" runat="server" CssClass="NormalTextBox" Rows="1" Columns="10" />
+		</div>
+		<div class="dnnFormItem">
+            <dnn:Label ID="lblPageTemplate" runat="server" ControlName="txtPageTemplate"  Suffix=":" />
+            <asp:TextBox ID="txtPageTemplate" Runat="server" CssClass="NormalTextBox" Rows="1" Columns="100" />
+		</div>
+        <div class="dnnFormMessage dnnFormInfo">Pager tokens include:<br/>
+            <strong>[PAGER]</strong> - inserts the pager (if it isn't found it will be added to the end)<br/>
+            <strong>[PAGER:FIRST]</strong> - inserts the first page link<br/>
+            <strong>[PAGER:LAST]</strong> - inserts the last page link<br/>
+            <strong>[PAGER:PREVIOUS]</strong> - inserts the previous page link<br/>
+            <strong>[PAGER:NEXT]</strong> - inserts the next page link<br/>
+            <strong>[PAGER:PAGES]</strong> - inserts the pages link list (up to 10)<br/>
+            <strong>[PAGER:NUMBER]</strong> - the current page number<br/>
+            <strong>[PAGER:COUNT]</strong> - the number of pages available
+        </div>
+        <div class="dnnFormMessage dnnFormInfo">Page Link tokens include:<br/>
+            <strong>[URL]</strong> - inserts the url for the page<br/>
+            <strong>[TEXT]</strong> - inserts the text for the page link<br/>
+            <strong>[TYPE]</strong> - inserts the link type (ie. first, last, previous, next or page (for numeric pages)) - usefull in a classname to destinquish different link types
+        </div>
+    	</fieldset>
 </div>
 <script type="text/javascript">
 	jQuery(function ($) {

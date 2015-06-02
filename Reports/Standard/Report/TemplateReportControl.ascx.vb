@@ -123,39 +123,69 @@ Namespace DNNStuff.SQLViewPro.StandardReports
 
                 ' paging support
                 If ReportExtra.AllowPaging Then
-                    Dim pagerControls As String = ""
+                    Dim pagerPrevious As String = ""
+                    Dim pagerNext As String = ""
+                    Dim pagerFirst As String = ""
+                    Dim pagerLast As String = ""
+                    Dim pagerPages As String = ""
 
+                    ' previous
                     Dim prevPage As Int32 = PageNumber - 1
                     If prevPage > 0 Then
                         ' insert previous page item
                         If ReportExtra.PagingType = PAGINGTYPE_INTERNAL Then
-                            pagerControls = pagerControls & "<asp:LinkButton id=""cmdPrevPage"" runat=""server"" CommandName=""PrevPage"" CommandArgument=""" & prevPage & """>" & ReportExtra.PrevPageText & "</asp:LinkButton>"
+                            pagerPrevious = "<asp:LinkButton id=""cmdPreviousPage"" runat=""server"" CommandArgument=""" & prevPage & """>" & ReportExtra.PrevPageText & "</asp:LinkButton>"
                         Else
-                            pagerControls = pagerControls & String.Format("<a href=""{0}"">{1}</a>", Url.ReplaceQueryStringParam(Request.Url.AbsoluteUri, "pg", prevPage), ReportExtra.PrevPageText)
+                            pagerPrevious = PageTemplate(prevPage, ReportExtra.PrevPageText, "prev")
                         End If
-
                     End If
-
-                        Dim nextPage As Int32 = PageNumber + 1
-                        If PageNumber < maxPage Then
-                            ' insert next page
+                    ' next
+                    Dim nextPage As Int32 = PageNumber + 1
+                    If PageNumber < maxPage Then
+                        ' insert next page
                         If ReportExtra.PagingType = PAGINGTYPE_INTERNAL Then
-                            pagerControls = pagerControls & "<asp:LinkButton id=""cmdNextPage"" runat=""server"" CommandName=""NextPage"" CommandArgument=""" & nextPage & """>" & ReportExtra.NextPageText & "</asp:LinkButton>"
+                            pagerNext = "<asp:LinkButton id=""cmdNextPage"" runat=""server"" CommandArgument=""" & nextPage & """>" & ReportExtra.NextPageText & "</asp:LinkButton>"
                         Else
-                            pagerControls = pagerControls & String.Format("<a href=""{0}"">{1}</a>", Url.ReplaceQueryStringParam(Request.Url.AbsoluteUri, "pg", nextPage), ReportExtra.NextPageText)
+                            pagerNext = PageTemplate(nextPage, ReportExtra.NextPageText, "next")
                         End If
-
+                    End If
+                    ' first
+                    If PageNumber > 1 Then
+                        If ReportExtra.PagingType = PAGINGTYPE_INTERNAL Then
+                            pagerFirst = "<asp:LinkButton id=""cmdFirstPage"" runat=""server"" CommandArgument=""" & 1 & """>" & ReportExtra.FirstPageText & "</asp:LinkButton>"
+                        Else
+                            pagerFirst = PageTemplate(1, ReportExtra.FirstPageText, "first")
+                        End If
+                    End If
+                    ' last
+                    If PageNumber < maxPage Then
+                        If ReportExtra.PagingType = PAGINGTYPE_INTERNAL Then
+                            pagerLast = "<asp:LinkButton id=""cmdLastPage"" runat=""server"" CommandArgument=""" & maxPage & """>" & ReportExtra.LastPageText & "</asp:LinkButton>"
+                        Else
+                            pagerLast = PageTemplate(maxPage, ReportExtra.LastPageText, "last")
+                        End If
+                    End If
+                    ' pages
+                    If ReportExtra.PagingType = PAGINGTYPE_QUERYSTRING Then
+                        For i As Integer = 1 To Math.Min(10, maxPage)
+                            pagerPages = pagerPages & PageTemplate(i, i, "page")
+                        Next
                     End If
 
-                    ' make sure pager tag is present, if not add it
-                    If Not result.Contains("[PAGER]") Then
+                    ' check if no [PAGER*] tokens present, otherwise use a default
+                    If Not result.Contains("[PAGER") Then
                         result = result & "[PAGER]"
                     End If
 
                     ' inject pager controls
-                    result = result.Replace("[PAGER]", pagerControls)
-                    result = result.Replace("[PAGENUMBER]", PageNumber.ToString())
-                    result = result.Replace("[PAGECOUNT]", maxPage.ToString())
+                    result = result.Replace("[PAGER]", "[PAGER:FIRST][PAGER:PREVIOUS][PAGER:PAGES][PAGER:NEXT][PAGER:LAST]")
+                    result = result.Replace("[PAGER:FIRST]", pagerFirst)
+                    result = result.Replace("[PAGER:LAST]", pagerLast)
+                    result = result.Replace("[PAGER:PREVIOUS]", pagerPrevious)
+                    result = result.Replace("[PAGER:NEXT]", pagerNext)
+                    result = result.Replace("[PAGER:PAGES]", pagerPages)
+                    result = result.Replace("[PAGER:NUMBER]", PageNumber.ToString())
+                    result = result.Replace("[PAGER:COUNT]", maxPage.ToString())
                 End If
 
 
@@ -178,19 +208,32 @@ Namespace DNNStuff.SQLViewPro.StandardReports
 
                 ' hookup command for pager links for internal
                 If ReportExtra.PagingType = PAGINGTYPE_INTERNAL Then
-                    Dim cmdPrevPage As LinkButton
-                    cmdPrevPage = DirectCast(phContent.FindControl("cmdPrevPage"), LinkButton)
-                    If cmdPrevPage IsNot Nothing Then
-                        AddHandler cmdPrevPage.Command, AddressOf Pager_Click
+                    Dim cmdPreviousPage As LinkButton
+                    cmdPreviousPage = DirectCast(phContent.FindControl("cmdPreviousPage"), LinkButton)
+                    If cmdPreviousPage IsNot Nothing Then
+                        AddHandler cmdPreviousPage.Command, AddressOf Pager_Click
                     End If
                     Dim cmdNextPage As LinkButton
                     cmdNextPage = DirectCast(phContent.FindControl("cmdNextPage"), LinkButton)
                     If cmdNextPage IsNot Nothing Then
                         AddHandler cmdNextPage.Command, AddressOf Pager_Click
                     End If
+                    Dim cmdFirstPage As LinkButton
+                    cmdFirstPage = DirectCast(phContent.FindControl("cmdFirstPage"), LinkButton)
+                    If cmdFirstPage IsNot Nothing Then
+                        AddHandler cmdFirstPage.Command, AddressOf Pager_Click
+                    End If
+                    Dim cmdLastPage As LinkButton
+                    cmdLastPage = DirectCast(phContent.FindControl("cmdLastPage"), LinkButton)
+                    If cmdLastPage IsNot Nothing Then
+                        AddHandler cmdLastPage.Command, AddressOf Pager_Click
+                    End If
                 End If
             End If
         End Sub
+        Private Function PageTemplate(page As Integer, text As String, type As String) As String
+            Return ReportExtra.PageTemplate.Replace("[URL]", Url.ReplaceQueryStringParam(Request.Url.AbsoluteUri, "pg", page)).Replace("[TEXT]", text).Replace("[TYPE]", type)
+        End Function
 #End Region
 
 #Region "Paging"

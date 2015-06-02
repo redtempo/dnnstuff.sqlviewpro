@@ -123,11 +123,23 @@
   <data name="lblAllowPaging.Text" xml:space="preserve">
     <value>Allow Paging</value>
   </data>
+  <data name="lblFirstLast.Help" xml:space="preserve">
+    <value>The wording used for first and last buttons</value>
+  </data>
+  <data name="lblFirstLast.Text" xml:space="preserve">
+    <value>First/Last Wording</value>
+  </data>
   <data name="lblPageSize.Help" xml:space="preserve">
     <value>A number indicating how many items in each page of data</value>
   </data>
   <data name="lblPageSize.Text" xml:space="preserve">
     <value>Page Size</value>
+  </data>
+  <data name="lblPageTemplate.Help" xml:space="preserve">
+    <value>The template used to generate links for querystring pager type</value>
+  </data>
+  <data name="lblPageTemplate.Text" xml:space="preserve">
+    <value>Page Link Template</value>
   </data>
   <data name="lblPagingHeader.Help" xml:space="preserve">
     <value>Paging Settings</value>
@@ -142,7 +154,7 @@
     <value>Paging Type</value>
   </data>
   <data name="lblPrevNext.Help" xml:space="preserve">
-    <value>The wording used for prev and next buttons when pager type is PrevNext</value>
+    <value>The wording used for prev and next buttons</value>
   </data>
   <data name="lblPrevNext.Text" xml:space="preserve">
     <value>Prev/Next Wording</value>
