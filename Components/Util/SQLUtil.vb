@@ -4,7 +4,7 @@ Namespace DNNStuff.SQLViewPro
 
         Public Shared Sub AddOptionsFromQuery(ByVal list As ListControl, ByVal queryText As String, ByVal connectionString As String, ByVal defaultValue As String, ByVal cacheTimeout As Integer)
 
-            Dim ds As DataSet = Services.Data.Query.RetrieveData(queryText, connectionString, cacheTimeout)
+            Dim ds As DataSet = Services.Data.Query.RetrieveData(queryText, connectionString, cacheTimeout, "Absolute")
 
             If ds.Tables.Count > 0 Then
                 If ds.Tables(0).Columns.Count = 1 Then

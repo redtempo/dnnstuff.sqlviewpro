@@ -38,6 +38,13 @@
                     <asp:CompareValidator runat="server" ID="cmpCommandCacheTimeout" CssClass="dnnFormMessage dnnFormError" ControlToValidate="txtCommandCacheTimeout" Display="Dynamic" ErrorMessage="Cache timeout must be zero or greater" ValueToCompare="0" Type="Integer" Operator="GreaterThanEqual"></asp:CompareValidator>
                 </div>
                 <div class="dnnFormItem">
+                    <dnn:Label ID="lblCommandCacheScheme" runat="server" ControlName="ddCommandCacheScheme" Suffix=":" />
+                    <asp:DropDownList runat="server" ID="ddCommandCacheScheme">
+                        <asp:ListItem Value="Sliding">Sliding</asp:ListItem>
+                        <asp:ListItem Value="Absolute">Absolute</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+                <div class="dnnFormItem">
                     <dnn:Label ID="lblNoItems" runat="server" ControlName="txtNoItems" Suffix=":" />
                     <asp:TextBox ID="txtNoItems" runat="server" TextMode="MultiLine" Rows="2" Columns="70" Width="100%"></asp:TextBox>
                 </div>

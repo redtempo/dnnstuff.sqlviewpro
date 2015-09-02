@@ -112,6 +112,7 @@ Namespace DNNStuff.SQLViewPro
         Public Property ReportNoItemsText() As String
         Public Property ReportCommand() As String
         Public Property ReportCommandCacheTimeout() As Integer = 60
+        Public Property ReportCommandCacheScheme() As String
         Public Property ReportConfig() As String
         Public Property ReportTypeName() As String
         Public Property ReportTypeId() As String = "GRID"
@@ -165,10 +166,10 @@ Namespace DNNStuff.SQLViewPro
         End Function
 
         Public Function UpdateReport(ByVal ReportSetId As Integer, ByVal ReportId As Integer, ByVal ReportTypeId As String, ByVal ReportName As String, ByVal ReportTheme As String, ByVal ReportConnectionId As Integer, ByVal ReportHeaderText As String, ByVal ReportFooterText As String, _
-            ByVal ReportCommand As String, ByVal ReportConfig As String, ByVal ReportOrder As Integer, ByVal ReportDrilldownReportId As Integer, ByVal ReportDrilldownFieldname As String, ByVal ReportNoItemsText As String, ByVal ReportPageTitle As String, ByVal ReportCommandCacheTimeout As Integer, ByVal ReportMetaDescription As String) As Integer
+            ByVal ReportCommand As String, ByVal ReportConfig As String, ByVal ReportOrder As Integer, ByVal ReportDrilldownReportId As Integer, ByVal ReportDrilldownFieldname As String, ByVal ReportNoItemsText As String, ByVal ReportPageTitle As String, ByVal ReportCommandCacheTimeout As Integer, ByVal ReportMetaDescription As String, ByVal ReportCommandCacheScheme As String) As Integer
 
             Return DataProvider.Instance().UpdateReport(ReportSetId, ReportId, ReportTypeId, ReportName, ReportTheme, ReportConnectionId, ReportHeaderText, ReportFooterText, _
-                ReportCommand, ReportConfig, ReportOrder, ReportDrilldownReportId, ReportDrilldownFieldname, ReportNoItemsText, ReportPageTitle, ReportCommandCacheTimeout, ReportMetaDescription)
+                ReportCommand, ReportConfig, ReportOrder, ReportDrilldownReportId, ReportDrilldownFieldname, ReportNoItemsText, ReportPageTitle, ReportCommandCacheTimeout, ReportMetaDescription, ReportCommandCacheScheme)
         End Function
         Public Function ListReport(ByVal ReportSetId As Integer) As ArrayList
             Return CBO.FillCollection(DataProvider.Instance().ListReport(ReportSetId), GetType(ReportInfo))

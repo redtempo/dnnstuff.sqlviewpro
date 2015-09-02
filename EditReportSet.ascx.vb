@@ -158,7 +158,7 @@ Namespace DNNStuff.SQLViewPro
             Dim objReportController As ReportController = New ReportController
             Dim objReport As ReportInfo = objReportController.GetReport(ReportId)
             With objReport
-                objReportController.UpdateReport(ReportSetId, -1, .ReportTypeId, "Copy of " & .ReportName, .ReportTheme, .ReportConnectionId, .ReportHeaderText, .ReportFooterText, .ReportCommand, .ReportConfig, -1, .ReportDrilldownReportId, .ReportDrilldownFieldname, .ReportNoItemsText, .ReportPageTitle, .ReportCommandCacheTimeout, .ReportMetaDescription)
+                objReportController.UpdateReport(ReportSetId, -1, .ReportTypeId, "Copy of " & .ReportName, .ReportTheme, .ReportConnectionId, .ReportHeaderText, .ReportFooterText, .ReportCommand, .ReportConfig, -1, .ReportDrilldownReportId, .ReportDrilldownFieldname, .ReportNoItemsText, .ReportPageTitle, .ReportCommandCacheTimeout, .ReportMetaDescription, .ReportCommandCacheScheme)
             End With
 
         End Sub

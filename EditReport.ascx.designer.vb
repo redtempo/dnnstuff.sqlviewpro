@@ -141,6 +141,24 @@ Namespace DNNStuff.SQLViewPro
         Protected WithEvents cmpCommandCacheTimeout As Global.System.Web.UI.WebControls.CompareValidator
 
         '''<summary>
+        '''lblCommandCacheScheme control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents lblCommandCacheScheme As Global.DotNetNuke.UI.UserControls.LabelControl
+
+        '''<summary>
+        '''ddCommandCacheScheme control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents ddCommandCacheScheme As Global.System.Web.UI.WebControls.DropDownList
+
+        '''<summary>
         '''lblNoItems control.
         '''</summary>
         '''<remarks>

@@ -5,11 +5,11 @@ Namespace DNNStuff.SQLViewPro.Services.Data
 #Region " Report Query"
     Public Class Query
 
-        Public Shared Function RetrieveData(ByVal queryText As String, ByVal connectionString As String, ByVal cacheTimeout As Integer) As DataSet
-            Return RetrieveData(queryText, connectionString, "SQLData", "Table", cacheTimeout)
+        Public Shared Function RetrieveData(ByVal queryText As String, ByVal connectionString As String, ByVal cacheTimeout As Integer, ByVal cacheScheme As String) As DataSet
+            Return RetrieveData(queryText, connectionString, "SQLData", "Table", cacheTimeout, cacheScheme)
         End Function
 
-        Public Shared Function RetrieveData(ByVal queryText As String, ByVal connectionString As String, ByVal dataSetName As String, ByVal srcTable As String, ByVal cacheTimeout As Integer) As DataSet
+        Public Shared Function RetrieveData(ByVal queryText As String, ByVal connectionString As String, ByVal dataSetName As String, ByVal srcTable As String, ByVal cacheTimeout As Integer, byval cacheScheme as String) As DataSet
             Dim results As DataSet
 
             ' try cache first
@@ -39,7 +39,11 @@ Namespace DNNStuff.SQLViewPro.Services.Data
 
             ' update cache
             If cacheTimeout > 0 Then
-                DataCache.SetCache(cacheKey, results, TimeSpan.FromSeconds(cacheTimeout))
+                If cacheScheme = "Sliding" Then
+                    DataCache.SetCache(cacheKey, results, TimeSpan.FromSeconds(cacheTimeout))
+                Else
+                    DataCache.SetCache(cacheKey, results, Date.Now.AddSeconds(cacheTimeout))
+                End If
             End If
             Return results
 
@@ -60,7 +64,7 @@ Namespace DNNStuff.SQLViewPro.Services.Data
 
             ' check for valid query
             Try
-                RetrieveData(Compatibility.ReplaceGenericTokensForTest(queryText), connectionString, 0)
+                RetrieveData(Compatibility.ReplaceGenericTokensForTest(queryText), connectionString, 0, "Sliding")
             Catch ex As Exception
                 queryValid = False
                 msg = "<br>" & Localization.GetString("QueryTestError", sharedResourceFile) & " : " & ex.Message

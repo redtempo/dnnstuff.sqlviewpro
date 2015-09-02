@@ -123,9 +123,9 @@ Namespace DNNStuff.SQLViewPro
         End Function
 
         Public Overrides Function UpdateReport(ByVal ReportSetId As Integer, ByVal ReportId As Integer, ByVal ReportTypeId As String, ByVal ReportName As String, ByVal ReportTheme As String, ByVal ReportConnectionId As Integer, ByVal ReportHeaderText As String, ByVal ReportFooterText As String, _
-                ByVal ReportCommand As String, ByVal ReportConfig As String, ByVal ReportOrder As Integer, ByVal ReportDrilldownReportId As Integer, ByVal ReportDrilldownFieldname As String, ByVal ReportNoItemsText As String, ByVal ReportPageTitle As String, ByVal ReportCommandCacheTimeout As Integer, ByVal ReportMetaDescription As String) As Integer
+                ByVal ReportCommand As String, ByVal ReportConfig As String, ByVal ReportOrder As Integer, ByVal ReportDrilldownReportId As Integer, ByVal ReportDrilldownFieldname As String, ByVal ReportNoItemsText As String, ByVal ReportPageTitle As String, ByVal ReportCommandCacheTimeout As Integer, ByVal ReportMetaDescription As String, ByVal ReportCommandCacheScheme As String) As Integer
             Return CType(SqlHelper.ExecuteScalar(ConnectionString, DatabaseOwner & ObjectQualifier & CmdPrefix & "UpdateReport", ReportSetId, ReportId, ReportTypeId, ReportName, ReportTheme, ReportConnectionId, ReportHeaderText, ReportFooterText, _
-                ReportCommand, ReportConfig, ReportOrder, ReportDrilldownReportId, ReportDrilldownFieldname, ReportNoItemsText, ReportPageTitle, ReportCommandCacheTimeout, ReportMetaDescription), Integer)
+                ReportCommand, ReportConfig, ReportOrder, ReportDrilldownReportId, ReportDrilldownFieldname, ReportNoItemsText, ReportPageTitle, ReportCommandCacheTimeout, ReportMetaDescription, ReportCommandCacheScheme), Integer)
         End Function
 
         Public Overrides Function ListReport(ByVal ReportSetId As Integer) As IDataReader

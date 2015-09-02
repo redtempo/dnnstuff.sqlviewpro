@@ -210,4 +210,10 @@
   <data name="lblMetaDescription.Text" xml:space="preserve">
     <value>Meta Description/ Meta Tags</value>
   </data>
+  <data name="lblCommandCacheScheme.Help" xml:space="preserve">
+    <value>Choose the scheme used to invalidate the cached data</value>
+  </data>
+  <data name="lblCommandCacheScheme.Text" xml:space="preserve">
+    <value>Query Cache Scheme</value>
+  </data>
 </root>

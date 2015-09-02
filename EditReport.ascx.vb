@@ -111,6 +111,11 @@ Namespace DNNStuff.SQLViewPro
                 txtQuery.Text = .ReportCommand
                 txtCommandCacheTimeout.Text = .ReportCommandCacheTimeout.ToString()
 
+                ' cache scheme
+                li = ddCommandCacheScheme.Items.FindByValue(.ReportCommandCacheScheme)
+                If Not li Is Nothing Then li.Selected = True Else ddCommandCacheScheme.Items.FindByValue("Sliding").Selected = True
+                ddCommandCacheScheme.SelectedValue = .ReportCommandCacheScheme
+
                 ' report type - default to GRID if not selected
                 li = ddReportType.Items.FindByValue(.ReportTypeId.ToString)
                 If Not li Is Nothing Then li.Selected = True Else ddReportType.Items.FindByValue("GRID").Selected = True
@@ -142,7 +147,7 @@ Namespace DNNStuff.SQLViewPro
             RetrieveReportSettings()
 
             Dim objReportController As ReportController = New ReportController
-            ReportId = objReportController.UpdateReport(ReportSetId, ReportId, ddReportType.SelectedValue, txtName.Text, cboSkin.SelectedItem.Value, cpConnection.ConnectionId, txtHeader.Text, txtFooter.Text, txtQuery.Text, ReportConfig, -1, Convert.ToInt32(ddDrilldownReportId.SelectedValue), txtDrilldownFieldname.Text, txtNoItems.Text, txtPageTitle.Text, Convert.ToInt32(txtCommandCacheTimeout.Text), txtMetaDescription.Text)
+            ReportId = objReportController.UpdateReport(ReportSetId, ReportId, ddReportType.SelectedValue, txtName.Text, cboSkin.SelectedItem.Value, cpConnection.ConnectionId, txtHeader.Text, txtFooter.Text, txtQuery.Text, ReportConfig, -1, Convert.ToInt32(ddDrilldownReportId.SelectedValue), txtDrilldownFieldname.Text, txtNoItems.Text, txtPageTitle.Text, Convert.ToInt32(txtCommandCacheTimeout.Text), txtMetaDescription.Text, ddCommandCacheScheme.SelectedValue)
         End Sub
 
         Private Sub BindReportType()

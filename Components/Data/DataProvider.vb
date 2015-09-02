@@ -45,7 +45,7 @@ Namespace DNNStuff.SQLViewPro
         ' report
         Public MustOverride Function GetReport(ByVal ReportId As Integer) As IDataReader
         Public MustOverride Function UpdateReport(ByVal ReportSetId As Integer, ByVal ReportId As Integer, ByVal ReportTypeId As String, ByVal ReportName As String, ByVal ReportTheme As String, ByVal ReportConnectionId As Integer, ByVal ReportHeaderText As String, ByVal ReportFooterText As String, _
-            ByVal ReportCommand As String, ByVal ReportConfig As String, ByVal ReportOrder As Integer, ByVal ReportDrilldownReportId As Integer, ByVal ReportDrilldownFieldname As String, ByVal ReportNoItemsText As String, ByVal ReportPageTitle As String, ByVal ReportCommandCacheTimeout As Integer, ByVal ReportMetaDescription As String) As Integer
+            ByVal ReportCommand As String, ByVal ReportConfig As String, ByVal ReportOrder As Integer, ByVal ReportDrilldownReportId As Integer, ByVal ReportDrilldownFieldname As String, ByVal ReportNoItemsText As String, ByVal ReportPageTitle As String, ByVal ReportCommandCacheTimeout As Integer, ByVal ReportMetaDescription As String, ByVal ReportCommandCacheScheme As String) As Integer
         Public MustOverride Sub DeleteReport(ByVal ReportId As Integer)
         Public MustOverride Sub UpdateReportOrder(ByVal ReportId As Integer, ByVal Increment As Integer)
 

@@ -45,7 +45,7 @@ Namespace DNNStuff.SQLViewPro.Controls
         ''' <returns>DataSet containing all data</returns>
         ''' <remarks></remarks>
         Public Function ReportData(ByVal query As String) As DataSet
-            Return Services.Data.Query.RetrieveData(query, Report.ReportConnectionString, Report.ReportCommandCacheTimeout)
+            Return Services.Data.Query.RetrieveData(query, Report.ReportConnectionString, Report.ReportCommandCacheTimeout, Report.ReportCommandCacheScheme)
         End Function
 
         ''' <summary>
@@ -54,7 +54,7 @@ Namespace DNNStuff.SQLViewPro.Controls
         ''' <returns>DataSet containing all data</returns>
         ''' <remarks></remarks>
         Public Function ReportData() As DataSet
-            Return Services.Data.Query.RetrieveData(QueryText, Report.ReportConnectionString, Report.ReportCommandCacheTimeout)
+            Return Services.Data.Query.RetrieveData(QueryText, Report.ReportConnectionString, Report.ReportCommandCacheTimeout, Report.ReportCommandCacheScheme)
         End Function
 
         ''' <summary>
