@@ -95,6 +95,7 @@ Namespace DNNStuff.SQLViewPro
                 s += "<pagetitle>" & XMLEncode(info.ReportPageTitle) & "</pagetitle>"
                 s += "<cachetimeout>" & XMLEncode(info.ReportCommandCacheTimeout.ToString()) & "</cachetimeout>"
                 s += "<metadescription>" & XMLEncode(info.ReportMetaDescription) & "</metadescription>"
+                s += "<cachescheme>" & XMLEncode(info.ReportCommandCacheScheme.ToString()) & "</cachescheme>"
 
                 s += "</report>"
             Next
@@ -263,7 +264,7 @@ Namespace DNNStuff.SQLViewPro
                 reportPageTitle = GetNodeInnerText(xmlReport, "pagetitle")
                 reportCommandCacheTimeout = CInt(GetNodeInnerText(xmlReport, "cachetimeout", "0"))
                 Dim reportMetaDescription As String = GetNodeInnerText(xmlReport, "metadescription")
-                Dim reportCommandCacheScheme As String = GetNodeInnerText(xmlReport, "cachescheme", "sliding")
+                Dim reportCommandCacheScheme As String = GetNodeInnerText(xmlReport, "cachescheme", "Sliding")
 
                 ' check if id is already present
                 Dim newid As Integer = ctrl.UpdateReport(ReportSetId, -1, reportTypeId, reportName, reportTheme, reportConnectionId, reportHeaderText, reportFooterText, reportCommand, reportConfig, reportOrder, reportDrilldownReportId, reportDrilldownFieldname, reportNoItemsText, reportPageTitle, reportCommandCacheTimeout, reportMetaDescription, reportCommandCacheScheme)

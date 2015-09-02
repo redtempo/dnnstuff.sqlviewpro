@@ -1,9 +1,9 @@
 ﻿ALTER TABLE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_Report]
-COLUMN ReportCommandCacheScheme nvarchar(50)
+ADD ReportCommandCacheScheme nvarchar(50) NULL
 GO
 
 UPDATE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_Report]
-SET ReportCommandCacheScheme = 'Sliding''
+SET ReportCommandCacheScheme = 'Sliding'
 GO
 
 ALTER PROCEDURE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_UpdateReport]
