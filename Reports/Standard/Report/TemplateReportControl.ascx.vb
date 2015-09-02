@@ -18,6 +18,7 @@ Imports DNNStuff.SQLViewPro.Controls
 Imports DNNStuff.SQLViewPro.Serialization
 Imports DNNStuff.Utilities
 Imports System.Collections.Generic
+Imports System.Linq
 
 Namespace DNNStuff.SQLViewPro.StandardReports
 
@@ -104,7 +105,12 @@ Namespace DNNStuff.SQLViewPro.StandardReports
                     If i > ds.Tables(0).Rows.Count Then Exit For
                     pageData.Add(ds.Tables(0).Rows(i - 1))
                 Next
-                Dim pageTable As DataTable = pageData.CopyToDataTable()
+                Dim pageTable As DataTable
+                If pageData.Any() Then ' check for data as CopyToDataTable errors if empty list
+                    pageTable = pageData.CopyToDataTable()
+                Else
+                    pageTable = ds.Tables(0).Clone() ' just copy table structure
+                End If
                 ds = New DataSet()
                 ds.Tables.Add(pageTable)
             End If
