@@ -48,10 +48,22 @@ Namespace DNNStuff.SQLViewPro.StandardReports
         End Property
 
         Public Overrides Function UpdateSettings() As String
-
+            Dim PageSize As Integer = 5
             Dim obj As TemplateReportSettings = New TemplateReportSettings
             With obj
                 .TemplateText = txtTemplateText.Text
+                .AllowPaging = chkAllowPaging.Checked
+                .PagingType = ddPagingType.SelectedValue
+                If Integer.TryParse(txtPageSize.Text, PageSize) Then
+                    .PageSize = PageSize
+                Else
+                    .PageSize = 5
+                End If
+                .PrevPageText = txtPrevPageText.Text
+                .NextPageText = txtNextPageText.Text
+                .FirstPageText = txtFirstPageText.Text
+                .LastPageText = txtLastPageText.Text
+                .PageTemplate = txtPageTemplate.Text
             End With
 
             Return SerializeObject(obj, GetType(TemplateReportSettings))
@@ -66,6 +78,14 @@ Namespace DNNStuff.SQLViewPro.StandardReports
 
             With obj
                 txtTemplateText.Text = obj.TemplateText
+                chkAllowPaging.Checked = .AllowPaging
+                ddPagingType.SelectedValue = .PagingType
+                txtPageSize.Text = .PageSize.ToString
+                txtPrevPageText.Text = .PrevPageText
+                txtNextPageText.Text = .NextPageText
+                txtFirstPageText.Text = .FirstPageText
+                txtLastPageText.Text = .LastPageText
+                txtPageTemplate.Text = .PageTemplate
             End With
         End Sub
 
@@ -77,6 +97,14 @@ Namespace DNNStuff.SQLViewPro.StandardReports
     <XmlRootAttribute(ElementName:="Settings", IsNullable:=False)> _
     Public Class TemplateReportSettings
         Public Property TemplateText() As String = "[EACHROW][StringCol][/EACHROW]"
+        Public Property AllowPaging() As Boolean = False
+        Public Property PagingType() As String = "Internal"
+        Public Property PageSize() As Integer = 10
+        Public Property PrevPageText() As String = "Prev"
+        Public Property NextPageText() As String = "Next"
+        Public Property FirstPageText() As String = "First"
+        Public Property LastPageText() As String = "Last"
+        Public Property PageTemplate() As String = "<a href=""[URL]"">[TEXT]</a>"
     End Class
 #End Region
 

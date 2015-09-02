@@ -1,11 +1,11 @@
 
-## 04.00.15
+## 04.00.17
 
-10/Feb/2015
+02/Jun/2015
 
-* Fixes
-	* Fixed error that occured in MySql connections with ORDER BY
 
+* Enhancements
+    * Added paging support to Template report
 
 
 For additional release history please visit the [documentation](http://docs.dnnstuff.com/pages/sqlviewpro).

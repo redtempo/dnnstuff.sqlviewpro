@@ -11,6 +11,14 @@ SQLView Pro Specific Tokens
 -   [REPORTNAME]
     -   inserts the name of the current report
 
+-   [REPORTTYPE]
+    -   inserts the simple type of the current report (ie. FUSIONCHART)
+    -   all report types can be found in the table, DNNStuff_SqlViewPro_ReportType
+
+-   [REPORTTYPENAME]
+    -   inserts the friendly type name of the current report (ie. Chart (Fusion))
+    -   all report types can be found in the table, DNNStuff_SqlViewPro_ReportType
+
 -   [PAGEURL]
     -   inserts the full url to the current page.
 

@@ -42,7 +42,9 @@ Namespace DNNStuff.SQLViewPro
             InitializeComponent()
 
             Try
+#If TRIAL Then
 
+#End If
 #If CONFIG = "Trial" Then
                 Common.AddTrialNotice(Me)
 #End If
@@ -313,13 +315,17 @@ Namespace DNNStuff.SQLViewPro
             'RenderPage()
         End Sub
 
+        Private Function UrlBasedPagingActive() As Boolean
+            Return Request.QueryString("pg") IsNot Nothing
+        End Function
+
         Private Sub RenderModule()
             If ReportSet Is Nothing Then Exit Sub
 
             Try
                 RetrieveParameterValuesFromControls()
 
-                If Not Page.IsPostBack Then
+                If Not (Page.IsPostBack Or UrlBasedPagingActive()) Then
                     If CurrentlyInFullscreen() Then
                         RetrieveParameterValuesFromQueryString()
                     End If

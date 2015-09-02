@@ -21,9 +21,10 @@
                 </div>
                 <div class="dnnFormItem">
                     <dnn:Label ID="lblQuery" runat="server" ControlName="txtQuery" Suffix=":" />
-                    <asp:LinkButton ID="cmdQueryTest" runat="server" Text="Test Query" ResourceKey="cmdQueryTest" />
                     <asp:TextBox ID="txtQuery" runat="server" TextMode="MultiLine" Rows="10" Columns="70" Width="100%"></asp:TextBox><br />
                     <asp:CustomValidator ID="vldQuery" runat="server" CssClass="NormalRed" Display="Dynamic" ControlToValidate="txtQuery" ResourceKey="vldQuery.ErrorText" Enabled="false"></asp:CustomValidator>
+                    <div class="dnnLabel"></div>
+                    <asp:LinkButton ID="cmdQueryTest" runat="server" Text="Test Query" ResourceKey="cmdQueryTest" CssClass="dnnPrimaryAction" /><br />
                     <asp:Label ID="lblQueryTestResults" runat="server" EnableViewState="False" CssClass="NormalText" Text="" />
                 </div>
                 <div class="dnnFormItem">

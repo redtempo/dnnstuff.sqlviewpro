@@ -83,6 +83,20 @@
 
         End Function
 
+        Public Shared Function ReplaceQueryStringParam(currentPageUrl As String, paramToReplace As String, newValue As String) As String
+            Dim urlWithoutQuery As String = If(currentPageUrl.IndexOf("?"c) >= 0, currentPageUrl.Substring(0, currentPageUrl.IndexOf("?"c)), currentPageUrl)
+
+            Dim queryString As String = If(currentPageUrl.IndexOf("?"c) >= 0, currentPageUrl.Substring(currentPageUrl.IndexOf("?"c)), Nothing)
+
+            Dim queryParamList As Specialized.NameValueCollection = If(queryString IsNot Nothing, HttpUtility.ParseQueryString(queryString), HttpUtility.ParseQueryString(String.Empty))
+
+            If queryParamList(paramToReplace) IsNot Nothing Then
+                queryParamList(paramToReplace) = newValue
+            Else
+                queryParamList.Add(paramToReplace, newValue)
+            End If
+            Return [String].Format("{0}?{1}", urlWithoutQuery, queryParamList)
+        End Function
 
     End Class
 End Namespace
