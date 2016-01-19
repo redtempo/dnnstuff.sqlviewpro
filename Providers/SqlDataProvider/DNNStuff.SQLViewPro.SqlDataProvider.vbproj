@@ -42,7 +42,7 @@
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>DNNVERSION="DNN6"</DefineConstants>
+    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>true</DebugSymbols>
@@ -60,7 +60,7 @@
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>DNNVERSION="DNN6"</DefineConstants>
+    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>false</DebugSymbols>
@@ -81,7 +81,7 @@
     <WarningLevel>1</WarningLevel>
     <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DefineConstants>DNNVERSION="DNN6"</DefineConstants>
+    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trial|AnyCPU' ">
     <DefineTrace>true</DefineTrace>
@@ -92,21 +92,19 @@
     <WarningLevel>1</WarningLevel>
     <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DefineConstants>DNNVERSION="DNN6"</DefineConstants>
+    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetNuke">
       <Name>DotNetNuke</Name>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN5' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke5\DotNetNuke.dll</HintPath>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN6' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke6\DotNetNuke.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">D:\TOOLING\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">D:\TOOLING\BIN\DotNetNuke8\DotNetNuke.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.ApplicationBlocks.Data">
       <Name>Microsoft.ApplicationBlocks.Data</Name>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke7\Microsoft.ApplicationBlocks.Data.dll</HintPath>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN5' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke5\Microsoft.ApplicationBlocks.Data.dll</HintPath>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN6' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke6\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">D:\TOOLING\BIN\DotNetNuke7\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">D:\TOOLING\BIN\DotNetNuke8\Microsoft.ApplicationBlocks.Data.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System">

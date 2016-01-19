@@ -61,7 +61,7 @@
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>DNNVERSION="DNN6"</DefineConstants>
+    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>true</DebugSymbols>
@@ -81,7 +81,7 @@
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>DNNVERSION="DNN6"</DefineConstants>
+    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>false</DebugSymbols>
@@ -101,7 +101,7 @@
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>DNNVERSION="DNN6"</DefineConstants>
+    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>false</DebugSymbols>
@@ -123,13 +123,12 @@
   <ItemGroup>
     <Reference Include="DNNStuff.Utilities, Version=1.1.0.30560, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>\\RICHARD-SERVER\Shared Files\Development\BIN\Various\DNNStuff.Utilities.dll</HintPath>
+      <HintPath>D:\TOOLING\BIN\Various\DNNStuff.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="DotNetNuke">
       <Name>DotNetNuke</Name>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN5' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke5\DotNetNuke.dll</HintPath>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN6' ">\\RICHARD-SERVER\Shared Files\Development\BIN\DotNetNuke6\DotNetNuke.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">D:\TOOLING\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">D:\TOOLING\BIN\DotNetNuke8\DotNetNuke.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -250,9 +249,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62053</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://dev.dnn6/DesktopModules/DNNStuff - SQLViewPro/Reports/SSRS</IISUrl>
+          <IISUrl>http://dnn7.dev.com/DesktopModules/DNNStuff - SQLViewPro/Reports/SSRS</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://dev.dnn6/</IISAppRootUrl>
+          <IISAppRootUrl>http://dnn7.dev.com/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
