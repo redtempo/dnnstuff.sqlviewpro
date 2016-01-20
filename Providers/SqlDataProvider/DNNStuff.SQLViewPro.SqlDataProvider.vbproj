@@ -37,12 +37,12 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\..\..\..\bin\</OutputPath>
+    <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
     <DocumentationFile>DNNStuff.SQLViewPro.SqlDataProvider.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
+    <DefineConstants></DefineConstants>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>true</DebugSymbols>
@@ -55,12 +55,12 @@
     <DebugType>full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\..\..\..\bin\</OutputPath>
+    <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
     <DocumentationFile>DNNStuff.SQLViewPro.SqlDataProvider.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
+    <DefineConstants></DefineConstants>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>false</DebugSymbols>
@@ -72,27 +72,16 @@
     <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
     <DebugType>none</DebugType>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Demo|AnyCPU' ">
-    <DefineTrace>true</DefineTrace>
-    <OutputPath>..\..\..\..\bin\</OutputPath>
-    <BaseAddress>285212672</BaseAddress>
-    <DocumentationFile>DNNStuff.SQLViewPro.SqlDataProvider.xml</DocumentationFile>
-    <Optimize>true</Optimize>
-    <WarningLevel>1</WarningLevel>
-    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
-  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trial|AnyCPU' ">
     <DefineTrace>true</DefineTrace>
-    <OutputPath>..\..\..\..\bin\</OutputPath>
+    <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
     <BaseAddress>285212672</BaseAddress>
     <DocumentationFile>DNNStuff.SQLViewPro.SqlDataProvider.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <WarningLevel>1</WarningLevel>
     <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
+    <DefineConstants></DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetNuke">

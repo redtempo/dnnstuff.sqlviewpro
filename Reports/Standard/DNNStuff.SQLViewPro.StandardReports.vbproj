@@ -60,12 +60,12 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\..\..\..\bin\</OutputPath>
+    <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
     <DocumentationFile>DNNStuff.SQLViewPro.StandardReports.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
+    <DefineConstants></DefineConstants>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>true</DebugSymbols>
@@ -80,12 +80,12 @@
     </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\..\..\..\bin\</OutputPath>
+    <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
     <DocumentationFile>DNNStuff.SQLViewPro.StandardReports.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
+    <DefineConstants></DefineConstants>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>false</DebugSymbols>
@@ -100,12 +100,12 @@
     </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trial|AnyCPU' ">
-    <OutputPath>..\..\..\..\bin\</OutputPath>
+    <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
     <DocumentationFile>DNNStuff.SQLViewPro.StandardReports.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>DNNVERSION="DNN8"</DefineConstants>
+    <DefineConstants></DefineConstants>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>false</DebugSymbols>
@@ -118,11 +118,6 @@
     <DebugType>none</DebugType>
     <WarningsAsErrors>
     </WarningsAsErrors>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Demo|AnyCPU'">
-    <WarningsAsErrors>
-    </WarningsAsErrors>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DNNStuff.Utilities, Version=1.1.0.30560, Culture=neutral, processorArchitecture=MSIL">
