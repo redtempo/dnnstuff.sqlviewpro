@@ -8,7 +8,10 @@ module.exports = function() {
 		version: '04.01.00',
 		company: 'DNNStuff',
 		product: 'SQLViewPro',
-		targets: [{target:'DNN6', framework:'v3.5'}, {target:'DNN7', framework:'v4.0'}],
+		targets: [ 
+            {target:'DNN7', framework:'v4.0'}, 
+            {target:'DNN8', framework:'v4.5'}
+            ],
 		configurations: ['Release', 'Trial'],
         /**
          * File paths
@@ -37,6 +40,6 @@ module.exports = function() {
 
 };
 var logPath = function() { return path.join(__dirname,'Build','logs');};
-var binPath = function(target) { return path.join(__dirname,'Build',target,'bin');};
-var binSrc = function(target) { return path.join(__dirname,'Build',target,'bin') + '/*.dll';};
+var binPath = function(target) { return path.join(__dirname,'Build','Output',target);};
+var binSrc = function(target) { return binPath(target) + '/*.dll';};
 var packagePath = function(target) { return path.join(__dirname,'Build',target,'package');};

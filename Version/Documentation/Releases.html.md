@@ -1,14 +1,23 @@
 # SQLView Pro Release History 
 
-```Minimum configuration DNN 6.0.3+ / DNN 7+ / .NET 3.5```
+```Minimum configuration DNN 7.1.2+ (.NET 4.0) / DNN 8+ (.NET 4.5)```
 
 <!-- insert-newversion -->
+
+
+## 04.01.00
+
+22/Jan/2016
+
+* Fixes
+	* Added support for DNN8
+    * Minimum configuration is now DNN 7.1.2+ (.NET 4.0) / DNN 8+ (.NET 4.5)
+    
+```Minimum configuration DNN 6.0.3+ / DNN 7+ / .NET 3.5```
 
 ## 04.00.18
 
 02/Sep/2015
-
-
 
 * Enhancements
     * Added paging support to Template report
@@ -16,13 +25,6 @@
         * Sliding cache resets the timeout each time it is hit so if you have a busy site the data might stay in cache a long time
         * Absolute cache expires after a set number of seconds regardless of whether it has been accessed and will reload at that expiry
 
-For additional release history please visit the [documentation](http://docs.dnnstuff.com/pages/sqlviewpro).
-
-
-## 04.00.17
-
-02/Jun/2015
-
 
 ## 04.00.16
 
@@ -33,9 +35,6 @@ For additional release history please visit the [documentation](http://docs.dnns
     * Added paging support to Template report
 
 
-For additional release history please visit the [documentation](http://docs.dnnstuff.com/pages/sqlviewpro).
-
-
 ## 04.00.16
 
 01/Jun/2015
@@ -43,9 +42,6 @@ For additional release history please visit the [documentation](http://docs.dnns
 
 * Enhancements
     * Added paging support to Template report
-
-
-For additional release history please visit the [documentation](http://docs.dnnstuff.com/pages/sqlviewpro).
 
 
 ## 04.01.00
@@ -56,19 +52,12 @@ For additional release history please visit the [documentation](http://docs.dnns
     * Added paging support to Template report
 
 
-
-For additional release history please visit the [documentation](http://docs.dnnstuff.com/pages/sqlviewpro).
-
-
 ## 04.00.15
 
 10/Feb/2015
 
 * Fixes
 	* Fixed error that occured in MySql connections with ORDER BY
-
-
-
 
 ## 04.00.14
 
