@@ -25,7 +25,7 @@
     <OutputType>Library</OutputType>
     <OptionCompare>Binary</OptionCompare>
     <OptionExplicit>On</OptionExplicit>
-    <OptionStrict>Off</OptionStrict>
+    <OptionStrict>On</OptionStrict>
     <RootNamespace>
     </RootNamespace>
     <StartupObject>
@@ -54,6 +54,11 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <UseIISExpress>false</UseIISExpress>
     <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
@@ -61,7 +66,8 @@
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>true</DebugSymbols>
@@ -70,10 +76,9 @@
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningLevel>1</WarningLevel>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <NoWarn>42353,42354,42355</NoWarn>
     <DebugType>full</DebugType>
-    <WarningsAsErrors>
-    </WarningsAsErrors>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
@@ -81,7 +86,8 @@
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>false</DebugSymbols>
@@ -90,10 +96,9 @@
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningLevel>1</WarningLevel>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <NoWarn>42353,42354,42355</NoWarn>
     <DebugType>none</DebugType>
-    <WarningsAsErrors>
-    </WarningsAsErrors>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trial|AnyCPU' ">
     <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
@@ -101,7 +106,8 @@
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>false</DebugSymbols>
@@ -110,10 +116,9 @@
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningLevel>1</WarningLevel>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <NoWarn>42353,42354,42355</NoWarn>
     <DebugType>none</DebugType>
-    <WarningsAsErrors>
-    </WarningsAsErrors>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DNNStuff.Utilities, Version=1.1.0.30560, Culture=neutral, processorArchitecture=MSIL">

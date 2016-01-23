@@ -150,7 +150,7 @@ Namespace DNNStuff.SQLViewPro.ExcelReports
                 ' write tmp file
                 Dim filePath As String = Server.MapPath(ResolveUrl(String.Format("{0}.dat", System.Guid.NewGuid().ToString())))
                 Dim fs As FileStream = File.OpenWrite(filePath)
-                fs.Write(ms.GetBuffer(), 0, ms.Length)
+                fs.Write(ms.GetBuffer(), 0, Convert.ToInt32(ms.Length))
                 fs.Close()
                 details.BinaryFilename = filePath
 
