@@ -100,7 +100,7 @@ namespace DNNStuff.SQLViewPro
 				else
 				{
 					action = new ModuleAction(GetNextActionID());
-					action.Title = string.Format(Localization.GetString("Menu.EditCurrentReportSet", LocalResourceFile), ReportSet.ReportSetName, null);
+					action.Title = string.Format(Localization.GetString("Menu.EditCurrentReportSet", LocalResourceFile), ReportSet.ReportSetName);
 					action.CommandName = ModuleActionType.ContentOptions;
 					action.Url = EditUrl("ReportSetId", ReportSet.ReportSetId.ToString(), "EditReportSet");
 					action.Secure = SecurityAccessLevel.Edit;
@@ -109,7 +109,7 @@ namespace DNNStuff.SQLViewPro
 					foreach (ReportInfo r in Reports)
 					{
 						action = new ModuleAction(GetNextActionID());
-						action.Title = string.Format(Localization.GetString("Menu.EditCurrentReport", LocalResourceFile), r.ReportName, null);
+						action.Title = string.Format(Localization.GetString("Menu.EditCurrentReport", LocalResourceFile), r.ReportName);
 						action.CommandName = ModuleActionType.ContentOptions;
 						action.Url = EditUrl("ReportSetId", ReportSet.ReportSetId.ToString(), "EditReport", "ReportId=" + r.ReportId.ToString());
 						action.Secure = SecurityAccessLevel.Edit;
@@ -120,7 +120,7 @@ namespace DNNStuff.SQLViewPro
 					foreach (ParameterInfo p in Parameters)
 					{
 						action = new ModuleAction(GetNextActionID());
-						action.Title = string.Format(Localization.GetString("Menu.EditCurrentParameter", LocalResourceFile), p.ParameterName, null);
+						action.Title = string.Format(Localization.GetString("Menu.EditCurrentParameter", LocalResourceFile), p.ParameterName);
 						action.CommandName = ModuleActionType.ContentOptions;
 						action.Url = EditUrl("ParameterId", p.ParameterId.ToString(), "EditParameter", string.Format("ReportSetId={0}", ReportSet.ReportSetId.ToString()));
 						action.Secure = SecurityAccessLevel.Edit;

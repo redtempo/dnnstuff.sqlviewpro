@@ -26,15 +26,15 @@ namespace DNNStuff.SQLViewPro
 		{
 			
 			System.Text.StringBuilder sb = new System.Text.StringBuilder();
-			sb.AppendFormat("<p>Thank you for evaluating <a style=\"text-decoration:underline\" target=\"_blank\" ", null);
+			sb.AppendFormat("<p>Thank you for evaluating <a style=\"text-decoration:underline\" target=\"_blank\" ");
 			sb.AppendFormat("title=\"{0}\" ", ProductName);
 			sb.AppendFormat("href=\"{0}/{2}.aspx?utm_source={1}&utm_medium=trial&utm_campaign={1}\">{2}</a>. ", CompanyUrl, CompanyName, ProductName);
-			sb.AppendFormat("If after your evaluation you wish to support great DotNetNuke software and obtain a licensed copy of all DNNStuff modules, ", null);
-			sb.AppendFormat("please visit the store to <a style=\"text-decoration:underline\" target=\"_blank\" ", null);
+			sb.AppendFormat("If after your evaluation you wish to support great DotNetNuke software and obtain a licensed copy of all DNNStuff modules, ");
+			sb.AppendFormat("please visit the store to <a style=\"text-decoration:underline\" target=\"_blank\" ");
 			sb.AppendFormat("title=\"{0}\" ", CompanyName);
 			sb.AppendFormat("href=\"{0}/store.aspx?utm_source={1}&utm_medium=trial&utm_campaign={2}", CompanyUrl, CompanyName, ProductName);
-			sb.AppendFormat("\">purchase a membership</a>. Use discount code <strong>\'TRIAL\'</strong> at checkout for 10% ", null);
-			sb.AppendFormat("off!</p><hr />", null);
+			sb.AppendFormat("\">purchase a membership</a>. Use discount code <strong>\'TRIAL\'</strong> at checkout for 10% ");
+			sb.AppendFormat("off!</p><hr />");
 			
 			return sb.ToString();
 		}

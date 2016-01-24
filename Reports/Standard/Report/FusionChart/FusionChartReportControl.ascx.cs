@@ -126,7 +126,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 					// only append if there is a value
 					if (expectedValue.Length > 0)
 					{
-						s.AppendFormat("{0}=\'{1}\' ", prop.Name, StringHelpers.XmlEncode(ReplaceReportTokens(expectedValue, null)));
+						s.AppendFormat("{0}=\'{1}\' ", prop.Name, StringHelpers.XmlEncode(ReplaceReportTokens(expectedValue)));
 					}
 					
 				}
@@ -190,12 +190,12 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		private void RenderMultiSeriesChartSingleTable(DataSet ds, System.Text.StringBuilder data)
 		{
 			// multi series
-			data.AppendFormat("<categories>", null);
+			data.AppendFormat("<categories>");
 			foreach (DataRow dr in ds.Tables[0].Rows)
 			{
 				data.AppendFormat("<category name=\'{0}\' />", StringHelpers.XmlEncode((string) (dr[0].ToString())));
 			}
-			data.AppendFormat("</categories>", null);
+			data.AppendFormat("</categories>");
 			
 			string[] colors = null;
 			int colorIndex = 0;
@@ -207,7 +207,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 				{
 					data.AppendFormat("<set value=\'{0}\' />", StringHelpers.XmlEncode((string) (dr[columnIndex].ToString())));
 				}
-				data.AppendFormat("</dataset>", null);
+				data.AppendFormat("</dataset>");
 				colorIndex++;
 				if (colorIndex >= colors.Length)
 				{
@@ -219,12 +219,12 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		private void RenderMultiSeriesChartMultipleTable(DataSet ds, System.Text.StringBuilder data)
 		{
 			// multi series - get categories off first table
-			data.AppendFormat("<categories>", null);
+			data.AppendFormat("<categories>");
 			foreach (DataRow dr in ds.Tables[0].Rows)
 			{
 				data.AppendFormat("<category name=\'{0}\' />", dr[0].ToString());
 			}
-			data.AppendFormat("</categories>", null);
+			data.AppendFormat("</categories>");
 			
 			string[] colors = null;
 			int colorIndex = 0;
@@ -236,7 +236,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 				{
 					data.AppendFormat("<set value=\'{0}\' />", StringHelpers.XmlEncode((string) (dr[1].ToString())));
 				}
-				data.AppendFormat("</dataset>", null);
+				data.AppendFormat("</dataset>");
 				colorIndex++;
 				if (colorIndex >= colors.Length)
 				{
