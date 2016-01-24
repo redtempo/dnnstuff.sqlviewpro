@@ -1,18 +1,20 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DNNStuff.SQLViewPro", "DNNStuff.SQLViewPro.vbproj", "{0440098F-FF3B-41A4-A074-45B878F929B9}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNNStuff.SQLViewPro", "DNNStuff.SQLViewPro.csproj", "{0440098F-FF3B-41A4-A074-45B878F929B9}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DNNStuff.SQLViewPro.SqlDataProvider", "Providers\SqlDataProvider\DNNStuff.SQLViewPro.SqlDataProvider.vbproj", "{DBE7F349-8112-44D2-A094-EBBEDF015E0B}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DNNStuff.SQLViewPro.SqlDataProvider", "Providers\SqlDataProvider\DNNStuff.SQLViewPro.SqlDataProvider.csproj", "{DBE7F349-8112-44D2-A094-EBBEDF015E0B}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DNNStuff.SQLViewPro.StandardParameters", "Parameters\Standard\DNNStuff.SQLViewPro.StandardParameters.vbproj", "{931898D3-79C1-4491-88E3-24CC810C0F6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNNStuff.SQLViewPro.StandardParameters", "Parameters\Standard\DNNStuff.SQLViewPro.StandardParameters.csproj", "{931898D3-79C1-4491-88E3-24CC810C0F6E}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DNNStuff.SQLViewPro.StandardReports", "Reports\Standard\DNNStuff.SQLViewPro.StandardReports.vbproj", "{1A747D72-86BF-41BC-815A-E33681F4AB71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNNStuff.SQLViewPro.StandardReports", "Reports\Standard\DNNStuff.SQLViewPro.StandardReports.csproj", "{1A747D72-86BF-41BC-815A-E33681F4AB71}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DNNStuff.SQLViewPro.SSRSReports", "Reports\SSRS\DNNStuff.SQLViewPro.SSRSReports.vbproj", "{AAF60DD7-B713-488C-A9D8-FEBA1032D3D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNNStuff.SQLViewPro.SSRSReports", "Reports\SSRS\DNNStuff.SQLViewPro.SSRSReports.csproj", "{AAF60DD7-B713-488C-A9D8-FEBA1032D3D3}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DNNStuff.SQLViewPro.ExcelReports", "Reports\Excel\DNNStuff.SQLViewPro.ExcelReports.vbproj", "{6162044F-D5E3-4EE6-950D-90A1B286F44F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNNStuff.SQLViewPro.ExcelReports", "Reports\Excel\DNNStuff.SQLViewPro.ExcelReports.csproj", "{6162044F-D5E3-4EE6-950D-90A1B286F44F}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DNNStuff.SQLViewPro.MobileParameters", "Parameters\Mobile\DNNStuff.SQLViewPro.MobileParameters.vbproj", "{2E8E89C2-A59F-4DE8-B49D-437556E8F6AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNNStuff.SQLViewPro.MobileParameters", "Parameters\Mobile\DNNStuff.SQLViewPro.MobileParameters.csproj", "{2E8E89C2-A59F-4DE8-B49D-437556E8F6AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

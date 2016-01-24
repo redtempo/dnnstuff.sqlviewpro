@@ -1,9 +1,491 @@
 <?xml version="1.0"?>
 <doc>
-  <assembly>
-    <name>DNNStuff.SQLViewPro.StandardReports</name>
-    <version>3.0.0.1</version>
-    <fullname>DNNStuff.SQLViewPro.StandardReports, Version=3.0.0.1, Culture=neutral, PublicKeyToken=null</fullname>
-  </assembly>
-  <members />
+    <assembly>
+        <name>DNNStuff.SQLViewPro.StandardReports</name>
+    </assembly>
+    <members>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportControl.pnlHeader">
+            <summary>
+            pnlHeader control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportControl.dgCommand">
+            <summary>
+            dgCommand control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportControl.pnlFooter">
+            <summary>
+            pnlFooter control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportControl.phContent">
+            <summary>
+            phContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportControl.cmdExportExcel">
+            <summary>
+            cmdExportExcel control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.XmlReportControl.xmlContent">
+            <summary>
+            xmlContent control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.FusionChartReportSettingsControl.lblChartType">
+            <summary>
+            lblChartType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.FusionChartReportSettingsControl.ddlChartType">
+            <summary>
+            ddlChartType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.FusionChartReportSettingsControl.cpvMain">
+            <summary>
+            cpvMain control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.lblAllowSorting">
+            <summary>
+            lblAllowSorting control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.chkAllowSorting">
+            <summary>
+            chkAllowSorting control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.lblOrderBy">
+            <summary>
+            lblOrderBy control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.txtOrderBy">
+            <summary>
+            txtOrderBy control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.lblAllowPaging">
+            <summary>
+            lblAllowPaging control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.chkAllowPaging">
+            <summary>
+            chkAllowPaging control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.lblPageSize">
+            <summary>
+            lblPageSize control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.txtPageSize">
+            <summary>
+            txtPageSize control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.lblPagerMode">
+            <summary>
+            lblPagerMode control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.ddPagerMode">
+            <summary>
+            ddPagerMode control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.lblPrevNext">
+            <summary>
+            lblPrevNext control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.txtPrevPageText">
+            <summary>
+            txtPrevPageText control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.txtNextPageText">
+            <summary>
+            txtNextPageText control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.lblPagerPosition">
+            <summary>
+            lblPagerPosition control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.ddPagerPosition">
+            <summary>
+            ddPagerPosition control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.lblEnableExcelExport">
+            <summary>
+            lblEnableExcelExport control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.chkEnableExcelExport">
+            <summary>
+            chkEnableExcelExport control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.lblExcelExportCaption">
+            <summary>
+            lblExcelExportCaption control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.txtExcelExportButtonCaption">
+            <summary>
+            txtExcelExportButtonCaption control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.lblExcelExportPosition">
+            <summary>
+            lblExcelExportPosition control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.ddExcelExportPosition">
+            <summary>
+            ddExcelExportPosition control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.lblHideColumnHeaders">
+            <summary>
+            lblHideColumnHeaders control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.chkHideColumnHeaders">
+            <summary>
+            chkHideColumnHeaders control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.lblHideColumns">
+            <summary>
+            lblHideColumns control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl.txtHideColumns">
+            <summary>
+            txtHideColumns control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.lblTemplateText">
+            <summary>
+            lblTemplateText control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.txtTemplateText">
+            <summary>
+            txtTemplateText control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.lblAllowPaging">
+            <summary>
+            lblAllowPaging control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.chkAllowPaging">
+            <summary>
+            chkAllowPaging control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.lblPagingType">
+            <summary>
+            lblPagingType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.ddPagingType">
+            <summary>
+            ddPagingType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.lblPageSize">
+            <summary>
+            lblPageSize control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.txtPageSize">
+            <summary>
+            txtPageSize control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.lblPrevNext">
+            <summary>
+            lblPrevNext control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.txtPrevPageText">
+            <summary>
+            txtPrevPageText control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.txtNextPageText">
+            <summary>
+            txtNextPageText control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.lblFirstLast">
+            <summary>
+            lblFirstLast control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.txtFirstPageText">
+            <summary>
+            txtFirstPageText control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.txtLastPageText">
+            <summary>
+            txtLastPageText control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.lblPageTemplate">
+            <summary>
+            lblPageTemplate control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.txtPageTemplate">
+            <summary>
+            txtPageTemplate control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.XmlReportSettingsControl.lblXslSrc">
+            <summary>
+            lblXslSrc control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.XmlReportSettingsControl.txtXslSrc">
+            <summary>
+            txtXslSrc control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.CustomPropertiesViewer.tblProperties">
+            <summary>
+            tblProperties control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="M:DNNStuff.SQLViewPro.CustomPropertiesViewer.SetProperties">
+            <summary>
+            Capture settings from controls and save to properties dictionary
+            </summary>
+            <remarks></remarks>
+        </member>
+    </members>
 </doc>

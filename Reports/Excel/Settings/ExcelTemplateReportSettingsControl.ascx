@@ -1,4 +1,4 @@
-﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="ExcelTemplateReportSettingsControl.ascx.vb" Inherits="DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl" EnableViewState="true" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ExcelTemplateReportSettingsControl.ascx.cs" Inherits="DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl" EnableViewState="true" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="URL" Src="~/controls/URLControl.ascx" %>
 
@@ -51,3 +51,4 @@
 			});
 	});
 </script>
+

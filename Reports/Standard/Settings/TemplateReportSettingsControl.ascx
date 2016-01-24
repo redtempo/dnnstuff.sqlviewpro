@@ -1,4 +1,4 @@
-﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="TemplateReportSettingsControl.ascx.vb" Inherits="DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl" EnableViewState="false" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TemplateReportSettingsControl.ascx.cs" Inherits="DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl" EnableViewState="false" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <div class="dnnForm" id="panels-settings">
 	<div class="dnnFormExpandContent">
@@ -14,7 +14,7 @@
 	</fieldset>
 	<h2 id="Paging" class="dnnFormSectionHead">
 		<a href="#">
-			<%=Localization.GetString("lblPagingHeader",LocalResourceFile)%></a></h2>
+			<%=Localization.GetString("lblPagingHeader", LocalResourceFile)%></a></h2>
 	<fieldset class="dnnClear">
 		<div class="dnnFormItem">
 			<dnn:Label ID="lblAllowPaging" runat="server" ControlName="chkAllowPaging" Suffix=":" />
@@ -78,3 +78,4 @@
 			});
 	});
 </script>
+

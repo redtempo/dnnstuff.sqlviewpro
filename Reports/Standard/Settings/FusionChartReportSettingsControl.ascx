@@ -1,4 +1,4 @@
-<%@ Control Language="vb" Inherits="DNNStuff.SQLViewPro.StandardReports.FusionChartReportSettingsControl" CodeBehind="FusionChartReportSettingsControl.ascx.vb" AutoEventWireup="false" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" EnableViewState="false" %>
+<%@ Control Language="C#" Inherits="DNNStuff.SQLViewPro.StandardReports.FusionChartReportSettingsControl" CodeBehind="FusionChartReportSettingsControl.ascx.cs" AutoEventWireup="true" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" EnableViewState="false" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <%@ Register TagPrefix="dnnstuff" TagName="CustomPropertiesViewer" Src="Properties/CustomPropertiesViewer.ascx" %>
 <div class="dnnForm" id="panels-settings">
@@ -10,7 +10,7 @@
     <fieldset class="dnnClear">
         <div class="dnnFormItem">
             <dnn:Label ID="lblChartType" runat="server" CssClass="SubHead" ControlName="ddlChartType" Suffix=":" />
-            <asp:DropDownList ID="ddlChartType" runat="server" AutoPostBack="true">
+            <asp:DropDownList ID="ddlChartType" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlChartType_SelectedIndexChanged">
                 <asp:ListItem Value="Area2D" Text="Area 2D" />
                 <asp:ListItem Value="Bar2D" Text="Bar 2D" />
                 <asp:ListItem Value="Column2D" Text="Column 2D" />
@@ -59,3 +59,4 @@
 			});
 	});
 </script>
+

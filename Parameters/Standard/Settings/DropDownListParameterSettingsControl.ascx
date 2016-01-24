@@ -1,4 +1,4 @@
-<%@ Control Language="vb" Inherits="DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl" CodeBehind="DropDownListParameterSettingsControl.ascx.vb" AutoEventWireup="false" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="C#" Inherits="DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl" CodeBehind="DropDownListParameterSettingsControl.ascx.cs" AutoEventWireup="true" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <%@ Register TagPrefix="dnnstuff" TagName="ConnectionPicker" Src="../../../controls/ConnectionPicker/ConnectionPickerControl.ascx" %>
 <div class="dnnForm" id="panels-settings">
@@ -37,7 +37,7 @@
             <asp:TextBox ID="txtCommand" Columns="70" TextMode="MultiLine"
                          runat="server" Rows="10"></asp:TextBox><br />
             <asp:CustomValidator ID="vldCommand" CssClass="NormalRed" runat="server" ErrorMessage=""
-                Display="Dynamic" ControlToValidate="txtCommand"></asp:CustomValidator>
+                Display="Dynamic" ControlToValidate="txtCommand" OnServerValidate="vldCommand_ServerValidate"></asp:CustomValidator>
         </div>
         <div class="dnnFormItem">
             <dnn:Label ID="lblCommandCacheTimeout" runat="server" ControlName="txtCommandCacheTimeout" />
@@ -46,7 +46,7 @@
             <asp:CompareValidator runat="server" ID="cmpCommandCacheTimeout" CssClass="dnnFormMessage dnnFormError" ControlToValidate="txtCommandCacheTimeout" Display="Dynamic" ErrorMessage="Cache timeout must be zero or greater" ValueToCompare="0" Type="Integer" Operator="GreaterThanEqual"></asp:CompareValidator>
         </div>
         <div class="dnnFormItem">
-            <asp:LinkButton ID="cmdQueryTest" runat="server" CssClass="Normal" CausesValidation="false"><%=Localization.GetString("cmdQueryTest.Text", LocalResourceFile)%></asp:LinkButton>
+            <asp:LinkButton ID="cmdQueryTest" runat="server" CssClass="Normal" CausesValidation="false" OnClick="cmdQueryTest_Click"><%=Localization.GetString("cmdQueryTest.Text", LocalResourceFile)%></asp:LinkButton>
             <asp:Label ID="lblQueryTestResults" runat="server" EnableViewState="False" CssClass="NormalText"
                 Text="" />
         </div>
@@ -68,4 +68,5 @@
 			});
 	});
 </script>
+
 

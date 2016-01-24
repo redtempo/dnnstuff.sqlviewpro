@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0440098F-FF3B-41A4-A074-45B878F929B9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>DNNStuff.SQLViewPro</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Flow</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE32Nav30</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+    <RootNamespace>
+    </RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\dnn7.dev.com\bin\</OutputPath>
+    <DocumentationFile>DNNStuff.SQLViewPro.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NOWARN>1591,660,661</NOWARN>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\dnn7.dev.com\bin\</OutputPath>
+    <DocumentationFile>DNNStuff.SQLViewPro.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NOWARN>1591,660,661</NOWARN>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trial|AnyCPU' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\dnn7.dev.com\bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>DNNStuff.SQLViewPro.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NOWARN>1591,660,661</NOWARN>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="mscorlib" />
+    <Reference Include="DotNetNuke">
+      <Name>DotNetNuke</Name>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">D:\TOOLING\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">D:\TOOLING\BIN\DotNetNuke8\DotNetNuke.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DNNStuff.Utilities, Version=1.1.0.30560, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\TOOLING\BIN\Various\DNNStuff.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BrowseRepository.ascx.designer.cs">
+      <DependentUpon>BrowseRepository.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseRepository.ascx.cs">
+      <DependentUpon>BrowseRepository.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Compatibility\DNN6\Compatibility.cs" />
+    <Compile Include="Components\Business\Common.cs" />
+    <Compile Include="Components\Services\File.cs" />
+    <Compile Include="Components\Services\Query.cs" />
+    <Compile Include="Components\Report\DrilldownEventArgs.cs" />
+    <Compile Include="Components\Util\ArrayListStack.cs" />
+    <Compile Include="Components\Services\TokenReplacement.cs" />
+    <Compile Include="Components\Util\ControlHelpers.cs" />
+    <Compile Include="Components\Util\ScriptController.cs" />
+    <Compile Include="Components\Util\StringHelpers.cs" />
+    <Compile Include="Components\Util\Url.cs" />
+    <Compile Include="Components\Util\ValidationHelpers.cs" />
+    <Compile Include="Controls\ConnectionPicker\ConnectionPickerControl.ascx.designer.cs">
+      <DependentUpon>ConnectionPickerControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ConnectionPicker\ConnectionPickerControl.ascx.cs">
+      <DependentUpon>ConnectionPickerControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Data\DataProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Export\Excel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Util\DNNUtilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Report\DrilldownState.cs" />
+    <Compile Include="EditConnection.ascx.designer.cs">
+      <DependentUpon>EditConnection.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EditConnection.ascx.cs">
+      <DependentUpon>EditConnection.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditConnections.ascx.designer.cs">
+      <DependentUpon>EditConnections.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EditConnections.ascx.cs">
+      <DependentUpon>EditConnections.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditParameter.ascx.designer.cs">
+      <DependentUpon>EditParameter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EditParameter.ascx.cs">
+      <DependentUpon>EditParameter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditReport.ascx.designer.cs">
+      <DependentUpon>EditReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EditReport.ascx.cs">
+      <DependentUpon>EditReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditReportSet.ascx.designer.cs">
+      <DependentUpon>EditReportSet.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EditReportSet.ascx.cs">
+      <DependentUpon>EditReportSet.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Parameter\ParameterControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Parameter\ParameterSettingsControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Report\ReportControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Report\ReportSettingsControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Util\Serialization.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Util\SQLUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Data\SQLViewPlusDB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Export.aspx.designer.cs">
+      <DependentUpon>Export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Export.aspx.cs">
+      <DependentUpon>Export.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="SQLViewPro.ascx.designer.cs">
+      <DependentUpon>SQLViewPro.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SQLViewPro.ascx.cs">
+      <DependentUpon>SQLViewPro.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Data\SQLViewProController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="BrowseRepository.ascx" />
+    <Content Include="Controls\ConnectionPicker\ConnectionPickerControl.ascx" />
+    <Content Include="EditConnection.ascx" />
+    <Content Include="EditConnections.ascx" />
+    <Content Include="EditParameter.ascx" />
+    <Content Include="EditReport.ascx" />
+    <Content Include="EditReportSet.ascx" />
+    <Content Include="Export.aspx" />
+    <Content Include="Report.aspx" />
+    <Content Include="Repository\content.DNNStuffSQLViewPro.SampleDrilldownYearlyBudgets.xml" />
+    <Content Include="Repository\content.DNNStuffSQLViewPro.SampleEmployeesbyDepartment.xml" />
+    <Content Include="Repository\content.DNNStuffSQLViewPro.SampleFusionChart.3DColumn-MultiSeries.xml" />
+    <Content Include="Repository\content.DNNStuffSQLViewPro.SampleFusionChart.3DColumn.xml" />
+    <Content Include="Repository\content.DNNStuffSQLViewPro.SampleParameterLayout.xml" />
+    <Content Include="Repository\content.DNNStuffSQLViewPro.SampleTemplateGoogleChart.xml" />
+    <Content Include="Repository\content.DNNStuffSQLViewPro.SampleXSLEmployee.xml" />
+    <Content Include="Resources\jQuery\fancybox\blank.gif" />
+    <Content Include="Resources\jQuery\fancybox\fancybox-x.png" />
+    <Content Include="Resources\jQuery\fancybox\fancybox-y.png" />
+    <Content Include="Resources\jQuery\fancybox\fancybox.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_close.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_loading.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_nav_left.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_nav_right.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_shadow_e.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_shadow_n.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_shadow_ne.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_shadow_nw.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_shadow_s.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_shadow_se.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_shadow_sw.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_shadow_w.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_title_left.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_title_main.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_title_over.png" />
+    <Content Include="Resources\jQuery\fancybox\fancy_title_right.png" />
+    <Content Include="Resources\jQuery\fancybox\jquery.easing-1.3.pack.js" />
+    <Content Include="Resources\jQuery\fancybox\jquery.fancybox-1.3.4.css" />
+    <Content Include="Resources\jQuery\fancybox\jquery.fancybox-1.3.4.js" />
+    <Content Include="Resources\jQuery\fancybox\jquery.fancybox-1.3.4.pack.js" />
+    <Content Include="Resources\jQuery\fancybox\jquery.mousewheel-3.0.4.pack.js" />
+    <Content Include="Resources\jQuery\jquery.sqlviewpro.fullscreen.js" />
+    <Content Include="Resources\Support\alert.png" />
+    <Content Include="Resources\Support\close-icn.png" />
+    <Content Include="Resources\Support\down-icn.png" />
+    <Content Include="Resources\Support\edit.css" />
+    <Content Include="Resources\Support\error-icn.png" />
+    <Content Include="Resources\Support\errorbg.gif" />
+    <Content Include="Resources\Support\help-icn.png" />
+    <Content Include="Resources\Support\pixel.gif" />
+    <Content Include="Resources\Support\success-icn.png" />
+    <Content Include="Resources\Support\up-icn.png" />
+    <Content Include="Resources\Support\warning-icn.png" />
+    <Content Include="Resources\Support\yetii-min.js" />
+    <Content Include="Skins\Black\images\HeaderGlass.jpg" />
+    <Content Include="Skins\Black\styles.css" />
+    <Content Include="Skins\Blue\images\HeaderGlass.jpg" />
+    <Content Include="Skins\Blue\styles.css" />
+    <Content Include="Skins\Default\styles.css" />
+    <Content Include="Skins\Gray\images\HeaderGlass.jpg" />
+    <Content Include="Skins\Gray\styles.css" />
+    <Content Include="Skins\Green\images\HeaderGlass.jpg" />
+    <Content Include="Skins\Green\styles.css" />
+    <Content Include="Skins\Red\images\HeaderGlass.jpg" />
+    <Content Include="Skins\Red\styles.css" />
+    <Content Include="Skins\Report1\styles.css" />
+    <Content Include="Skins\Report2\styles.css" />
+    <Content Include="Skins\Set1\styles.css" />
+    <Content Include="SQLViewPro.ascx" />
+    <Content Include="Version\All\Version_Append.md" />
+    <None Include="Version\All\Version_Current.md" />
+    <Content Include="Version\All\icon_sqlviewpro_32px.gif" />
+    <Content Include="Version\All\License.html" />
+    <Content Include="App_LocalResources\EditConnection.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\BrowseRepository.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="App_LocalResources\EditConnections.ascx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\EditParameter.ascx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\EditReport.ascx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\EditReportSet.ascx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\EditReportSets.ascx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="App_LocalResources\SharedResources.resx">
+    </Content>
+    <EmbeddedResource Include="App_LocalResources\Settings.ascx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\SQLViewPro.ascx.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowseRepository.ascx.resx">
+      <DependentUpon>BrowseRepository.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ConnectionPicker\ConnectionPickerControl.ascx.resx">
+      <DependentUpon>ConnectionPickerControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditConnection.ascx.resx">
+      <DependentUpon>EditConnection.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditConnections.ascx.resx">
+      <DependentUpon>EditConnections.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditParameter.ascx.resx">
+      <DependentUpon>EditParameter.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditReport.ascx.resx">
+      <DependentUpon>EditReport.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditReportSet.ascx.resx">
+      <DependentUpon>EditReportSet.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLViewPro.ascx.resx">
+      <DependentUpon>SQLViewPro.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Build\Build.bat" />
+    <None Include="Build\BuildFinal.bat" />
+    <None Include="Build\DeployFinal.bat" />
+    <None Include="Build\ModuleSpecific.targets">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Version\All\SQLViewPro.dnn">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Version\Data\03.00.00.SqlDataProvider" />
+    <None Include="Version\Data\03.00.03.SqlDataProvider" />
+    <None Include="Version\Data\03.01.00.SqlDataProvider" />
+    <None Include="Version\Data\03.01.01.SqlDataProvider" />
+    <None Include="Version\Data\03.01.02.SqlDataProvider" />
+    <None Include="Version\Data\03.01.03.SqlDataProvider" />
+    <None Include="Version\Data\03.01.07.SqlDataProvider" />
+    <None Include="Version\Data\03.03.00.SqlDataProvider" />
+    <None Include="Version\Data\03.04.00.SqlDataProvider" />
+    <None Include="Version\Data\03.05.00.SqlDataProvider" />
+    <None Include="Version\Data\03.05.01.SqlDataProvider" />
+    <None Include="Version\Data\03.06.00.SqlDataProvider" />
+    <None Include="Version\Data\03.06.01.SqlDataProvider" />
+    <None Include="Version\Data\03.06.08.SqlDataProvider" />
+    <None Include="Version\Data\03.07.01.SqlDataProvider" />
+    <None Include="Version\Data\03.08.01.SqlDataProvider" />
+    <None Include="Version\Data\03.08.03.SqlDataProvider" />
+    <None Include="Version\Data\03.08.05.SqlDataProvider" />
+    <None Include="Version\Data\03.08.07.SqlDataProvider" />
+    <None Include="Version\Data\03.08.08.SqlDataProvider" />
+    <Content Include="Version\All\Version_Current.html">
+      <DependentUpon>Version_Current.md</DependentUpon>
+    </Content>
+    <Content Include="Version\Data\03.09.03.SqlDataProvider" />
+    <Content Include="Version\Data\04.00.03.SqlDataProvider" />
+    <Content Include="Version\Data\04.00.04.SqlDataProvider" />
+    <Content Include="Version\Data\04.00.09.SqlDataProvider" />
+    <Content Include="Version\Data\04.00.13.SqlDataProvider" />
+    <Content Include="Version\Data\04.00.18.SqlDataProvider" />
+    <None Include="Version\Data\Uninstall.SqlDataProvider" />
+    <Content Include="Version\Documentation\Configuration.html.md" />
+    <Content Include="Version\Documentation\Connections.html.md" />
+    <Content Include="Version\Documentation\DecodingHtml.html.md" />
+    <Content Include="Version\Documentation\ExcelTemplate.html.md" />
+    <Content Include="Version\Documentation\Grid.html.md" />
+    <Content Include="Version\Documentation\images\EditConnection.png" />
+    <Content Include="Version\Documentation\images\EditConnections.png" />
+    <Content Include="Version\Documentation\images\EditParameter.png" />
+    <Content Include="Version\Documentation\images\EditReport.png" />
+    <Content Include="Version\Documentation\images\EditReportSet.png" />
+    <Content Include="Version\Documentation\images\EditReportSets.png" />
+    <Content Include="Version\Documentation\images\EditReportSet_Parameters.png" />
+    <Content Include="Version\Documentation\images\EditReportSet_Reports.png" />
+    <Content Include="Version\Documentation\images\EditReport_GridSettings.png" />
+    <Content Include="Version\Documentation\images\EditReport_XSLSettings.png" />
+    <Content Include="Version\Documentation\images\ModuleSettings.png" />
+    <Content Include="Version\Documentation\images\Parameter_Calendar.png" />
+    <Content Include="Version\Documentation\images\Parameter_Checkbox.png" />
+    <Content Include="Version\Documentation\images\Parameter_CheckboxList.png" />
+    <Content Include="Version\Documentation\images\Parameter_DropDownList.png" />
+    <Content Include="Version\Documentation\images\Parameter_LayoutResults1.png" />
+    <Content Include="Version\Documentation\images\Parameter_Listbox.png" />
+    <Content Include="Version\Documentation\images\Parameter_ListValues.png" />
+    <Content Include="Version\Documentation\images\Parameter_ListValues_Sample.png" />
+    <Content Include="Version\Documentation\images\Parameter_RadioButtonList.png" />
+    <Content Include="Version\Documentation\images\Parameter_TextBox.png" />
+    <Content Include="Version\Documentation\Index.html.md" />
+    <Content Include="Version\Documentation\Installation.html.md" />
+    <Content Include="Version\Documentation\ParameterLayout.html.md" />
+    <Content Include="Version\Documentation\Parameters.html.md" />
+    <Content Include="Version\Documentation\Queries.html.md" />
+    <Content Include="Version\Documentation\Releases.html.md" />
+    <Content Include="Version\Documentation\Reports.html.md" />
+    <Content Include="Version\Documentation\ReportSets.html.md" />
+    <Content Include="Version\Documentation\Skins.html.md" />
+    <Content Include="Version\Documentation\SSRS.html.md" />
+    <Content Include="Version\Documentation\Template.html.md" />
+    <Content Include="Version\Documentation\Tokens.html.md" />
+    <Content Include="Version\Documentation\Faq.html.md" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)/Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1124</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://dnn7.dev.com/DesktopModules/DNNStuff - SQLViewPro</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://dnn7.dev.com/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://dnn7.dev.com</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v14.0\WebApplications\Microsoft.WebApplication.targets" />
+</Project>

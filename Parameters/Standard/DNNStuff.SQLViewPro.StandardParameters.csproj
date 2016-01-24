@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{931898D3-79C1-4491-88E3-24CC810C0F6E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>DNNStuff.SQLViewPro.StandardParameters</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>
+    </RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
+    <DocumentationFile>DNNStuff.SQLViewPro.StandardParameters.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG</DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NOWARN>1591,660,661</NOWARN>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
+    <DocumentationFile>DNNStuff.SQLViewPro.StandardParameters.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NOWARN>1591,660,661</NOWARN>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trial|AnyCPU' ">
+    <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
+    <DocumentationFile>DNNStuff.SQLViewPro.StandardParameters.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NOWARN>1591,660,661</NOWARN>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="mscorlib" />
+    <Reference Include="DotNetNuke">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">D:\TOOLING\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">D:\TOOLING\BIN\DotNetNuke8\DotNetNuke.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\ListParameterControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parameter\GeoLocationParameterControl.ascx.designer.cs">
+      <DependentUpon>GeoLocationParameterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Parameter\GeoLocationParameterControl.ascx.cs">
+      <DependentUpon>GeoLocationParameterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parameter\TextBoxParameterControl.ascx.designer.cs">
+      <DependentUpon>TextBoxParameterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Parameter\TextBoxParameterControl.ascx.cs">
+      <DependentUpon>TextBoxParameterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parameter\EmptyParameterControl.ascx.designer.cs">
+      <DependentUpon>EmptyParameterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Parameter\EmptyParameterControl.ascx.cs">
+      <DependentUpon>EmptyParameterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\CalendarParameterSettingsControl.ascx.designer.cs">
+      <DependentUpon>CalendarParameterSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\CalendarParameterSettingsControl.ascx.cs">
+      <DependentUpon>CalendarParameterSettingsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\CheckBoxParameterSettingsControl.ascx.designer.cs">
+      <DependentUpon>CheckBoxParameterSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\CheckBoxParameterSettingsControl.ascx.cs">
+      <DependentUpon>CheckBoxParameterSettingsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\ListBoxParameterSettingsControl.ascx.designer.cs">
+      <DependentUpon>ListBoxParameterSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\ListBoxParameterSettingsControl.ascx.cs">
+      <DependentUpon>ListBoxParameterSettingsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\GeoLocationParameterSettingsControl.ascx.designer.cs">
+      <DependentUpon>GeoLocationParameterSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\GeoLocationParameterSettingsControl.ascx.cs">
+      <DependentUpon>GeoLocationParameterSettingsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\TextBoxParameterSettingsControl.ascx.designer.cs">
+      <DependentUpon>TextBoxParameterSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\TextBoxParameterSettingsControl.ascx.cs">
+      <DependentUpon>TextBoxParameterSettingsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\DefaultParameterSettingsControl.ascx.designer.cs">
+      <DependentUpon>DefaultParameterSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\DefaultParameterSettingsControl.ascx.cs">
+      <DependentUpon>DefaultParameterSettingsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\ListParameterSettings.cs" />
+    <Compile Include="Settings\DropDownListParameterSettingsControl.ascx.designer.cs">
+      <DependentUpon>DropDownListParameterSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\DropDownListParameterSettingsControl.ascx.cs">
+      <DependentUpon>DropDownListParameterSettingsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\EmptyParameterSettingsControl.ascx.designer.cs">
+      <DependentUpon>EmptyParameterSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\EmptyParameterSettingsControl.ascx.cs">
+      <DependentUpon>EmptyParameterSettingsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\FlowListParameterSettingsControl.ascx.designer.cs">
+      <DependentUpon>FlowListParameterSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\FlowListParameterSettingsControl.ascx.cs">
+      <DependentUpon>FlowListParameterSettingsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parameter\CalendarParameterControl.ascx.designer.cs">
+      <DependentUpon>CalendarParameterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Parameter\CalendarParameterControl.ascx.cs">
+      <DependentUpon>CalendarParameterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parameter\CheckBoxListParameterControl.ascx.designer.cs">
+      <DependentUpon>CheckBoxListParameterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Parameter\CheckBoxListParameterControl.ascx.cs">
+      <DependentUpon>CheckBoxListParameterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parameter\CheckBoxParameterControl.ascx.designer.cs">
+      <DependentUpon>CheckBoxParameterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Parameter\CheckBoxParameterControl.ascx.cs">
+      <DependentUpon>CheckBoxParameterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parameter\DefaultParameterControl.ascx.designer.cs">
+      <DependentUpon>DefaultParameterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Parameter\DefaultParameterControl.ascx.cs">
+      <DependentUpon>DefaultParameterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parameter\DropDownListParameterControl.ascx.designer.cs">
+      <DependentUpon>DropDownListParameterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Parameter\DropDownListParameterControl.ascx.cs">
+      <DependentUpon>DropDownListParameterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parameter\ListBoxParameterControl.ascx.designer.cs">
+      <DependentUpon>ListBoxParameterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Parameter\ListBoxParameterControl.ascx.cs">
+      <DependentUpon>ListBoxParameterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Parameter\RadioButtonListParameterControl.ascx.designer.cs">
+      <DependentUpon>RadioButtonListParameterControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Parameter\RadioButtonListParameterControl.ascx.cs">
+      <DependentUpon>RadioButtonListParameterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Parameter\GeoLocationParameterControl.ascx" />
+    <Content Include="Parameter\TextBoxParameterControl.ascx" />
+    <Content Include="Parameter\EmptyParameterControl.ascx" />
+    <Content Include="Settings\CalendarParameterSettingsControl.ascx" />
+    <Content Include="Settings\CheckBoxParameterSettingsControl.ascx" />
+    <Content Include="Settings\ListBoxParameterSettingsControl.ascx" />
+    <Content Include="Settings\GeoLocationParameterSettingsControl.ascx" />
+    <Content Include="Settings\TextBoxParameterSettingsControl.ascx" />
+    <Content Include="Settings\DefaultParameterSettingsControl.ascx" />
+    <Content Include="Settings\DropDownListParameterSettingsControl.ascx" />
+    <Content Include="Settings\EmptyParameterSettingsControl.ascx" />
+    <Content Include="Settings\FlowListParameterSettingsControl.ascx" />
+    <Content Include="Parameter\CalendarParameterControl.ascx" />
+    <Content Include="Parameter\CheckBoxListParameterControl.ascx" />
+    <Content Include="Parameter\CheckBoxParameterControl.ascx" />
+    <Content Include="Parameter\DefaultParameterControl.ascx" />
+    <Content Include="Parameter\DropDownListParameterControl.ascx" />
+    <Content Include="Parameter\ListBoxParameterControl.ascx" />
+    <Content Include="Parameter\RadioButtonListParameterControl.ascx" />
+    <Content Include="Settings\App_LocalResources\DefaultParameterSettingsControl.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Settings\App_LocalResources\DropDownListParameterSettingsControl.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Settings\App_LocalResources\CheckBoxParameterSettingsControl.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Settings\App_LocalResources\FlowListParameterSettingsControl.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="Parameter\GeoLocationParameterControl.ascx.resx">
+      <DependentUpon>GeoLocationParameterControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameter\TextBoxParameterControl.ascx.resx">
+      <DependentUpon>TextBoxParameterControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameter\EmptyParameterControl.ascx.resx">
+      <DependentUpon>EmptyParameterControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Settings\App_LocalResources\EmptyParameterSettingsControl.ascx.resx" />
+    <Content Include="Settings\App_LocalResources\TextBoxParameterSettingsControl.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Settings\App_LocalResources\CalendarParameterSettingsControl.ascx.resx" />
+    <Content Include="Settings\App_LocalResources\GeoLocationParameterSettingsControl.ascx.resx" />
+    <Content Include="Settings\App_LocalResources\ListBoxParameterSettingsControl.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="Settings\CalendarParameterSettingsControl.ascx.resx">
+      <DependentUpon>CalendarParameterSettingsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\CheckBoxParameterSettingsControl.ascx.resx">
+      <DependentUpon>CheckBoxParameterSettingsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\ListBoxParameterSettingsControl.ascx.resx">
+      <DependentUpon>ListBoxParameterSettingsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\GeoLocationParameterSettingsControl.ascx.resx">
+      <DependentUpon>GeoLocationParameterSettingsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\TextBoxParameterSettingsControl.ascx.resx">
+      <DependentUpon>TextBoxParameterSettingsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\DefaultParameterSettingsControl.ascx.resx">
+      <DependentUpon>DefaultParameterSettingsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\DropDownListParameterSettingsControl.ascx.resx">
+      <DependentUpon>DropDownListParameterSettingsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\EmptyParameterSettingsControl.ascx.resx">
+      <DependentUpon>EmptyParameterSettingsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\FlowListParameterSettingsControl.ascx.resx">
+      <DependentUpon>FlowListParameterSettingsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameter\CalendarParameterControl.ascx.resx">
+      <DependentUpon>CalendarParameterControl.ascx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameter\CheckBoxListParameterControl.ascx.resx">
+      <DependentUpon>CheckBoxListParameterControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameter\CheckBoxParameterControl.ascx.resx">
+      <DependentUpon>CheckBoxParameterControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameter\DefaultParameterControl.ascx.resx">
+      <DependentUpon>DefaultParameterControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameter\DropDownListParameterControl.ascx.resx">
+      <DependentUpon>DropDownListParameterControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameter\ListBoxParameterControl.ascx.resx">
+      <DependentUpon>ListBoxParameterControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameter\RadioButtonListParameterControl.ascx.resx">
+      <DependentUpon>RadioButtonListParameterControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DNNStuff.SQLViewPro.csproj">
+      <Project>{0440098f-ff3b-41a4-a074-45b878f929b9}</Project>
+      <Name>DNNStuff.SQLViewPro</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)/Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1550</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://dnn7.dev.com/DesktopModules/DNNStuff - SQLViewPro\Parameters\Standard</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://dnn7.dev.com/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v14.0\WebApplications\Microsoft.WebApplication.targets" />
+</Project>

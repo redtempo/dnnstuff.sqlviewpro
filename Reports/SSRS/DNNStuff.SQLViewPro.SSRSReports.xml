@@ -1,9 +1,233 @@
 <?xml version="1.0"?>
 <doc>
-  <assembly>
-    <name>DNNStuff.SQLViewPro.SSRSReports</name>
-    <version>3.0.0.1</version>
-    <fullname>DNNStuff.SQLViewPro.SSRSReports, Version=3.0.0.1, Culture=neutral, PublicKeyToken=null</fullname>
-  </assembly>
-  <members />
+    <assembly>
+        <name>DNNStuff.SQLViewPro.SSRSReports</name>
+    </assembly>
+    <members>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportControl.ReportViewer1">
+            <summary>
+            ReportViewer1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.lblProcessingMode">
+            <summary>
+            lblProcessingMode control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.ddlProcessingMode">
+            <summary>
+            ddlProcessingMode control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.pnlRemote">
+            <summary>
+            pnlRemote control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.lblReportServerUrl">
+            <summary>
+            lblReportServerUrl control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.txtReportServerUrl">
+            <summary>
+            txtReportServerUrl control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.lblReportServerReportPath">
+            <summary>
+            lblReportServerReportPath control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.txtReportServerReportPath">
+            <summary>
+            txtReportServerReportPath control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.lblReportServerUsername">
+            <summary>
+            lblReportServerUsername control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.txtReportServerUsername">
+            <summary>
+            txtReportServerUsername control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.lblReportServerPassword">
+            <summary>
+            lblReportServerPassword control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.txtReportServerPassword">
+            <summary>
+            txtReportServerPassword control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.lblReportServerDomain">
+            <summary>
+            lblReportServerDomain control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.txtReportServerDomain">
+            <summary>
+            txtReportServerDomain control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.pnlLocal">
+            <summary>
+            pnlLocal control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.lblLocalReportPath">
+            <summary>
+            lblLocalReportPath control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.urlLocalReportPath">
+            <summary>
+            urlLocalReportPath control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.lblAdditionalParameters">
+            <summary>
+            lblAdditionalParameters control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.txtAdditionalParameters">
+            <summary>
+            txtAdditionalParameters control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.lblViewerWidth">
+            <summary>
+            lblViewerWidth control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.txtViewerWidth">
+            <summary>
+            txtViewerWidth control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.lblViewerHeight">
+            <summary>
+            lblViewerHeight control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.txtViewerHeight">
+            <summary>
+            txtViewerHeight control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.lblReportOptions">
+            <summary>
+            lblReportOptions control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl.lstReportOptions">
+            <summary>
+            lstReportOptions control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+    </members>
 </doc>

@@ -1,5 +1,5 @@
 <%@ Register TagPrefix="dnnstuff" TagName="ConnectionPicker" Src="controls/ConnectionPicker/ConnectionPickerControl.ascx" %>
-<%@ Control Language="vb" Inherits="DNNStuff.SQLViewPro.EditReport" CodeBehind="EditReport.ascx.vb" AutoEventWireup="false" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="C#" Inherits="DNNStuff.SQLViewPro.EditReport" CodeBehind="EditReport.ascx.cs" AutoEventWireup="true" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <div class="dnnForm dnnClear">
     <div id="editsettings" class="tabslayout">
@@ -22,9 +22,9 @@
                 <div class="dnnFormItem">
                     <dnn:Label ID="lblQuery" runat="server" ControlName="txtQuery" Suffix=":" />
                     <asp:TextBox ID="txtQuery" runat="server" TextMode="MultiLine" Rows="10" Columns="70" Width="100%"></asp:TextBox><br />
-                    <asp:CustomValidator ID="vldQuery" runat="server" CssClass="NormalRed" Display="Dynamic" ControlToValidate="txtQuery" ResourceKey="vldQuery.ErrorText" Enabled="false"></asp:CustomValidator>
+                    <asp:CustomValidator ID="vldQuery" runat="server" CssClass="NormalRed" Display="Dynamic" ControlToValidate="txtQuery" ResourceKey="vldQuery.ErrorText" Enabled="false" OnServerValidate="vldQuery_ServerValidate"></asp:CustomValidator>
                     <div class="dnnLabel"></div>
-                    <asp:LinkButton ID="cmdQueryTest" runat="server" Text="Test Query" ResourceKey="cmdQueryTest" CssClass="dnnPrimaryAction" /><br />
+                    <asp:LinkButton ID="cmdQueryTest" runat="server" Text="Test Query" ResourceKey="cmdQueryTest" CssClass="dnnPrimaryAction"  OnClick="cmdQueryTest_Click"/><br />
                     <asp:Label ID="lblQueryTestResults" runat="server" EnableViewState="False" CssClass="NormalText" Text="" />
                 </div>
                 <div class="dnnFormItem">
@@ -77,7 +77,7 @@
             <div class="tab" id="tab2">
                 <div class="dnnFormItem">
                     <dnn:Label ID="lblReportType" runat="server" ControlName="ddReportType" Suffix=":" />
-                    <asp:DropDownList ID="ddReportType" runat="server" AutoPostBack="True" />
+                    <asp:DropDownList ID="ddReportType" runat="server" AutoPostBack="True"  OnSelectedIndexChanged="ddReportType_SelectedIndexChanged"/>
                     <asp:PlaceHolder ID="phReportSettings" runat="server" />
                 </div>
             </div>
@@ -85,9 +85,9 @@
     </div>
     <ul class="dnnActions dnnClear">
         <li>
-            <asp:LinkButton ID="cmdUpdate" Text="Update" resourcekey="cmdUpdate" CausesValidation="True" runat="server" CssClass="dnnPrimaryAction" /></li>
+            <asp:LinkButton ID="cmdUpdate" Text="Update" resourcekey="cmdUpdate" CausesValidation="True" runat="server" CssClass="dnnPrimaryAction"  OnClick="cmdUpdate_Click"/></li>
         <li>
-            <asp:LinkButton ID="cmdCancel" Text="Cancel" resourcekey="cmdCancel" CausesValidation="False" runat="server" CssClass="dnnSecondaryAction" /></li>
+            <asp:LinkButton ID="cmdCancel" Text="Cancel" resourcekey="cmdCancel" CausesValidation="False" runat="server" CssClass="dnnSecondaryAction"  OnClick="cmdCancel_Click"/></li>
     </ul>
 </div>
 <script type="text/javascript">
@@ -96,3 +96,4 @@
         persist: true
     });
 </script>
+

@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DNNStuff.SQLViewPro.ExcelReports</name>
+    </assembly>
+    <members>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportControl.lblChoose">
+            <summary>
+            lblChoose control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportControl.rdoExcelType">
+            <summary>
+            rdoExcelType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl.lblOutputFileName">
+            <summary>
+            lblOutputFileName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl.txtOutputFileName">
+            <summary>
+            txtOutputFileName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl.lblContainsHeaderRow">
+            <summary>
+            lblContainsHeaderRow control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl.chkContainsHeaderRow">
+            <summary>
+            chkContainsHeaderRow control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl.lblDataSheetName">
+            <summary>
+            lblDataSheetName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl.txtDataSheetName">
+            <summary>
+            txtDataSheetName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl.lblXlsFileName">
+            <summary>
+            lblXlsFileName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl.ctlXlsFileName">
+            <summary>
+            ctlXlsFileName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl.lblXlsxFileName">
+            <summary>
+            lblXlsxFileName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl.ctlXlsxFileName">
+            <summary>
+            ctlXlsxFileName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl.lblDispositionType">
+            <summary>
+            lblDispositionType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.ExcelReports.ExcelTemplateReportSettingsControl.ddDispositionType">
+            <summary>
+            ddDispositionType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+    </members>
+</doc>

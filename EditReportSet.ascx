@@ -1,4 +1,4 @@
-<%@ Control Language="vb" Inherits="DNNStuff.SQLViewPro.EditReportSet" CodeBehind="EditReportSet.ascx.vb" AutoEventWireup="false" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="C#" Inherits="DNNStuff.SQLViewPro.EditReportSet" CodeBehind="EditReportSet.ascx.cs" AutoEventWireup="true" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <%@ Register TagPrefix="dnnstuff" TagName="ConnectionPicker" Src="controls/ConnectionPicker/ConnectionPickerControl.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 
@@ -38,10 +38,10 @@
                     <dnn:Label ID="lblReports" runat="server" ControlName="dgReport" Suffix=":" />
                 </div>
                 <div class="dnnFormItem">
-                    <asp:LinkButton ID="cmdAddReport" runat="server" CssClass="CommandButton" ResourceKey="cmdAddReport">Add Report</asp:LinkButton>
+                    <asp:LinkButton ID="cmdAddReport" runat="server" CssClass="CommandButton" ResourceKey="cmdAddReport" OnClick="cmdAddReport_Click">Add Report</asp:LinkButton>
                 </div>
                 <div class="dnnFormItem">
-                    <asp:DataGrid ID="dgReport" runat="server" DataKeyField="ReportId" AutoGenerateColumns="False" CssClass="Grid" Width="100%">
+                    <asp:DataGrid ID="dgReport" runat="server" DataKeyField="ReportId" AutoGenerateColumns="False" CssClass="Grid" Width="100%" OnItemCommand="dgReport_ItemCommand" OnItemCreated="dgReport_ItemCreated" OnItemDataBound="dgReport_ItemDataBound">
                         <HeaderStyle CssClass="GridHeader" />
                         <ItemStyle CssClass="GridItem" />
                         <AlternatingItemStyle CssClass="GridAltItem" />
@@ -82,10 +82,10 @@
                         <dnn:Label ID="lblParameters" runat="server" CssClass="SubHead" ControlName="" Suffix=":" />
                     </div>
 					<div class="dnnFormItem">
-                        <asp:LinkButton ID="cmdAddParameter" runat="server" CssClass="CommandButton" ResourceKey="cmdAddParameter">Add Parameter</asp:LinkButton>
+                        <asp:LinkButton ID="cmdAddParameter" runat="server" CssClass="CommandButton" ResourceKey="cmdAddParameter" OnClick="cmdAddParameter_Click">Add Parameter</asp:LinkButton>
 					</div>
                     <div class="dnnFormItem">
-                        <asp:DataGrid ID="dgParameter" runat="server" DataKeyField="ParameterId" AutoGenerateColumns="False" CssClass="Grid" Width="100%">
+                        <asp:DataGrid ID="dgParameter" runat="server" DataKeyField="ParameterId" AutoGenerateColumns="False" CssClass="Grid" Width="100%" OnItemCommand="dgParameter_ItemCommand" OnItemCreated="dgParameter_ItemCreated" OnItemDataBound="dgParameter_ItemDataBound">
                             <HeaderStyle CssClass="GridHeader" />
                             <ItemStyle CssClass="GridItem" />
                             <AlternatingItemStyle CssClass="GridAltItem" />
@@ -167,9 +167,9 @@
     </div>
     <ul class="dnnActions dnnClear">
         <li>
-            <asp:LinkButton ID="cmdUpdate" Text="Update" resourcekey="cmdUpdate" CausesValidation="True" runat="server" CssClass="dnnPrimaryAction" /></li>
+            <asp:LinkButton ID="cmdUpdate" Text="Update" resourcekey="cmdUpdate" CausesValidation="True" runat="server" CssClass="dnnPrimaryAction"  OnClick="cmdUpdate_Click"/></li>
         <li>
-            <asp:LinkButton ID="cmdCancel" Text="Cancel" resourcekey="cmdCancel" CausesValidation="False" runat="server" CssClass="dnnSecondaryAction" /></li>
+            <asp:LinkButton ID="cmdCancel" Text="Cancel" resourcekey="cmdCancel" CausesValidation="False" runat="server" CssClass="dnnSecondaryAction"  OnClick="cmdCancel_Click"/></li>
     </ul>
 </div>
 <script type="text/javascript">
@@ -178,3 +178,4 @@
         persist: true
     });
 </script>
+
