@@ -1,23 +1,9 @@
-
-
 using System;
 using System.Data;
 using System.Web.UI.WebControls;
 using System.Web.UI;
-
 using DNNStuff.SQLViewPro.Controls;
 using DotNetNuke.Common;
-
-//***************************************************************************/
-//* GridReportControl.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Grid Report
-//*************/
 
 namespace DNNStuff.SQLViewPro.StandardReports
 {
@@ -299,14 +285,14 @@ namespace DNNStuff.SQLViewPro.StandardReports
 				SortDirection = "ASC";
 			}
 		}
-		
-		private void SortCommand_OnClick(object Source, DataGridSortCommandEventArgs E)
+
+        protected void SortCommand_OnClick(object Source, DataGridSortCommandEventArgs E)
 		{
 			ToggleSort(E.SortExpression);
 			BindGridToData();
 		}
-		
-		private void PageIndexChanged(object source, DataGridPageChangedEventArgs e)
+
+        protected void PageIndexChanged(object source, DataGridPageChangedEventArgs e)
 		{
 			dgCommand.CurrentPageIndex = e.NewPageIndex;
 			BindGridToData();
@@ -383,7 +369,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			return false;
 		}
 		
-		private ReportInfo DrilldownReportByColumn(string colName)
+		protected ReportInfo DrilldownReportByColumn(string colName)
 		{
 			foreach (var obj in Report.ReportDrillDowns)
 			{

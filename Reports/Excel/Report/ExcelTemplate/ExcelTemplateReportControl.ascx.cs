@@ -62,22 +62,15 @@ using FlexCel.XlsAdapter;
 #endregion
 		
 #region  Page
-		
-		private ExcelTemplateReportSettings _ReportExtra = new ExcelTemplateReportSettings();
-		private ExcelTemplateReportSettings ReportExtra
-		{
-			get
-			{
-				return _ReportExtra;
-			}
-		}
-		
-#endregion
+
+			    private ExcelTemplateReportSettings ReportExtra { get; set; } = new ExcelTemplateReportSettings();
+
+			    #endregion
 		
 #region  Base Method Implementations
 		public override void LoadRuntimeSettings(ReportInfo Settings)
 		{
-			_ReportExtra = (ExcelTemplateReportSettings) (Serialization.DeserializeObject(Settings.ReportConfig, typeof(ExcelTemplateReportSettings)));
+			ReportExtra = (ExcelTemplateReportSettings) (Serialization.DeserializeObject(Settings.ReportConfig, typeof(ExcelTemplateReportSettings)));
 		}
 #endregion
 		
@@ -85,7 +78,7 @@ using FlexCel.XlsAdapter;
 		private void ProcessExcelTemplate(string fileId)
 		{
 			
-			DataSet ds = ReportData();
+			var ds = ReportData();
 			
 			// add debug info
 			if (State.ReportSet.ReportSetDebug)
@@ -105,13 +98,13 @@ using FlexCel.XlsAdapter;
 		
 		private void RenderExcelTemplate(DataTable dt, string fileId)
 		{
-			string dataPath = Server.MapPath(ResolveUrl("Templates"));
-			string fileName = (string) (Services.File.GetFilenameFromFileId(fileId));
+			var dataPath = Server.MapPath(ResolveUrl("Templates"));
+			var fileName = (string) (Services.File.GetFilenameFromFileId(fileId));
 			
-			XlsFile xls = new XlsFile(fileName);
+			var xls = new XlsFile(fileName);
 			
 			// save current sheet reference for later
-			string activeSheetSaved = (string) xls.ActiveSheetByName;
+			var activeSheetSaved = (string) xls.ActiveSheetByName;
 			
 			xls.ActiveSheetByName = ReportExtra.DataSheetName;
 			// handle header row
@@ -125,16 +118,16 @@ using FlexCel.XlsAdapter;
 				// clear sheet
 				xls.ClearSheet();
 				// headings
-				for (int col = 0; col <= dt.Columns.Count - 1; col++)
+				for (var col = 0; col <= dt.Columns.Count - 1; col++)
 				{
 					xls.SetCellFromString(1, col + 1, dt.Columns[col].ColumnName);
 				}
 			}
 			
 			// update data
-			for (int row = 0; row <= dt.Rows.Count - 1; row++)
+			for (var row = 0; row <= dt.Rows.Count - 1; row++)
 			{
-				for (int col = 0; col <= dt.Columns.Count - 1; col++)
+				for (var col = 0; col <= dt.Columns.Count - 1; col++)
 				{
 					xls.SetCellValue(row + 2, col + 1, dt.Rows[row][col]);
 				}
@@ -149,25 +142,25 @@ using FlexCel.XlsAdapter;
 			//xls.SetNamedRange(range)
 			
 			// determine file extension
-			string fileExtension = "xls";
+			var fileExtension = "xls";
 			if (fileName.EndsWith("xlsx"))
 			{
 				fileExtension = "xlsx";
 			}
 			
 			// stream to user
-			using (MemoryStream ms = new MemoryStream())
+			using (var ms = new MemoryStream())
 			{
 				xls.Save(ms);
 				
-				ExportDetails details = new ExportDetails();
+				var details = new ExportDetails();
 				details.Dataset = null;
 				details.Filename = ReportExtra.OutputFileName.Replace("[TICKS]", DateTime.Now.Ticks.ToString()) + "." + fileExtension;
 				details.Disposition = ReportExtra.DispositionType;
 				
 				// write tmp file
-				string filePath = Server.MapPath(ResolveUrl(string.Format("{0}.dat", Guid.NewGuid().ToString())));
-				FileStream fs = File.OpenWrite(filePath);
+				var filePath = Server.MapPath(ResolveUrl(string.Format("{0}.dat", Guid.NewGuid().ToString())));
+				var fs = File.OpenWrite(filePath);
 				fs.Write(ms.GetBuffer(), 0, Convert.ToInt32(ms.Length));
 				fs.Close();
 				details.BinaryFilename = filePath;
@@ -191,7 +184,7 @@ using FlexCel.XlsAdapter;
 		}
 #endregion
 		
-		private void rdoExcelType_SelectedIndexChanged(object sender, EventArgs e)
+		protected void rdoExcelType_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			switch (rdoExcelType.SelectedValue)
 			{

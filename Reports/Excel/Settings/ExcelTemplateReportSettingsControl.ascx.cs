@@ -1,20 +1,5 @@
-
-
-
 using System.Xml.Serialization;
 using DNNStuff.SQLViewPro.Controls;
-
-//***************************************************************************/
-//* ExcelTemplateReportSettings.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Xml Report Settings Handler
-//*************/
-
 
 namespace DNNStuff.SQLViewPro.ExcelReports
 {
@@ -41,18 +26,12 @@ namespace DNNStuff.SQLViewPro.ExcelReports
 		
 	
 #region  Base Method Implementations
-		protected override string LocalResourceFile
-		{
-			get
-			{
-				return ResolveUrl("App_LocalResources/ExcelTemplateReportSettingsControl");
-			}
-		}
-		
-		public override string UpdateSettings()
+		protected override string LocalResourceFile => ResolveUrl("App_LocalResources/ExcelTemplateReportSettingsControl");
+
+	    public override string UpdateSettings()
 		{
 			
-			ExcelTemplateReportSettings obj = new ExcelTemplateReportSettings();
+			var obj = new ExcelTemplateReportSettings();
 			obj.DataSheetName = txtDataSheetName.Text;
 			obj.ContainsHeaderRow = chkContainsHeaderRow.Checked;
 			obj.XlsFileName = (string) ctlXlsFileName.Url;
@@ -66,7 +45,7 @@ namespace DNNStuff.SQLViewPro.ExcelReports
 		
 		public override void LoadSettings(string settings)
 		{
-			ExcelTemplateReportSettings obj = new ExcelTemplateReportSettings();
+			var obj = new ExcelTemplateReportSettings();
 			if (!string.IsNullOrEmpty(settings))
 			{
 				obj = (ExcelTemplateReportSettings) (Serialization.DeserializeObject(settings, typeof(ExcelTemplateReportSettings)));
@@ -92,18 +71,7 @@ namespace DNNStuff.SQLViewPro.ExcelReports
 		public string XlsFileName {get; set;}
 		public string XlsxFileName {get; set;}
 		public bool ContainsHeaderRow {get; set;}
-		private string _DispositionType = "attachment";
-		public string DispositionType
-		{
-			get
-			{
-				return _DispositionType;
-			}
-			set
-			{
-				_DispositionType = value;
-			}
-		}
+	    public string DispositionType { get; set; } = "attachment";
 	}
 #endregion
 	
