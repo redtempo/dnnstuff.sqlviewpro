@@ -16,7 +16,7 @@ namespace DNNStuff
 			
 			
 			Control postbackControlInstance = null;
-			string postbackControlName = page.Request.Params.Get("__EVENTTARGET");
+			var postbackControlName = page.Request.Params.Get("__EVENTTARGET");
 			
 			if (postbackControlName != null && postbackControlName != string.Empty)
 			{
@@ -25,7 +25,7 @@ namespace DNNStuff
 			else
 			{
 				// handle the Button control postbacks
-				for (int i = 0; i <= page.Request.Form.Keys.Count - 1; i++)
+				for (var i = 0; i <= page.Request.Form.Keys.Count - 1; i++)
 				{
 					postbackControlInstance = FindControlRecursive(page, page.Request.Form.Keys[i]);
 					if (postbackControlInstance is Button)
@@ -38,7 +38,7 @@ namespace DNNStuff
 			// handle the ImageButton postbacks
 			if (postbackControlInstance == null)
 			{
-				for (int i = 0; i <= page.Request.Form.Count - 1; i++)
+				for (var i = 0; i <= page.Request.Form.Count - 1; i++)
 				{
 					if ((page.Request.Form.Keys[i].EndsWith(".x")) || (page.Request.Form.Keys[i].EndsWith(".y")))
 					{
@@ -55,7 +55,7 @@ namespace DNNStuff
 		{
 			
 			
-			string postbackControlName = page.Request.Params.Get("__EVENTTARGET");
+			var postbackControlName = page.Request.Params.Get("__EVENTTARGET");
 			if (string.IsNullOrEmpty(postbackControlName))
 			{
 				return "";
@@ -72,7 +72,7 @@ namespace DNNStuff
 		
 		public static void InitDropDownByValue(DropDownList c, string value)
 		{
-			ListItem li = c.Items.FindByValue(value);
+			var li = c.Items.FindByValue(value);
 			if (li != null)
 			{
 				li.Selected = true;

@@ -76,14 +76,6 @@
             To modify move field declaration from designer file to code-behind file.
             </remarks>
         </member>
-        <member name="M:DNNStuff.SQLViewPro.Controls.ParameterControlBase.Unique(System.String)">
-            <summary>
-            Retrieves a unique string based on the given key
-            </summary>
-            <param name="key"></param>
-            <returns></returns>
-            <remarks></remarks>
-        </member>
         <member name="M:DNNStuff.SQLViewPro.Controls.ReportControlBase.ReportData(System.String)">
             <summary>
             Retrieve data for the given query

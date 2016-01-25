@@ -1,27 +1,11 @@
-
-
 using System;
-
 using DotNetNuke.Entities.Modules;
-
-//***************************************************************************/
-//* EditConnection.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Portal Module for editing setting for a Connection grid
-//*************/
-
 
 namespace DNNStuff.SQLViewPro
 {
 	
 	public partial class EditConnection : PortalModuleBase
 	{
-		
 		
 		//standard
 		
@@ -101,7 +85,7 @@ namespace DNNStuff.SQLViewPro
 #region  Data
 		private void InitConnection()
 		{
-			ConnectionInfo objConnection = ConnectionController.GetConnection(ConnectionId);
+			var objConnection = ConnectionController.GetConnection(ConnectionId);
 			
 			// load from database
 			Connection = objConnection;
@@ -119,7 +103,7 @@ namespace DNNStuff.SQLViewPro
 		
 		private void SaveConnection()
 		{
-			ConnectionController objConnectionController = new ConnectionController();
+			var objConnectionController = new ConnectionController();
 			ConnectionId = objConnectionController.UpdateConnection(PortalId, ConnectionId, txtName.Text, txtConnectionString.Text);
 		}
 		

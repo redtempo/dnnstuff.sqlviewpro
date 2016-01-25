@@ -104,16 +104,16 @@ namespace DNNStuff.SQLViewPro
 		private void ImportTemplate(string TemplateName)
 		{
 			
-			System.IO.FileInfo templateFile = new System.IO.FileInfo(System.IO.Path.Combine((string) (Server.MapPath(ResolveUrl("Repository"))), TemplateName));
+			var templateFile = new System.IO.FileInfo(System.IO.Path.Combine((string) (Server.MapPath(ResolveUrl("Repository"))), TemplateName));
 			if (templateFile != null)
 			{
-				XmlDocument xmlData = new XmlDocument();
+				var xmlData = new XmlDocument();
 				xmlData.Load(templateFile.FullName);
-				string strType = xmlData.DocumentElement.GetAttribute("type").ToString();
+				var strType = xmlData.DocumentElement.GetAttribute("type").ToString();
 				if (strType == StringHelpers.CleanName((string) ModuleConfiguration.DesktopModule.ModuleName) || strType == StringHelpers.CleanName((string) ModuleConfiguration.DesktopModule.FriendlyName))
 				{
-					string strVersion = xmlData.DocumentElement.GetAttribute("version").ToString();
-					SQLViewProController ctrl = new SQLViewProController();
+					var strVersion = xmlData.DocumentElement.GetAttribute("version").ToString();
+					var ctrl = new SQLViewProController();
 					ctrl.ImportModule(ModuleId, xmlData.DocumentElement.InnerXml, strVersion, UserId);
 				}
 			}
@@ -130,9 +130,9 @@ namespace DNNStuff.SQLViewPro
 		
 		private void BindRepository(ListControl o)
 		{
-			System.IO.DirectoryInfo repositoryFolder = new System.IO.DirectoryInfo((string) (Server.MapPath(ResolveUrl("Repository"))));
+			var repositoryFolder = new System.IO.DirectoryInfo((string) (Server.MapPath(ResolveUrl("Repository"))));
 			o.Items.Clear();
-			foreach (System.IO.FileInfo fi in repositoryFolder.GetFiles("content.*.xml"))
+			foreach (var fi in repositoryFolder.GetFiles("content.*.xml"))
 			{
 				o.Items.Add(fi.Name);
 			}

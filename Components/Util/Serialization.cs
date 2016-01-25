@@ -18,14 +18,14 @@ namespace DNNStuff.SQLViewPro
 #region  XML Serialization Support
 		private static string UTF8ByteArrayToString(byte[] characters)
 		{
-			UTF8Encoding encoding = new UTF8Encoding();
-			string constructedString = encoding.GetString(characters);
+			var encoding = new UTF8Encoding();
+			var constructedString = encoding.GetString(characters);
 			return constructedString;
 		} //UTF8ByteArrayToString
 		private static byte[] StringToUTF8ByteArray(string pXmlString)
 		{
-			UTF8Encoding encoding = new UTF8Encoding();
-			byte[] byteArray = encoding.GetBytes(pXmlString);
+			var encoding = new UTF8Encoding();
+			var byteArray = encoding.GetBytes(pXmlString);
 			return byteArray;
 		} //StringToUTF8ByteArray
 		
@@ -33,9 +33,9 @@ namespace DNNStuff.SQLViewPro
 		{
 			try
 			{
-				MemoryStream ms = new MemoryStream();
-				XmlSerializer xs = new XmlSerializer(t);
-				XmlTextWriter writer = new XmlTextWriter(ms, new UTF8Encoding());
+				var ms = new MemoryStream();
+				var xs = new XmlSerializer(t);
+				var writer = new XmlTextWriter(ms, new UTF8Encoding());
 				writer.Formatting = Formatting.Indented;
 				
 				xs.Serialize(writer, o);
@@ -53,16 +53,16 @@ namespace DNNStuff.SQLViewPro
 			try
 			{
 				//                Dim ms As New MemoryStream
-				UTF8StringWriter sw = new UTF8StringWriter();
-				XmlSerializer xs = new XmlSerializer(t);
+				var sw = new UTF8StringWriter();
+				var xs = new XmlSerializer(t);
 				
-				XmlWriterSettings settings = new XmlWriterSettings();
+				var settings = new XmlWriterSettings();
 				settings.NewLineHandling = NewLineHandling.Entitize;
 				settings.Indent = true;
 				settings.Encoding = new UTF8Encoding();
 				settings.IndentChars = " ";
 				
-				XmlWriter writer = XmlWriter.Create(sw, settings);
+				var writer = XmlWriter.Create(sw, settings);
 				xs.Serialize(writer, o);
 				
 				return sw.ToString();
@@ -78,30 +78,24 @@ namespace DNNStuff.SQLViewPro
 		
 		public static object DeserializeObjectOld(string s, Type t)
 		{
-			XmlSerializer xs = new XmlSerializer(t);
-			MemoryStream ms = new MemoryStream(StringToUTF8ByteArray(s));
+			var xs = new XmlSerializer(t);
+			var ms = new MemoryStream(StringToUTF8ByteArray(s));
 			return xs.Deserialize(ms);
 		} //DeserializeObject
 		
 		public static object DeserializeObject(string s, Type t)
 		{
-			StringReader sr = new StringReader(s);
-			XmlSerializer xs = new XmlSerializer(t);
+			var sr = new StringReader(s);
+			var xs = new XmlSerializer(t);
 			
-			XmlReaderSettings settings = new XmlReaderSettings();
-			XmlReader xr = XmlReader.Create(sr, settings);
+			var settings = new XmlReaderSettings();
+			var xr = XmlReader.Create(sr, settings);
 			return xs.Deserialize(xr);
 		} //DeserializeObject
 		
 		internal class UTF8StringWriter : StringWriter
 		{
-			public override Encoding Encoding
-			{
-				get
-				{
-					return Encoding.UTF8;
-				}
-			}
+			public override Encoding Encoding => Encoding.UTF8;
 		}
 		
 #endregion

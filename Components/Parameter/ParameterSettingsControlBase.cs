@@ -9,14 +9,9 @@ namespace DNNStuff.SQLViewPro.Controls
 		public abstract void LoadSettings(string settings);
 		public abstract string UpdateSettings();
 		protected abstract string LocalResourceFile {get;}
-		public virtual bool CaptionRequired
-		{
-			get
-			{
-				return true;
-			}
-		}
-#endregion
+		public virtual bool CaptionRequired => true;
+
+	    #endregion
 		
 		protected void Page_Load(object sender, System.EventArgs e)
 		{
@@ -29,13 +24,13 @@ namespace DNNStuff.SQLViewPro.Controls
 			{
 				if ((c) is DotNetNuke.UI.UserControls.LabelControl)
 				{
-					DotNetNuke.UI.UserControls.LabelControl label = (DotNetNuke.UI.UserControls.LabelControl) c;
-					string labelText = (string) (DotNetNuke.Services.Localization.Localization.GetString(label.ID + ".Text", LocalResourceFile));
+					var label = (DotNetNuke.UI.UserControls.LabelControl) c;
+					var labelText = (string) (DotNetNuke.Services.Localization.Localization.GetString(label.ID + ".Text", LocalResourceFile));
 					if (labelText == null)
 					{
 						labelText = label.ID.Replace("lbl", "");
 					}
-					string helpText = (string) (DotNetNuke.Services.Localization.Localization.GetString(label.ID + ".Help", LocalResourceFile));
+					var helpText = (string) (DotNetNuke.Services.Localization.Localization.GetString(label.ID + ".Help", LocalResourceFile));
 					if (helpText == null)
 					{
 						helpText = "Help not available for " + labelText;

@@ -9,13 +9,8 @@ namespace DNNStuff.SQLViewPro.Controls
 #region Public Methods
 		public ParameterInfo Settings {get; set;}
 		public PortalSettings PortalSettings {get; set;}
-		/// <summary>
-		/// Retrieves a unique string based on the given key
-		/// </summary>
-		/// <param name="key"></param>
-		/// <returns></returns>
-		/// <remarks></remarks>
-		public string Unique(string key)
+
+        public string Unique(string key)
 		{
 			return key + "_" + Settings.ParameterId.ToString();
 		}
@@ -24,27 +19,15 @@ namespace DNNStuff.SQLViewPro.Controls
 #region Abstract Methods
 		
 		public abstract List<string> Values {get; set;}
-		public virtual bool MultiValued
-		{
-			get
-			{
-				return false;
-			}
-		}
-		public abstract void LoadRuntimeSettings();
-		public virtual System.Collections.Specialized.StringDictionary ExtraValues
-		{
-			get
-			{
-				return null;
-			}
-		}
+		public virtual bool MultiValued => false;
+	    public abstract void LoadRuntimeSettings();
+		public virtual System.Collections.Specialized.StringDictionary ExtraValues => null;
 
-        #endregion
+	    #endregion
 
         #region Events
         // events
-        public event ParameterControlBase.OnRunEventHandler OnRun;
+        public event OnRunEventHandler OnRun;
         public delegate void OnRunEventHandler(object o);
 
         protected void Run(ParameterControlBase o)

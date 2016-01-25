@@ -13,7 +13,7 @@ using DotNetNuke.Common.Utilities;
 		{
 			public static string GetFilenameFromFileId(string fileId)
 			{
-				DotNetNuke.Services.FileSystem.IFileInfo fi = DotNetNuke.Services.FileSystem.FileManager.Instance.GetFile(Convert.ToInt32(UrlUtils.GetParameterValue(fileId)));
+				var fi = DotNetNuke.Services.FileSystem.FileManager.Instance.GetFile(Convert.ToInt32(UrlUtils.GetParameterValue(fileId)));
 			if (fi != null)
 			{
 				return fi.PhysicalPath;

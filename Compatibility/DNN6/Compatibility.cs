@@ -13,15 +13,15 @@ namespace DNNStuff.SQLViewPro
 		// this module will provide compatibility between DNN versions
 		public static string ReplaceGenericTokens(string text)
 		{
-			string ret = text;
-			DotNetNuke.Services.Tokens.TokenReplace objTokenReplace = new DotNetNuke.Services.Tokens.TokenReplace();
+			var ret = text;
+			var objTokenReplace = new DotNetNuke.Services.Tokens.TokenReplace();
 			ret = (string) (objTokenReplace.ReplaceEnvironmentTokens(ret));
 			return ret;
 		}
 		
 		public static string ReplaceGenericTokensForTest(string text)
 		{
-			string ret = text;
+			var ret = text;
 			
 			// replace tokens that aren't available
 			ret = Regex.Replace(ret, "\\[QUERYSTRING:.*?\\]", "1", RegexOptions.IgnoreCase);
@@ -31,7 +31,7 @@ namespace DNNStuff.SQLViewPro
 			// replace rest of parameters
 			ret = Regex.Replace(ret, "\\[PARAMETER:.*?\\]", "1", RegexOptions.IgnoreCase);
 			
-			DotNetNuke.Services.Tokens.TokenReplace objTokenReplace = new DotNetNuke.Services.Tokens.TokenReplace();
+			var objTokenReplace = new DotNetNuke.Services.Tokens.TokenReplace();
 			ret = (string) (objTokenReplace.ReplaceEnvironmentTokens(ret));
 			
 			return ret;

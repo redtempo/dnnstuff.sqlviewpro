@@ -13,7 +13,7 @@ public class StringHelpers
 #region  Strings
 	public static string Wordify(string pascalCaseString)
 	{
-		Regex r = new Regex("(?<=[a-z])(?<x>[A-Z])|(?<=.)(?<x>[A-Z])(?=[a-z])");
+		var r = new Regex("(?<=[a-z])(?<x>[A-Z])|(?<=.)(?<x>[A-Z])(?=[a-z])");
 		return r.Replace(pascalCaseString, " ${x}");
 	}
 	
@@ -24,13 +24,13 @@ public class StringHelpers
 	
 	public static string XmlEncode(string buf)
 	{
-		StringBuilder textOut = new StringBuilder();
-		char c = default(char);
+		var textOut = new StringBuilder();
+		var c = default(char);
 		if (buf.Trim() == null || buf == string.Empty)
 		{
 			return string.Empty;
 		}
-		for (int i = 0; i <= buf.Length - 1; i++)
+		for (var i = 0; i <= buf.Length - 1; i++)
 		{
 			c = buf[i];
 			if (Entities.ContainsKey(c))
@@ -59,7 +59,7 @@ public class StringHelpers
 	
 	public static int DefaultInt32FromString(string s, int @default)
 	{
-		int result = default(int);
+		var result = default(int);
 		if (int.TryParse(s, out result))
 		{
 			return result;
@@ -72,7 +72,7 @@ public class StringHelpers
 		
 		const string strBadChars = ". ~`!@#$%^&*()-_+={[}]|\\:;<,>?/" + "\u0022" + "\u0027";
 		
-		int intCounter = default(int);
+		var intCounter = default(int);
 		for (intCounter = 0; intCounter <= strBadChars.Length - 1; intCounter++)
 		{
 			name = name.Replace(strBadChars.Substring(intCounter, 1), "");
@@ -84,7 +84,7 @@ public class StringHelpers
 	
 	public static string FindNthField(string s, char separator, int position)
 	{
-		string[] splits = s.Split(separator);
+		var splits = s.Split(separator);
 		if (splits.Length < position)
 		{
 			return null;
@@ -94,16 +94,16 @@ public class StringHelpers
 	
 	public static string FindLastField(string s, char separator)
 	{
-		string[] splits = s.Split(separator);
+		var splits = s.Split(separator);
 		return FindNthField(s, separator, splits.Length);
 	}
 	
 	public static Dictionary<string, string> ToDictionary(string s, char separator)
 	{
-		Dictionary<string, string> d = new Dictionary<string, string>();
-		foreach (string temp in s.Split(separator))
+		var d = new Dictionary<string, string>();
+		foreach (var temp in s.Split(separator))
 		{
-			int index = temp.IndexOf('=');
+			var index = temp.IndexOf('=');
 			if (index > -1)
 			{
 				d.Add(temp.Substring(0, index), temp.Substring(index + 1));

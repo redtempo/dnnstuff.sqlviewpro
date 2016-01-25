@@ -102,7 +102,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		{
 			var ds = ReportData();
 			var details = new ExportDetails();
-			details.Dataset = ds;
+			details.Data = ds;
 			details.Filename = (string) (Globals.CleanFileName(Report.ReportName + ".xls"));
 			Session[Export.EXPORT_KEY] = details;
 			Controls.Add(new LiteralControl(string.Format("<iframe style=\'display:none\' scrolling=\'auto\' src=\'{0}?ModuleId={1}&TabId={2}\'></iframe>", ResolveUrl("~/DesktopModules/DNNStuff - SQLViewPro/Export.aspx"), State.ModuleId, State.TabId)));

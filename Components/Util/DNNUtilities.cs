@@ -13,7 +13,7 @@ namespace DNNStuff.SQLViewPro
 	{
 		public static string GetSetting(Hashtable settings, string key, string @default = "")
 		{
-			string ret = default(string);
+			var ret = default(string);
 			
 			if (settings.ContainsKey(key))
 			{
@@ -62,7 +62,7 @@ namespace DNNStuff.SQLViewPro
 		{
 			
 			// page style sheet reference
-			Control objCSS = pg.FindControl("CSS");
+			var objCSS = pg.FindControl("CSS");
 			if (objCSS == null)
 			{
 				// DNN 4 doesn't have CSS control any more, look for Head
@@ -72,13 +72,13 @@ namespace DNNStuff.SQLViewPro
 			// container stylesheet
 			if (objCSS != null)
 			{
-				string CSSId = (string) (DotNetNuke.Common.Globals.CreateValidID(fileName));
+				var CSSId = (string) (DotNetNuke.Common.Globals.CreateValidID(fileName));
 				
 				// container package style sheet
 				if (objCSS.FindControl(CSSId) == null)
 				{
 					
-					HtmlGenericControl objLink = new HtmlGenericControl("link");
+					var objLink = new HtmlGenericControl("link");
 					objLink.ID = CSSId;
 					objLink.Attributes["rel"] = "stylesheet";
 					objLink.Attributes["type"] = "text/css";
@@ -103,7 +103,7 @@ namespace DNNStuff.SQLViewPro
 		/// <returns>true if it worked.</returns>
 		public static bool SafeDNNVersion(int major, int minor, int revision, int build)
 		{
-			Version ver = System.Reflection.Assembly.GetAssembly(typeof(DotNetNuke.Common.Globals)).GetName().Version;
+			var ver = System.Reflection.Assembly.GetAssembly(typeof(DotNetNuke.Common.Globals)).GetName().Version;
 			if (ver != null)
 			{
 				major = ver.Major;
@@ -124,7 +124,7 @@ namespace DNNStuff.SQLViewPro
 		
 		public static Version SafeDNNVersion()
 		{
-			Version ver = System.Reflection.Assembly.GetAssembly(typeof(DotNetNuke.Common.Globals)).GetName().Version;
+			var ver = System.Reflection.Assembly.GetAssembly(typeof(DotNetNuke.Common.Globals)).GetName().Version;
 			if (ver != null)
 			{
 				return ver;

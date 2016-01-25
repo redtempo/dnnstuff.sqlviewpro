@@ -38,7 +38,7 @@ namespace DNNStuff.SQLViewPro.Controls
 		{
 			get
 			{
-				string s = Report.ReportCommand;
+				var s = Report.ReportCommand;
 				if (s != "")
 				{
 					s = ReplaceReportTokens(s);
@@ -89,7 +89,7 @@ namespace DNNStuff.SQLViewPro.Controls
 		
 		public virtual string RenderHeaderAsText()
 		{
-			StringBuilder s = new StringBuilder();
+			var s = new StringBuilder();
 			if (Report.ReportHeaderText.Length > 0)
 			{
 				s.AppendFormat("<div class=\"{0}_Header\">{1}</div>", Report.ReportTheme, ReplaceReportTokens(Report.ReportHeaderText));
@@ -99,7 +99,7 @@ namespace DNNStuff.SQLViewPro.Controls
 		
 		public virtual string RenderFooterAsText()
 		{
-			StringBuilder s = new StringBuilder();
+			var s = new StringBuilder();
 			if (Report.ReportFooterText.Length > 0)
 			{
 				s.AppendFormat("<div class=\"{0}_Footer\">{1}</div>", Report.ReportTheme, ReplaceReportTokens(Report.ReportFooterText));
@@ -112,7 +112,7 @@ namespace DNNStuff.SQLViewPro.Controls
 			if (Report.ReportNoItemsText.Length > 0)
 			{
 				// No Items
-				System.Web.UI.HtmlControls.HtmlGenericControl ctrl = new System.Web.UI.HtmlControls.HtmlGenericControl("div");
+				var ctrl = new System.Web.UI.HtmlControls.HtmlGenericControl("div");
 				ctrl.InnerHtml = ReplaceReportTokens(Report.ReportNoItemsText);
 				ctrl.Attributes.Add("class", Report.ReportTheme + "_NoItems");
 				Controls.Add(ctrl);
@@ -132,7 +132,7 @@ namespace DNNStuff.SQLViewPro.Controls
 #region Events
         protected void DrillDown(ReportControlBase o, DrilldownEventArgs e)
         {
-            OnDrillDownEventHandler onDrillDownEventHandler = OnDrillDown;
+            var onDrillDownEventHandler = OnDrillDown;
             if (onDrillDownEventHandler != null)
             {
                 onDrillDownEventHandler(o, e);
@@ -140,10 +140,10 @@ namespace DNNStuff.SQLViewPro.Controls
         }
         private void Page_Init(object sender, System.EventArgs e)
 		{
-			string postbackControlId = "";
+			var postbackControlId = "";
 			if (Page.IsPostBack)
 			{
-				Control postbackControl = ControlHelpers.GetPostBackControl(Page);
+				var postbackControl = ControlHelpers.GetPostBackControl(Page);
 				if (postbackControl != null)
 				{
 					postbackControlId = postbackControl.ID;
@@ -154,13 +154,13 @@ namespace DNNStuff.SQLViewPro.Controls
 			{
 				if (Report.ReportPageTitle != "")
 				{
-					DotNetNuke.Framework.CDefault thisPage = (DotNetNuke.Framework.CDefault) Page;
+					var thisPage = (DotNetNuke.Framework.CDefault) Page;
 					thisPage.Title = RenderPageTitleAsText();
 				}
 				if (Report.ReportMetaDescription != "")
 				{
-					DotNetNuke.Framework.CDefault thisPage = (DotNetNuke.Framework.CDefault) Page;
-					string meta = RenderMetaDescriptionAsText();
+					var thisPage = (DotNetNuke.Framework.CDefault) Page;
+					var meta = RenderMetaDescriptionAsText();
 					if (meta.Contains("<meta"))
 					{
 						thisPage.Header.Controls.Add(new LiteralControl(meta));
@@ -196,11 +196,11 @@ namespace DNNStuff.SQLViewPro.Controls
 			if (_reportTokens == null)
 			{
 				_reportTokens = (Hashtable) (new Hashtable());
-				string fullScreenParameters = "";
+				var fullScreenParameters = "";
 				// now do parameters
 				foreach (ParameterInfo param in State.Parameters)
 				{
-					string tokenValue = "";
+					var tokenValue = "";
 					if (param.Values != null)
 					{
 						if (param.MultiValued)
@@ -249,7 +249,7 @@ namespace DNNStuff.SQLViewPro.Controls
 		
 		private string RenderDebugAsText(string info)
 		{
-			StringBuilder s = new StringBuilder();
+			var s = new StringBuilder();
 			if (info.Length > 0)
 			{
 				s.AppendFormat("<div class=\"{0}_Debug\">{1}</div>", Report.ReportTheme, info);

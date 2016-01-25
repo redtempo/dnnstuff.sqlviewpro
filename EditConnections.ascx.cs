@@ -49,7 +49,7 @@ namespace DNNStuff.SQLViewPro
 		// connection
 		private void DeleteConnection(int ConnectionId)
 		{
-			ConnectionController objConnectionController = new ConnectionController();
+			var objConnectionController = new ConnectionController();
 			objConnectionController.DeleteConnection(ConnectionId);
 		}
 		
@@ -57,8 +57,8 @@ namespace DNNStuff.SQLViewPro
 		{
 			Localization.LocalizeDataGrid(ref dgConnection, LocalResourceFile);
 			
-			ArrayList objConnectionList = default(ArrayList);
-			ConnectionController objConnectionController = new ConnectionController();
+			var objConnectionList = default(ArrayList);
+			var objConnectionController = new ConnectionController();
 			
 			objConnectionList = objConnectionController.ListConnection(PortalId, false, false);
 			
@@ -92,7 +92,7 @@ namespace DNNStuff.SQLViewPro
 		
 		protected void dgConnection_ItemCommand(object source, DataGridCommandEventArgs e)
 		{
-			int ConnectionId = int.Parse(dgConnection.DataKeys[e.Item.ItemIndex].ToString());
+			var ConnectionId = int.Parse(dgConnection.DataKeys[e.Item.ItemIndex].ToString());
 			switch (e.CommandName.ToLower())
 			{
 				case "edit":
@@ -112,7 +112,7 @@ namespace DNNStuff.SQLViewPro
 			{
 				// get a reference to the LinkButton of this row,
 				//  and add the javascript confirmation
-				LinkButton lnkDelete = (LinkButton) (e.Item.FindControl("cmdDeleteConnection"));
+				var lnkDelete = (LinkButton) (e.Item.FindControl("cmdDeleteConnection"));
 				if (lnkDelete != null)
 				{
 					if (lnkDelete.Enabled)

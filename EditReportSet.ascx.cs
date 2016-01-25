@@ -96,8 +96,8 @@ namespace DNNStuff.SQLViewPro
 #region  Data ReportSet
 		private void LoadReportSet()
 		{
-			ReportSetController objReportSetController = new ReportSetController();
-			ReportSetInfo objReportSet = objReportSetController.GetReportSet(ReportSetId);
+			var objReportSetController = new ReportSetController();
+			var objReportSet = objReportSetController.GetReportSet(ReportSetId);
 			
 			if (objReportSet == null)
 			{
@@ -109,7 +109,7 @@ namespace DNNStuff.SQLViewPro
 			
 			txtName.Text = objReportSet.ReportSetName;
 			
-			ListItem item = cboSkin.Items.FindByValue(objReportSet.ReportSetTheme);
+			var item = cboSkin.Items.FindByValue(objReportSet.ReportSetTheme);
 			if (item != null)
 			{
 				item.Selected = true;
@@ -140,17 +140,17 @@ namespace DNNStuff.SQLViewPro
 		
 		private void SaveReportSet()
 		{
-			ReportSetController objReportSetController = new ReportSetController();
-			ReportSetConfig obj = new ReportSetConfig();
+			var objReportSetController = new ReportSetController();
+			var obj = new ReportSetConfig();
 			ReportSetId = objReportSetController.UpdateReportSet(ModuleId, ReportSetId, txtName.Text, cboSkin.SelectedItem.Value, System.Convert.ToInt32(cpConnection.ConnectionId), txtHeader.Text, txtFooter.Text, chkDebug.Checked, txtRunCaption.Text, txtBackCaption.Text, txtParameterLayout.Text, chkAlwaysShowParameters.Checked, ddlRenderMode.SelectedValue, chkAutoRun.Checked, Serialization.SerializeObject(obj, typeof(ReportSetConfig)));
 		}
 		
 		private void BindSkinFolder(ListControl o)
 		{
-			System.IO.DirectoryInfo skinFolder = new System.IO.DirectoryInfo((string) (Server.MapPath(ResolveUrl("Skins"))));
+			var skinFolder = new System.IO.DirectoryInfo((string) (Server.MapPath(ResolveUrl("Skins"))));
 			o.Items.Clear();
 			o.Items.Add(new ListItem("None", "None"));
-			foreach (System.IO.DirectoryInfo folder in skinFolder.GetDirectories())
+			foreach (var folder in skinFolder.GetDirectories())
 			{
 				o.Items.Add(folder.Name);
 			}
@@ -162,20 +162,20 @@ namespace DNNStuff.SQLViewPro
 		// report
 		private void DeleteReport(int ReportId)
 		{
-			ReportController objReportController = new ReportController();
+			var objReportController = new ReportController();
 			objReportController.DeleteReport(ReportId);
 		}
 		
 		private void MoveReport(int ReportId, int Increment)
 		{
-			ReportController objReportController = new ReportController();
+			var objReportController = new ReportController();
 			objReportController.UpdateReportOrder(ReportId, Increment);
 		}
 		
 		private void CopyReport(int ReportId)
 		{
-			ReportController objReportController = new ReportController();
-			ReportInfo objReport = objReportController.GetReport(ReportId);
+			var objReportController = new ReportController();
+			var objReport = objReportController.GetReport(ReportId);
 			objReportController.UpdateReport(ReportSetId, -1, objReport.ReportTypeId, "Copy of " + objReport.ReportName, objReport.ReportTheme, objReport.ReportConnectionId, objReport.ReportHeaderText, objReport.ReportFooterText, objReport.ReportCommand, objReport.ReportConfig, -1, objReport.ReportDrilldownReportId, objReport.ReportDrilldownFieldname, objReport.ReportNoItemsText, objReport.ReportPageTitle, objReport.ReportCommandCacheTimeout, objReport.ReportMetaDescription, objReport.ReportCommandCacheScheme);
 			
 		}
@@ -185,8 +185,8 @@ namespace DNNStuff.SQLViewPro
 			
 			Localization.LocalizeDataGrid(ref dgReport, LocalResourceFile);
 			
-			ArrayList objReportList = default(ArrayList);
-			ReportSetController objReportSetController = new ReportSetController();
+			var objReportList = default(ArrayList);
+			var objReportSetController = new ReportSetController();
 			
 			objReportList = objReportSetController.GetReportSetReport(ReportSetId);
 			// save Report count
@@ -205,21 +205,21 @@ namespace DNNStuff.SQLViewPro
 #region  Data Parameter
 		private void DeleteParameter(int ParameterId)
 		{
-			ParameterController objParameterController = new ParameterController();
+			var objParameterController = new ParameterController();
 			objParameterController.DeleteParameter(ParameterId);
 		}
 		
 		private void MoveParameter(int ParameterId, int Increment)
 		{
-			ParameterController objParameterController = new ParameterController();
+			var objParameterController = new ParameterController();
 			objParameterController.UpdateParameterOrder(ParameterId, Increment);
 		}
 		
 		private void CopyParameter(int ParameterId)
 		{
-			ParameterController objParameterController = new ParameterController();
-			ParameterInfo objParameter = objParameterController.GetParameter(ParameterId);
-			int NewParameterId = 0;
+			var objParameterController = new ParameterController();
+			var objParameter = objParameterController.GetParameter(ParameterId);
+			var NewParameterId = 0;
 			NewParameterId = objParameterController.UpdateParameter(ReportSetId, -1, "Copy of " + objParameter.ParameterName, objParameter.ParameterCaption, objParameter.ParameterTypeId, objParameter.ParameterConfig, -1);
 			
 		}
@@ -228,8 +228,8 @@ namespace DNNStuff.SQLViewPro
 			
 			Localization.LocalizeDataGrid(ref dgParameter, LocalResourceFile);
 			
-			ArrayList objParameterList = default(ArrayList);
-			ReportSetController objReportSetController = new ReportSetController();
+			var objParameterList = default(ArrayList);
+			var objReportSetController = new ReportSetController();
 			
 			objParameterList = objReportSetController.GetReportSetParameter(ReportSetId);
 			// save parameter count
@@ -295,7 +295,7 @@ namespace DNNStuff.SQLViewPro
 		
 		protected void dgReport_ItemCommand(object source, DataGridCommandEventArgs e)
 		{
-			int ReportId = int.Parse(dgReport.DataKeys[e.Item.ItemIndex].ToString());
+			var ReportId = int.Parse(dgReport.DataKeys[e.Item.ItemIndex].ToString());
 			switch (e.CommandName.ToLower())
 			{
 				case "edit":
@@ -327,7 +327,7 @@ namespace DNNStuff.SQLViewPro
 			{
 				// get a reference to the LinkButton of this row,
 				//  and add the javascript confirmation
-				LinkButton lnkDelete = (LinkButton) (e.Item.FindControl("cmdDeleteReport"));
+				var lnkDelete = (LinkButton) (e.Item.FindControl("cmdDeleteReport"));
 				if (lnkDelete != null)
 				{
 					lnkDelete.Attributes.Add("onclick", "return confirm(\'Are you sure you want to delete this report?\');");
@@ -337,7 +337,7 @@ namespace DNNStuff.SQLViewPro
 		
 		protected void dgReport_ItemDataBound(object sender, DataGridItemEventArgs e)
 		{
-			ImageButton ib = default(ImageButton);
+			var ib = default(ImageButton);
 			if (e.Item.ItemType == ListItemType.Item | e.Item.ItemType == ListItemType.AlternatingItem)
 			{
 				if (e.Item.ItemIndex == 0)
@@ -373,7 +373,7 @@ namespace DNNStuff.SQLViewPro
 		
 		protected void dgParameter_ItemCommand(object source, DataGridCommandEventArgs e)
 		{
-			int ParameterId = int.Parse(dgParameter.DataKeys[e.Item.ItemIndex].ToString());
+			var ParameterId = int.Parse(dgParameter.DataKeys[e.Item.ItemIndex].ToString());
 			switch (e.CommandName.ToLower())
 			{
 				case "edit":
@@ -405,7 +405,7 @@ namespace DNNStuff.SQLViewPro
 			{
 				// get a reference to the LinkButton of this row,
 				//  and add the javascript confirmation
-				LinkButton lnkDelete = (LinkButton) (e.Item.FindControl("cmdDeleteParameter"));
+				var lnkDelete = (LinkButton) (e.Item.FindControl("cmdDeleteParameter"));
 				if (lnkDelete != null)
 				{
 					lnkDelete.Attributes.Add("onclick", "return confirm(\'Are you sure you want to delete this parameter?\');");
@@ -416,7 +416,7 @@ namespace DNNStuff.SQLViewPro
 		
 		protected void dgParameter_ItemDataBound(object sender, DataGridItemEventArgs e)
 		{
-			ImageButton ib = default(ImageButton);
+			var ib = default(ImageButton);
 			if (e.Item.ItemType == ListItemType.Item | e.Item.ItemType == ListItemType.AlternatingItem)
 			{
 				if (e.Item.ItemIndex == 0)

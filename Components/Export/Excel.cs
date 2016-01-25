@@ -33,15 +33,15 @@ namespace DNNStuff.SQLViewPro.Services.Export
 			response.ExpiresAbsolute = DateTime.Now.AddYears(-1);
 			
 			//header/footer to support UTF-8 characters
-			string header = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">" + Constants.vbLf + "<html xmlns=\"http://www.w3.org/1999/xhtml\">" + Constants.vbLf + "<head>" + Constants.vbLf + "<title></title>" + Constants.vbLf + "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" + Constants.vbLf + "<style>" + Constants.vbLf + "</style>" + Constants.vbLf + "</head>" + Constants.vbLf + "<body>" + Constants.vbLf;
-			string footer = Constants.vbLf + "</body>" + Constants.vbLf + "</html>";
+			var header = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">" + Constants.vbLf + "<html xmlns=\"http://www.w3.org/1999/xhtml\">" + Constants.vbLf + "<head>" + Constants.vbLf + "<title></title>" + Constants.vbLf + "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" + Constants.vbLf + "<style>" + Constants.vbLf + "</style>" + Constants.vbLf + "</head>" + Constants.vbLf + "<body>" + Constants.vbLf;
+			var footer = Constants.vbLf + "</body>" + Constants.vbLf + "</html>";
 			
 			response.Write(header);
 			
 			//create an htmltextwriter which uses the stringwriter
-			System.Web.UI.HtmlTextWriter htmlWrite = new System.Web.UI.HtmlTextWriter(response.Output);
+			var htmlWrite = new System.Web.UI.HtmlTextWriter(response.Output);
 			//instantiate a datagrid
-			System.Web.UI.WebControls.DataGrid dg = new System.Web.UI.WebControls.DataGrid();
+			var dg = new System.Web.UI.WebControls.DataGrid();
 			//set the datagrid datasource to the dataset passed in
 			dg.DataSource = dt;
 			//bind the datagrid

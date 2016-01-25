@@ -31,9 +31,9 @@ namespace DNNStuff
 			}
 			
 			// *** Start by fixing up the Url an Application relative Url
-			string newUrl = ResolveUrl(serverUrl);
+			var newUrl = ResolveUrl(serverUrl);
 			
-			Uri originalUri = HttpContext.Current.Request.Url;
+			var originalUri = HttpContext.Current.Request.Url;
 			newUrl = ((forceHttps ? "https" : originalUri.Scheme) ) + "://" + originalUri.Authority + newUrl;
 			return newUrl;
 			
@@ -82,7 +82,7 @@ namespace DNNStuff
 			// *** Fix up image path for ~ root app dir directory
 			if (originalUrl.StartsWith("~"))
 			{
-				string newUrl = "";
+				var newUrl = "";
 				
 				if (HttpContext.Current != null)
 				{
@@ -105,11 +105,11 @@ namespace DNNStuff
 		
 		public static string ReplaceQueryStringParam(string currentPageUrl, string paramToReplace, string newValue)
 		{
-			string urlWithoutQuery = Convert.ToString((currentPageUrl.IndexOf('?') >= 0) ? (currentPageUrl.Substring(0, currentPageUrl.IndexOf('?'))) : currentPageUrl);
+			var urlWithoutQuery = Convert.ToString((currentPageUrl.IndexOf('?') >= 0) ? (currentPageUrl.Substring(0, currentPageUrl.IndexOf('?'))) : currentPageUrl);
 			
-			string queryString = Convert.ToString((currentPageUrl.IndexOf('?') >= 0) ? (currentPageUrl.Substring(currentPageUrl.IndexOf('?'))) : null);
+			var queryString = Convert.ToString((currentPageUrl.IndexOf('?') >= 0) ? (currentPageUrl.Substring(currentPageUrl.IndexOf('?'))) : null);
 			
-			System.Collections.Specialized.NameValueCollection queryParamList = queryString != null ? (HttpUtility.ParseQueryString(queryString)) : (HttpUtility.ParseQueryString(string.Empty));
+			var queryParamList = queryString != null ? (HttpUtility.ParseQueryString(queryString)) : (HttpUtility.ParseQueryString(string.Empty));
 			
 			if (queryParamList[paramToReplace] != null)
 			{

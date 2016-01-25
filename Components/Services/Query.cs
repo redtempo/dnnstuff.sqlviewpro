@@ -21,10 +21,10 @@ using DotNetNuke.Common.Utilities;
 		
 		public static DataSet RetrieveData(string queryText, string connectionString, string dataSetName, string srcTable, int cacheTimeout, string cacheScheme)
 		{
-			DataSet results = default(DataSet);
+			var results = default(DataSet);
 			
 			// try cache first
-			string cacheKey = (string) ("SQLViewPro_Data_" + (queryText.GetHashCode()).ToString());
+			var cacheKey = (string) ("SQLViewPro_Data_" + (queryText.GetHashCode()).ToString());
 			if (cacheTimeout > 0)
 			{
 				results = DataCache.GetCache(cacheKey) as DataSet;
@@ -47,12 +47,12 @@ using DotNetNuke.Common.Utilities;
 			}
 			else
 			{
-				using (System.Data.OleDb.OleDbConnection cn = new System.Data.OleDb.OleDbConnection(connectionString))
+				using (var cn = new System.Data.OleDb.OleDbConnection(connectionString))
 				{
-					using (System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(queryText, cn))
+					using (var cmd = new System.Data.OleDb.OleDbCommand(queryText, cn))
 					{
 						cmd.CommandTimeout = 0;
-						System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(cmd);
+						var da = new System.Data.OleDb.OleDbDataAdapter(cmd);
 						cn.Open();
 						results = new DataSet(dataSetName);
 						da.Fill(results, srcTable);
@@ -80,18 +80,18 @@ using DotNetNuke.Common.Utilities;
 		
 		public static void TestConnection(string connectionString)
 		{
-			System.Data.OleDb.OleDbConnection cn = new System.Data.OleDb.OleDbConnection(connectionString);
+			var cn = new System.Data.OleDb.OleDbConnection(connectionString);
 			cn.Open();
 		}
 		
 		public static bool IsQueryValid(string queryText, string connectionString, ref string errorMessage)
 		{
-			string sharedResourceFile = DotNetNuke.Common.Globals.ApplicationPath + "/DesktopModules/DNNStuff - SQLViewPro/App_LocalResources/SharedResources.resx";
+			var sharedResourceFile = DotNetNuke.Common.Globals.ApplicationPath + "/DesktopModules/DNNStuff - SQLViewPro/App_LocalResources/SharedResources.resx";
 			
 			// valid query and return appropriate error message
-			string msg = "";
-			bool queryValid = true;
-			bool catchwordsPassed = true;
+			var msg = "";
+			var queryValid = true;
+			var catchwordsPassed = true;
 			
 			// check for valid query
 			try

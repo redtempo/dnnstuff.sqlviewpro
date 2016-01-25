@@ -92,8 +92,8 @@ namespace DNNStuff.SQLViewPro
 #region  Data
 		private void InitReport()
 		{
-			ReportController objReportController = new ReportController();
-			ReportInfo objReport = objReportController.GetReport(ReportId);
+			var objReportController = new ReportController();
+			var objReport = objReportController.GetReport(ReportId);
 			
 			// load from database
 			if (objReport == null)
@@ -110,7 +110,7 @@ namespace DNNStuff.SQLViewPro
 			
 			txtName.Text = Report.ReportName;
 			
-			ListItem li = cboSkin.Items.FindByValue(Report.ReportTheme);
+			var li = cboSkin.Items.FindByValue(Report.ReportTheme);
 			if (li != null)
 			{
 				li.Selected = true;
@@ -170,11 +170,11 @@ namespace DNNStuff.SQLViewPro
 		}
 		private void BindSkinFolder(ListControl o)
 		{
-			System.IO.DirectoryInfo skinFolder = new System.IO.DirectoryInfo((string) (Server.MapPath(ResolveUrl("Skins"))));
+			var skinFolder = new System.IO.DirectoryInfo((string) (Server.MapPath(ResolveUrl("Skins"))));
 			o.Items.Clear();
 			o.Items.Add(new ListItem("Report Set Default", ""));
 			o.Items.Add(new ListItem("None", "None"));
-			foreach (System.IO.DirectoryInfo folder in skinFolder.GetDirectories())
+			foreach (var folder in skinFolder.GetDirectories())
 			{
 				o.Items.Add(folder.Name);
 			}
@@ -184,13 +184,13 @@ namespace DNNStuff.SQLViewPro
 		{
 			RetrieveReportSettings();
 			
-			ReportController objReportController = new ReportController();
+			var objReportController = new ReportController();
 			ReportId = objReportController.UpdateReport(ReportSetId, ReportId, ddReportType.SelectedValue, txtName.Text, cboSkin.SelectedItem.Value, Convert.ToInt32(cpConnection.ConnectionId), txtHeader.Text, txtFooter.Text, txtQuery.Text, ReportConfig, -1, Convert.ToInt32(ddDrilldownReportId.SelectedValue), txtDrilldownFieldname.Text, txtNoItems.Text, txtPageTitle.Text, Convert.ToInt32(txtCommandCacheTimeout.Text), txtMetaDescription.Text, ddCommandCacheScheme.SelectedValue);
 		}
 		
 		private void BindReportType()
 		{
-			ReportTypeController objReportTypeController = new ReportTypeController();
+			var objReportTypeController = new ReportTypeController();
 			ddReportType.DataTextField = "ReportTypeName";
 			ddReportType.DataValueField = "ReportTypeId";
 			ddReportType.DataSource = objReportTypeController.ListReportType();
@@ -199,8 +199,8 @@ namespace DNNStuff.SQLViewPro
 		
 		private void BindDrilldownReport()
 		{
-			ArrayList objReportList = default(ArrayList);
-			ReportSetController objReportSetController = new ReportSetController();
+			var objReportList = default(ArrayList);
+			var objReportSetController = new ReportSetController();
 			objReportList = objReportSetController.GetReportSetReport(ReportSetId);
 			
 			ddDrilldownReportId.DataValueField = "ReportId";
@@ -209,7 +209,7 @@ namespace DNNStuff.SQLViewPro
 			ddDrilldownReportId.DataBind();
 			
 			// add the default to the start of the list
-			ListItem li = new ListItem((string) (Localization.GetString("NoDrilldown.Text", LocalResourceFile)), "-1");
+			var li = new ListItem((string) (Localization.GetString("NoDrilldown.Text", LocalResourceFile)), "-1");
 			ddDrilldownReportId.Items.Insert(0, li);
 			
 			// remove this report
@@ -256,20 +256,20 @@ namespace DNNStuff.SQLViewPro
 		
 		private void RetrieveReportSettings()
 		{
-			Controls.ReportSettingsControlBase objReportSettings = (Controls.ReportSettingsControlBase) (phReportSettings.FindControl("ReportSettings"));
+			var objReportSettings = (Controls.ReportSettingsControlBase) (phReportSettings.FindControl("ReportSettings"));
 			
 			ReportConfig = (string) objReportSettings.UpdateSettings();
 			
 		}
 		private void RenderReportSettings()
 		{
-			string reportTypeId = ddReportType.SelectedValue;
+			var reportTypeId = ddReportType.SelectedValue;
 			
-			ReportTypeController objReportTypeController = new ReportTypeController();
+			var objReportTypeController = new ReportTypeController();
 			
-			ReportTypeInfo objReportType = objReportTypeController.GetReportType(reportTypeId);
+			var objReportType = objReportTypeController.GetReportType(reportTypeId);
 			
-			Controls.ReportSettingsControlBase objReportSettingsBase = default(Controls.ReportSettingsControlBase);
+			var objReportSettingsBase = default(Controls.ReportSettingsControlBase);
 			objReportSettingsBase = (Controls.ReportSettingsControlBase) (LoadControl(ResolveUrl(objReportType.ReportTypeSettingsControlSrc)));
 			
 			objReportSettingsBase.ID = "ReportSettings";
@@ -296,15 +296,15 @@ namespace DNNStuff.SQLViewPro
 #region  Validation
 		protected void vldQuery_ServerValidate(Object source, ServerValidateEventArgs args)
 		{
-			string msg = "";
+			var msg = "";
 			args.IsValid = Convert.ToBoolean(Services.Data.Query.IsQueryValid(txtQuery.Text, ConnectionController.GetConnectionString(Convert.ToInt32(cpConnection.ConnectionId), ReportSetId), ref msg));
 			vldQuery.ErrorMessage = msg;
 		}
 		
 		protected void cmdQueryTest_Click(object sender, EventArgs e)
 		{
-			string msg = "";
-			bool isValid = Convert.ToBoolean(Services.Data.Query.IsQueryValid(txtQuery.Text, ConnectionController.GetConnectionString(Convert.ToInt32(cpConnection.ConnectionId), ReportSetId), ref msg));
+			var msg = "";
+			var isValid = Convert.ToBoolean(Services.Data.Query.IsQueryValid(txtQuery.Text, ConnectionController.GetConnectionString(Convert.ToInt32(cpConnection.ConnectionId), ReportSetId), ref msg));
 			
 			lblQueryTestResults.Text = msg;
 			lblQueryTestResults.CssClass = "NormalGreen";

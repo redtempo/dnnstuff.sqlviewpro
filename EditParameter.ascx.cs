@@ -86,8 +86,8 @@ namespace DNNStuff.SQLViewPro
 #region  Data
 		private void InitParameter()
 		{
-			ParameterController objParameterController = new ParameterController();
-			ParameterInfo objParameter = objParameterController.GetParameter(ParameterId);
+			var objParameterController = new ParameterController();
+			var objParameter = objParameterController.GetParameter(ParameterId);
 			
 			// load from database
 			if (objParameter == null)
@@ -111,13 +111,13 @@ namespace DNNStuff.SQLViewPro
 		{
 			RetrieveParameterSettings();
 			
-			ParameterController objParameterController = new ParameterController();
+			var objParameterController = new ParameterController();
 			ParameterId = objParameterController.UpdateParameter(ReportSetId, ParameterId, txtName.Text, txtCaption.Text, ddParameterType.SelectedValue, ParameterConfig, -1);
 		}
 		
 		private void BindParameterType()
 		{
-			ParameterTypeController objParameterTypeController = new ParameterTypeController();
+			var objParameterTypeController = new ParameterTypeController();
 			ddParameterType.DataTextField = "ParameterTypeName";
 			ddParameterType.DataValueField = "ParameterTypeId";
 			ddParameterType.DataSource = objParameterTypeController.ListParameterType();
@@ -158,7 +158,7 @@ namespace DNNStuff.SQLViewPro
 		
 		private void RetrieveParameterSettings()
 		{
-			Controls.ParameterSettingsControlBase objParameterSettings = (Controls.ParameterSettingsControlBase) (phParameterSettings.FindControl("ParameterSettings"));
+			var objParameterSettings = (Controls.ParameterSettingsControlBase) (phParameterSettings.FindControl("ParameterSettings"));
 			
 			ParameterConfig = (string) objParameterSettings.UpdateSettings();
 			
@@ -166,13 +166,13 @@ namespace DNNStuff.SQLViewPro
 		
 		private void RenderParameterSettings()
 		{
-			string parameterTypeId = ddParameterType.SelectedValue;
+			var parameterTypeId = ddParameterType.SelectedValue;
 			
-			ParameterTypeController objParameterTypeController = new ParameterTypeController();
+			var objParameterTypeController = new ParameterTypeController();
 			
-			ParameterTypeInfo objParameterType = objParameterTypeController.GetParameterType(parameterTypeId);
+			var objParameterType = objParameterTypeController.GetParameterType(parameterTypeId);
 			
-			Controls.ParameterSettingsControlBase objParameterSettingsBase = default(Controls.ParameterSettingsControlBase);
+			var objParameterSettingsBase = default(Controls.ParameterSettingsControlBase);
 			objParameterSettingsBase = (Controls.ParameterSettingsControlBase) (LoadControl(ResolveUrl(objParameterType.ParameterTypeSettingsControlSrc)));
 			
 			objParameterSettingsBase.ID = "ParameterSettings";

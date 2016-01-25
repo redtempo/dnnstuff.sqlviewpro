@@ -15,7 +15,7 @@ namespace DNNStuff.SQLViewPro.Services.Data
 		
 		public static string ReplaceTokens(string text, Hashtable settings = null, DataSet ds = null)
 		{
-			Hashtable sharedSettings = default(Hashtable);
+			var sharedSettings = default(Hashtable);
 			
 			// make a copy of settings
 			if (settings == null)
@@ -28,8 +28,8 @@ namespace DNNStuff.SQLViewPro.Services.Data
 			}
 			
 			// add querystring values
-			System.Collections.Specialized.NameValueCollection qs = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.QueryString); // create a copy, some weird errors happening with url rewriters
-			object keyval = default(object);
+			var qs = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.QueryString); // create a copy, some weird errors happening with url rewriters
+			var keyval = default(object);
 			foreach (string key in qs.Keys)
 			{
 				keyval = qs[key];
@@ -41,7 +41,7 @@ namespace DNNStuff.SQLViewPro.Services.Data
 			}
 			
 			// add server variables
-			System.Collections.Specialized.NameValueCollection sv = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.ServerVariables); // create a copy
+			var sv = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.ServerVariables); // create a copy
 			foreach (string key in sv.Keys)
 			{
 				keyval = sv[key];
@@ -53,7 +53,7 @@ namespace DNNStuff.SQLViewPro.Services.Data
 			}
 			
 			// add form variables
-			System.Collections.Specialized.NameValueCollection fv = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.Form); // create a copy
+			var fv = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.Form); // create a copy
 			foreach (string key in fv.Keys)
 			{
 				keyval = fv[key];
@@ -67,16 +67,16 @@ namespace DNNStuff.SQLViewPro.Services.Data
 			// do dataset replacements (if necessary)
 			if (ds != null)
 			{
-				Utilities.RegularExpression.DataSetTokenReplacement dataReplacer = new Utilities.RegularExpression.DataSetTokenReplacement(ds);
+				var dataReplacer = new Utilities.RegularExpression.DataSetTokenReplacement(ds);
 				text = (string) (dataReplacer.Replace(text));
 			}
 			
 			// do logic replacements
-			Utilities.RegularExpression.IfDefinedTokenReplacement logicReplacer = new Utilities.RegularExpression.IfDefinedTokenReplacement(sharedSettings);
+			var logicReplacer = new Utilities.RegularExpression.IfDefinedTokenReplacement(sharedSettings);
 			text = (string) (logicReplacer.Replace(text));
 			
 			// do settings replacements
-			Utilities.RegularExpression.TokenReplacement replacer = new Utilities.RegularExpression.TokenReplacement(sharedSettings);
+			var replacer = new Utilities.RegularExpression.TokenReplacement(sharedSettings);
 			replacer.ReplaceIfNotFound = false;
 			text = (string) (replacer.Replace(text));
 			

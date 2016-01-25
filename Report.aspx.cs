@@ -39,7 +39,7 @@ using DotNetNuke.Security.Permissions;
 		{
 			if (HasViewPermissions())
 			{
-				DotNetNuke.Entities.Modules.PortalModuleBase ctrl = default(DotNetNuke.Entities.Modules.PortalModuleBase);
+				var ctrl = default(DotNetNuke.Entities.Modules.PortalModuleBase);
 				ctrl = (DotNetNuke.Entities.Modules.PortalModuleBase) (LoadControl(ResolveUrl("SQLViewPro.ascx")));
 				phInject.Controls.Add(ctrl);
 			}
@@ -51,8 +51,8 @@ using DotNetNuke.Security.Permissions;
 		
 		private bool HasViewPermissions()
 		{
-			DotNetNuke.Entities.Modules.ModuleInfo mi = default(DotNetNuke.Entities.Modules.ModuleInfo);
-			DotNetNuke.Entities.Modules.ModuleController mc = new DotNetNuke.Entities.Modules.ModuleController();
+			var mi = default(DotNetNuke.Entities.Modules.ModuleInfo);
+			var mc = new DotNetNuke.Entities.Modules.ModuleController();
 			mi = mc.GetModule(ModuleId, TabId);
 			return ModulePermissionController.CanViewModule(mi);
 		}

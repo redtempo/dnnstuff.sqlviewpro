@@ -218,15 +218,9 @@ namespace DNNStuff.SQLViewPro
 			}
 		}
 		
-		public string DrilldownStackKey
-		{
-			get
-			{
-				return "Drilldown$" + EffectiveModuleId.ToString();
-			}
-		}
-		
-		public ReportSetInfo ReportSet
+		public string DrilldownStackKey => "Drilldown$" + EffectiveModuleId.ToString();
+
+	    public ReportSetInfo ReportSet
 		{
 			get
 			{

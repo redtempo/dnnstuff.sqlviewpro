@@ -22,13 +22,13 @@ namespace DNNStuff.SQLViewPro.Controls
 			{
 				if ((c) is DotNetNuke.UI.UserControls.LabelControl)
 				{
-					DotNetNuke.UI.UserControls.LabelControl label = (DotNetNuke.UI.UserControls.LabelControl) c;
-					string labelText = (string) (DotNetNuke.Services.Localization.Localization.GetString(label.ID + ".Text", LocalResourceFile));
+					var label = (DotNetNuke.UI.UserControls.LabelControl) c;
+					var labelText = (string) (DotNetNuke.Services.Localization.Localization.GetString(label.ID + ".Text", LocalResourceFile));
 					if (labelText == null)
 					{
 						labelText = label.ID.Replace("lbl", "");
 					}
-					string helpText = (string) (DotNetNuke.Services.Localization.Localization.GetString(label.ID + ".Help", LocalResourceFile));
+					var helpText = (string) (DotNetNuke.Services.Localization.Localization.GetString(label.ID + ".Help", LocalResourceFile));
 					if (helpText == null)
 					{
 						helpText = "Help not available for " + labelText;

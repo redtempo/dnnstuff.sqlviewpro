@@ -73,12 +73,12 @@ namespace DNNStuff.SQLViewPro
 		/// <param name="debug">if true, includes the uncompressed libraries</param>
 		public static void InjectjQueryLibary(System.Web.UI.Page page, bool includejQueryUI, bool debug)
 		{
-			int major = default(int);
-			int minor = default(int);
-			int build = default(int);
-			int revision = default(int);
-			bool injectjQueryLib = false;
-			bool injectjQueryUiLib = false;
+			var major = default(int);
+			var minor = default(int);
+			var build = default(int);
+			var revision = default(int);
+			var injectjQueryLib = false;
+			var injectjQueryUiLib = false;
 			if (DNNUtilities.SafeDNNVersion(major, minor, revision, build))
 			{
 				switch (major)
@@ -118,14 +118,14 @@ namespace DNNStuff.SQLViewPro
 				
 				if (page.Header.FindControl("jquery") == null)
 				{
-					System.Web.UI.HtmlControls.HtmlGenericControl jQueryLib = new System.Web.UI.HtmlControls.HtmlGenericControl("script");
+					var jQueryLib = new System.Web.UI.HtmlControls.HtmlGenericControl("script");
 					jQueryLib.Attributes.Add("src", lib);
 					jQueryLib.Attributes.Add("type", "text/javascript");
 					jQueryLib.ID = "jquery";
 					page.Header.Controls.Add(jQueryLib);
 					
 					// use the noConflict (stops use of $) due to the use of prototype with a standard DNN distro
-					System.Web.UI.HtmlControls.HtmlGenericControl noConflictScript = new System.Web.UI.HtmlControls.HtmlGenericControl("script");
+					var noConflictScript = new System.Web.UI.HtmlControls.HtmlGenericControl("script");
 					noConflictScript.InnerText = " jQuery.noConflict(); ";
 					noConflictScript.Attributes.Add("type", "text/javascript");
 					page.Header.Controls.Add(noConflictScript);
@@ -134,7 +134,7 @@ namespace DNNStuff.SQLViewPro
 			else
 			{
 				//call DotNetNuke.Framework.jQuery.RequestRegistration();
-				Type jQueryType = Type.GetType("DotNetNuke.Framework.jQuery, DotNetNuke");
+				var jQueryType = Type.GetType("DotNetNuke.Framework.jQuery, DotNetNuke");
 				if (jQueryType != null)
 				{
 					//run the DNN 5.0 specific jQuery registration code
@@ -164,7 +164,7 @@ namespace DNNStuff.SQLViewPro
 				else
 				{
 					//use late bound call to request registration of jquery
-					Type jQueryType = Type.GetType("DotNetNuke.Framework.jQuery, DotNetNuke");
+					var jQueryType = Type.GetType("DotNetNuke.Framework.jQuery, DotNetNuke");
 					if (jQueryType != null)
 					{
 						//dnn 6.0 and later, allow jquery ui to be loaded from the settings.
@@ -184,13 +184,13 @@ namespace DNNStuff.SQLViewPro
 		/// <param name="scriptPosition">Enumerated position for calculating where to place the script.  Works for DNN 6.1 and later only, ignored in earlier versions</param>
 		public static void InjectJsLibrary(System.Web.UI.Page page, string name, string lib, bool inHeader, ScriptInjectOrder scriptPosition)
 		{
-			int major = default(int);
-			int minor = default(int);
-			int build = default(int);
-			int revision = default(int);
-			bool allowInHeader = false;
-			bool useDotNetNukeWebClient = false;
-			bool dnnWebClientOk = false;
+			var major = default(int);
+			var minor = default(int);
+			var build = default(int);
+			var revision = default(int);
+			var allowInHeader = false;
+			var useDotNetNukeWebClient = false;
+			var dnnWebClientOk = false;
 			if (DNNUtilities.SafeDNNVersion(major, minor, revision, build))
 			{
 				switch (major)
@@ -228,14 +228,14 @@ namespace DNNStuff.SQLViewPro
 			if (useDotNetNukeWebClient)
 			{
 				//use the dotnetnuke web client methods
-				int priority = GetScriptPriority(scriptPosition);
+				var priority = GetScriptPriority(scriptPosition);
 				//get the imbibe type
-				Type imbibe = Type.GetType("DotNetNuke.Web.Client.ClientResourceManagement.ClientResourceManager, DotNetNuke.Web.Client");
+				var imbibe = Type.GetType("DotNetNuke.Web.Client.ClientResourceManagement.ClientResourceManager, DotNetNuke.Web.Client");
 				if (imbibe != null)
 				{
 					//create arrays of both types and values for the parameters, in readiness for the reflection call
-					Type[] paramTypes = new Type[4];
-					object[] paramValues = new object[4];
+					var paramTypes = new Type[4];
+					var paramValues = new object[4];
 					paramTypes[0] = typeof(System.Web.UI.Page);
 					paramValues[0] = page;
 					paramTypes[1] = typeof(string);
@@ -252,7 +252,7 @@ namespace DNNStuff.SQLViewPro
 						paramValues[3] = "DnnBodyProvider";
 					}
 					//call the method to register the script via reflection
-					MethodInfo registerScriptMethod = imbibe.GetMethod("RegisterScript", paramTypes);
+					var registerScriptMethod = imbibe.GetMethod("RegisterScript", paramTypes);
 					if (registerScriptMethod != null)
 					{
 						registerScriptMethod.Invoke(null, paramValues);
@@ -269,7 +269,7 @@ namespace DNNStuff.SQLViewPro
 				{
 					if (page.Header.FindControl(name) == null)
 					{
-						System.Web.UI.HtmlControls.HtmlGenericControl jsLib = new System.Web.UI.HtmlControls.HtmlGenericControl("script");
+						var jsLib = new System.Web.UI.HtmlControls.HtmlGenericControl("script");
 						jsLib.Attributes.Add("src", lib);
 						jsLib.Attributes.Add("type", "text/javascript");
 						jsLib.ID = name;
@@ -298,12 +298,12 @@ namespace DNNStuff.SQLViewPro
 		/// <param name="cssOrder">Where to include the css file in relation to the DNN css files - applies to DNN 6.1 installs only</param>
 		public static void InjectCssReference(System.Web.UI.Page page, string name, string file, bool inHeader, CssInjectOrder cssOrder)
 		{
-			int major = default(int);
-			int minor = default(int);
-			int build = default(int);
-			int revision = default(int);
-			bool useDotNetNukeWebClient = false;
-			bool dnnWebClientOk = false;
+			var major = default(int);
+			var minor = default(int);
+			var build = default(int);
+			var revision = default(int);
+			var useDotNetNukeWebClient = false;
+			var dnnWebClientOk = false;
 			if (DNNUtilities.SafeDNNVersion(major, minor, revision, build))
 			{
 				if (major >= 6)
@@ -321,15 +321,15 @@ namespace DNNStuff.SQLViewPro
 			if (useDotNetNukeWebClient)
 			{
 				//use reflection to inject the css reference
-				int priority = GetCssPriority(cssOrder);
+				var priority = GetCssPriority(cssOrder);
 				//get the imbibe type
-				Type imbibe = Type.GetType("DotNetNuke.Web.Client.ClientResourceManagement.ClientResourceManager, DotNetNuke.Web.Client");
+				var imbibe = Type.GetType("DotNetNuke.Web.Client.ClientResourceManagement.ClientResourceManager, DotNetNuke.Web.Client");
 				if (imbibe != null)
 				{
 					//reflection call
 					//ClientResourceManager.RegisterScript(Page page, string filePath, int priority) // default provider
-					Type[] paramTypes = new Type[4];
-					object[] paramValues = new object[4];
+					var paramTypes = new Type[4];
+					var paramValues = new object[4];
 					paramTypes[0] = typeof(System.Web.UI.Page);
 					paramValues[0] = page;
 					paramTypes[1] = typeof(string);
@@ -346,7 +346,7 @@ namespace DNNStuff.SQLViewPro
 						paramValues[3] = "DnnBodyProvider";
 					}
 					//call the method to register the script via reflection
-					MethodInfo registerStyleSheetMethod = imbibe.GetMethod("RegisterStyleSheet", paramTypes);
+					var registerStyleSheetMethod = imbibe.GetMethod("RegisterStyleSheet", paramTypes);
 					if (registerStyleSheetMethod != null)
 					{
 						registerStyleSheetMethod.Invoke(null, paramValues);
@@ -362,7 +362,7 @@ namespace DNNStuff.SQLViewPro
 				if (page.Header.FindControl(name) == null)
 				{
 					//764 : xhtml compliance by using html link control which closes tag without separate closing tag
-					System.Web.UI.HtmlControls.HtmlLink cssFile = new System.Web.UI.HtmlControls.HtmlLink();
+					var cssFile = new System.Web.UI.HtmlControls.HtmlLink();
 					cssFile.Attributes.Add("rel", "stylesheet");
 					cssFile.Attributes.Add("href", file);
 					cssFile.Attributes.Add("type", "text/css");
@@ -373,7 +373,7 @@ namespace DNNStuff.SQLViewPro
 				{
 					if (page.FindControl(name) == null)
 					{
-						System.Web.UI.HtmlControls.HtmlLink cssFile = new System.Web.UI.HtmlControls.HtmlLink();
+						var cssFile = new System.Web.UI.HtmlControls.HtmlLink();
 						cssFile.Attributes.Add("rel", "stylesheet");
 						cssFile.Attributes.Add("href", file);
 						cssFile.Attributes.Add("type", "text/css");
@@ -393,10 +393,10 @@ namespace DNNStuff.SQLViewPro
 		/// the UI Tabs</remarks>
 		public static void InjectjQueryTabsCss(System.Web.UI.Page page, string preDnn6CssFile, string postDnn6CssFile)
 		{
-			int major = default(int);
-			int minor = default(int);
-			int build = default(int);
-			int revision = default(int);
+			var major = default(int);
+			var minor = default(int);
+			var build = default(int);
+			var revision = default(int);
 			DNNUtilities.SafeDNNVersion(major, minor, revision, build);
 			if (major < 6)
 			{

@@ -149,7 +149,7 @@ namespace DNNStuff.SQLViewPro
 			var ctrl = new ReportSetController();
 			ctrl.DeleteReportSet(ModuleID);
 			
-			XmlNode xmlSqlViewPro = DotNetNuke.Common.Globals.GetContent(Content, "sqlviewpro");
+			var xmlSqlViewPro = DotNetNuke.Common.Globals.GetContent(Content, "sqlviewpro");
 			
 			var ReportSetId = ImportReportSet(ModuleID, xmlSqlViewPro);
 			ImportReport(ReportSetId, xmlSqlViewPro);

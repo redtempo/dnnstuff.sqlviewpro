@@ -106,11 +106,11 @@ namespace DNNStuff.SQLViewPro
 		
 		public ArrayList GetReportSetReport(int ReportSetId)
 		{
-			ArrayList al = default(ArrayList);
+			var al = default(ArrayList);
 			al = (ArrayList) (CBO.FillCollection(DataProvider.Instance().GetReportSetReport(ReportSetId), typeof(ReportInfo)));
-			foreach (object obj in al)
+			foreach (var obj in al)
 			{
-				ReportInfo ri = (ReportInfo) obj;
+				var ri = (ReportInfo) obj;
 				ri.ReportDrillDowns = CBO.FillCollection(DataProvider.Instance().ListReportDrilldown(ri.ReportId), typeof(ReportInfo));
 			}
 			return al;
@@ -203,15 +203,9 @@ namespace DNNStuff.SQLViewPro
 		public string ReportMetaDescription {get; set;}
 		
 		// calced
-		public string ReportIdentifier
-		{
-			get
-			{
-				return ReportName.Replace(" ", "_");
-			}
-		}
-		
-		public string ReportIdentifierQuoteStartCharacter
+		public string ReportIdentifier => ReportName.Replace(" ", "_");
+
+	    public string ReportIdentifierQuoteStartCharacter
 		{
 			get
 			{
@@ -239,7 +233,7 @@ namespace DNNStuff.SQLViewPro
 	{
 		public ReportInfo GetReport(int reportId)
 		{
-			ReportInfo ri = default(ReportInfo);
+			var ri = default(ReportInfo);
 			
 			ri = (ReportInfo) (CBO.FillObject(DataProvider.Instance().GetReport(reportId), typeof(ReportInfo)));
 			
@@ -360,14 +354,7 @@ namespace DNNStuff.SQLViewPro
 		}
 		
 		// calculated
-		public string ParameterIdentifier
-		{
-			get
-			{
-				return ParameterName.Replace(" ", "_");
-			}
-		}
-		
+		public string ParameterIdentifier => ParameterName.Replace(" ", "_");
 	}
 	
 	public class ParameterController
@@ -473,13 +460,7 @@ namespace DNNStuff.SQLViewPro
 		public int UsedInParameterCount {get; set;}
 		public int UsedInReportCount {get; set;}
 		public int UsedInReportSetCount {get; set;}
-		public bool CanDelete
-		{
-			get
-			{
-				return (UsedInParameterCount + UsedInReportCount + UsedInReportSetCount) == 0;
-			}
-		}
+		public bool CanDelete => (UsedInParameterCount + UsedInReportCount + UsedInReportSetCount) == 0;
 	}
 	
 	public class ConnectionController
@@ -496,11 +477,11 @@ namespace DNNStuff.SQLViewPro
 				case (int) ConnectionType.PortalDefault:
 					return "";
 				case (int) ConnectionType.ReportSetDefault:
-					ReportSetController rsc = new ReportSetController();
-					ReportSetInfo rsi = rsc.GetReportSet(ReportSetId);
+					var rsc = new ReportSetController();
+					var rsi = rsc.GetReportSet(ReportSetId);
 					return rsi.ReportSetConnectionString;
 				default:
-					ConnectionInfo csi = GetConnection(ConnectionId);
+					var csi = GetConnection(ConnectionId);
 					return csi.ConnectionString;
 			}
 		}
@@ -516,9 +497,9 @@ namespace DNNStuff.SQLViewPro
 		}
 		public ArrayList ListConnection(int PortalId, bool IncludePortalDefault, bool IncludeReportSetDefault)
 		{
-			ArrayList al = (ArrayList) (CBO.FillCollection(DataProvider.Instance().ListConnection(PortalId), typeof(ConnectionInfo)));
+			var al = (ArrayList) (CBO.FillCollection(DataProvider.Instance().ListConnection(PortalId), typeof(ConnectionInfo)));
 			
-			ConnectionInfo ci = default(ConnectionInfo);
+			var ci = default(ConnectionInfo);
 			
 			if (IncludePortalDefault)
 			{

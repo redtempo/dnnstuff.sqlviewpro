@@ -25,7 +25,7 @@ namespace DNNStuff.SQLViewPro
 		public static string TrialWarning()
 		{
 			
-			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+			var sb = new System.Text.StringBuilder();
 			sb.AppendFormat("<p>Thank you for evaluating <a style=\"text-decoration:underline\" target=\"_blank\" ");
 			sb.AppendFormat("title=\"{0}\" ", ProductName);
 			sb.AppendFormat("href=\"{0}/{2}.aspx?utm_source={1}&utm_medium=trial&utm_campaign={1}\">{2}</a>. ", CompanyUrl, CompanyName, ProductName);
@@ -45,7 +45,7 @@ namespace DNNStuff.SQLViewPro
 		public static void AddTrialNotice(Control ParentControl)
 		{
 			
-			System.Web.UI.HtmlControls.HtmlGenericControl ctrl = new System.Web.UI.HtmlControls.HtmlGenericControl("div");
+			var ctrl = new System.Web.UI.HtmlControls.HtmlGenericControl("div");
 			ctrl.InnerHtml = TrialWarning();
 			ctrl.Attributes.Add("style", TrialStyle);
 			
