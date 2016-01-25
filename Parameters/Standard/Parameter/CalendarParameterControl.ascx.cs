@@ -55,8 +55,8 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		{
 			get
 			{
-				string ret = txtCalendar.Text;
-				DateTime dt = default(DateTime);
+				var ret = txtCalendar.Text;
+				var dt = default(DateTime);
 				if (DateTime.TryParse(txtCalendar.Text, out dt))
 				{
 					if (CalendarSettings().DatabaseDateFormat != "")
@@ -74,8 +74,8 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 			set
 			{
 				
-				CultureInfo provider = CultureInfo.GetCultureInfo(PortalSettings.DefaultLanguage);
-				DateTime dt = default(DateTime);
+				var provider = CultureInfo.GetCultureInfo(PortalSettings.DefaultLanguage);
+				var dt = default(DateTime);
 				if (value.Count > 0)
 				{
 					if (DateTime.TryParseExact(value[0].ToString(), "M/d/yyyy", provider, DateTimeStyles.None, out dt))

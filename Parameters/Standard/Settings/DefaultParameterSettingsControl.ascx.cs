@@ -42,18 +42,12 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 #region  Base Method Implementations
 		
-		protected override string LocalResourceFile
-		{
-			get
-			{
-				return ResolveUrl("App_LocalResources/DefaultParameterSettingsControl");
-			}
-		}
-		
-		public override string UpdateSettings()
+		protected override string LocalResourceFile => ResolveUrl("App_LocalResources/DefaultParameterSettingsControl");
+
+	    public override string UpdateSettings()
 		{
 			
-			DefaultParameterSettings obj = new DefaultParameterSettings();
+			var obj = new DefaultParameterSettings();
 			obj.Default = txtDefault.Text;
 			
 			return Serialization.SerializeObject(obj, typeof(DefaultParameterSettings));
@@ -62,7 +56,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		public override void LoadSettings(string settings)
 		{
-			DefaultParameterSettings obj = new DefaultParameterSettings();
+			var obj = new DefaultParameterSettings();
 			if (settings != null)
 			{
 				obj = (DefaultParameterSettings) (Serialization.DeserializeObject(settings, typeof(DefaultParameterSettings)));
@@ -79,18 +73,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 #region  Settings
 	[XmlRootAttribute(ElementName = "Settings", IsNullable = false)]public class DefaultParameterSettings
 	{
-		private string _Default;
-		public string Default
-		{
-			get
-			{
-				return _Default;
-			}
-			set
-			{
-				_Default = value;
-			}
-		}
+	    public string Default { get; set; }
 	}
 #endregion
 	

@@ -41,18 +41,12 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		
 #region  Base Method Implementations
-		protected override string LocalResourceFile
-		{
-			get
-			{
-				return ResolveUrl("App_LocalResources/EmptyParameterSettingsControl");
-			}
-		}
-		
-		public override string UpdateSettings()
+		protected override string LocalResourceFile => ResolveUrl("App_LocalResources/EmptyParameterSettingsControl");
+
+	    public override string UpdateSettings()
 		{
 			
-			EmptyParameterSettings obj = new EmptyParameterSettings();
+			var obj = new EmptyParameterSettings();
 			return Serialization.SerializeObject(obj, typeof(EmptyParameterSettings));
 			
 		}

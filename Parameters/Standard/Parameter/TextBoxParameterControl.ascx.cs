@@ -69,7 +69,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		public override void LoadRuntimeSettings()
 		{
-			TextBoxParameterSettings obj = (TextBoxParameterSettings) (Serialization.DeserializeObject(Settings.ParameterConfig, typeof(TextBoxParameterSettings)));
+			var obj = (TextBoxParameterSettings) (Serialization.DeserializeObject(Settings.ParameterConfig, typeof(TextBoxParameterSettings)));
 			txtParameter.Text = TokenReplacement.ReplaceTokens(obj.Default, null, null);
 			if (obj.Rows > 1)
 			{

@@ -51,7 +51,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		{
 			get
 			{
-				List<string> selected = new List<string>();
+				var selected = new List<string>();
 				foreach (System.Web.UI.WebControls.ListItem li in cblParameter.Items)
 				{
 					if (li.Selected)
@@ -74,16 +74,11 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 				}
 			}
 		}
-		public override bool MultiValued
+		public override bool MultiValued => true;
+
+	    public override void LoadRuntimeSettings()
 		{
-			get
-			{
-				return true;
-			}
-		}
-		public override void LoadRuntimeSettings()
-		{
-			FlowListParameterSettings obj = (FlowListParameterSettings) (Serialization.DeserializeObject(Settings.ParameterConfig, typeof(FlowListParameterSettings)));
+			var obj = (FlowListParameterSettings) (Serialization.DeserializeObject(Settings.ParameterConfig, typeof(FlowListParameterSettings)));
 			cblParameter.RepeatColumns = obj.RepeatColumns;
 			cblParameter.RepeatDirection = obj.RepeatDirection;
 			cblParameter.RepeatLayout = obj.RepeatLayout;

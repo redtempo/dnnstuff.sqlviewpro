@@ -62,8 +62,8 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		{
 			get
 			{
-				string location = geolocation.Value;
-				System.Collections.Specialized.StringDictionary vals = new System.Collections.Specialized.StringDictionary();
+				var location = geolocation.Value;
+				var vals = new System.Collections.Specialized.StringDictionary();
 				if (location.Length > 0)
 				{
 					vals.Add("Latitude", (string) (location.Split(',')[0]));

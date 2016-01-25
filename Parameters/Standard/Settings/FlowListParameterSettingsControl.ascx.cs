@@ -45,33 +45,13 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 #endregion
 		
 #region  Page
-		private int _ReportSetId = -1;
-		public int ReportSetId
-		{
-			get
-			{
-				return _ReportSetId;
-			}
-			set
-			{
-				_ReportSetId = value;
-			}
-		}
-		private int _ParameterId = -1;
-		public int ParameterId
-		{
-			get
-			{
-				return _ParameterId;
-			}
-			set
-			{
-				_ParameterId = value;
-			}
-		}
-		
-		
-		private void QueryStringInitialize()
+
+	    public int ReportSetId { get; set; } = -1;
+
+	    public int ParameterId { get; set; } = -1;
+
+
+	    private void QueryStringInitialize()
 		{
 			// initialize
 			if (!(Request.QueryString["ReportSetId"] == null))
@@ -96,18 +76,12 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 #endregion
 		
 #region  Base Method Implementations
-		protected override string LocalResourceFile
-		{
-			get
-			{
-				return ResolveUrl("App_LocalResources/FlowListParameterSettingsControl");
-			}
-		}
-		
-		public override string UpdateSettings()
+		protected override string LocalResourceFile => ResolveUrl("App_LocalResources/FlowListParameterSettingsControl");
+
+	    public override string UpdateSettings()
 		{
 			
-			FlowListParameterSettings obj = new FlowListParameterSettings();
+			var obj = new FlowListParameterSettings();
 			obj.Default = txtDefault.Text;
 			obj.List = txtList.Text;
 			obj.Command = txtCommand.Text;
@@ -124,7 +98,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		public override void LoadSettings(string settings)
 		{
-			FlowListParameterSettings obj = new FlowListParameterSettings();
+			var obj = new FlowListParameterSettings();
 			if (settings != null)
 			{
 				obj = (FlowListParameterSettings) (Serialization.DeserializeObject(settings, typeof(FlowListParameterSettings)));
@@ -147,7 +121,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		protected void vldCommand_ServerValidate(Object source, ServerValidateEventArgs args)
 		{
 			
-			string msg = "";
+			var msg = "";
 			args.IsValid = Convert.ToBoolean(Services.Data.Query.IsQueryValid(txtCommand.Text, ConnectionController.GetConnectionString(Convert.ToInt32(cpConnection.ConnectionId), ReportSetId), ref msg));
 			vldCommand.ErrorMessage = msg;
 			
@@ -156,8 +130,8 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		protected void cmdQueryTest_Click(object sender, EventArgs e)
 		{
-			string msg = "";
-			bool isValid = Convert.ToBoolean(Services.Data.Query.IsQueryValid(txtCommand.Text, ConnectionController.GetConnectionString(Convert.ToInt32(cpConnection.ConnectionId), ReportSetId), ref msg));
+			var msg = "";
+			var isValid = Convert.ToBoolean(Services.Data.Query.IsQueryValid(txtCommand.Text, ConnectionController.GetConnectionString(Convert.ToInt32(cpConnection.ConnectionId), ReportSetId), ref msg));
 			
 			lblQueryTestResults.Text = msg;
 			lblQueryTestResults.CssClass = "NormalGreen";

@@ -41,18 +41,12 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		
 #region  Base Method Implementations
-		protected override string LocalResourceFile
-		{
-			get
-			{
-				return ResolveUrl("App_LocalResources/GeoLocationParameterSettingsControl");
-			}
-		}
-		
-		public override string UpdateSettings()
+		protected override string LocalResourceFile => ResolveUrl("App_LocalResources/GeoLocationParameterSettingsControl");
+
+	    public override string UpdateSettings()
 		{
 			
-			GeoLocationParameterSettings obj = new GeoLocationParameterSettings();
+			var obj = new GeoLocationParameterSettings();
 			obj.EnableHighAccuracy = chkEnableHighAccuracy.Checked;
 			obj.Timeout = StringHelpers.DefaultInt32FromString(txtTimeout.Text, 5000);
 			obj.MaximumAge = StringHelpers.DefaultInt32FromString(txtMaximumAge.Text, 60000);
@@ -62,7 +56,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		public override void LoadSettings(string settings)
 		{
-			GeoLocationParameterSettings obj = new GeoLocationParameterSettings();
+			var obj = new GeoLocationParameterSettings();
 			
 			if (settings != null)
 			{
@@ -75,14 +69,9 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 			
 		}
 		
-		public override bool CaptionRequired
-		{
-			get
-			{
-				return false;
-			}
-		}
-#endregion
+		public override bool CaptionRequired => false;
+
+	    #endregion
 		
 		
 		
@@ -91,42 +80,11 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 #region  Settings
 	[XmlRootAttribute(ElementName = "Settings", IsNullable = false)]public class GeoLocationParameterSettings
 	{
-		private bool _EnableHighAccuracy = true;
-		public bool EnableHighAccuracy
-		{
-			get
-			{
-				return _EnableHighAccuracy;
-			}
-			set
-			{
-				_EnableHighAccuracy = value;
-			}
-		}
-		private int _Timeout = 5000;
-		public int Timeout
-		{
-			get
-			{
-				return _Timeout;
-			}
-			set
-			{
-				_Timeout = value;
-			}
-		}
-		private int _MaximumAge = 60000;
-		public int MaximumAge
-		{
-			get
-			{
-				return _MaximumAge;
-			}
-			set
-			{
-				_MaximumAge = value;
-			}
-		}
+	    public bool EnableHighAccuracy { get; set; } = true;
+
+	    public int Timeout { get; set; } = 5000;
+
+	    public int MaximumAge { get; set; } = 60000;
 	}
 #endregion
 	

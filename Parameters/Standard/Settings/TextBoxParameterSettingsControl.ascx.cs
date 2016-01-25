@@ -40,18 +40,12 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 #endregion
 		
 #region  Base Method Implementations
-		protected override string LocalResourceFile
-		{
-			get
-			{
-				return ResolveUrl("App_LocalResources/TextBoxParameterSettingsControl");
-			}
-		}
-		
-		public override string UpdateSettings()
+		protected override string LocalResourceFile => ResolveUrl("App_LocalResources/TextBoxParameterSettingsControl");
+
+	    public override string UpdateSettings()
 		{
 			
-			TextBoxParameterSettings obj = new TextBoxParameterSettings();
+			var obj = new TextBoxParameterSettings();
 			obj.Default = txtDefault.Text;
 			obj.Rows = StringHelpers.DefaultInt32FromString(txtRows.Text, 1);
 			obj.Columns = StringHelpers.DefaultInt32FromString(txtColumns.Text, 0);
@@ -62,7 +56,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		public override void LoadSettings(string settings)
 		{
-			TextBoxParameterSettings obj = new TextBoxParameterSettings();
+			var obj = new TextBoxParameterSettings();
 			if (settings != null)
 			{
 				obj = (TextBoxParameterSettings) (Serialization.DeserializeObject(settings, typeof(TextBoxParameterSettings)));
@@ -82,30 +76,9 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 	[XmlRootAttribute(ElementName = "Settings", IsNullable = false)]public class TextBoxParameterSettings
 	{
 		public string Default {get; set;}
-		private int _Rows = 1;
-		public int Rows
-		{
-			get
-			{
-				return _Rows;
-			}
-			set
-			{
-				_Rows = value;
-			}
-		}
-		private int _Columns = 0;
-		public int Columns
-		{
-			get
-			{
-				return _Columns;
-			}
-			set
-			{
-				_Columns = value;
-			}
-		}
+	    public int Rows { get; set; } = 1;
+
+	    public int Columns { get; set; } = 0;
 	}
 #endregion
 	

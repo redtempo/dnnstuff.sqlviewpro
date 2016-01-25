@@ -68,7 +68,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		public override void LoadRuntimeSettings()
 		{
-			CheckBoxParameterSettings obj = (CheckBoxParameterSettings) (Serialization.DeserializeObject(Settings.ParameterConfig, typeof(CheckBoxParameterSettings)));
+			var obj = (CheckBoxParameterSettings) (Serialization.DeserializeObject(Settings.ParameterConfig, typeof(CheckBoxParameterSettings)));
 			chkParameter.Checked = obj.DefaultChecked;
 		}
 		

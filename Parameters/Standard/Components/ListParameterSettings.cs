@@ -15,74 +15,21 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		public string Command {get; set;}
 		public string List {get; set;}
 		public string Default {get; set;}
-		private int _CommandCacheTimeout = 60;
-		public int CommandCacheTimeout
-		{
-			get
-			{
-				return _CommandCacheTimeout;
-			}
-			set
-			{
-				_CommandCacheTimeout = value;
-			}
-		}
+	    public int CommandCacheTimeout { get; set; } = 60;
 	}
 	
 	[XmlRootAttribute(ElementName = "Settings", IsNullable = false)]public class DropDownListParameterSettings : ListParameterSettings
 	{
-		private bool _AutoPostback = false;
-		public bool AutoPostback
-		{
-			get
-			{
-				return _AutoPostback;
-			}
-			set
-			{
-				_AutoPostback = value;
-			}
-		}
+	    public bool AutoPostback { get; set; } = false;
 	}
 	
 	[XmlRootAttribute(ElementName = "Settings", IsNullable = false)]public class ListBoxParameterSettings : ListParameterSettings
 	{
-		private bool _AutoPostback = false;
-		public bool AutoPostback
-		{
-			get
-			{
-				return _AutoPostback;
-			}
-			set
-			{
-				_AutoPostback = value;
-			}
-		}
-		private bool _MultiSelect = false;
-		public bool MultiSelect
-		{
-			get
-			{
-				return _MultiSelect;
-			}
-			set
-			{
-				_MultiSelect = value;
-			}
-		}
-		private int _MultiSelectSize = 5;
-		public int MultiSelectSize
-		{
-			get
-			{
-				return _MultiSelectSize;
-			}
-			set
-			{
-				_MultiSelectSize = value;
-			}
-		}
+	    public bool AutoPostback { get; set; } = false;
+
+	    public bool MultiSelect { get; set; } = false;
+
+	    public int MultiSelectSize { get; set; } = 5;
 	}
 	
 	[XmlRootAttribute(ElementName = "Settings", IsNullable = false)]public class FlowListParameterSettings : ListParameterSettings
@@ -90,18 +37,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		public RepeatLayout RepeatLayout {get; set;}
 		public RepeatDirection RepeatDirection {get; set;}
-		private int _RepeatColumns = 2;
-		public int RepeatColumns
-		{
-			get
-			{
-				return _RepeatColumns;
-			}
-			set
-			{
-				_RepeatColumns = value;
-			}
-		}
+	    public int RepeatColumns { get; set; } = 2;
 	}
 	
 	

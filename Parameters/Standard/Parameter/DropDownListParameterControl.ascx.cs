@@ -68,7 +68,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		public override void LoadRuntimeSettings()
 		{
-			DropDownListParameterSettings obj = (DropDownListParameterSettings) (Serialization.DeserializeObject(Settings.ParameterConfig, typeof(DropDownListParameterSettings)));
+			var obj = (DropDownListParameterSettings) (Serialization.DeserializeObject(Settings.ParameterConfig, typeof(DropDownListParameterSettings)));
 			AddOptions(ddlParameter, obj, Settings);
 			SelectDefaults(ddlParameter, obj, false);
 			ddlParameter.AutoPostBack = obj.AutoPostback;

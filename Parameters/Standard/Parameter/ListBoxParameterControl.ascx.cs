@@ -53,7 +53,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		{
 			get
 			{
-				List<string> selected = new List<string>();
+				var selected = new List<string>();
 				foreach (ListItem li in lbParameter.Items)
 				{
 					if (li.Selected)
@@ -76,16 +76,11 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 				}
 			}
 		}
-		public override bool MultiValued
+		public override bool MultiValued => _multiValued;
+
+	    public override void LoadRuntimeSettings()
 		{
-			get
-			{
-				return _multiValued;
-			}
-		}
-		public override void LoadRuntimeSettings()
-		{
-			ListBoxParameterSettings obj = (ListBoxParameterSettings) (Serialization.DeserializeObject(Settings.ParameterConfig, typeof(ListBoxParameterSettings)));
+			var obj = (ListBoxParameterSettings) (Serialization.DeserializeObject(Settings.ParameterConfig, typeof(ListBoxParameterSettings)));
 			_multiValued = obj.MultiSelect;
 			AddOptions(lbParameter, obj, Settings);
 			if (obj.MultiSelect)

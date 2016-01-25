@@ -31,17 +31,17 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 			// add options from both if necessary
 			if (customParameterSettings.Command.Length > 0)
 			{
-				string connectionString = default(string);
+				var connectionString = default(string);
 				if (customParameterSettings.ConnectionId < 0)
 				{
 					// get report set connection
-					ReportSetController objReportSetController = new ReportSetController();
-					ReportSetInfo objReportSetInfo = objReportSetController.GetReportSet(parameterSettings.ReportSetId);
+					var objReportSetController = new ReportSetController();
+					var objReportSetInfo = objReportSetController.GetReportSet(parameterSettings.ReportSetId);
 					connectionString = objReportSetInfo.ReportSetConnectionString;
 				}
 				else
 				{
-					ConnectionInfo objConnectionInfo = ConnectionController.GetConnection(customParameterSettings.ConnectionId);
+					var objConnectionInfo = ConnectionController.GetConnection(customParameterSettings.ConnectionId);
 					connectionString = objConnectionInfo.ConnectionString;
 				}
 				SQLUtil.AddOptionsFromQuery(list, ReplaceOptionTokens(customParameterSettings.Command), connectionString, customParameterSettings.Default, customParameterSettings.CommandCacheTimeout);
@@ -59,13 +59,13 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		protected void SelectDefaults(ListControl list, ListParameterSettings customParameterSettings, bool multiAllowed)
 		{
-			string[] defaultValues = customParameterSettings.Default.Split(',');
+			var defaultValues = customParameterSettings.Default.Split(',');
 			
 			if (defaultValues.Length > 0)
 			{
-				foreach (string defaultValue in defaultValues)
+				foreach (var defaultValue in defaultValues)
 				{
-					ListItem li = list.Items.FindByValue(defaultValue);
+					var li = list.Items.FindByValue(defaultValue);
 					if (li != null)
 					{
 						li.Selected = true;

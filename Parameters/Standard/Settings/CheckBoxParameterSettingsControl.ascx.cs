@@ -41,18 +41,12 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		
 #region  Base Method Implementations
-		protected override string LocalResourceFile
-		{
-			get
-			{
-				return ResolveUrl("App_LocalResources/CheckBoxParameterSettingsControl");
-			}
-		}
-		
-		public override string UpdateSettings()
+		protected override string LocalResourceFile => ResolveUrl("App_LocalResources/CheckBoxParameterSettingsControl");
+
+	    public override string UpdateSettings()
 		{
 			
-			CheckBoxParameterSettings obj = new CheckBoxParameterSettings();
+			var obj = new CheckBoxParameterSettings();
 			obj.DefaultChecked = chkDefault.Checked;
 			
 			return Serialization.SerializeObject(obj, typeof(CheckBoxParameterSettings));
@@ -61,7 +55,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		public override void LoadSettings(string settings)
 		{
-			CheckBoxParameterSettings obj = new CheckBoxParameterSettings();
+			var obj = new CheckBoxParameterSettings();
 			if (settings != null)
 			{
 				obj = (CheckBoxParameterSettings) (Serialization.DeserializeObject(settings, typeof(CheckBoxParameterSettings)));
@@ -77,18 +71,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 #region  Settings
 	[XmlRootAttribute(ElementName = "Settings", IsNullable = false)]public class CheckBoxParameterSettings
 	{
-		private bool _DefaultChecked;
-		public bool DefaultChecked
-		{
-			get
-			{
-				return _DefaultChecked;
-			}
-			set
-			{
-				_DefaultChecked = value;
-			}
-		}
+	    public bool DefaultChecked { get; set; }
 	}
 #endregion
 	

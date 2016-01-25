@@ -68,7 +68,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 		public override void LoadRuntimeSettings()
 		{
-			FlowListParameterSettings obj = (FlowListParameterSettings) (Serialization.DeserializeObject(Settings.ParameterConfig, typeof(FlowListParameterSettings)));
+			var obj = (FlowListParameterSettings) (Serialization.DeserializeObject(Settings.ParameterConfig, typeof(FlowListParameterSettings)));
 			rblParameter.RepeatColumns = obj.RepeatColumns;
 			rblParameter.RepeatDirection = obj.RepeatDirection;
 			rblParameter.RepeatLayout = obj.RepeatLayout;
