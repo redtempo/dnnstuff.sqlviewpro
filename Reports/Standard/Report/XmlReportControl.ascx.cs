@@ -36,26 +36,15 @@ namespace DNNStuff.SQLViewPro.StandardReports
 #endregion
 		
 #region  Page
-		
-		private XmlReportSettings _ReportExtra = new XmlReportSettings();
-		private XmlReportSettings ReportExtra
-		{
-			get
-			{
-				return _ReportExtra;
-			}
-			set
-			{
-				_ReportExtra = value;
-			}
-		}
-		
-#endregion
+
+	    private XmlReportSettings ReportExtra { get; set; } = new XmlReportSettings();
+
+	    #endregion
 		
 #region  Base Method Implementations
 		public override void LoadRuntimeSettings(ReportInfo Settings)
 		{
-			_ReportExtra = (XmlReportSettings) (Serialization.DeserializeObject(Settings.ReportConfig, typeof(XmlReportSettings)));
+			ReportExtra = (XmlReportSettings) (Serialization.DeserializeObject(Settings.ReportConfig, typeof(XmlReportSettings)));
 		}
 #endregion
 		
@@ -63,13 +52,13 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		private void BindXMLToData()
 		{
 			
-			DataSet ds = ReportData();
+			var ds = ReportData();
 			
 			// add debug info
 			if (State.ReportSet.ReportSetDebug)
 			{
 				DebugInfo.Append(QueryText);
-				System.IO.StringWriter sw = new System.IO.StringWriter();
+				var sw = new System.IO.StringWriter();
 				ds.WriteXml(sw);
 				DebugInfo.AppendFormat("<pre>{0}</pre>", Server.HtmlEncode(sw.ToString()));
 			}
@@ -81,17 +70,17 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			}
 			else
 			{
-				System.IO.StringWriter swData = new System.IO.StringWriter();
+				var swData = new System.IO.StringWriter();
 				ds.WriteXml(swData);
 				
-				XmlDocument xmlData = new XmlDocument();
+				var xmlData = new XmlDocument();
 				xmlData.LoadXml(swData.ToString());
 				
 				// transform data using xsl
-				System.Xml.Xsl.XslCompiledTransform xslTransform = GetXslTransform(ReportExtra.XslSrc);
-				System.IO.StringWriter swOutput = new System.IO.StringWriter();
+				var xslTransform = GetXslTransform(ReportExtra.XslSrc);
+				var swOutput = new System.IO.StringWriter();
 				
-				XmlTextWriter xmltwOutput = new XmlTextWriter(swOutput);
+				var xmltwOutput = new XmlTextWriter(swOutput);
 				if (xslTransform != null&& xmlData != null)
 				{
 					xslTransform.Transform(xmlData, xmltwOutput);
@@ -108,11 +97,11 @@ namespace DNNStuff.SQLViewPro.StandardReports
 #region xsl functions
 		private System.Xml.Xsl.XslCompiledTransform GetXSLContent(string ContentURL)
 		{
-			System.Xml.Xsl.XslCompiledTransform returnValue = default(System.Xml.Xsl.XslCompiledTransform);
+			var returnValue = default(System.Xml.Xsl.XslCompiledTransform);
 			
 			returnValue = new System.Xml.Xsl.XslCompiledTransform();
 			System.Net.WebRequest req = Globals.GetExternalRequest(ContentURL);
-			System.Net.WebResponse result = req.GetResponse();
+			var result = req.GetResponse();
 			XmlReader objXSLTransform = new XmlTextReader(result.GetResponseStream());
 			returnValue.Load(objXSLTransform, null, null);
 			
@@ -131,13 +120,13 @@ namespace DNNStuff.SQLViewPro.StandardReports
 					}
 					else if (XslDoc.StartsWith("~") || XslDoc.StartsWith("/"))
 					{
-						System.Xml.Xsl.XslCompiledTransform trans = new System.Xml.Xsl.XslCompiledTransform();
+						var trans = new System.Xml.Xsl.XslCompiledTransform();
 						trans.Load(Context.Server.MapPath(XslDoc));
 						return trans;
 					}
 					else if (XslDoc.Contains(":\\"))
 					{
-						System.Xml.Xsl.XslCompiledTransform trans = new System.Xml.Xsl.XslCompiledTransform();
+						var trans = new System.Xml.Xsl.XslCompiledTransform();
 						trans.Load(XslDoc);
 						return trans;
 					}

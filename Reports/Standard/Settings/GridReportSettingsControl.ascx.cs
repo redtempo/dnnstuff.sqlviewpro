@@ -1,20 +1,5 @@
-
-
-
 using System.Xml.Serialization;
 using DNNStuff.SQLViewPro.Controls;
-
-//***************************************************************************/
-//* GridReportSettings.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Grid Report Settings Handler
-//*************/
-
 
 namespace DNNStuff.SQLViewPro.StandardReports
 {
@@ -39,14 +24,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 #endregion
 		
-#region  Page
-		private void Page_Load(System.Object sender, System.EventArgs e)
-		{
-			
-		}
-		
-#endregion
-		
+	
 #region  Base Method Implementations
 		protected override string LocalResourceFile
 		{
@@ -58,9 +36,9 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		public override string UpdateSettings()
 		{
-			int PageSize = 5;
+			var PageSize = 5;
 			
-			GridReportSettings obj = new GridReportSettings();
+			var obj = new GridReportSettings();
 			obj.OrderBy = txtOrderBy.Text;
 			obj.AllowSorting = chkAllowSorting.Checked;
 			obj.AllowPaging = chkAllowPaging.Checked;
@@ -88,7 +66,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		public override void LoadSettings(string settings)
 		{
-			GridReportSettings obj = new GridReportSettings();
+			var obj = new GridReportSettings();
 			if (!string.IsNullOrEmpty(settings))
 			{
 				obj = (GridReportSettings) (Serialization.DeserializeObject(settings, typeof(GridReportSettings)));
@@ -117,162 +95,31 @@ namespace DNNStuff.SQLViewPro.StandardReports
 #region  Settings
 	[XmlRootAttribute(ElementName = "Settings", IsNullable = false)]public class GridReportSettings
 	{
-		private bool _AllowSorting = false;
-		public bool AllowSorting
-		{
-			get
-			{
-				return _AllowSorting;
-			}
-			set
-			{
-				_AllowSorting = value;
-			}
-		}
-		private string _OrderBy = "";
-		public string OrderBy
-		{
-			get
-			{
-				return _OrderBy;
-			}
-			set
-			{
-				_OrderBy = value;
-			}
-		}
-		private bool _AllowPaging = false;
-		public bool AllowPaging
-		{
-			get
-			{
-				return _AllowPaging;
-			}
-			set
-			{
-				_AllowPaging = value;
-			}
-		}
-		private int _PageSize = 10;
-		public int PageSize
-		{
-			get
-			{
-				return _PageSize;
-			}
-			set
-			{
-				_PageSize = value;
-			}
-		}
-		private string _PagerMode = "";
-		public string PagerMode
-		{
-			get
-			{
-				return _PagerMode;
-			}
-			set
-			{
-				_PagerMode = value;
-			}
-		}
-		private string _PrevPageText = "Prev";
-		public string PrevPageText
-		{
-			get
-			{
-				return _PrevPageText;
-			}
-			set
-			{
-				_PrevPageText = value;
-			}
-		}
-		private string _NextPageText = "Next";
-		public string NextPageText
-		{
-			get
-			{
-				return _NextPageText;
-			}
-			set
-			{
-				_NextPageText = value;
-			}
-		}
-		private string _PagerPosition = "Bottom";
-		public string PagerPosition
-		{
-			get
-			{
-				return _PagerPosition;
-			}
-			set
-			{
-				_PagerPosition = value;
-			}
-		}
-		private bool _EnableExcelExport = false;
-		public bool EnableExcelExport
-		{
-			get
-			{
-				return _EnableExcelExport;
-			}
-			set
-			{
-				_EnableExcelExport = value;
-			}
-		}
-		private string _ExcelExportButtonCaption = "Excel";
-		public string ExcelExportButtonCaption
-		{
-			get
-			{
-				return _ExcelExportButtonCaption;
-			}
-			set
-			{
-				_ExcelExportButtonCaption = value;
-			}
-		}
-		private string _ExcelExportPosition = "Bottom";
-		public string ExcelExportPosition
-		{
-			get
-			{
-				return _ExcelExportPosition;
-			}
-			set
-			{
-				_ExcelExportPosition = value;
-			}
-		}
-		private bool _HideColumnHeaders = false;
-		public bool HideColumnHeaders
-		{
-			get
-			{
-				return _HideColumnHeaders;
-			}
-			set
-			{
-				_HideColumnHeaders = value;
-			}
-		}
-		private string _HideColumns = "";
-		public string HideColumns
-		{
-			get
-			{
-				return _HideColumns;
-			}
-			set
-			{
-				_HideColumns = value;
-			}
-		}
+	    public bool AllowSorting { get; set; } = false;
+
+	    public string OrderBy { get; set; } = "";
+
+	    public bool AllowPaging { get; set; } = false;
+
+	    public int PageSize { get; set; } = 10;
+
+	    public string PagerMode { get; set; } = "";
+
+	    public string PrevPageText { get; set; } = "Prev";
+
+	    public string NextPageText { get; set; } = "Next";
+
+	    public string PagerPosition { get; set; } = "Bottom";
+
+	    public bool EnableExcelExport { get; set; } = false;
+
+	    public string ExcelExportButtonCaption { get; set; } = "Excel";
+
+	    public string ExcelExportPosition { get; set; } = "Bottom";
+
+	    public bool HideColumnHeaders { get; set; } = false;
+
+	    public string HideColumns { get; set; } = "";
 	}
 #endregion
 	

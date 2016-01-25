@@ -24,26 +24,14 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 #endregion
 		
-#region  Page
-		private void Page_Load(System.Object sender, System.EventArgs e)
-		{
-		}
-		
-#endregion
-		
+	
 #region  Base Method Implementations
-		protected override string LocalResourceFile
+		protected override string LocalResourceFile => ResolveUrl("App_LocalResources/TemplateReportSettingsControl");
+
+	    public override string UpdateSettings()
 		{
-			get
-			{
-				return ResolveUrl("App_LocalResources/TemplateReportSettingsControl");
-			}
-		}
-		
-		public override string UpdateSettings()
-		{
-			int PageSize = 5;
-			TemplateReportSettings obj = new TemplateReportSettings();
+			var PageSize = 5;
+			var obj = new TemplateReportSettings();
 			obj.TemplateText = txtTemplateText.Text;
 			obj.AllowPaging = chkAllowPaging.Checked;
 			obj.PagingType = ddPagingType.SelectedValue;
@@ -67,7 +55,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		public override void LoadSettings(string settings)
 		{
-			TemplateReportSettings obj = new TemplateReportSettings();
+			var obj = new TemplateReportSettings();
 			if (!string.IsNullOrEmpty(settings))
 			{
 				obj = (TemplateReportSettings) (Serialization.DeserializeObject(settings, typeof(TemplateReportSettings)));
@@ -91,114 +79,23 @@ namespace DNNStuff.SQLViewPro.StandardReports
 #region  Settings
 	[XmlRootAttribute(ElementName = "Settings", IsNullable = false)]public class TemplateReportSettings
 	{
-		private string _TemplateText = "[EACHROW][StringCol][/EACHROW]";
-		public string TemplateText
-		{
-			get
-			{
-				return _TemplateText;
-			}
-			set
-			{
-				_TemplateText = value;
-			}
-		}
-		private bool _AllowPaging = false;
-		public bool AllowPaging
-		{
-			get
-			{
-				return _AllowPaging;
-			}
-			set
-			{
-				_AllowPaging = value;
-			}
-		}
-		private string _PagingType = "Internal";
-		public string PagingType
-		{
-			get
-			{
-				return _PagingType;
-			}
-			set
-			{
-				_PagingType = value;
-			}
-		}
-		private int _PageSize = 10;
-		public int PageSize
-		{
-			get
-			{
-				return _PageSize;
-			}
-			set
-			{
-				_PageSize = value;
-			}
-		}
-		private string _PrevPageText = "Prev";
-		public string PrevPageText
-		{
-			get
-			{
-				return _PrevPageText;
-			}
-			set
-			{
-				_PrevPageText = value;
-			}
-		}
-		private string _NextPageText = "Next";
-		public string NextPageText
-		{
-			get
-			{
-				return _NextPageText;
-			}
-			set
-			{
-				_NextPageText = value;
-			}
-		}
-		private string _FirstPageText = "First";
-		public string FirstPageText
-		{
-			get
-			{
-				return _FirstPageText;
-			}
-			set
-			{
-				_FirstPageText = value;
-			}
-		}
-		private string _LastPageText = "Last";
-		public string LastPageText
-		{
-			get
-			{
-				return _LastPageText;
-			}
-			set
-			{
-				_LastPageText = value;
-			}
-		}
-		private string _PageTemplate = "<a href=\"[URL]\">[TEXT]</a>";
-		public string PageTemplate
-		{
-			get
-			{
-				return _PageTemplate;
-			}
-			set
-			{
-				_PageTemplate = value;
-			}
-		}
+	    public string TemplateText { get; set; } = "[EACHROW][StringCol][/EACHROW]";
+
+	    public bool AllowPaging { get; set; } = false;
+
+	    public string PagingType { get; set; } = "Internal";
+
+	    public int PageSize { get; set; } = 10;
+
+	    public string PrevPageText { get; set; } = "Prev";
+
+	    public string NextPageText { get; set; } = "Next";
+
+	    public string FirstPageText { get; set; } = "First";
+
+	    public string LastPageText { get; set; } = "Last";
+
+	    public string PageTemplate { get; set; } = "<a href=\"[URL]\">[TEXT]</a>";
 	}
 #endregion
 	

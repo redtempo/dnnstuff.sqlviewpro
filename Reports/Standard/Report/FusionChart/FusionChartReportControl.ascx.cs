@@ -46,37 +46,27 @@ namespace DNNStuff.SQLViewPro.StandardReports
 #endregion
 		
 #region  Page
-		
-		private FusionChartReportSettings _ReportExtra = new FusionChartReportSettings();
-		private FusionChartReportSettings ReportExtra
-		{
-			get
-			{
-				return _ReportExtra;
-			}
-			set
-			{
-				_ReportExtra = value;
-			}
-		}
-		private string _reportScript;
+
+	    private FusionChartReportSettings ReportExtra { get; set; } = new FusionChartReportSettings();
+
+	    private string _reportScript;
 		
 #endregion
 		
 #region  Base Method Implementations
 		public override void LoadRuntimeSettings(ReportInfo settings)
 		{
-			_ReportExtra = (FusionChartReportSettings) (Serialization.DeserializeObject(settings.ReportConfig, typeof(FusionChartReportSettings)));
+			ReportExtra = (FusionChartReportSettings) (Serialization.DeserializeObject(settings.ReportConfig, typeof(FusionChartReportSettings)));
 		}
 #endregion
 		
 #region  Chart
 		private string GenerateColourSet(int numColors)
 		{
-			Random random = new Random();
-			string s = "";
+			var random = new Random();
+			var s = "";
 			
-			for (int i = 0; i <= numColors - 1; i++)
+			for (var i = 0; i <= numColors - 1; i++)
 			{
 				s = s + string.Format("{0:X6}", random.Next(0x1000000)) + ",";
 			}
@@ -87,7 +77,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		private string ReportColorSet(int numColors)
 		{
-			string colorSet = ReportExtra.ColorSet;
+			var colorSet = ReportExtra.ColorSet;
 			
 			if (colorSet == "Custom")
 			{
@@ -103,14 +93,14 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		private string GetChartProperties()
 		{
-			System.Text.StringBuilder s = new System.Text.StringBuilder();
+			var s = new System.Text.StringBuilder();
 			
-			foreach (PropertyInfo prop in ReportExtra.GetType().GetProperties())
+			foreach (var prop in ReportExtra.GetType().GetProperties())
 			{
 				
-				string expectedValue = "";
+				var expectedValue = "";
 				
-				object value = prop.GetValue(ReportExtra, null);
+				var value = prop.GetValue(ReportExtra, null);
 				if (value != null)
 				{
 					switch (prop.PropertyType.Name)
@@ -153,9 +143,9 @@ namespace DNNStuff.SQLViewPro.StandardReports
 				DebugInfo.Append(QueryText);
 			}
 			
-			DataSet ds = ReportData();
+			var ds = ReportData();
 			
-			System.Text.StringBuilder data = new System.Text.StringBuilder();
+			var data = new System.Text.StringBuilder();
 			data.AppendFormat("<graph {0} >", GetChartProperties());
 			
 			if (ds.Tables.Count > 1 && (ReportExtra.ChartType.StartsWith("MS") || ReportExtra.ChartType.StartsWith("Stacked")))
@@ -173,7 +163,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			
 			data.Append("</graph>");
 			
-			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+			var sb = new System.Text.StringBuilder();
 			sb.Append("<script type=\"text/javascript\">");
 			sb.Append("jQuery(document).ready(function () {");
 			sb.AppendFormat("   var chart = new FusionCharts(\"{0}\", \"ChartId\", \"{1}\", \"{2}\");", ResolveUrl("Charts/FCF_" + ReportExtra.ChartType + ".swf"), ReportExtra.ChartWidth, ReportExtra.ChartHeight);
@@ -198,9 +188,9 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			data.AppendFormat("</categories>");
 			
 			string[] colors = null;
-			int colorIndex = 0;
+			var colorIndex = 0;
 			colors = ReportColorSet(ds.Tables[0].Columns.Count).Split(',');
-			for (int columnIndex = 1; columnIndex <= ds.Tables[0].Columns.Count - 1; columnIndex++)
+			for (var columnIndex = 1; columnIndex <= ds.Tables[0].Columns.Count - 1; columnIndex++)
 			{
 				data.AppendFormat("<dataset seriesname=\'{0}\' color=\'{1}\'>", StringHelpers.XmlEncode(ds.Tables[0].Columns[columnIndex].ColumnName), colors[colorIndex]);
 				foreach (DataRow dr in ds.Tables[0].Rows)
@@ -227,9 +217,9 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			data.AppendFormat("</categories>");
 			
 			string[] colors = null;
-			int colorIndex = 0;
+			var colorIndex = 0;
 			colors = ReportColorSet(ds.Tables[0].Columns.Count).Split(',');
-			for (int tableIndex = 0; tableIndex <= ds.Tables.Count - 1; tableIndex++)
+			for (var tableIndex = 0; tableIndex <= ds.Tables.Count - 1; tableIndex++)
 			{
 				data.AppendFormat("<dataset seriesname=\'{0}\' color=\'{1}\'>", StringHelpers.XmlEncode(ds.Tables[tableIndex].Columns[1].ColumnName), colors[colorIndex]);
 				foreach (DataRow dr in ds.Tables[tableIndex].Rows)
@@ -248,7 +238,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		private void RenderSingleSeriesChart(DataSet ds, System.Text.StringBuilder data)
 		{
 			string[] colors = null;
-			int colorIndex = 0;
+			var colorIndex = 0;
 			colors = ReportColorSet(ds.Tables[0].Rows.Count).Split(',');
 			
 			// single series

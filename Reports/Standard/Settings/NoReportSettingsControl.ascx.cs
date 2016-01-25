@@ -1,20 +1,5 @@
-
-
-
 using System.Xml.Serialization;
 using DNNStuff.SQLViewPro.Controls;
-
-//***************************************************************************/
-//* NoReportSettings.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Default Report Settings Handler
-//*************/
-
 
 namespace DNNStuff.SQLViewPro.StandardReports
 {
@@ -39,14 +24,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 #endregion
 		
-#region  Page
-		private void Page_Load(System.Object sender, System.EventArgs e)
-		{
-			
-		}
-		
-#endregion
-		
+	
 #region  Base Method Implementations
 		protected override string LocalResourceFile
 		{
@@ -58,7 +36,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		public override string UpdateSettings()
 		{
-			NoReportSettings obj = new NoReportSettings();
+			var obj = new NoReportSettings();
 			return Serialization.SerializeObject(obj, typeof(NoReportSettings));
 		}
 		

@@ -36,8 +36,8 @@ namespace DNNStuff.SQLViewPro
 		
 		static new public Settings Load(string filename)
 		{
-			XmlSerializer serializer = new XmlSerializer(typeof(Settings));
-			using (System.IO.StreamReader reader = new System.IO.StreamReader(filename))
+			var serializer = new XmlSerializer(typeof(Settings));
+			using (var reader = new System.IO.StreamReader(filename))
 			{
 				return ((Settings) (serializer.Deserialize(reader)));
 			}
@@ -47,17 +47,17 @@ namespace DNNStuff.SQLViewPro
 		
 		public List<CustomProperty> GetAllProperties()
 		{
-			List<CustomProperty> all = new List<CustomProperty>();
-			foreach (Section Section in Sections)
+			var all = new List<CustomProperty>();
+			foreach (var Section in Sections)
 			{
-				foreach (PropertyGroup group in Section.PropertyGroups)
+				foreach (var group in Section.PropertyGroups)
 				{
-					foreach (CustomProperty prop in group.Properties)
+					foreach (var prop in group.Properties)
 					{
 						all.Add(prop);
 					}
 				}
-				foreach (CustomProperty prop in Section.Properties)
+				foreach (var prop in Section.Properties)
 				{
 					all.Add(prop);
 				}

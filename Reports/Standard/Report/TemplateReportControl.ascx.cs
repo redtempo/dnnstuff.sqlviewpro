@@ -48,25 +48,14 @@ using DotNetNuke.Common;
 #region  Page
 		private const string PAGINGTYPE_INTERNAL = "Internal";
 		private const string PAGINGTYPE_QUERYSTRING = "Querystring";
-		
-		private TemplateReportSettings _ReportExtra = new TemplateReportSettings();
-		private TemplateReportSettings ReportExtra
+
+		    private TemplateReportSettings ReportExtra { get; set; } = new TemplateReportSettings();
+
+		    private int PageNumber
 		{
 			get
 			{
-				return _ReportExtra;
-			}
-			set
-			{
-				_ReportExtra = value;
-			}
-		}
-		
-		private int PageNumber
-		{
-			get
-			{
-				int value = 1;
+				var value = 1;
 				if (ReportExtra.PagingType == PAGINGTYPE_INTERNAL)
 				{
 					if (ViewState["pageNumber"] != null)
@@ -109,7 +98,7 @@ using DotNetNuke.Common;
 #region  Base Method Implementations
 		public override void LoadRuntimeSettings(ReportInfo settings)
 		{
-			_ReportExtra = (TemplateReportSettings) (Serialization.DeserializeObject(settings.ReportConfig, typeof(TemplateReportSettings)));
+			ReportExtra = (TemplateReportSettings) (Serialization.DeserializeObject(settings.ReportConfig, typeof(TemplateReportSettings)));
 		}
 #endregion
 		
@@ -125,14 +114,14 @@ using DotNetNuke.Common;
 				DebugInfo.Append(QueryText);
 			}
 			
-			DataSet ds = ReportData();
+			var ds = ReportData();
 			
-			int maxPage = 1;
+			var maxPage = 1;
 			if (ReportExtra.AllowPaging)
 			{
 				maxPage = Convert.ToInt32((ds.Tables[0].Rows.Count + ReportExtra.PageSize - 1) / ReportExtra.PageSize);
-				System.Collections.Generic.List<DataRow> pageData = new System.Collections.Generic.List<DataRow>();
-				for (int i = ((PageNumber - 1) * ReportExtra.PageSize + 1); i <= ((PageNumber) * ReportExtra.PageSize); i++)
+				var pageData = new System.Collections.Generic.List<DataRow>();
+				for (var i = ((PageNumber - 1) * ReportExtra.PageSize + 1); i <= ((PageNumber) * ReportExtra.PageSize); i++)
 				{
 					if (i > ds.Tables[0].Rows.Count)
 					{
@@ -140,7 +129,7 @@ using DotNetNuke.Common;
 					}
 					pageData.Add(ds.Tables[0].Rows[i - 1]);
 				}
-				DataTable pageTable = default(DataTable);
+				var pageTable = default(DataTable);
 				if (pageData.Any()) // check for data as CopyToDataTable errors if empty list
 				{
 					pageTable = pageData.CopyToDataTable();
@@ -160,7 +149,7 @@ using DotNetNuke.Common;
 			}
 			else
 			{
-				string result = ReportExtra.TemplateText;
+				var result = ReportExtra.TemplateText;
 				
 				// TEMPORARY: until export services changed
 				if (result.Contains("[EXPORT_EXCEL]"))
@@ -172,14 +161,14 @@ using DotNetNuke.Common;
 				// paging support
 				if (ReportExtra.AllowPaging)
 				{
-					string pagerPrevious = "";
-					string pagerNext = "";
-					string pagerFirst = "";
-					string pagerLast = "";
-					string pagerPages = "";
+					var pagerPrevious = "";
+					var pagerNext = "";
+					var pagerFirst = "";
+					var pagerLast = "";
+					var pagerPages = "";
 					
 					// previous
-					int prevPage = PageNumber - 1;
+					var prevPage = PageNumber - 1;
 					if (prevPage > 0)
 					{
 						// insert previous page item
@@ -193,7 +182,7 @@ using DotNetNuke.Common;
 						}
 					}
 					// next
-					int nextPage = PageNumber + 1;
+					var nextPage = PageNumber + 1;
 					if (PageNumber < maxPage)
 					{
 						// insert next page
@@ -233,7 +222,7 @@ using DotNetNuke.Common;
 					// pages
 					if (ReportExtra.PagingType == PAGINGTYPE_QUERYSTRING)
 					{
-						for (int i = 1; i <= Math.Min(10, maxPage); i++)
+						for (var i = 1; i <= Math.Min(10, maxPage); i++)
 						{
 							pagerPages = pagerPages + PageTemplate(i, i.ToString(), "page");
 						}
@@ -262,8 +251,8 @@ using DotNetNuke.Common;
 				phContent.Controls.Add(ParseControl(result));
 				
 				// hook up command for drilldown links
-				LinkButton drilldownCtrl = default(LinkButton);
-				int drilldownIndex = 1;
+				var drilldownCtrl = default(LinkButton);
+				var drilldownIndex = 1;
 				while (true)
 				{
 					drilldownCtrl = (LinkButton) (phContent.FindControl("cmdDrillDown" + drilldownIndex.ToString()));
@@ -281,25 +270,25 @@ using DotNetNuke.Common;
 				// hookup command for pager links for internal
 				if (ReportExtra.PagingType == PAGINGTYPE_INTERNAL)
 				{
-					LinkButton cmdPreviousPage = default(LinkButton);
+					var cmdPreviousPage = default(LinkButton);
 					cmdPreviousPage = (LinkButton) (phContent.FindControl("cmdPreviousPage"));
 					if (cmdPreviousPage != null)
 					{
 						cmdPreviousPage.Command += new CommandEventHandler(Pager_Click);
 					}
-					LinkButton cmdNextPage = default(LinkButton);
+					var cmdNextPage = default(LinkButton);
 					cmdNextPage = (LinkButton) (phContent.FindControl("cmdNextPage"));
 					if (cmdNextPage != null)
 					{
 						cmdNextPage.Command += new CommandEventHandler(Pager_Click);
 					}
-					LinkButton cmdFirstPage = default(LinkButton);
+					var cmdFirstPage = default(LinkButton);
 					cmdFirstPage = (LinkButton) (phContent.FindControl("cmdFirstPage"));
 					if (cmdFirstPage != null)
 					{
 						cmdFirstPage.Command += new CommandEventHandler(Pager_Click);
 					}
-					LinkButton cmdLastPage = default(LinkButton);
+					var cmdLastPage = default(LinkButton);
 					cmdLastPage = (LinkButton) (phContent.FindControl("cmdLastPage"));
 					if (cmdLastPage != null)
 					{
@@ -317,7 +306,7 @@ using DotNetNuke.Common;
 #region Paging
 		private void Pager_Click(object sender, EventArgs e)
 		{
-			LinkButton btn = (LinkButton) sender;
+			var btn = (LinkButton) sender;
 			if (btn != null)
 			{
 				PageNumber = int.Parse(btn.CommandArgument);
@@ -329,7 +318,7 @@ using DotNetNuke.Common;
 #region  Export
 		protected void cmdExportExcel_Click(object sender, EventArgs e)
 		{
-			DataSet ds = ReportData();
+			var ds = ReportData();
 			Services.Export.Excel.Export(ds.Tables[0], Response, Globals.CleanFileName(Report.ReportName + ".xls"));
 		}
 #endregion
@@ -345,9 +334,9 @@ using DotNetNuke.Common;
 		{
 			if (e.CommandName.StartsWith("Drilldown|"))
 			{
-				int row = int.Parse(e.CommandArgument.ToString());
-				DataSet ds = ReportData();
-				DataRow dr = ds.Tables[0].Rows[row - 1];
+				var row = int.Parse(e.CommandArgument.ToString());
+				var ds = ReportData();
+				var dr = ds.Tables[0].Rows[row - 1];
 				
 				DrillDown(this, new DrilldownEventArgs(Report.ReportId, e.CommandName.Replace("Drilldown|", ""), dr));
 			}

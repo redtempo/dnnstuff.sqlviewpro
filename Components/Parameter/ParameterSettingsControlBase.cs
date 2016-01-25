@@ -18,7 +18,7 @@ namespace DNNStuff.SQLViewPro.Controls
 		}
 #endregion
 		
-		private void Page_Load(object sender, System.EventArgs e)
+		protected void Page_Load(object sender, System.EventArgs e)
 		{
 			LoadLabelResources(this);
 		}

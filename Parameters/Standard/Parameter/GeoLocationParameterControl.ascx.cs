@@ -37,15 +37,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		}
 		
 #endregion
-		
-#region  Page
-		private void Page_Load(System.Object sender, System.EventArgs e)
-		{
-			
-		}
-		
-#endregion
-		
+	
 #region  Base Method Implementations
 		public override List<string> Values
 		{

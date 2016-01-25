@@ -51,21 +51,10 @@ namespace DNNStuff.SQLViewPro.StandardReports
 #endregion
 		
 #region  Page
-		
-		private NoReportSettings _ReportExtra = new NoReportSettings();
-		private NoReportSettings ReportExtra
-		{
-			get
-			{
-				return _ReportExtra;
-			}
-			set
-			{
-				_ReportExtra = value;
-			}
-		}
-		
-#endregion
+
+	    private NoReportSettings ReportExtra { get; set; } = new NoReportSettings();
+
+	    #endregion
 		
 #region  Base Method Implementations
 		
@@ -80,8 +69,8 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		private void ExportReport()
 		{
-			DataSet ds = ReportData();
-			ExportDetails details = new ExportDetails();
+			var ds = ReportData();
+			var details = new ExportDetails();
 			details.Dataset = ds;
 			details.Filename = (string) (Globals.CleanFileName(Report.ReportName + ".xls"));
 			Session[Export.EXPORT_KEY] = details;

@@ -39,13 +39,7 @@ namespace DNNStuff.SQLViewPro.ExcelReports
 		
 #endregion
 		
-#region  Page
-		private void Page_Load(System.Object sender, System.EventArgs e)
-		{
-		}
-		
-#endregion
-		
+	
 #region  Base Method Implementations
 		protected override string LocalResourceFile
 		{

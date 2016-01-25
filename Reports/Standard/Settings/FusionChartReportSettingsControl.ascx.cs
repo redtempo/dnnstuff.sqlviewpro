@@ -1,18 +1,6 @@
 using System.Xml.Serialization;
 using DNNStuff.SQLViewPro.Controls;
 
-//***************************************************************************/
-//* ChartReportSettings.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Grid Report Settings Handler
-//*************/
-
-
 namespace DNNStuff.SQLViewPro.StandardReports
 {
 	
@@ -26,21 +14,10 @@ namespace DNNStuff.SQLViewPro.StandardReports
 				return ResolveUrl("App_LocalResources/FusionChartReportSettingsControl");
 			}
 		}
-		
-		private FusionChartReportSettings _ReportSettings = new FusionChartReportSettings();
-		private FusionChartReportSettings ReportSettings
-		{
-			get
-			{
-				return _ReportSettings;
-			}
-			set
-			{
-				_ReportSettings = value;
-			}
-		}
-		
-#region  Web Form Designer Generated Code
+
+	    private FusionChartReportSettings ReportSettings { get; set; } = new FusionChartReportSettings();
+
+	    #region  Web Form Designer Generated Code
 		
 		//This call is required by the Web Form Designer.
 		[System.Diagnostics.DebuggerStepThrough()]private void InitializeComponent()
@@ -157,51 +134,19 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			Animation = true;
 			ShowColumnShadow = true;
 		}
-		
-		private string _ChartType = "Column2D";
-		public string ChartType
-		{
-			get
-			{
-				return _ChartType;
-			}
-			set
-			{
-				_ChartType = value;
-			}
-		}
-		
-		// colorset
+
+	    public string ChartType { get; set; } = "Column2D";
+
+	    // colorset
 		public string ColorSet {get; set;}
 		public string CustomColorSet {get; set;}
 		
 		// chart settings
-		private int _ChartHeight = 400;
-		public int ChartHeight
-		{
-			get
-			{
-				return _ChartHeight;
-			}
-			set
-			{
-				_ChartHeight = value;
-			}
-		}
-		private int _ChartWidth = 600;
-		public int ChartWidth
-		{
-			get
-			{
-				return _ChartWidth;
-			}
-			set
-			{
-				_ChartWidth = value;
-			}
-		}
-		
-		//Background Properties
+	    public int ChartHeight { get; set; } = 400;
+
+	    public int ChartWidth { get; set; } = 600;
+
+	    //Background Properties
 		public string BgColor {get; set;}
 		public string BgAlpha {get; set;}
 		public string BgSWF {get; set;}

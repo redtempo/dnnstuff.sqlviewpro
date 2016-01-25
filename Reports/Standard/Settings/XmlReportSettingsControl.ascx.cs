@@ -1,20 +1,5 @@
-
-
-
 using System.Xml.Serialization;
 using DNNStuff.SQLViewPro.Controls;
-
-//***************************************************************************/
-//* XmlReportSettings.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Xml Report Settings Handler
-//*************/
-
 
 namespace DNNStuff.SQLViewPro.StandardReports
 {
@@ -39,13 +24,6 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 #endregion
 		
-#region  Page
-		private void Page_Load(System.Object sender, System.EventArgs e)
-		{
-		}
-		
-#endregion
-		
 #region  Base Method Implementations
 		protected override string LocalResourceFile
 		{
@@ -58,7 +36,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		public override string UpdateSettings()
 		{
 			
-			XmlReportSettings obj = new XmlReportSettings();
+			var obj = new XmlReportSettings();
 			obj.XslSrc = txtXslSrc.Text;
 			
 			return Serialization.SerializeObject(obj, typeof(XmlReportSettings));
@@ -67,7 +45,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		public override void LoadSettings(string settings)
 		{
-			XmlReportSettings obj = new XmlReportSettings();
+			var obj = new XmlReportSettings();
 			if (!string.IsNullOrEmpty(settings))
 			{
 				obj = (XmlReportSettings) (Serialization.DeserializeObject(settings, typeof(XmlReportSettings)));
@@ -82,18 +60,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 #region  Settings
 	[XmlRootAttribute(ElementName = "Settings", IsNullable = false)]public class XmlReportSettings
 	{
-		private string _XslSrc;
-		public string XslSrc
-		{
-			get
-			{
-				return _XslSrc;
-			}
-			set
-			{
-				_XslSrc = value;
-			}
-		}
+	    public string XslSrc { get; set; }
 	}
 #endregion
 	

@@ -49,21 +49,10 @@ namespace DNNStuff.SQLViewPro.StandardReports
 #endregion
 		
 #region  Page
-		
-		private GridReportSettings _ReportExtra = new GridReportSettings();
-		private GridReportSettings ReportExtra
-		{
-			get
-			{
-				return _ReportExtra;
-			}
-			set
-			{
-				_ReportExtra = value;
-			}
-		}
-		
-		private void Page_Load(object sender, EventArgs e)
+
+	    private GridReportSettings ReportExtra { get; set; } = new GridReportSettings();
+
+	    private void Page_Load(object sender, EventArgs e)
 		{
 			try
 			{
@@ -114,7 +103,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			pnl.Controls.Add(c);
 			
 			// set action buttons
-			Control obj = Globals.FindControlRecursive(pnl, "cmdExportExcel");
+			var obj = Globals.FindControlRecursive(pnl, "cmdExportExcel");
 			
 			if (obj != null)
 			{
@@ -125,8 +114,8 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		protected void cmdExportExcel_Click(object sender, EventArgs e)
 		{
-			DataSet ds = ReportData();
-			ExportDetails details = new ExportDetails();
+			var ds = ReportData();
+			var details = new ExportDetails();
 			details.Dataset = ds;
 			details.Filename = (string) (Globals.CleanFileName(Report.ReportName + ".xls"));
 			Session[Export.EXPORT_KEY] = details;
@@ -160,7 +149,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		private void BindGridToData()
 		{
-			string gridQuery = GetQueryText();
+			var gridQuery = GetQueryText();
 			
 			// debug
 			if (State.ReportSet.ReportSetDebug)
@@ -168,7 +157,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 				DebugInfo.Append(gridQuery);
 			}
 			
-			DataSet ds = ReportData(gridQuery);
+			var ds = ReportData(gridQuery);
 			
 			if (dgCommand.Columns.Count == 0 && dgCommand.AutoGenerateColumns == false)
 			{
@@ -194,7 +183,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		private void AddGridColumns(DataSet ds)
 		{
-			string[] hiddenColumns = ReportExtra.HideColumns.Split(',');
+			var hiddenColumns = ReportExtra.HideColumns.Split(',');
 			
 			foreach (DataColumn c in ds.Tables[0].Columns)
 			{
@@ -203,7 +192,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 					
 					if (IsDrilldown() && IsDrilldownColumn(c.ColumnName))
 					{
-						TemplateColumn dgt = new TemplateColumn();
+						var dgt = new TemplateColumn();
 						dgt.ItemTemplate = new DrilldownTemplate(c.ColumnName);
 						dgt.HeaderText = c.Caption;
 						dgt.SortExpression = c.ColumnName;
@@ -211,7 +200,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 					}
 					else
 					{
-						BoundColumn dgc = new BoundColumn();
+						var dgc = new BoundColumn();
 						dgc.DataField = c.ColumnName;
 						dgc.HeaderText = c.Caption;
 						dgc.SortExpression = c.ColumnName;
@@ -225,7 +214,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		{
 			get
 			{
-				string value = (ViewState["SortExpression"]).ToString();
+				var value = (ViewState["SortExpression"]).ToString();
 				if (value == "")
 				{
 					value = (string) (ReportExtra.OrderBy.Replace(" DESC", "").Replace(" ASC", ""));
@@ -241,7 +230,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		{
 			get
 			{
-				string value = (ViewState["SortDirection"]).ToString();
+				var value = (ViewState["SortDirection"]).ToString();
 				if (value == "")
 				{
 					value = "ASC";
@@ -264,7 +253,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		private string GetQueryText()
 		{
-			string query = QueryText;
+			var query = QueryText;
 			
 			// bind data
 			if (query != "")
@@ -347,7 +336,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			
 			public void InstantiateIn(Control container)
 			{
-				LinkButton linkbtn = new LinkButton();
+				var linkbtn = new LinkButton();
 				linkbtn.ID = "lbDrilldown" + _fieldName;
 				linkbtn.DataBinding += new EventHandler(BindHyperLinkColumn);
 				container.Controls.Add(linkbtn);
@@ -355,8 +344,8 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			
 			private void BindHyperLinkColumn(object sender, EventArgs e)
 			{
-				LinkButton linkbtn = (LinkButton) sender;
-				DataGridItem container = (DataGridItem) linkbtn.NamingContainer;
+				var linkbtn = (LinkButton) sender;
+				var container = (DataGridItem) linkbtn.NamingContainer;
 				
 				linkbtn.CommandName = "Drilldown|" + _fieldName;
 				linkbtn.CommandArgument = Convert.ToString(DataBinder.Eval(container.DataItem, _fieldName));
@@ -368,9 +357,9 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		{
 			if (e.CommandName.StartsWith("Drilldown|"))
 			{
-				string query = GetQueryText();
-				DataSet ds = ReportData(query);
-				DataRow dr = ds.Tables[0].Rows[e.Item.DataSetIndex];
+				var query = GetQueryText();
+				var ds = ReportData(query);
+				var dr = ds.Tables[0].Rows[e.Item.DataSetIndex];
 				
 				DrillDown(this, new DrilldownEventArgs(Report.ReportId, e.CommandName.Replace("Drilldown|", ""), dr));
 			}
@@ -383,9 +372,9 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		private bool IsDrilldownColumn(string colName)
 		{
-			foreach (object obj in Report.ReportDrillDowns)
+			foreach (var obj in Report.ReportDrillDowns)
 			{
-				ReportInfo ri = (ReportInfo) obj;
+				var ri = (ReportInfo) obj;
 				if (ri.ReportDrilldownFieldname == colName)
 				{
 					return true;
@@ -396,9 +385,9 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 		private ReportInfo DrilldownReportByColumn(string colName)
 		{
-			foreach (object obj in Report.ReportDrillDowns)
+			foreach (var obj in Report.ReportDrillDowns)
 			{
-				ReportInfo ri = (ReportInfo) obj;
+				var ri = (ReportInfo) obj;
 				if (ri.ReportDrilldownFieldname == colName)
 				{
 					return ri;
