@@ -1,18 +1,6 @@
 using System.Collections.Generic;
 using DNNStuff.SQLViewPro.Services.Data;
 
-//***************************************************************************/
-//* MobiscrollParameter.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Default Parameter Handler
-//*************/
-
-
 namespace DNNStuff.SQLViewPro.MobileParameters
 {
 	
@@ -44,7 +32,7 @@ namespace DNNStuff.SQLViewPro.MobileParameters
 			ScriptController.InjectCssReference(Page, "mobiscroll", ResolveUrl("Resources/mobiscroll-1.6.min.css"), true, ScriptController.CssInjectOrder.f_Last);
 			ScriptController.InjectJsLibrary(Page, "mobiscroll_js", ResolveUrl("Resources/mobiscroll-1.6.min.js"), false, ScriptController.ScriptInjectOrder.e_Default);
 			
-			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+			var sb = new System.Text.StringBuilder();
 			sb.AppendLine("<script type=\"text/javascript\">");
 			sb.AppendLine("$(document).ready(function () {");
 			sb.AppendLine(string.Format("$(\'#{0}\').scroller({{ preset: \'{1}\' , theme: \'{2}\', mode: \'{3}\' }});", txtMobiscroll.ClientID, MobiscrollSettings().Preset, MobiscrollSettings().Theme, MobiscrollSettings().Mode));

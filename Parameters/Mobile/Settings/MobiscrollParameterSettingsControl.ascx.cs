@@ -1,20 +1,5 @@
-
-
-
 using System.Xml.Serialization;
 using DNNStuff.SQLViewPro.Controls;
-
-//***************************************************************************/
-//* MobiscrollParameterSettings.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Mobiscroll Parameter Settings Handler
-//*************/
-
 
 namespace DNNStuff.SQLViewPro.MobileParameters
 {
@@ -51,7 +36,7 @@ namespace DNNStuff.SQLViewPro.MobileParameters
 		public override string UpdateSettings()
 		{
 			
-			MobiscrollParameterSettings obj = new MobiscrollParameterSettings();
+			var obj = new MobiscrollParameterSettings();
 			obj.Default = txtDefault.Text;
 			obj.Preset = ddPreset.SelectedValue;
 			obj.Theme = ddTheme.SelectedValue;
@@ -63,7 +48,7 @@ namespace DNNStuff.SQLViewPro.MobileParameters
 		
 		public override void LoadSettings(string settings)
 		{
-			MobiscrollParameterSettings obj = new MobiscrollParameterSettings();
+			var obj = new MobiscrollParameterSettings();
 			if (settings != null)
 			{
 				obj = (MobiscrollParameterSettings) (Serialization.DeserializeObject(settings, typeof(MobiscrollParameterSettings)));
@@ -83,54 +68,13 @@ namespace DNNStuff.SQLViewPro.MobileParameters
 	[XmlRootAttribute(ElementName = "Settings", IsNullable = false)]public class MobiscrollParameterSettings
 	{
 		public string Default {get; set;}
-		private string _DatabaseFormat = "";
-		public string DatabaseFormat
-		{
-			get
-			{
-				return _DatabaseFormat;
-			}
-			set
-			{
-				_DatabaseFormat = value;
-			}
-		}
-		private string _Preset = "date";
-		public string Preset
-		{
-			get
-			{
-				return _Preset;
-			}
-			set
-			{
-				_Preset = value;
-			}
-		}
-		private string _Theme = "default";
-		public string Theme
-		{
-			get
-			{
-				return _Theme;
-			}
-			set
-			{
-				_Theme = value;
-			}
-		}
-		private string _Mode = "Scroller";
-		public string Mode
-		{
-			get
-			{
-				return _Mode;
-			}
-			set
-			{
-				_Mode = value;
-			}
-		}
+	    public string DatabaseFormat { get; set; } = "";
+
+	    public string Preset { get; set; } = "date";
+
+	    public string Theme { get; set; } = "default";
+
+	    public string Mode { get; set; } = "Scroller";
 	}
 #endregion
 	
