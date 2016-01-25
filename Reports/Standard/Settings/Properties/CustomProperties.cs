@@ -48,16 +48,16 @@ namespace DNNStuff.SQLViewPro
 		public List<CustomProperty> GetAllProperties()
 		{
 			var all = new List<CustomProperty>();
-			foreach (var Section in Sections)
+			foreach (var section in Sections)
 			{
-				foreach (var group in Section.PropertyGroups)
+				foreach (var group in section.PropertyGroups)
 				{
 					foreach (var prop in group.Properties)
 					{
 						all.Add(prop);
 					}
 				}
-				foreach (var prop in Section.Properties)
+				foreach (var prop in section.Properties)
 				{
 					all.Add(prop);
 				}

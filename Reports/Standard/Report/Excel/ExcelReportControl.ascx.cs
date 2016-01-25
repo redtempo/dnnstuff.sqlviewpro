@@ -1,22 +1,7 @@
-
-
 using System;
 using System.Data;
 using System.Web.UI;
 using DotNetNuke.Common;
-
-
-
-//***************************************************************************/
-//* ExcelReportControl.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Excel Report
-//*************/
 
 namespace DNNStuff.SQLViewPro.StandardReports
 {
