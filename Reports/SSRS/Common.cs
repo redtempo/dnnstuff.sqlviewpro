@@ -1,8 +1,3 @@
-
-
-
-
-
 namespace DNNStuff.SQLViewPro.SSRSReports
 {
 	public class Common

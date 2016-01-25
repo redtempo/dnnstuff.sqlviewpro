@@ -9,17 +9,6 @@ using System.Collections.Generic;
 using Microsoft.Reporting.WebForms;
 using System.Security.Principal;
 
-//***************************************************************************/
-//* XmlReportControl.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Xml Report
-//*************/
-
 namespace DNNStuff.SQLViewPro.SSRSReports
 {
 	
@@ -46,21 +35,10 @@ namespace DNNStuff.SQLViewPro.SSRSReports
 #endregion
 		
 #region  Page
-		
-		private SSRSReportSettings _ReportExtra = new SSRSReportSettings();
-		private SSRSReportSettings ReportExtra
-		{
-			get
-			{
-				return _ReportExtra;
-			}
-			set
-			{
-				_ReportExtra = value;
-			}
-		}
-		
-		private void Page_Load(object sender, EventArgs e)
+
+	    private SSRSReportSettings ReportExtra { get; set; } = new SSRSReportSettings();
+
+	    private void Page_Load(object sender, EventArgs e)
 		{
 			try
 			{
@@ -76,7 +54,7 @@ namespace DNNStuff.SQLViewPro.SSRSReports
 #region  Base Method Implementations
 		public override void LoadRuntimeSettings(ReportInfo settings)
 		{
-			_ReportExtra = (SSRSReportSettings) (Serialization.DeserializeObject(settings.ReportConfig, typeof(SSRSReportSettings)));
+			ReportExtra = (SSRSReportSettings) (Serialization.DeserializeObject(settings.ReportConfig, typeof(SSRSReportSettings)));
 		}
 #endregion
 		
@@ -118,7 +96,7 @@ namespace DNNStuff.SQLViewPro.SSRSReports
 				ReportViewer1.Height = Unit.Percentage(100);
 			}
 			
-			Dictionary<string, string> options = StringHelpers.ToDictionary(ReportExtra.ToolbarOptions, ',');
+			var options = StringHelpers.ToDictionary(ReportExtra.ToolbarOptions, ',');
 			ReportViewer1.ShowBackButton = options.ContainsKey("ShowBackButton");
 			ReportViewer1.ShowDocumentMapButton = options.ContainsKey("ShowDocumentMapButton");
 			ReportViewer1.ShowExportControls = options.ContainsKey("ShowExportControls");
@@ -146,15 +124,15 @@ namespace DNNStuff.SQLViewPro.SSRSReports
 		private void RenderLocalReport()
 		{
 			
-			DataSet ds = ReportData();
+			var ds = ReportData();
 			
 			ReportViewer1.ProcessingMode = ProcessingMode.Local;
 			ReportViewer1.LocalReport.ReportPath = (string) (Services.File.GetFilenameFromFileId(ReportExtra.LocalReportPath));
 			ReportViewer1.LocalReport.DisplayName = Report.ReportName;
 			
-			IList<string> dsNames = ReportViewer1.LocalReport.GetDataSourceNames();
+			var dsNames = ReportViewer1.LocalReport.GetDataSourceNames();
 			ReportViewer1.LocalReport.DataSources.Clear();
-			for (int dsIndex = 0; dsIndex <= dsNames.Count - 1; dsIndex++)
+			for (var dsIndex = 0; dsIndex <= dsNames.Count - 1; dsIndex++)
 			{
 				ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource(dsNames[dsIndex], ds.Tables[dsIndex]));
 			}
@@ -180,19 +158,19 @@ namespace DNNStuff.SQLViewPro.SSRSReports
 		private List<ReportParameter> SetReportParameters(ReportParameterInfoCollection reportParameters)
 		{
 			
-			List<ReportParameter> parameters = new List<ReportParameter>();
-			Dictionary<string, string> additional = StringHelpers.ToDictionary(ReportExtra.AdditionalParameters, ',');
+			var parameters = new List<ReportParameter>();
+			var additional = StringHelpers.ToDictionary(ReportExtra.AdditionalParameters, ',');
 			// report parameters
-			foreach (ReportParameterInfo parameterInfo in reportParameters)
+			foreach (var parameterInfo in reportParameters)
 			{
-				ReportParameter p = new ReportParameter(parameterInfo.Name);
+				var p = new ReportParameter(parameterInfo.Name);
 				foreach (ParameterInfo parameter in State.Parameters)
 				{
 					if (parameter.ParameterName == p.Name)
 					{
 						if (parameter.Values != null)
 						{
-							foreach (string val in parameter.Values)
+							foreach (var val in parameter.Values)
 							{
 								p.Values.Add(val);
 							}
@@ -211,6 +189,7 @@ namespace DNNStuff.SQLViewPro.SSRSReports
 		}
 		
 #endregion
+
 #region ReportViewer
 		private void ReportViewer1_ReportRefresh(object sender, System.ComponentModel.CancelEventArgs e)
 		{
@@ -230,23 +209,11 @@ namespace DNNStuff.SQLViewPro.SSRSReports
 
         private readonly string _domain;
 
-        public WindowsIdentity ImpersonationUser
-        {
-            get
-            {
-                return null;
-            }
-        }
+        public WindowsIdentity ImpersonationUser => null;
 
-        public ICredentials NetworkCredentials
-        {
-            get
-            {
-                return new NetworkCredential(_username, _password, _domain);
-            }
-        }
+	    public ICredentials NetworkCredentials => new NetworkCredential(_username, _password, _domain);
 
-        public CustomReportCredentials(string username, string password, string domain)
+	    public CustomReportCredentials(string username, string password, string domain)
         {
             _username = username;
             _password = password;

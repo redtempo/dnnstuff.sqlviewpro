@@ -7,19 +7,7 @@ using DNNStuff.SQLViewPro.Controls;
 using System.Collections.Generic;
 using System.Linq;
 	
-	//***************************************************************************/
-	//* XmlReportSettings.ascx.vb
-	//*
-	//* Copyright (c) 2004 by DNNStuff.
-	//* All rights reserved.
-	//*
-	//* Date:        August 9, 2004
-	//* Author:      Richard Edwards
-	//* Description: Template Report Settings Handler
-	//*************/
-	
-	
-	namespace DNNStuff.SQLViewPro.SSRSReports
+namespace DNNStuff.SQLViewPro.SSRSReports
 	{
 		
 		public partial class SSRSReportSettingsControl : ReportSettingsControlBase
@@ -49,18 +37,12 @@ using System.Linq;
 #endregion
 		
 #region  Base Method Implementations
-		protected override string LocalResourceFile
-		{
-			get
-			{
-				return ResolveUrl("App_LocalResources/SSRSReportSettingsControl");
-			}
-		}
-		
-		public override string UpdateSettings()
+		protected override string LocalResourceFile => ResolveUrl("App_LocalResources/SSRSReportSettingsControl");
+
+		    public override string UpdateSettings()
 		{
 			
-			SSRSReportSettings obj = new SSRSReportSettings();
+			var obj = new SSRSReportSettings();
 			obj.ProcessingMode = ddlProcessingMode.SelectedValue;
 			
 			// remote
@@ -81,7 +63,7 @@ using System.Linq;
 			obj.ViewerWidth = txtViewerWidth.Text;
 			
 			// toolbar
-			Dictionary<string, string> options = new Dictionary<string, string>();
+			var options = new Dictionary<string, string>();
 			foreach (ListItem li in lstReportOptions.Items)
 			{
 				if (li.Selected)
@@ -97,7 +79,7 @@ using System.Linq;
 		
 		public override void LoadSettings(string settings)
 		{
-			SSRSReportSettings obj = new SSRSReportSettings();
+			var obj = new SSRSReportSettings();
 			if (!string.IsNullOrEmpty(settings))
 			{
 				obj = (SSRSReportSettings) (Serialization.DeserializeObject(settings, typeof(SSRSReportSettings)));
@@ -123,7 +105,7 @@ using System.Linq;
 			txtViewerWidth.Text = obj.ViewerWidth;
 			
 			// toolbar
-			Dictionary<string, string> options = StringHelpers.ToDictionary(obj.ToolbarOptions, ',');
+			var options = StringHelpers.ToDictionary(obj.ToolbarOptions, ',');
 			foreach (ListItem li in lstReportOptions.Items)
 			{
 				li.Selected = false;
@@ -140,7 +122,7 @@ using System.Linq;
 		
 		public void RefreshVisibility()
 		{
-			bool showRemote = ddlProcessingMode.SelectedValue == Common.ProcessingModeRemote;
+			var showRemote = ddlProcessingMode.SelectedValue == Common.ProcessingModeRemote;
 			pnlRemote.Visible = showRemote;
 			pnlLocal.Visible = !(showRemote);
 		}
@@ -157,142 +139,27 @@ using System.Linq;
 #region  Settings
 	[XmlRootAttribute(ElementName = "Settings", IsNullable = false)]public class SSRSReportSettings
 	{
-		private string _ProcessingMode = "Remote";
-		public string ProcessingMode
-		{
-			get
-			{
-				return _ProcessingMode;
-			}
-			set
-			{
-				_ProcessingMode = value;
-			}
-		}
-		private string _ReportServerUrl = "http://myserver/reportserver";
-		public string ReportServerUrl
-		{
-			get
-			{
-				return _ReportServerUrl;
-			}
-			set
-			{
-				_ReportServerUrl = value;
-			}
-		}
-		private string _ReportServerReportPath = "/myreport";
-		public string ReportServerReportPath
-		{
-			get
-			{
-				return _ReportServerReportPath;
-			}
-			set
-			{
-				_ReportServerReportPath = value;
-			}
-		}
-		private string _ReportServerUsername = "";
-		public string ReportServerUsername
-		{
-			get
-			{
-				return _ReportServerUsername;
-			}
-			set
-			{
-				_ReportServerUsername = value;
-			}
-		}
-		private string _ReportServerPassword = "";
-		public string ReportServerPassword
-		{
-			get
-			{
-				return _ReportServerPassword;
-			}
-			set
-			{
-				_ReportServerPassword = value;
-			}
-		}
-		private string _ReportServerDomain = "";
-		public string ReportServerDomain
-		{
-			get
-			{
-				return _ReportServerDomain;
-			}
-			set
-			{
-				_ReportServerDomain = value;
-			}
-		}
-		
-		private string _LocalReportPath = "";
-		public string LocalReportPath
-		{
-			get
-			{
-				return _LocalReportPath;
-			}
-			set
-			{
-				_LocalReportPath = value;
-			}
-		}
-		
-		private string _AdditionalParameters = "";
-		public string AdditionalParameters
-		{
-			get
-			{
-				return _AdditionalParameters;
-			}
-			set
-			{
-				_AdditionalParameters = value;
-			}
-		}
-		
-		private string _ViewerHeight = "80%";
-		public string ViewerHeight
-		{
-			get
-			{
-				return _ViewerHeight;
-			}
-			set
-			{
-				_ViewerHeight = value;
-			}
-		}
-		private string _ViewerWidth = "100%";
-		public string ViewerWidth
-		{
-			get
-			{
-				return _ViewerWidth;
-			}
-			set
-			{
-				_ViewerWidth = value;
-			}
-		}
-		
-		private string _ToolbarOptions = "ShowBackButton=1,ShowDocumentMapButton=1,ShowExportControls=1,ShowFindControls=1,ShowPageNavigationControls=1,ShowParameterPrompts=1,ShowPrintButton=1,ShowPromptAreaButton=1,ShowRefreshButton=1,ShowToolBar=1,ShowZoomControl=1,ShowWaitControlCancelLink=1";
-		public string ToolbarOptions
-		{
-			get
-			{
-				return _ToolbarOptions;
-			}
-			set
-			{
-				_ToolbarOptions = value;
-			}
-		}
+	    public string ProcessingMode { get; set; } = "Remote";
+
+	    public string ReportServerUrl { get; set; } = "http://myserver/reportserver";
+
+	    public string ReportServerReportPath { get; set; } = "/myreport";
+
+	    public string ReportServerUsername { get; set; } = "";
+
+	    public string ReportServerPassword { get; set; } = "";
+
+	    public string ReportServerDomain { get; set; } = "";
+
+	    public string LocalReportPath { get; set; } = "";
+
+	    public string AdditionalParameters { get; set; } = "";
+
+	    public string ViewerHeight { get; set; } = "80%";
+
+	    public string ViewerWidth { get; set; } = "100%";
+
+	    public string ToolbarOptions { get; set; } = "ShowBackButton=1,ShowDocumentMapButton=1,ShowExportControls=1,ShowFindControls=1,ShowPageNavigationControls=1,ShowParameterPrompts=1,ShowPrintButton=1,ShowPromptAreaButton=1,ShowRefreshButton=1,ShowToolBar=1,ShowZoomControl=1,ShowWaitControlCancelLink=1";
 	}
 #endregion
 	
