@@ -130,7 +130,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 #endregion
 		
-		private void ddlChartType_SelectedIndexChanged(object sender, System.EventArgs e)
+		protected void ddlChartType_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			cpvMain.Filter = ddlChartType.SelectedValue;
 			cpvMain.RenderProperties();

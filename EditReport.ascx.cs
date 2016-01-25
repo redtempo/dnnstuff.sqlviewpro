@@ -285,7 +285,7 @@ namespace DNNStuff.SQLViewPro
 			phReportSettings.Controls.Add(objReportSettingsBase);
 			
 		}
-		private void ddReportType_SelectedIndexChanged(object sender, EventArgs e)
+		protected void ddReportType_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (Report != null)
 			{
@@ -294,7 +294,7 @@ namespace DNNStuff.SQLViewPro
 		}
 		
 #region  Validation
-		private void vldQuery_ServerValidate(Object source, ServerValidateEventArgs args)
+		protected void vldQuery_ServerValidate(Object source, ServerValidateEventArgs args)
 		{
 			string msg = "";
 			args.IsValid = Convert.ToBoolean(Services.Data.Query.IsQueryValid(txtQuery.Text, ConnectionController.GetConnectionString(Convert.ToInt32(cpConnection.ConnectionId), ReportSetId), ref msg));

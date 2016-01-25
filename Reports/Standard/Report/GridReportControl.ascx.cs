@@ -323,7 +323,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			BindGridToData();
 		}
 		
-		private void dgCommand_ItemCreated(object sender, DataGridItemEventArgs e)
+		protected void dgCommand_ItemCreated(object sender, DataGridItemEventArgs e)
 		{
 			// hide columns
 			if (e.Item.ItemType == ListItemType.Header)
@@ -364,7 +364,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			}
 		}
 		
-		private void dgCommand_ItemCommand(object source, DataGridCommandEventArgs e)
+		protected void dgCommand_ItemCommand(object source, DataGridCommandEventArgs e)
 		{
 			if (e.CommandName.StartsWith("Drilldown|"))
 			{

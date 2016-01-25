@@ -1,22 +1,6 @@
-
-
 using System;
 using DotNetNuke.Common;
 using DotNetNuke.Entities.Modules;
-
-
-
-//***************************************************************************/
-//* EditSQLViewPro.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Portal Module for editing setting for a report grid
-//*************/
-
 
 namespace DNNStuff.SQLViewPro
 {
@@ -206,7 +190,7 @@ namespace DNNStuff.SQLViewPro
 			txtCaption_Required.Enabled = Convert.ToBoolean(objParameterSettingsBase.CaptionRequired);
 			
 		}
-		private void ddParameterType_SelectedIndexChanged(object sender, EventArgs e)
+		protected void ddParameterType_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			RetrieveParameterSettings();
 		}

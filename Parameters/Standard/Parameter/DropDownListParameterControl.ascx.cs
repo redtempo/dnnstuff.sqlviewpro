@@ -77,7 +77,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 		
 #endregion
 		
-		private void ddlParameter_SelectedIndexChanged(object sender, System.EventArgs e)
+		protected void ddlParameter_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			Run(this);
 		}

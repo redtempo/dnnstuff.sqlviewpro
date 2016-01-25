@@ -135,7 +135,7 @@ namespace DNNStuff.SQLViewPro.StandardParameters
 #endregion
 		
 #region  Validation
-		private void vldCommand_ServerValidate(Object source, System.Web.UI.WebControls.ServerValidateEventArgs args)
+		protected void vldCommand_ServerValidate(Object source, System.Web.UI.WebControls.ServerValidateEventArgs args)
 		{
 			
 			string msg = "";

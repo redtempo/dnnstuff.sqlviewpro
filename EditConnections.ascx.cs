@@ -90,7 +90,7 @@ namespace DNNStuff.SQLViewPro
 			Response.Redirect(NavigateConnection(-1));
 		}
 		
-		private void dgConnection_ItemCommand(object source, DataGridCommandEventArgs e)
+		protected void dgConnection_ItemCommand(object source, DataGridCommandEventArgs e)
 		{
 			int ConnectionId = int.Parse(dgConnection.DataKeys[e.Item.ItemIndex].ToString());
 			switch (e.CommandName.ToLower())
@@ -105,7 +105,7 @@ namespace DNNStuff.SQLViewPro
 			}
 		}
 		
-		private void dgConnection_ItemDataBound(object sender, DataGridItemEventArgs e)
+		protected void dgConnection_ItemDataBound(object sender, DataGridItemEventArgs e)
 		{
 			// process data rows only (skip the header, footer etc.)
 			if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)

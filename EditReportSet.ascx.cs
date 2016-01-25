@@ -293,7 +293,7 @@ namespace DNNStuff.SQLViewPro
 			Response.Redirect(NavigateReport(ReportSetId, -1));
 		}
 		
-		private void dgReport_ItemCommand(object source, DataGridCommandEventArgs e)
+		protected void dgReport_ItemCommand(object source, DataGridCommandEventArgs e)
 		{
 			int ReportId = int.Parse(dgReport.DataKeys[e.Item.ItemIndex].ToString());
 			switch (e.CommandName.ToLower())
@@ -320,7 +320,7 @@ namespace DNNStuff.SQLViewPro
 			}
 		}
 		
-		private void dgReport_ItemCreated(object sender, DataGridItemEventArgs e)
+		protected void dgReport_ItemCreated(object sender, DataGridItemEventArgs e)
 		{
 			// process data rows only (skip the header, footer etc.)
 			if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
@@ -335,7 +335,7 @@ namespace DNNStuff.SQLViewPro
 			}
 		}
 		
-		private void dgReport_ItemDataBound(object sender, DataGridItemEventArgs e)
+		protected void dgReport_ItemDataBound(object sender, DataGridItemEventArgs e)
 		{
 			ImageButton ib = default(ImageButton);
 			if (e.Item.ItemType == ListItemType.Item | e.Item.ItemType == ListItemType.AlternatingItem)
@@ -371,7 +371,7 @@ namespace DNNStuff.SQLViewPro
 			Response.Redirect(NavigateParameter(ReportSetId, -1));
 		}
 		
-		private void dgParameter_ItemCommand(object source, DataGridCommandEventArgs e)
+		protected void dgParameter_ItemCommand(object source, DataGridCommandEventArgs e)
 		{
 			int ParameterId = int.Parse(dgParameter.DataKeys[e.Item.ItemIndex].ToString());
 			switch (e.CommandName.ToLower())
@@ -398,7 +398,7 @@ namespace DNNStuff.SQLViewPro
 					
 			}
 		}
-		private void dgParameter_ItemCreated(object sender, DataGridItemEventArgs e)
+		protected void dgParameter_ItemCreated(object sender, DataGridItemEventArgs e)
 		{
 			// process data rows only (skip the header, footer etc.)
 			if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
@@ -414,7 +414,7 @@ namespace DNNStuff.SQLViewPro
 			
 		}
 		
-		private void dgParameter_ItemDataBound(object sender, DataGridItemEventArgs e)
+		protected void dgParameter_ItemDataBound(object sender, DataGridItemEventArgs e)
 		{
 			ImageButton ib = default(ImageButton);
 			if (e.Item.ItemType == ListItemType.Item | e.Item.ItemType == ListItemType.AlternatingItem)

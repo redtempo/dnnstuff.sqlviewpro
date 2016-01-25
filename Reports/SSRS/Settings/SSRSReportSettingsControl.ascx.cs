@@ -147,7 +147,7 @@ using System.Linq;
 		
 #endregion
 		
-		private void ddlProcessingMode_SelectedIndexChanged(object sender, System.EventArgs e)
+		protected void ddlProcessingMode_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			RefreshVisibility();
 		}
