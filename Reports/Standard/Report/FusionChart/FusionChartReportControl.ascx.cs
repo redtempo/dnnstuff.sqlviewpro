@@ -1,21 +1,8 @@
-
-
 using System;
 using System.Data;
 using System.Web.UI;
 
 using System.Reflection;
-
-//***************************************************************************/
-//* FusionChartReportControl.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        Sep/27/2008
-//* Author:      Richard Edwards
-//* Description: FusionChart Report
-//*************/
 
 namespace DNNStuff.SQLViewPro.StandardReports
 {
@@ -255,7 +242,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		
 #endregion
 		
-		private void Page_PreRender1(object sender, EventArgs e)
+		private void Page_PreRender(object sender, EventArgs e)
 		{
 			Page.ClientScript.RegisterClientScriptBlock(GetType(), Unique("RenderFusionChart"), _reportScript);
 		}
