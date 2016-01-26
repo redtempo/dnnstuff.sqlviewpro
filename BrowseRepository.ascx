@@ -1,4 +1,4 @@
-<%@ Control Language="vb" CodeBehind="BrowseRepository.ascx.vb" AutoEventWireup="false" Explicit="True" Inherits="DNNStuff.SQLViewPro.BrowseRepository" %>
+<%@ Control Language="C#" CodeBehind="BrowseRepository.ascx.cs" AutoEventWireup="true" Explicit="True" Inherits="DNNStuff.SQLViewPro.BrowseRepository" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <div>
     <%=Localization.GetString("DocumentationHelp.Text", LocalResourceFile)%></div>
@@ -17,3 +17,4 @@
             <asp:LinkButton ID="cmdCancel" Text="Cancel" resourcekey="cmdCancel" CausesValidation="False" runat="server" CssClass="dnnSecondaryAction" /></li>
     </ul>
 </div>
+

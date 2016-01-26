@@ -1,4 +1,4 @@
-﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="SSRSReportSettingsControl.ascx.vb" Inherits="DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl" EnableViewState="false" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SSRSReportSettingsControl.ascx.cs" Inherits="DNNStuff.SQLViewPro.SSRSReports.SSRSReportSettingsControl" EnableViewState="false" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="URL" Src="~/controls/URLControl.ascx" %>
 <div class="dnnForm dnnClear" id="panels-settings">
@@ -10,7 +10,7 @@
             <div class="dnnFormItem">
                 <dnn:Label ID="lblProcessingMode" runat="server" ControlName="ddlProcessingMode"
                     Suffix=":" />
-                <asp:DropDownList runat="server" ID="ddlProcessingMode" AutoPostBack="true">
+                <asp:DropDownList runat="server" ID="ddlProcessingMode" AutoPostBack="true" OnSelectedIndexChanged="ddlProcessingMode_SelectedIndexChanged">
                     <asp:ListItem Value="Remote">Remote</asp:ListItem>
                     <asp:ListItem Value="Local">Local</asp:ListItem>
                 </asp:DropDownList>
@@ -111,3 +111,4 @@
 		});
 	});
 </script>
+

@@ -1,4 +1,4 @@
-<%@ Control language="vb" Inherits="DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterSettingsControl" CodeBehind="GeoLocationParameterSettingsControl.ascx.vb" AutoEventWireup="false" Explicit="True" targetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="C#" Inherits="DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterSettingsControl" CodeBehind="GeoLocationParameterSettingsControl.ascx.cs" AutoEventWireup="true" Explicit="True" targetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <div class="dnnForm" id="panel-settings">
 	<div class="dnnFormMessage dnnFormInfo">
@@ -43,3 +43,4 @@
 			});
 	});
 </script>
+

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DNNStuff.SQLViewPro.MobileParameters</name>
+    </assembly>
+    <members>
+        <member name="F:DNNStuff.SQLViewPro.MobileParameters.MobiscrollParameterSettingsControl.lblDefault">
+            <summary>
+            lblDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.MobileParameters.MobiscrollParameterSettingsControl.txtDefault">
+            <summary>
+            txtDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.MobileParameters.MobiscrollParameterSettingsControl.lblPreset">
+            <summary>
+            lblPreset control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.MobileParameters.MobiscrollParameterSettingsControl.ddPreset">
+            <summary>
+            ddPreset control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.MobileParameters.MobiscrollParameterSettingsControl.lblTheme">
+            <summary>
+            lblTheme control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.MobileParameters.MobiscrollParameterSettingsControl.ddTheme">
+            <summary>
+            ddTheme control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.MobileParameters.MobiscrollParameterSettingsControl.lblMode">
+            <summary>
+            lblMode control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.MobileParameters.MobiscrollParameterSettingsControl.ddMode">
+            <summary>
+            ddMode control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.MobileParameters.MobiscrollParameterControl.txtMobiscroll">
+            <summary>
+            txtMobiscroll control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+    </members>
+</doc>

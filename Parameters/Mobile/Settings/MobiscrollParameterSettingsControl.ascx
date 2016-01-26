@@ -1,4 +1,4 @@
-<%@ Control language="vb" Inherits="DNNStuff.SQLViewPro.MobileParameters.MobiscrollParameterSettingsControl" CodeBehind="MobiscrollParameterSettingsControl.ascx.vb" AutoEventWireup="false" Explicit="True" targetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="C#" Inherits="DNNStuff.SQLViewPro.MobileParameters.MobiscrollParameterSettingsControl" CodeBehind="MobiscrollParameterSettingsControl.ascx.cs" AutoEventWireup="true" Explicit="True" targetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <table cellSpacing="2" cellPadding="2" width="100%" summary="List options table" border="0">
 	<tr vAlign="top">
@@ -42,3 +42,4 @@
 	</tr>
 
 </table>
+

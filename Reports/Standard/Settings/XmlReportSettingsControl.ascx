@@ -1,4 +1,4 @@
-﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="XmlReportSettingsControl.ascx.vb" Inherits="DNNStuff.SQLViewPro.StandardReports.XmlReportSettingsControl" EnableViewState="false" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="XmlReportSettingsControl.ascx.cs" Inherits="DNNStuff.SQLViewPro.StandardReports.XmlReportSettingsControl" EnableViewState="false" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <div class="dnnForm" id="panels-settings">
 	<div class="dnnFormExpandContent">
@@ -29,3 +29,4 @@
 			});
 	});
 </script>
+

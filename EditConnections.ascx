@@ -1,12 +1,12 @@
-<%@ Control Language="vb" Inherits="DNNStuff.SQLViewPro.EditConnections" CodeBehind="EditConnections.ascx.vb" AutoEventWireup="false" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="C#" Inherits="DNNStuff.SQLViewPro.EditConnections" CodeBehind="EditConnections.ascx.cs" AutoEventWireup="true" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <div class="dnnForm dnnClear">
     <div class="dnnFormItem">
         <dnn:label id="lblConnections" runat="server" controlname="dgConnection" suffix=":" />
-        <asp:LinkButton ID="cmdAddConnection" runat="server" CssClass="CommandButton" resourcekey="cmdAddConnection">Add Connection</asp:LinkButton>
+        <asp:LinkButton ID="cmdAddConnection" runat="server" CssClass="CommandButton" resourcekey="cmdAddConnection" OnClick="cmdAddConnection_Click">Add Connection</asp:LinkButton>
     </div>
     <div class="dnnFormItem">
-        <asp:DataGrid ID="dgConnection" CssClass="Grid" runat="server" AutoGenerateColumns="False" Width="100%" DataKeyField="ConnectionId">
+        <asp:DataGrid ID="dgConnection" CssClass="Grid" runat="server" AutoGenerateColumns="False" Width="100%" DataKeyField="ConnectionId" OnItemCommand="dgConnection_ItemCommand" OnItemDataBound="dgConnection_ItemDataBound">
             <HeaderStyle CssClass="GridHeader" />
             <ItemStyle CssClass="GridItem" />
             <AlternatingItemStyle CssClass="GridAltItem" />
@@ -32,6 +32,7 @@
 </div>
 <ul class="dnnActions dnnClear">
     <li>
-        <asp:LinkButton class="dnnPrimaryAction" ID="cmdCloseBottom" Text="Close" runat="server" CausesValidation="False" ResourceKey="Close" />
+        <asp:LinkButton class="dnnPrimaryAction" ID="cmdCloseBottom" Text="Close" runat="server" CausesValidation="False" ResourceKey="Close"  OnClick="cmdClose_Click"/>
     </li>
 </ul>
+

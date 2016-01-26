@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <doc>
-  <assembly>
-    <name>DNNStuff.SQLViewPro.SqlDataProvider</name>
-    <version>3.0.0.0</version>
-    <fullname>DNNStuff.SQLViewPro.SqlDataProvider, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</fullname>
-  </assembly>
-  <members />
+    <assembly>
+        <name>DNNStuff.SQLViewPro.SqlDataProvider</name>
+    </assembly>
+    <members>
+    </members>
 </doc>

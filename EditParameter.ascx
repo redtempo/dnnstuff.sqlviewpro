@@ -1,4 +1,4 @@
-<%@ Control Language="vb" Inherits="DNNStuff.SQLViewPro.EditParameter" CodeBehind="EditParameter.ascx.vb" AutoEventWireup="false" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="C#" Inherits="DNNStuff.SQLViewPro.EditParameter" CodeBehind="EditParameter.ascx.cs" AutoEventWireup="true" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <div class="dnnForm dnnClear">
     <div id="editsettings" class="tabslayout">
@@ -10,7 +10,7 @@
             <div class="tab" id="tab1">
                 <div class="dnnFormItem">
                     <dnn:Label ID="lblParameterType" runat="server" CssClass="SubHead" ControlName="ddParameterType" Suffix=":" />
-                    <asp:DropDownList ID="ddParameterType" runat="server" CssClass="NormalTextBox" AutoPostBack="True" />
+                    <asp:DropDownList ID="ddParameterType" runat="server" CssClass="NormalTextBox" AutoPostBack="True"  OnSelectedIndexChanged="ddParameterType_SelectedIndexChanged"/>
                 </div>
                 <div class="dnnFormItem">
                     <dnn:Label ID="lblName" runat="server" CssClass="SubHead" ControlName="txtName" Suffix=":" />
@@ -31,9 +31,9 @@
     </div>
         <ul class="dnnActions dnnClear">
             <li>
-                <asp:LinkButton ID="cmdUpdate" Text="Update" resourcekey="cmdUpdate" CausesValidation="True" runat="server" CssClass="dnnPrimaryAction" /></li>
+                <asp:LinkButton ID="cmdUpdate" Text="Update" resourcekey="cmdUpdate" CausesValidation="True" runat="server" CssClass="dnnPrimaryAction"  OnClick="cmdUpdate_Click"/></li>
             <li>
-                <asp:LinkButton ID="cmdCancel" Text="Cancel" resourcekey="cmdCancel" CausesValidation="False" runat="server" CssClass="dnnSecondaryAction" /></li>
+                <asp:LinkButton ID="cmdCancel" Text="Cancel" resourcekey="cmdCancel" CausesValidation="False" runat="server" CssClass="dnnSecondaryAction"  OnClick="cmdCancel_Click"/></li>
         </ul>
 </div>
 <script type="text/javascript">
@@ -42,3 +42,4 @@
         persist: true
     });
 </script>
+

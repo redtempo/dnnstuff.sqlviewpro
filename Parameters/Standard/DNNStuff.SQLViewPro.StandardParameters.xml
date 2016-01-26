@@ -1,9 +1,875 @@
 <?xml version="1.0"?>
 <doc>
-  <assembly>
-    <name>DNNStuff.SQLViewPro.StandardParameters</name>
-    <version>3.0.0.1</version>
-    <fullname>DNNStuff.SQLViewPro.StandardParameters, Version=3.0.0.1, Culture=neutral, PublicKeyToken=null</fullname>
-  </assembly>
-  <members />
+    <assembly>
+        <name>DNNStuff.SQLViewPro.StandardParameters</name>
+    </assembly>
+    <members>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterControl.geolocation">
+            <summary>
+            geolocation control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.TextBoxParameterControl.txtParameter">
+            <summary>
+            txtParameter control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.CalendarParameterSettingsControl.lblDefault">
+            <summary>
+            lblDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.CalendarParameterSettingsControl.txtDefault">
+            <summary>
+            txtDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.CalendarParameterSettingsControl.lblDatabaseDateFormat">
+            <summary>
+            lblDatabaseDateFormat control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.CalendarParameterSettingsControl.txtDatabaseDateFormat">
+            <summary>
+            txtDatabaseDateFormat control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.CheckBoxParameterSettingsControl.lblDefault">
+            <summary>
+            lblDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.CheckBoxParameterSettingsControl.chkDefault">
+            <summary>
+            chkDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.lblDefault">
+            <summary>
+            lblDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.txtDefault">
+            <summary>
+            txtDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.lblAutoPostback">
+            <summary>
+            lblAutoPostback control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.chkAutoPostback">
+            <summary>
+            chkAutoPostback control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.lblListBoxSize">
+            <summary>
+            lblListBoxSize control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.txtListBoxSize">
+            <summary>
+            txtListBoxSize control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.lblMultiSelect">
+            <summary>
+            lblMultiSelect control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.chkMultiSelect">
+            <summary>
+            chkMultiSelect control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.lblList">
+            <summary>
+            lblList control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.txtList">
+            <summary>
+            txtList control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.lblConnection">
+            <summary>
+            lblConnection control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.lblCommand">
+            <summary>
+            lblCommand control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.txtCommand">
+            <summary>
+            txtCommand control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.vldCommand">
+            <summary>
+            vldCommand control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.lblCommandCacheTimeout">
+            <summary>
+            lblCommandCacheTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.txtCommandCacheTimeout">
+            <summary>
+            txtCommandCacheTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.reqCommandCacheTimeout">
+            <summary>
+            reqCommandCacheTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.cmpCommandCacheTimeout">
+            <summary>
+            cmpCommandCacheTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.cmdQueryTest">
+            <summary>
+            cmdQueryTest control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterSettingsControl.lblQueryTestResults">
+            <summary>
+            lblQueryTestResults control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterSettingsControl.lblEnableHighAccuracy">
+            <summary>
+            lblEnableHighAccuracy control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterSettingsControl.chkEnableHighAccuracy">
+            <summary>
+            chkEnableHighAccuracy control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterSettingsControl.lblTimeout">
+            <summary>
+            lblTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterSettingsControl.txtTimeout">
+            <summary>
+            txtTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterSettingsControl.txtTimeoutRequired">
+            <summary>
+            txtTimeoutRequired control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterSettingsControl.txtTimeoutInteger">
+            <summary>
+            txtTimeoutInteger control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterSettingsControl.lblMaximumAge">
+            <summary>
+            lblMaximumAge control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterSettingsControl.txtMaximumAge">
+            <summary>
+            txtMaximumAge control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterSettingsControl.txtMaximumAgeRequired">
+            <summary>
+            txtMaximumAgeRequired control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.GeoLocationParameterSettingsControl.txtMaximumAgeInteger">
+            <summary>
+            txtMaximumAgeInteger control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.TextBoxParameterSettingsControl.lblDefault">
+            <summary>
+            lblDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.TextBoxParameterSettingsControl.txtDefault">
+            <summary>
+            txtDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.TextBoxParameterSettingsControl.lblRows">
+            <summary>
+            lblRows control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.TextBoxParameterSettingsControl.txtRows">
+            <summary>
+            txtRows control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.TextBoxParameterSettingsControl.lblColumns">
+            <summary>
+            lblColumns control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.TextBoxParameterSettingsControl.txtColumns">
+            <summary>
+            txtColumns control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DefaultParameterSettingsControl.lblDefault">
+            <summary>
+            lblDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DefaultParameterSettingsControl.txtDefault">
+            <summary>
+            txtDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.lblDefault">
+            <summary>
+            lblDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.txtDefault">
+            <summary>
+            txtDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.lblAutoPostback">
+            <summary>
+            lblAutoPostback control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.chkAutoPostback">
+            <summary>
+            chkAutoPostback control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.lblList">
+            <summary>
+            lblList control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.txtList">
+            <summary>
+            txtList control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.lblConnection">
+            <summary>
+            lblConnection control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.lblCommand">
+            <summary>
+            lblCommand control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.txtCommand">
+            <summary>
+            txtCommand control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.vldCommand">
+            <summary>
+            vldCommand control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.lblCommandCacheTimeout">
+            <summary>
+            lblCommandCacheTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.txtCommandCacheTimeout">
+            <summary>
+            txtCommandCacheTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.reqCommandCacheTimeout">
+            <summary>
+            reqCommandCacheTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.cmpCommandCacheTimeout">
+            <summary>
+            cmpCommandCacheTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.cmdQueryTest">
+            <summary>
+            cmdQueryTest control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterSettingsControl.lblQueryTestResults">
+            <summary>
+            lblQueryTestResults control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.lblDefault">
+            <summary>
+            lblDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.txtDefault">
+            <summary>
+            txtDefault control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.lblRepeatColumns">
+            <summary>
+            lblRepeatColumns control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.txtRepeatColumns">
+            <summary>
+            txtRepeatColumns control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.lblRepeatDirection">
+            <summary>
+            lblRepeatDirection control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.ddlRepeatDirection">
+            <summary>
+            ddlRepeatDirection control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.lblRepeatLayout">
+            <summary>
+            lblRepeatLayout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.ddlRepeatLayout">
+            <summary>
+            ddlRepeatLayout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.lblList">
+            <summary>
+            lblList control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.txtList">
+            <summary>
+            txtList control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.lblConnection">
+            <summary>
+            lblConnection control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.lblCommand">
+            <summary>
+            lblCommand control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.txtCommand">
+            <summary>
+            txtCommand control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.vldCommand">
+            <summary>
+            vldCommand control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.lblCommandCacheTimeout">
+            <summary>
+            lblCommandCacheTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.txtCommandCacheTimeout">
+            <summary>
+            txtCommandCacheTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.reqCommandCacheTimeout">
+            <summary>
+            reqCommandCacheTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.cmpCommandCacheTimeout">
+            <summary>
+            cmpCommandCacheTimeout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.cmdQueryTest">
+            <summary>
+            cmdQueryTest control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.FlowListParameterSettingsControl.lblQueryTestResults">
+            <summary>
+            lblQueryTestResults control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.CalendarParameterControl.txtCalendar">
+            <summary>
+            txtCalendar control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.CalendarParameterControl.valCalendar">
+            <summary>
+            valCalendar control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.CalendarParameterControl.cmdStartCalendar">
+            <summary>
+            cmdStartCalendar control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:DNNStuff.SQLViewPro.StandardParameters.CheckBoxListParameterControl">
+            <summary>
+            CheckBoxListParameterControl class.
+            </summary>
+            <remarks>
+            Auto-generated class.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.CheckBoxListParameterControl.cblParameter">
+            <summary>
+            cblParameter control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:DNNStuff.SQLViewPro.StandardParameters.CheckBoxParameterControl">
+            <summary>
+            CheckBoxParameterControl class.
+            </summary>
+            <remarks>
+            Auto-generated class.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.CheckBoxParameterControl.chkParameter">
+            <summary>
+            chkParameter control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:DNNStuff.SQLViewPro.StandardParameters.DefaultParameterControl">
+            <summary>
+            DefaultParameterControl class.
+            </summary>
+            <remarks>
+            Auto-generated class.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DefaultParameterControl.txtParameter">
+            <summary>
+            txtParameter control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterControl">
+            <summary>
+            DropDownListParameterControl class.
+            </summary>
+            <remarks>
+            Auto-generated class.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.DropDownListParameterControl.ddlParameter">
+            <summary>
+            ddlParameter control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterControl">
+            <summary>
+            ListBoxParameterControl class.
+            </summary>
+            <remarks>
+            Auto-generated class.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.ListBoxParameterControl.lbParameter">
+            <summary>
+            lbParameter control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:DNNStuff.SQLViewPro.StandardParameters.RadioButtonListParameterControl">
+            <summary>
+            RadioButtonListParameterControl class.
+            </summary>
+            <remarks>
+            Auto-generated class.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardParameters.RadioButtonListParameterControl.rblParameter">
+            <summary>
+            rblParameter control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+    </members>
 </doc>

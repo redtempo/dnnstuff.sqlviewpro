@@ -1,11 +1,11 @@
-<%@ Control Language="vb" Inherits="DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl" CodeBehind="GridReportSettingsControl.ascx.vb" AutoEventWireup="false" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" EnableViewState="false" %>
+<%@ Control Language="C#" Inherits="DNNStuff.SQLViewPro.StandardReports.GridReportSettingsControl" CodeBehind="GridReportSettingsControl.ascx.cs" AutoEventWireup="true" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" EnableViewState="false" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <div class="dnnForm" id="panels-settings">
 	<div class="dnnFormExpandContent">
 		<a href="">Expand All</a></div>
 	<h2 id="Sorting" class="dnnFormSectionHead">
 		<a href="#">
-			<%=Localization.GetString("lblSortingHeader",LocalResourceFile)%></a></h2>
+			<%=Localization.GetString("lblSortingHeader", LocalResourceFile)%></a></h2>
 	<fieldset class="dnnClear">
 		<div class="dnnFormItem">
 			<dnn:Label ID="lblAllowSorting" runat="server" ControlName="chkAllowSorting" Suffix=":" />
@@ -18,7 +18,7 @@
 	</fieldset>
 	<h2 id="Paging" class="dnnFormSectionHead">
 		<a href="#">
-			<%=Localization.GetString("lblPagingHeader",LocalResourceFile)%></a></h2>
+			<%=Localization.GetString("lblPagingHeader", LocalResourceFile)%></a></h2>
 	<fieldset class="dnnClear">
 		<div class="dnnFormItem">
 			<dnn:Label ID="lblAllowPaging" runat="server" ControlName="chkAllowPaging" Suffix=":" />
@@ -51,7 +51,7 @@
 	</fieldset>
 	<h2 id="Misc" class="dnnFormSectionHead">
 		<a href="#">
-			<%=Localization.GetString("lblMiscHeader",LocalResourceFile)%></a></h2>
+			<%=Localization.GetString("lblMiscHeader", LocalResourceFile)%></a></h2>
 	<fieldset class="dnnClear">
 		<div class="dnnFormItem">
 			<dnn:Label ID="lblEnableExcelExport" runat="server" ControlName="chkEnableExcelExport" Suffix=":" />
@@ -94,3 +94,4 @@
 			});
 	});
 </script>
+

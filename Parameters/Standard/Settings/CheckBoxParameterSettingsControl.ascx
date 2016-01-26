@@ -1,4 +1,4 @@
-<%@ Control Language="vb" Inherits="DNNStuff.SQLViewPro.StandardParameters.CheckBoxParameterSettingsControl" CodeBehind="CheckBoxParameterSettingsControl.ascx.vb" AutoEventWireup="false" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="C#" Inherits="DNNStuff.SQLViewPro.StandardParameters.CheckBoxParameterSettingsControl" CodeBehind="CheckBoxParameterSettingsControl.ascx.cs" AutoEventWireup="true" Explicit="True" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <div class="dnnForm" id="panels-settings">
     <div class="dnnFormExpandContent">
@@ -29,3 +29,4 @@
 			});
 	});
 </script>
+

@@ -1,4 +1,4 @@
-<%@ Control language="vb" Inherits="DNNStuff.SQLViewPro.StandardParameters.CalendarParameterSettingsControl" CodeBehind="CalendarParameterSettingsControl.ascx.vb" AutoEventWireup="false" Explicit="True" targetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+<%@ Control Language="C#" Inherits="DNNStuff.SQLViewPro.StandardParameters.CalendarParameterSettingsControl" CodeBehind="CalendarParameterSettingsControl.ascx.cs" AutoEventWireup="true" Explicit="True" targetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 <div class="dnnForm" id="panels-settings">
 	<div class="dnnFormExpandContent">
@@ -33,3 +33,4 @@
 			});
 	});
 </script>
+
