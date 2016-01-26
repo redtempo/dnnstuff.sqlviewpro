@@ -21,18 +21,7 @@ namespace DNNStuff.SQLViewPro
 		}
 		
 		// public properties
-		private int _ReportSetId = -1;
-		public int ReportSetId
-		{
-			get
-			{
-				return _ReportSetId;
-			}
-			set
-			{
-				_ReportSetId = value;
-			}
-		}
+		public int ReportSetId { get; set; }= -1;
 		public string ReportSetName {get; set;}
 		public string ReportSetTheme {get; set;}
 		public int ReportSetConnectionId {get; set;}

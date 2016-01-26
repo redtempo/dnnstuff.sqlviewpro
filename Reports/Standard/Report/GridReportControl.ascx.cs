@@ -68,7 +68,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 #region Export
 		private string RenderExcelExportButtonAsText()
 		{
-			return string.Format("<asp:LinkButton id=\"{1}\" runat=\"server\" CommandName=\"Goto\" CommandArgument=\"1\" OnClick=\"{1}_Click\" cssClass=\"CommandButton SQLViewProButton\">{0}</asp:LinkButton>", ReportExtra.ExcelExportButtonCaption, "cmdExportExcel");
+			return string.Format("<asp:LinkButton id=\"{1}\" runat=\"server\" CommandName=\"Goto\" CommandArgument=\"1\"  CssClass=\"CommandButton SQLViewProButton\">{0}</asp:LinkButton>", ReportExtra.ExcelExportButtonCaption, "cmdExportExcel");
 		}
 		
 		private void RenderExcelButton()
@@ -94,6 +94,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			if (obj != null)
 			{
 				cmdExportExcel = (LinkButton) obj;
+			    cmdExportExcel.Click += cmdExportExcel_Click;
 			}
 			
 		}

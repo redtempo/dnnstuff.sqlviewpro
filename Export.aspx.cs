@@ -36,7 +36,7 @@ namespace DNNStuff.SQLViewPro
             }
         }
 
-        protected void Report_Init(object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
             if (HasViewPermissions())
             {
