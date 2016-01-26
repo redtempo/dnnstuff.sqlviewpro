@@ -121,8 +121,8 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			
 			// sorting
 			dgCommand.AllowSorting = ReportExtra.AllowSorting;
-			
-			dgCommand.AllowPaging = ReportExtra.AllowPaging;
+
+            dgCommand.AllowPaging = ReportExtra.AllowPaging;
 			if (dgCommand.AllowPaging)
 			{
 				dgCommand.PageSize = ReportExtra.PageSize;
@@ -287,9 +287,9 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			}
 		}
 
-        protected void SortCommand_OnClick(object Source, DataGridSortCommandEventArgs E)
+        protected void SortCommand_OnClick(object source, DataGridSortCommandEventArgs e)
 		{
-			ToggleSort(E.SortExpression);
+			ToggleSort(e.SortExpression);
 			BindGridToData();
 		}
 
