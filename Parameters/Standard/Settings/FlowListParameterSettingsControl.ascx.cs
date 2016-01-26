@@ -1,21 +1,6 @@
-
-
 using System;
-
 using DNNStuff.SQLViewPro.Controls;
 using System.Web.UI.WebControls;
-
-//***************************************************************************/
-//* FlowListParameterSettings.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: FlowList Parameter Settings Handler
-//*************/
-
 
 namespace DNNStuff.SQLViewPro.StandardParameters
 {

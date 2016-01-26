@@ -1,26 +1,12 @@
-
-
 using System;
 using System.Data;
 using System.Web.UI.WebControls;
-
 using System.Text.RegularExpressions;
 using DNNStuff.SQLViewPro.Controls;
 using System.Linq;
 using DotNetNuke.Common;
 
-//***************************************************************************/
-	//* XmlReportControl.ascx.vb
-	//*
-	//* Copyright (c) 2004 by DNNStuff.
-	//* All rights reserved.
-	//*
-	//* Date:        August 9, 2004
-	//* Author:      Richard Edwards
-	//* Description: Xml Report
-	//*************/
-	
-	namespace DNNStuff.SQLViewPro.StandardReports
+namespace DNNStuff.SQLViewPro.StandardReports
 	{
 		
 		public partial class TemplateReportControl : ReportControlBase

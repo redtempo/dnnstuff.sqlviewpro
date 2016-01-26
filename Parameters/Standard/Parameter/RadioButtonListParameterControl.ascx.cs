@@ -1,19 +1,4 @@
-
-
-
 using System.Collections.Generic;
-
-//***************************************************************************/
-//* RadioButtonParameter.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: RadioButtonList Parameter Handler
-//*************/
-
 
 namespace DNNStuff.SQLViewPro.StandardParameters
 {

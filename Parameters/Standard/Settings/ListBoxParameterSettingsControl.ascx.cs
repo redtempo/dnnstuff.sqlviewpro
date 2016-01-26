@@ -1,20 +1,5 @@
-
-
 using System;
-
 using DNNStuff.SQLViewPro.Controls;
-
-//***************************************************************************/
-//* ListBoxParameterSettings.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: ListBox Parameter Settings Handler
-//*************/
-
 
 namespace DNNStuff.SQLViewPro.StandardParameters
 {

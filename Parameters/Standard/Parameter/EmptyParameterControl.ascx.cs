@@ -1,19 +1,4 @@
-
-
-
 using System.Collections.Generic;
-
-//***************************************************************************/
-//* EmptyParameter.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: Default Parameter Handler
-//*************/
-
 
 namespace DNNStuff.SQLViewPro.StandardParameters
 {

@@ -1,19 +1,4 @@
-
-
-
 using System.Collections.Generic;
-
-//***************************************************************************/
-//* CheckListBoxParameterControl.ascx.vb
-//*
-//* Copyright (c) 2004 by DNNStuff.
-//* All rights reserved.
-//*
-//* Date:        August 9, 2004
-//* Author:      Richard Edwards
-//* Description: CheckBoxList Parameter Handler
-//*************/
-
 
 namespace DNNStuff.SQLViewPro.StandardParameters
 {
