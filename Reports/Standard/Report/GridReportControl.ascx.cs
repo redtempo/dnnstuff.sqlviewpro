@@ -201,12 +201,17 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		{
 			get
 			{
-				var value = (ViewState["SortExpression"]).ToString();
-				if (value == "")
-				{
-					value = (string) (ReportExtra.OrderBy.Replace(" DESC", "").Replace(" ASC", ""));
-				}
-				return value;
+			    var value = "";
+			    if (ViewState["SortExpression"] != null)
+			    {
+                    value = ViewState["SortExpression"].ToString();
+                    if (value == "")
+                    {
+                        value = (string)(ReportExtra.OrderBy.Replace(" DESC", "").Replace(" ASC", ""));
+                    }
+
+                }
+                return value;
 			}
 			set
 			{
@@ -217,20 +222,25 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		{
 			get
 			{
-				var value = (ViewState["SortDirection"]).ToString();
-				if (value == "")
-				{
-					value = "ASC";
-					if (ReportExtra.OrderBy.Contains(" ASC"))
-					{
-						value = "ASC"; // NOTE: doing this step in case someone sorts by DESCRIPTION or something else with DESC in it and wants to specifically sort ascending
-					}
-					else if (ReportExtra.OrderBy.Contains(" DESC"))
-					{
-						value = "DESC";
-					}
-				}
-				return value;
+			    var value = "";
+			    if (ViewState["SortDirection"] != null)
+			    {
+                    value = ViewState["SortDirection"].ToString();
+                    if (value == "")
+                    {
+                        value = "ASC";
+                        if (ReportExtra.OrderBy.Contains(" ASC"))
+                        {
+                            value = "ASC"; // NOTE: doing this step in case someone sorts by DESCRIPTION or something else with DESC in it and wants to specifically sort ascending
+                        }
+                        else if (ReportExtra.OrderBy.Contains(" DESC"))
+                        {
+                            value = "DESC";
+                        }
+                    }
+
+                }
+                return value;
 			}
 			set
 			{
