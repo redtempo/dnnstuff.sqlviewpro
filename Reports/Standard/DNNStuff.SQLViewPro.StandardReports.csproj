@@ -168,6 +168,13 @@
     <Compile Include="Report\GridReportControl.ascx.designer.cs">
       <DependentUpon>GridReportControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Report\Html5Chart\Html5ChartReportControl.ascx.cs">
+      <DependentUpon>Html5ChartReportControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Html5Chart\Html5ChartReportControl.ascx.designer.cs">
+      <DependentUpon>Html5ChartReportControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Report\TemplateReportControl.ascx.designer.cs">
       <DependentUpon>TemplateReportControl.ascx</DependentUpon>
     </Compile>
@@ -187,6 +194,13 @@
     </Compile>
     <Compile Include="Settings\GridReportSettingsControl.ascx.designer.cs">
       <DependentUpon>GridReportSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Html5ChartReportSettingsControl.ascx.cs">
+      <DependentUpon>Html5ChartReportSettingsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\Html5ChartReportSettingsControl.ascx.designer.cs">
+      <DependentUpon>Html5ChartReportSettingsControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Settings\NoReportSettingsControl.ascx.designer.cs">
       <DependentUpon>NoReportSettingsControl.ascx</DependentUpon>
@@ -258,12 +272,37 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Report\FusionChart\Resources\FusionCharts.js" />
+    <Content Include="Report\Html5Chart\Charts\FCF_Area2D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_Bar2D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_Candlestick.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_Column2D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_Column3D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_Doughnut2D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_Funnel.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_Gantt.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_Line.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_MSArea2D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_MSBar2D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_MSColumn2D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_MSColumn2DLineDY.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_MSColumn3D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_MSColumn3DLineDY.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_MSLine.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_Pie2D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_Pie3D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_StackedArea2D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_StackedBar2D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_StackedColumn2D.swf" />
+    <Content Include="Report\Html5Chart\Charts\FCF_StackedColumn3D.swf" />
+    <Content Include="Report\Html5Chart\Html5ChartReportControl.ascx" />
+    <Content Include="Report\Html5Chart\Resources\Html5Charts.js" />
     <Content Include="Report\TemplateReportControl.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Settings\FusionChartReportSettingsControl.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Settings\Html5ChartReportSettingsControl.ascx" />
     <Content Include="Settings\NoReportSettingsControl.ascx" />
     <Content Include="Settings\Properties\CustomPropertiesViewer.ascx" />
     <Content Include="Settings\Properties\FusionChartReport.xml">
@@ -287,6 +326,9 @@
     <EmbeddedResource Include="Report\FusionChart\FusionChartReportControl.ascx.resx">
       <DependentUpon>FusionChartReportControl.ascx.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\Html5Chart\Html5ChartReportControl.ascx.resx">
+      <DependentUpon>Html5ChartReportControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\TemplateReportControl.ascx.resx">
       <DependentUpon>TemplateReportControl.ascx.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +340,9 @@
     </Content>
     <EmbeddedResource Include="Settings\FusionChartReportSettingsControl.ascx.resx">
       <DependentUpon>FusionChartReportSettingsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\Html5ChartReportSettingsControl.ascx.resx">
+      <DependentUpon>Html5ChartReportSettingsControl.ascx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\NoReportSettingsControl.ascx.resx">
       <DependentUpon>NoReportSettingsControl.ascx.cs</DependentUpon>
