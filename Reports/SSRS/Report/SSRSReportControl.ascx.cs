@@ -1,7 +1,4 @@
-
-
 using System;
-using System.Data;
 using System.Web.UI.WebControls;
 
 using System.Net;
@@ -191,7 +188,7 @@ namespace DNNStuff.SQLViewPro.SSRSReports
 #endregion
 
 #region ReportViewer
-		private void ReportViewer1_ReportRefresh(object sender, System.ComponentModel.CancelEventArgs e)
+		protected void ReportViewer_ReportRefresh(object sender, System.ComponentModel.CancelEventArgs e)
 		{
 			RefreshReport();
 		}
