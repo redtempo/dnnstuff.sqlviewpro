@@ -212,7 +212,7 @@ namespace DNNStuff.SQLViewPro
 			container.Controls.Add(prompt);
 			
 			var addedBreak = false;
-			if (prop.ValidationExpression != "")
+			if (!string.IsNullOrEmpty(prop.ValidationExpression))
 			{
 				var validate = new RegularExpressionValidator();
 				validate.ValidationExpression = ValidationHelpers.CommonValidator(prop.ValidationExpression);

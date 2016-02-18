@@ -1,0 +1,19 @@
+﻿INSERT INTO {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportType] (
+	[ReportTypeId],
+	[ReportTypeName],
+	[ReportTypeControlSrc],
+	[ReportTypeSettingsControlSrc]
+)
+	SELECT 'HTML5CHART', 'Chart (Html5)', 'Reports/Standard/Report/Html5Chart/Html5ChartReportControl.ascx', 'Reports/Standard/Settings/Html5ReportSettingsControl.ascx'
+GO
+
+
+ALTER PROCEDURE {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ListReportType]
+
+AS
+
+SELECT * FROM {databaseOwner}[{objectQualifier}DNNStuff_SqlViewPro_ReportType] ORDER BY ReportTypeName
+
+GO
+
+

@@ -272,28 +272,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Report\FusionChart\Resources\FusionCharts.js" />
-    <Content Include="Report\Html5Chart\Charts\FCF_Area2D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_Bar2D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_Candlestick.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_Column2D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_Column3D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_Doughnut2D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_Funnel.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_Gantt.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_Line.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_MSArea2D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_MSBar2D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_MSColumn2D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_MSColumn2DLineDY.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_MSColumn3D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_MSColumn3DLineDY.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_MSLine.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_Pie2D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_Pie3D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_StackedArea2D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_StackedBar2D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_StackedColumn2D.swf" />
-    <Content Include="Report\Html5Chart\Charts\FCF_StackedColumn3D.swf" />
     <Content Include="Report\Html5Chart\Html5ChartReportControl.ascx" />
     <Content Include="Report\Html5Chart\Resources\Html5Charts.js" />
     <Content Include="Report\TemplateReportControl.ascx">
@@ -305,6 +283,9 @@
     <Content Include="Settings\Html5ChartReportSettingsControl.ascx" />
     <Content Include="Settings\NoReportSettingsControl.ascx" />
     <Content Include="Settings\Properties\CustomPropertiesViewer.ascx" />
+    <Content Include="Settings\Properties\Html5ChartReport.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Settings\Properties\FusionChartReport.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -338,6 +319,7 @@
     <Content Include="Settings\App_LocalResources\TemplateReportSettingsControl.ascx.resx">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Settings\App_LocalResources\Html5ChartReportSettingsControl.ascx.resx" />
     <EmbeddedResource Include="Settings\FusionChartReportSettingsControl.ascx.resx">
       <DependentUpon>FusionChartReportSettingsControl.ascx.cs</DependentUpon>
     </EmbeddedResource>

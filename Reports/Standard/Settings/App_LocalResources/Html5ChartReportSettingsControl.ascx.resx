@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblAlternateHGridAlpha.Help" xml:space="preserve">
+    <value>Alpha (transparency) of the alternate horizontal grid bands.</value>
+  </data>
+  <data name="lblAlternateHGridColor.Help" xml:space="preserve">
+    <value>Color of the alternate horizontal grid bands.</value>
+  </data>
+  <data name="lblAlternateVGridAlpha.Help" xml:space="preserve">
+    <value>Alpha (transparency) of the alternate vertical grid bands.</value>
+  </data>
+  <data name="lblAlternateVGridColor.Help" xml:space="preserve">
+    <value>Color of the alternate vertical grid bands.</value>
+  </data>
+  <data name="lblAnimation.Help" xml:space="preserve">
+    <value>This attribute sets whether the animation is to be played or whether the entire chart would be rendered at one go.</value>
+  </data>
+  <data name="lblBaseFont.Help" xml:space="preserve">
+    <value>This attribute sets the base font family of the chart font which lies on the canvas i.e., all the values and the names in the chart which lie on the canvas will be displayed using the font name provided here.</value>
+  </data>
+  <data name="lblBaseFontColor.Help" xml:space="preserve">
+    <value>This attribute sets the base font color of the chart i.e., all the values and the names in the chart which lie on the canvas will be displayed using the font color provided here.</value>
+  </data>
+  <data name="lblBaseFontSize.Help" xml:space="preserve">
+    <value>This attribute sets the base font size of the chart i.e., all the values and the names in the chart which lie on the canvas will be displayed using the font size provided here.</value>
+  </data>
+  <data name="lblBgAlpha.Help" xml:space="preserve">
+    <value>This attribute helps you set the alpha (transparency) of the graph. This is particularly useful when you need to load the chart in one of your Flash movies or when you want to set a background image (.swf) for the chart.</value>
+  </data>
+  <data name="lblBgAlpha.Text" xml:space="preserve">
+    <value>Background Alpha</value>
+  </data>
+  <data name="lblBgColor.Help" xml:space="preserve">
+    <value>Background color of the chart</value>
+  </data>
+  <data name="lblBgColor.Text" xml:space="preserve">
+    <value>Background Color</value>
+  </data>
+  <data name="lblBgSWF.Help" xml:space="preserve">
+    <value>This attribute helps you load an external .swf file as a background for the chart.</value>
+  </data>
+  <data name="lblBgSWF.Text" xml:space="preserve">
+    <value>Background SWF file</value>
+  </data>
+  <data name="lblCanvasBgAlpha.Help" xml:space="preserve">
+    <value>This attribute helps you set the alpha (transparency) of the canvas.</value>
+  </data>
+  <data name="lblCanvasBgAlpha.Text" xml:space="preserve">
+    <value>Canvas Background Alpha</value>
+  </data>
+  <data name="lblCanvasBgColor.Help" xml:space="preserve">
+    <value>This attribute helps you set the background color of the canvas.</value>
+  </data>
+  <data name="lblCanvasBgColor.Text" xml:space="preserve">
+    <value>Canvas Background Color</value>
+  </data>
+  <data name="lblCanvasBgDepth.Text" xml:space="preserve">
+    <value>Canvas Background Depth</value>
+  </data>
+  <data name="lblCanvasBorderColor.Help" xml:space="preserve">
+    <value>This attribute helps you set the border color of the canvas.</value>
+  </data>
+  <data name="lblCanvasBorderThickness.Help" xml:space="preserve">
+    <value>This attribute helps you set the border thickness (in pixels) of the canvas.</value>
+  </data>
+  <data name="lblCaption.Help" xml:space="preserve">
+    <value>This attribute determines the caption of the chart that would appear at the top of the chart.</value>
+  </data>
+  <data name="lblChartBottomMargin.Help" xml:space="preserve">
+    <value>Empty space to be left at the bottom of the chart.</value>
+  </data>
+  <data name="lblChartHeight.Help" xml:space="preserve">
+    <value>The height of the chart in pixels</value>
+  </data>
+  <data name="lblChartHeight.Text" xml:space="preserve">
+    <value>Height (px)</value>
+  </data>
+  <data name="lblChartLeftMargin.Help" xml:space="preserve">
+    <value>Space to be left unplotted on the left side of the chart.</value>
+  </data>
+  <data name="lblChartRightMargin.Help" xml:space="preserve">
+    <value>Empty space to be left on the right side of the chart</value>
+  </data>
+  <data name="lblChartTopMargin.Help" xml:space="preserve">
+    <value>Empty space to be left on the top of the chart.</value>
+  </data>
+  <data name="lblChartType.Help" xml:space="preserve">
+    <value>The type of report to show</value>
+  </data>
+  <data name="lblChartType.Text" xml:space="preserve">
+    <value>Chart Type</value>
+  </data>
+  <data name="lblChartWidth.Help" xml:space="preserve">
+    <value>The width of the chart in pixels</value>
+  </data>
+  <data name="lblChartWidth.Text" xml:space="preserve">
+    <value>Width (px)</value>
+  </data>
+  <data name="lblColorSet.Help" xml:space="preserve">
+    <value>Choose a predefined color set or choose custom and define in 'Custom Color Set' below</value>
+  </data>
+  <data name="lblColorSet.Text" xml:space="preserve">
+    <value>Color Set</value>
+  </data>
+  <data name="lblCustomColorSet.Help" xml:space="preserve">
+    <value>A list of hex colour codes separated by commas used as colours for data points (ex. FF0000,00FF00,0000FF)</value>
+  </data>
+  <data name="lblCustomColorSet.Text" xml:space="preserve">
+    <value>Custom Color Set</value>
+  </data>
+  <data name="lblDecimalPrecision.Help" xml:space="preserve">
+    <value>Number of decimal places to which all numbers on the chart would be rounded to.</value>
+  </data>
+  <data name="lblDecimalSeparator.Help" xml:space="preserve">
+    <value>This option helps you specify the character to be used as the decimal separator in a number.</value>
+  </data>
+  <data name="lblDivLineAlpha.Help" xml:space="preserve">
+    <value>Alpha (transparency) of the grid divisional line.</value>
+  </data>
+  <data name="lblDivlineColor.Help" xml:space="preserve">
+    <value>The color of grid divisional line.</value>
+  </data>
+  <data name="lblDivLineDecimalPrecision.Help" xml:space="preserve">
+    <value>Number of decimal places to which all divisional line (horizontal) values on the chart would be rounded to.</value>
+  </data>
+  <data name="lblDivLineThickness.Help" xml:space="preserve">
+    <value>Thickness (in pixels) of the grid divisional line.</value>
+  </data>
+  <data name="lblFormatNumber.Help" xml:space="preserve">
+    <value>This configuration determines whether the numbers displayed on the chart will be formatted using commas, e.g., 40,000 if formatNumber='1' and 40000 if formatNumber='0 '</value>
+  </data>
+  <data name="lblFormatNumberScale.Help" xml:space="preserve">
+    <value>Configuration whether to add K (thousands) and M (millions) to a number after truncating and rounding it - e.g., if formatNumberScale is set to 1, 10434 would become 1.04K (with decimalPrecision set to 2 places). Same with numbers in millions - a M will added at the end.</value>
+  </data>
+  <data name="lblHoverCapBgColor.Help" xml:space="preserve">
+    <value>Background color of the hover caption box.</value>
+  </data>
+  <data name="lblHoverCapBorderColor.Help" xml:space="preserve">
+    <value>Border color of the hover caption box.</value>
+  </data>
+  <data name="lblHoverCapSepChar.Help" xml:space="preserve">
+    <value>The character specified as the value of this attribute separates the name and value displayed in the hover caption box.</value>
+  </data>
+  <data name="lblLimitsDecimalPrecision.Help" xml:space="preserve">
+    <value>Number of decimal places to which upper and lower limit values on the chart would be rounded to.</value>
+  </data>
+  <data name="lblNumberPrefix.Help" xml:space="preserve">
+    <value>Using this attribute, you could add prefix to all the numbers visible on the graph. For example, to represent all dollars figure on the chart, you could specify this attribute to ' $' to show like $40000, $50000.</value>
+  </data>
+  <data name="lblNumberSuffix.Help" xml:space="preserve">
+    <value>Using this attribute, you could add prefix to all the numbers visible on the graph. For example, to represent all figure quantified as per annum on the chart, you could specify this attribute to ' /a' to show like 40000/a, 50000/a.To use special characters for numberPrefix or numberSuffix, you'll need to URL Encode them. That is, suppose you wish to have numberSuffix as % (like 30%), you'll need to specify it as under:numberSuffix='%25'</value>
+  </data>
+  <data name="lblNumDivLines.Help" xml:space="preserve">
+    <value>This attribute sets the number of divisional lines to be drawn.</value>
+  </data>
+  <data name="lblNumVDivLines.Help" xml:space="preserve">
+    <value>Sets the number of vertical divisional lines to be drawn.</value>
+  </data>
+  <data name="lblOutCnvBaseFont.Help" xml:space="preserve">
+    <value>This attribute sets the base font family of the chart font which lies outside the canvas i.e., all the values and the names in the chart which lie outside the canvas will be displayed using the font name provided here.</value>
+  </data>
+  <data name="lblOutCnvBaseFont.Text" xml:space="preserve">
+    <value>Outside Canvas Base Font</value>
+  </data>
+  <data name="lblOutCnvBaseFontColor.Help" xml:space="preserve">
+    <value>This attribute sets the base font color of the chart i.e., all the values and the names in the chart which lie outside the canvas will be displayed using the font color provided here.</value>
+  </data>
+  <data name="lblOutCnvBaseFontColor.Text" xml:space="preserve">
+    <value>Outside Canvas Base Font Color</value>
+  </data>
+  <data name="lblOutCnvBaseFontSze.Help" xml:space="preserve">
+    <value>This attribute sets the base font size of the chart i.e., all the values and the names in the chart which lie outside the canvas will be displayed using the font size provided here.</value>
+  </data>
+  <data name="lblOutCnvBaseFontSze.Text" xml:space="preserve">
+    <value>Outside Canvas Base Font Size</value>
+  </data>
+  <data name="lblRotateNames.Help" xml:space="preserve">
+    <value>Configuration that sets whether the category name text boxes would be rotated or not.</value>
+  </data>
+  <data name="lblShowAlternateHGridColor.Help" xml:space="preserve">
+    <value>Option on whether to show alternate colored horizontal grid bands.</value>
+  </data>
+  <data name="lblShowAlternateVGridColor.Help" xml:space="preserve">
+    <value>Option on whether to show alternate colored vertical grid bands.</value>
+  </data>
+  <data name="lblShowColumnShadow.Help" xml:space="preserve">
+    <value>Whether the 2D shadow for the columns would be shown or not.</value>
+  </data>
+  <data name="lblShowDivLineValue.Help" xml:space="preserve">
+    <value>Option to show/hide the textual value of the divisional line.</value>
+  </data>
+  <data name="lblShowHoverCap.Help" xml:space="preserve">
+    <value>Option whether to show/hide hover caption box.</value>
+  </data>
+  <data name="lblShowLimits.Help" xml:space="preserve">
+    <value>Option whether to show/hide the chart limit textboxes.</value>
+  </data>
+  <data name="lblShowNames.Help" xml:space="preserve">
+    <value>This attribute can have either of the two possible values: 1,0. It sets the configuration whether the x-axis values (for the data sets) will be displayed or not. By default, this attribute assumes the value 1, which means that the x-axis names will be displayed.</value>
+  </data>
+  <data name="lblShowValues.Help" xml:space="preserve">
+    <value>This attribute can have either of the two possible values: 1,0. It sets the configuration whether the data numerical values will be displayed along with the columns, bars, lines and the pies. By default, this attribute assumes the value 1, which means that the values will be displayed.</value>
+  </data>
+  <data name="lblSubCaption.Help" xml:space="preserve">
+    <value>Sub-caption of the chart</value>
+  </data>
+  <data name="lblThousandSeparator.Help" xml:space="preserve">
+    <value>This option helps you specify the character to be used as the thousands separator in a number.</value>
+  </data>
+  <data name="lblVDivLineAlpha.Help" xml:space="preserve">
+    <value>Alpha (transparency) of the line.</value>
+  </data>
+  <data name="lblVDivlinecolor.Help" xml:space="preserve">
+    <value>Color of vertical grid divisional line.</value>
+  </data>
+  <data name="lblVDivLineThickness.Help" xml:space="preserve">
+    <value>Thickness (in pixels) of the line</value>
+  </data>
+  <data name="lblXAxisName.Help" xml:space="preserve">
+    <value>x-Axis text title (if the chart supports axis)</value>
+  </data>
+  <data name="lblYAxisMaxValue.Help" xml:space="preserve">
+    <value>This attribute determines the upper limit of y-axis.</value>
+  </data>
+  <data name="lblYAxisMinValue.Help" xml:space="preserve">
+    <value>This attribute determines the lower limit of y-axis.</value>
+  </data>
+  <data name="lblYAxisName.Help" xml:space="preserve">
+    <value>y-Axis text title (if the chart supports axis)</value>
+  </data>
+  <data name="lblZeroPlaneAlpha.Help" xml:space="preserve">
+    <value>The intended transparency for the zero plane.</value>
+  </data>
+  <data name="lblZeroPlaneColor.Help" xml:space="preserve">
+    <value>The intended color for the zero plane.</value>
+  </data>
+  <data name="lblZeroPlaneThickness.Help" xml:space="preserve">
+    <value>Thickness (in pixels) of the line indicating the zero plane.</value>
+  </data>
+  <data name="lblChartSpecificHeader.Text" xml:space="preserve">
+    <value>Chart Settings</value>
+  </data>
+  <data name="lblChartTypeHeader.Text" xml:space="preserve">
+    <value>Chart Type</value>
+  </data>
+</root>
