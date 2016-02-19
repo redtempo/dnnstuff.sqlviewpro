@@ -47,7 +47,7 @@ namespace DNNStuff.SQLViewPro
 			{
 				if (_Config == null)
 				{
-					if (ReportSetConfig == "")
+					if (string.IsNullOrEmpty(ReportSetConfig))
 					{
 						_Config = new ReportSetConfig();
 					}

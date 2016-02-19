@@ -118,7 +118,7 @@ namespace DNNStuff.SQLViewPro
 			l.ID = prop.Name + "_Help";
 			
 			var caption = (string) (Localization.GetString("lbl" + prop.Name, LocalResourceFile));
-			if (caption == "")
+			if (string.IsNullOrEmpty(caption))
 			{
 				caption = StringHelpers.Wordify(prop.Name);
 			}
@@ -126,7 +126,7 @@ namespace DNNStuff.SQLViewPro
 			l.Font.Bold = true;
 			
 			var help = (string) (Localization.GetString("lbl" + prop.Name + ".Help", LocalResourceFile));
-			if (help == "")
+			if (string.IsNullOrEmpty(help))
 			{
 				help = string.Format("Enter a {0} ({1})", caption, prop.Type.ToString());
 			}
@@ -281,7 +281,7 @@ namespace DNNStuff.SQLViewPro
 			
 			foreach (var prop in group.Properties)
 			{
-				if (prop.Filter == "" || prop.Filter.Contains(Filter))
+				if (string.IsNullOrEmpty(prop.Filter) || prop.Filter.Contains(Filter))
 				{
 					prop.Value = (string) (GetInitialValue(prop.Name).ToString());
 					
@@ -303,7 +303,7 @@ namespace DNNStuff.SQLViewPro
 			
 			foreach (var prop in group.Properties)
 			{
-				if (prop.Filter == "" || prop.Filter.Contains(Filter))
+				if (string.IsNullOrEmpty(prop.Filter) || prop.Filter.Contains(Filter))
 				{
 					prop.Value = (string) (GetInitialValue(prop.Name).ToString());
 					
@@ -332,7 +332,7 @@ namespace DNNStuff.SQLViewPro
 				{
 					foreach (var section in Settings.Sections)
 					{
-						if (section.Filter == "" || section.Filter.Contains(Filter))
+						if (string.IsNullOrEmpty(section.Filter) || section.Filter.Contains(Filter))
 						{
 							if (PropertiesToShow(section) > 0)
 							{
@@ -355,8 +355,7 @@ namespace DNNStuff.SQLViewPro
 										case "TopToBottom":
 											tbGroup.Rows.Add(RenderGroupCellsTopToBottom(group));
 											break;
-										case "LeftToRight":
-										case "":
+                                        default:
 											tbGroup.Rows.Add(RenderGroupCellsLeftToRight(group));
 											break;
 									}
@@ -372,7 +371,7 @@ namespace DNNStuff.SQLViewPro
 								var value = default(object);
 								foreach (var prop in section.Properties)
 								{
-									if (prop.Filter == "" || prop.Filter.Contains(Filter))
+									if (string.IsNullOrEmpty(prop.Filter) || prop.Filter.Contains(Filter))
 									{
 										value = GetInitialValue(prop.Name);
 										if (value != null)
@@ -403,7 +402,7 @@ namespace DNNStuff.SQLViewPro
 			var count = 0;
 			foreach (var prop in section.Properties)
 			{
-				if (prop.Filter == "" || prop.Filter.Contains(Filter))
+				if (string.IsNullOrEmpty(prop.Filter) || prop.Filter.Contains(Filter))
 				{
 					count++;
 				}
@@ -412,7 +411,7 @@ namespace DNNStuff.SQLViewPro
 			{
 				foreach (var prop in group.Properties)
 				{
-					if (prop.Filter == "" || prop.Filter.Contains(Filter))
+					if (string.IsNullOrEmpty(prop.Filter) || prop.Filter.Contains(Filter))
 					{
 						count++;
 					}

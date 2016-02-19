@@ -205,7 +205,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			    if (ViewState["SortExpression"] != null)
 			    {
                     value = ViewState["SortExpression"].ToString();
-                    if (value == "")
+                    if (string.IsNullOrEmpty(value))
                     {
                         value = (string)(ReportExtra.OrderBy.Replace(" DESC", "").Replace(" ASC", ""));
                     }
@@ -226,7 +226,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			    if (ViewState["SortDirection"] != null)
 			    {
                     value = ViewState["SortDirection"].ToString();
-                    if (value == "")
+                    if (string.IsNullOrEmpty(value))
                     {
                         value = "ASC";
                         if (ReportExtra.OrderBy.Contains(" ASC"))

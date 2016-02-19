@@ -535,7 +535,7 @@ namespace DNNStuff.SQLViewPro
 				{
 					
 					// override theme if nothing
-					if (objReport.ReportTheme == "")
+					if (string.IsNullOrEmpty(objReport.ReportTheme))
 					{
 						objReport.ReportTheme = ReportSet.ReportSetTheme;
 					}
@@ -619,11 +619,11 @@ namespace DNNStuff.SQLViewPro
 		private string ActionCaption()
 		{
 			var caption = ReportSet.RunCaption;
-			if (caption == "")
+			if (string.IsNullOrEmpty(caption))
 			{
 				caption = (string) (Localization.GetString("ActionRun.Text", LocalResourceFile));
 			}
-			if (caption == "")
+			if (string.IsNullOrEmpty(caption))
 			{
 				caption = "Run";
 			}
@@ -632,11 +632,11 @@ namespace DNNStuff.SQLViewPro
 		private string BackCaption()
 		{
 			var caption = ReportSet.BackCaption;
-			if (caption == "")
+			if (string.IsNullOrEmpty(caption))
 			{
 				caption = (string) (Localization.GetString("ActionBack.Text", LocalResourceFile));
 			}
-			if (caption == "")
+			if (string.IsNullOrEmpty(caption))
 			{
 				caption = "<- Back";
 			}

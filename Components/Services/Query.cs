@@ -35,13 +35,13 @@ using DotNetNuke.Common.Utilities;
 			}
 			
 			// if no query just return empty dataset
-			if (queryText == "")
+			if (string.IsNullOrEmpty(queryText))
 			{
 				return new DataSet();
 			}
 			
 			// not cached, grab live data
-			if (connectionString == "")
+			if (string.IsNullOrEmpty(connectionString))
 			{
 				results = DataProvider.Instance().RunQuery(queryText, dataSetName);
 			}

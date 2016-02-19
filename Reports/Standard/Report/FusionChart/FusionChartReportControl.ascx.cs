@@ -71,7 +71,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 				colorSet = ReportExtra.CustomColorSet.Replace(" ", "");
 			}
 			
-			if (colorSet == "")
+			if (string.IsNullOrEmpty(colorSet))
 			{
 				colorSet = GenerateColourSet(numColors);
 			}
