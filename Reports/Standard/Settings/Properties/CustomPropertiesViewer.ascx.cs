@@ -1,12 +1,14 @@
 
 using System.Web.UI.HtmlControls;
 using System;
+using System.Runtime.CompilerServices;
 using System.Web.UI.WebControls;
 using Microsoft.VisualBasic;
 using System.Web.UI;
 
 using DotNetNuke.Services.Localization;
 using DotNetNuke.UI.WebControls;
+using Microsoft.VisualBasic.CompilerServices;
 
 
 namespace DNNStuff.SQLViewPro
@@ -33,9 +35,10 @@ namespace DNNStuff.SQLViewPro
 				{
 					if (customprop.Name.ToUpper() == prop.Name.ToUpper())
 					{
-						customprop.Value = (string) (prop.GetValue(InitialValues, null));
-					}
-				}
+						//customprop.Value = prop.GetValue(InitialValues, null);
+                        customprop.Value = Conversions.ToString(prop.GetValue(RuntimeHelpers.GetObjectValue(this.InitialValues), null));
+                    }
+                }
 			}
 		}
 #endregion

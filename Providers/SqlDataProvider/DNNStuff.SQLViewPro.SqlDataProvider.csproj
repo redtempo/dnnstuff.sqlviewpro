@@ -90,14 +90,14 @@
     <Reference Include="mscorlib" />
     <Reference Include="DotNetNuke">
       <Name>DotNetNuke</Name>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">D:\TOOLING\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">D:\TOOLING\BIN\DotNetNuke8\DotNetNuke.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">J:\TOOLING\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">J:\TOOLING\BIN\DotNetNuke8\DotNetNuke.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.ApplicationBlocks.Data">
       <Name>Microsoft.ApplicationBlocks.Data</Name>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">D:\TOOLING\BIN\DotNetNuke7\Microsoft.ApplicationBlocks.Data.dll</HintPath>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">D:\TOOLING\BIN\DotNetNuke8\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">J:\TOOLING\BIN\DotNetNuke7\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">J:\TOOLING\BIN\DotNetNuke8\Microsoft.ApplicationBlocks.Data.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System">

@@ -141,6 +141,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			// debug
 			if (State.ReportSet.ReportSetDebug)
 			{
+			    DebugInfo.Clear();
 				DebugInfo.Append(gridQuery);
 			}
 			
@@ -204,12 +205,11 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			    var value = "";
 			    if (ViewState["SortExpression"] != null)
 			    {
-                    value = ViewState["SortExpression"].ToString();
-                    if (string.IsNullOrEmpty(value))
-                    {
-                        value = (string)(ReportExtra.OrderBy.Replace(" DESC", "").Replace(" ASC", ""));
-                    }
-
+			        value = ViewState["SortExpression"].ToString();
+			    }
+			    else
+			    {
+                    value = (string)(ReportExtra.OrderBy.Replace(" DESC", "").Replace(" ASC", "").Replace(Report.ReportIdentifierQuoteStartCharacter, "").Replace(Report.ReportIdentifierQuoteEndCharacter, ""));
                 }
                 return value;
 			}
@@ -225,18 +225,19 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			    var value = "";
 			    if (ViewState["SortDirection"] != null)
 			    {
-                    value = ViewState["SortDirection"].ToString();
-                    if (string.IsNullOrEmpty(value))
+			        value = ViewState["SortDirection"].ToString();
+			    }
+			    else
+			    {
+                    value = "ASC";
+                    if (ReportExtra.OrderBy.Contains(" ASC"))
                     {
                         value = "ASC";
-                        if (ReportExtra.OrderBy.Contains(" ASC"))
-                        {
-                            value = "ASC"; // NOTE: doing this step in case someone sorts by DESCRIPTION or something else with DESC in it and wants to specifically sort ascending
-                        }
-                        else if (ReportExtra.OrderBy.Contains(" DESC"))
-                        {
-                            value = "DESC";
-                        }
+                        // NOTE: doing this step in case someone sorts by DESCRIPTION or something else with DESC in it and wants to specifically sort ascending
+                    }
+                    else if (ReportExtra.OrderBy.Contains(" DESC"))
+                    {
+                        value = "DESC";
                     }
 
                 }

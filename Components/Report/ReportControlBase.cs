@@ -2,6 +2,7 @@ using System.Collections;
 using System.Web.UI;
 using System.Data;
 using System.Text;
+using System.Web;
 
 namespace DNNStuff.SQLViewPro.Controls
 {
@@ -120,7 +121,8 @@ namespace DNNStuff.SQLViewPro.Controls
                 onDrillDownEventHandler(o, e);
             }
         }
-        private void Page_Init(object sender, System.EventArgs e)
+
+        protected void Page_Init(object sender, System.EventArgs e)
 		{
 			var postbackControlId = "";
 			if (Page.IsPostBack)
@@ -155,8 +157,8 @@ namespace DNNStuff.SQLViewPro.Controls
 				
 			}
 		}
-		
-		private void Page_PreRender(object sender, System.EventArgs e)
+
+        protected void Page_PreRender(object sender, System.EventArgs e)
 		{
 			if (State.ReportSet.ReportSetDebug)
 			{
@@ -234,7 +236,7 @@ namespace DNNStuff.SQLViewPro.Controls
 			var s = new StringBuilder();
 			if (info.Length > 0)
 			{
-				s.AppendFormat("<div class=\"{0}_Debug\">{1}</div>", Report.ReportTheme, info);
+				s.AppendFormat("<div class=\"{0}_Debug\"><pre>{1}</pre></div>", Report.ReportTheme, info);
 			}
 			return s.ToString();
 		}
