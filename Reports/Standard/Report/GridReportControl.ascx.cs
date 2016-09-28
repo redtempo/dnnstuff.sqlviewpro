@@ -198,7 +198,27 @@ namespace DNNStuff.SQLViewPro.StandardReports
 				
 			}
 		}
-		private string SortExpression
+
+	    private string SortClause
+	    {
+	        get
+	        {
+	            if (ViewState["SortExpression"] == null) // use initial sort clause provided by user in tact
+	            {
+	                return ReportExtra.OrderBy;
+	            }
+	            if (SortExpression != "")
+	            {
+                    // otherwise create a clause based on column sort parameters
+                    return
+                        $"{Report.ReportIdentifierQuoteStartCharacter}{SortExpression}{Report.ReportIdentifierQuoteEndCharacter} {SortDirection}";
+
+                }
+	            return ""; // user might enable sorting but not specify an initial sort
+	        }
+        }
+
+	    private string SortExpression
 		{
 			get
 			{
@@ -207,10 +227,6 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			    {
 			        value = ViewState["SortExpression"].ToString();
 			    }
-			    else
-			    {
-                    value = (string)(ReportExtra.OrderBy.Replace(" DESC", "").Replace(" ASC", "").Replace(Report.ReportIdentifierQuoteStartCharacter, "").Replace(Report.ReportIdentifierQuoteEndCharacter, ""));
-                }
                 return value;
 			}
 			set
@@ -222,25 +238,11 @@ namespace DNNStuff.SQLViewPro.StandardReports
 		{
 			get
 			{
-			    var value = "";
+			    var value = "ASC";
 			    if (ViewState["SortDirection"] != null)
 			    {
 			        value = ViewState["SortDirection"].ToString();
 			    }
-			    else
-			    {
-                    value = "ASC";
-                    if (ReportExtra.OrderBy.Contains(" ASC"))
-                    {
-                        value = "ASC";
-                        // NOTE: doing this step in case someone sorts by DESCRIPTION or something else with DESC in it and wants to specifically sort ascending
-                    }
-                    else if (ReportExtra.OrderBy.Contains(" DESC"))
-                    {
-                        value = "DESC";
-                    }
-
-                }
                 return value;
 			}
 			set
@@ -264,11 +266,11 @@ namespace DNNStuff.SQLViewPro.StandardReports
 					}
 					else
 					{
-						if (SortExpression != "")
+						if (SortClause != "")
 						{
 							if (!query.Contains("ORDER BY"))
 							{
-								query = query + string.Format(" ORDER BY {0}{1}{2} {3}", Report.ReportIdentifierQuoteStartCharacter, SortExpression, Report.ReportIdentifierQuoteEndCharacter, SortDirection);
+								query = query + $" ORDER BY {SortClause}";
 							}
 						}
 					}
