@@ -196,7 +196,7 @@
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://dnn7.dev.com/DesktopModules/DNNStuff - SQLViewPro/Parameters/Mobile</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://dnn7.dev.com/</IISAppRootUrl>
+          <IISAppRootUrl>http://dnn7.dev.com</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
