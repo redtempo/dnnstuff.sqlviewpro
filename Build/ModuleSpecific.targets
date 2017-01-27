@@ -41,9 +41,11 @@
     <MyResourceFiles Include="..\Reports\SSRS\Settings\**\*.xml" />
 
     <MyResourceFiles Include="..\Parameters\Standard\**\*.ascx" />
+    <MyResourceFiles Include="..\Parameters\Standard\**\Resources\*.*" />
     <MyResourceFiles Include="..\Parameters\Standard\Settings\App_LocalResources\**\*.resx" />
 
     <MyResourceFiles Include="..\Parameters\Mobile\**\*.ascx" />
+    <MyResourceFiles Include="..\Parameters\Mobile\**\Resources\*.*" />
     <MyResourceFiles Include="..\Parameters\Mobile\Settings\App_LocalResources\**\*.resx" />
 
     <MyResourceFiles Include="..\Skins\**\*.*" Exclude="..\**\.svn\**"/>

@@ -1,11 +1,14 @@
 
 ## 04.01.01
 
-15/Sep/2016
+27/Jan/2017
 
 
 * Fixes
-	* Fixed issue with grid report, sorting with fieldnames that included spaces
+	* Fixed issue with grid report sorting with fieldnames that included spaces
+    * Mobiscroll parameter was missing resources
+
+
 
 
 
