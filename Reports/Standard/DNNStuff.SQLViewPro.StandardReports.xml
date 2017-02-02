@@ -310,6 +310,33 @@
             To modify move field declaration from designer file to code-behind file.
             </remarks>
         </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.HtmlChartReportSettingsControl.lblChartType">
+            <summary>
+            lblChartType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.HtmlChartReportSettingsControl.ddlChartType">
+            <summary>
+            ddlChartType control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:DNNStuff.SQLViewPro.StandardReports.HtmlChartReportSettingsControl.cpvMain">
+            <summary>
+            cpvMain control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
         <member name="F:DNNStuff.SQLViewPro.StandardReports.TemplateReportSettingsControl.lblTemplateText">
             <summary>
             lblTemplateText control.

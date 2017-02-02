@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="Report\HtmlChart\Charts\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs">
@@ -176,6 +177,13 @@
     <Compile Include="Report\GridReportControl.ascx.designer.cs">
       <DependentUpon>GridReportControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Report\HtmlChart\HtmlChartReportControl.ascx.cs">
+      <DependentUpon>HtmlChartReportControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\HtmlChart\HtmlChartReportControl.ascx.designer.cs">
+      <DependentUpon>HtmlChartReportControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Report\TemplateReportControl.ascx.designer.cs">
       <DependentUpon>TemplateReportControl.ascx</DependentUpon>
     </Compile>
@@ -195,6 +203,13 @@
     </Compile>
     <Compile Include="Settings\GridReportSettingsControl.ascx.designer.cs">
       <DependentUpon>GridReportSettingsControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\HtmlChartReportSettingsControl.ascx.cs">
+      <DependentUpon>HtmlChartReportSettingsControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\HtmlChartReportSettingsControl.ascx.designer.cs">
+      <DependentUpon>HtmlChartReportSettingsControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Settings\NoReportSettingsControl.ascx.designer.cs">
       <DependentUpon>NoReportSettingsControl.ascx</DependentUpon>
@@ -266,23 +281,24 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Report\FusionChart\Resources\FusionCharts.js" />
+    <Content Include="Report\HtmlChart\HtmlChartReportControl.ascx" />
+    <Content Include="Report\HtmlChart\Resources\HtmlCharts.js" />
     <Content Include="Report\TemplateReportControl.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Settings\FusionChartReportSettingsControl.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Settings\HtmlChartReportSettingsControl.ascx" />
     <Content Include="Settings\NoReportSettingsControl.ascx" />
     <Content Include="Settings\Properties\CustomPropertiesViewer.ascx" />
-    <Content Include="Settings\Properties\Html5ChartReport.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Settings\Properties\FusionChartReport.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Settings\GridReportSettingsControl.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Settings\Properties\HtmlChartReport.xml" />
     <Content Include="Settings\TemplateReportSettingsControl.ascx" />
     <Content Include="Settings\XmlReportSettingsControl.ascx" />
     <Content Include="Report\GridReportControl.ascx">
@@ -298,6 +314,9 @@
     <EmbeddedResource Include="Report\FusionChart\FusionChartReportControl.ascx.resx">
       <DependentUpon>FusionChartReportControl.ascx.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\HtmlChart\HtmlChartReportControl.ascx.resx">
+      <DependentUpon>HtmlChartReportControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\TemplateReportControl.ascx.resx">
       <DependentUpon>TemplateReportControl.ascx.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,9 +326,12 @@
     <Content Include="Settings\App_LocalResources\TemplateReportSettingsControl.ascx.resx">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Settings\App_LocalResources\Html5ChartReportSettingsControl.ascx.resx" />
+    <Content Include="Settings\App_LocalResources\HtmlChartReportSettingsControl.ascx.resx" />
     <EmbeddedResource Include="Settings\FusionChartReportSettingsControl.ascx.resx">
       <DependentUpon>FusionChartReportSettingsControl.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\HtmlChartReportSettingsControl.ascx.resx">
+      <DependentUpon>HtmlChartReportSettingsControl.ascx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\NoReportSettingsControl.ascx.resx">
       <DependentUpon>NoReportSettingsControl.ascx.cs</DependentUpon>
