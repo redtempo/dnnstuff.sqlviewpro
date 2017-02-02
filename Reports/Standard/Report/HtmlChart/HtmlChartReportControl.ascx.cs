@@ -1,8 +1,10 @@
 using System;
 using System.Data;
+using System.Linq;
 using System.Web.UI;
 
 using System.Reflection;
+using Newtonsoft.Json;
 
 namespace DNNStuff.SQLViewPro.StandardReports
 {
@@ -157,7 +159,7 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			sb.Append("jQuery(document).ready(function () {");
             sb.Append($"var ctx = document.getElementById(\"{Unique("chartdiv")}\");");
             sb.Append("var chart = new Chart(ctx, {");
-		    sb.Append("type: 'bar',");
+		    sb.Append("type: 'pie',");
 		    sb.Append($"data: {data}");
             sb.Append("});");
             sb.Append("});");
@@ -232,30 +234,17 @@ namespace DNNStuff.SQLViewPro.StandardReports
 			colors = ReportColorSet(ds.Tables[0].Rows.Count).Split(',');
 			
 			// single series
-		    var dataLabels = "labels: [";
-		    var dataPoints = "data: [";
-		    var backgroundColors = "backgroundColor: [";
-			foreach (DataRow dr in ds.Tables[0].Rows)
-			{
-			    dataLabels += "\"" + dr[0] + "\" ,";
-			    dataPoints += dr[1] + ",";
-			    backgroundColors += "'#" + colors[colorIndex] + "',";
-				colorIndex++;
-				if (colorIndex >= colors.Length)
-				{
-					colorIndex = 0;
-				}
-			}
-		    dataLabels = dataLabels.TrimEnd(',') + "]";
-            dataPoints = dataPoints.TrimEnd(',') + "]";
-            backgroundColors = backgroundColors.TrimEnd(',') + "]";
+		    var labels = ds.Tables[0].AsEnumerable().Select(r => r.ItemArray[0].ToString()).ToArray();
+            var dataPoints = ds.Tables[0].AsEnumerable().Select(r => r.ItemArray[1].ToString()).ToArray();
+		    var colorLength = colors.Length;
+            var backgroundColors = ds.Tables[0].AsEnumerable().Select((r,index) => "#" + colors[index%colorLength]).ToArray();
 
 		    data.Append("{");
-		    data.Append(dataLabels + ",");
+		    data.Append("labels: " + JsonConvert.SerializeObject(labels) + ",");
 		    data.Append("datasets: [{");
 		    data.Append("label: '# of Votes',");
-		    data.Append(dataPoints + ",");
-		    data.Append(backgroundColors);
+            data.Append("data: " + JsonConvert.SerializeObject(dataPoints) + ",");
+            data.Append("backgroundColor: " + JsonConvert.SerializeObject(backgroundColors));
 		    data.Append("}]");
 		    data.Append("}");
 		}
