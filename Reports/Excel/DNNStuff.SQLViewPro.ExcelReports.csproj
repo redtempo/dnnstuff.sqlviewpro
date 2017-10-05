@@ -58,6 +58,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\..\..\sites\dnn7.dnndev.me\bin\</OutputPath>
@@ -117,22 +118,22 @@
     <DebugType>none</DebugType>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DNNStuff.Utilities, Version=1.1.0.34870, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refs\DNNStuff.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke, Version=7.2.0.613, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetNuke.Core.7.2.0.613\lib\net40\DotNetNuke.dll</HintPath>
+    </Reference>
+    <Reference Include="FlexCel, Version=6.1.0.0, Culture=neutral, PublicKeyToken=cb8f6080e6d5a4d6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refs\FlexCel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net40\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="mscorlib" />
-    <Reference Include="DNNStuff.Utilities, Version=1.1.0.30560, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>J:\TOOLING\BIN\Various\DNNStuff.Utilities.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetNuke">
-      <Name>DotNetNuke</Name>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">J:\TOOLING\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">J:\TOOLING\BIN\DotNetNuke8\DotNetNuke.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="FlexCel, Version=5.6.0.1, Culture=neutral, PublicKeyToken=cb8f6080e6d5a4d6, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>J:\TOOLING\BIN\FlexCell\NET35\FlexCel.dll</HintPath>
-    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -151,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="refs\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs">
@@ -216,6 +218,9 @@
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

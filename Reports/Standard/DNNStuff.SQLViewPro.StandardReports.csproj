@@ -58,6 +58,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\..\..\sites\dnn7.dnndev.me\bin\</OutputPath>
@@ -116,9 +117,14 @@
     <DebugType>none</DebugType>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetNuke, Version=7.2.0.613, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetNuke.Core.7.2.0.613\lib\net40\DotNetNuke.dll</HintPath>
+    </Reference>
     <Reference Include="Handlebars, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22225d0bf33cd661, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Handlebars.Net.1.6.1\lib\Handlebars.dll</HintPath>
-      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net40\Microsoft.ApplicationBlocks.Data.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="mscorlib" />
@@ -126,15 +132,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>J:\TOOLING\BIN\Various\DNNStuff.Utilities.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetNuke">
-      <Name>DotNetNuke</Name>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">J:\TOOLING\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">J:\TOOLING\BIN\DotNetNuke8\DotNetNuke.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\TOOLING\BIN\DotNetNuke7\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>

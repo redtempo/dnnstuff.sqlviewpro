@@ -310,3 +310,4 @@ Build/Output/
 Build/Logs/
 Build/*.txt
 *.dat
+Reports/Excel/

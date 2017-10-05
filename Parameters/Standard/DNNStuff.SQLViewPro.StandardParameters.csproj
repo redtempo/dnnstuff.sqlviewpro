@@ -43,6 +43,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\..\..\sites\dnn7.dnndev.me\bin\</OutputPath>
@@ -101,14 +102,14 @@
     <DebugType>none</DebugType>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetNuke, Version=7.2.0.613, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetNuke.Core.7.2.0.613\lib\net40\DotNetNuke.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net40\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="mscorlib" />
-    <Reference Include="DotNetNuke">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">J:\TOOLING\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">J:\TOOLING\BIN\DotNetNuke8\DotNetNuke.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -373,6 +374,9 @@
       <Project>{0440098f-ff3b-41a4-a074-45b878f929b9}</Project>
       <Name>DNNStuff.SQLViewPro</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -43,6 +43,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>..\..\sites\dnn7.dnndev.me\bin\</OutputPath>
@@ -95,18 +96,18 @@
     </DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DNNStuff.Utilities, Version=1.1.0.34870, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refs\DNNStuff.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke, Version=7.2.0.613, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetNuke.Core.7.2.0.613\lib\net40\DotNetNuke.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ApplicationBlocks.Data.2.0.0\lib\net40\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="mscorlib" />
-    <Reference Include="DotNetNuke">
-      <Name>DotNetNuke</Name>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN7' ">J:\TOOLING\BIN\DotNetNuke7\DotNetNuke.dll</HintPath>
-      <HintPath Condition=" '$(DNNVERSION)' == 'DNN8' ">J:\TOOLING\BIN\DotNetNuke8\DotNetNuke.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DNNStuff.Utilities, Version=1.1.0.30560, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>J:\TOOLING\BIN\Various\DNNStuff.Utilities.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Name>Microsoft.VisualBasic</Name>
     </Reference>
@@ -321,6 +322,9 @@
     <Content Include="Skins\Set1\styles.css" />
     <Content Include="SQLViewPro.ascx" />
     <Content Include="Version\All\Version_Append.md" />
+    <Content Include="LICENSE" />
+    <Content Include="README.md" />
+    <None Include="packages.config" />
     <None Include="Version\All\Version_Current.md" />
     <Content Include="Version\All\icon_sqlviewpro_32px.gif" />
     <Content Include="Version\All\License.html" />
