@@ -324,6 +324,7 @@
     <Content Include="Version\All\Version_Append.md" />
     <Content Include="LICENSE" />
     <Content Include="README.md" />
+    <Content Include="Build\DNNInstall.targets" />
     <None Include="packages.config" />
     <None Include="Version\All\Version_Current.md" />
     <Content Include="Version\All\icon_sqlviewpro_32px.gif" />
@@ -388,8 +389,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Build\Build.bat" />
-    <None Include="Build\BuildFinal.bat" />
-    <None Include="Build\DeployFinal.bat" />
     <None Include="Build\ModuleSpecific.targets">
       <SubType>Designer</SubType>
     </None>

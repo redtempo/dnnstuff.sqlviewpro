@@ -8,7 +8,6 @@
     <ProjectToBuild Include="..\$(Company).$(ProductName).csproj" />
     <ProjectToBuild Include="..\Providers\SqlDataProvider\$(Company).$(ProductName).SQLDataProvider.csproj" />
     <ProjectToBuild Include="..\Reports\Standard\$(Company).$(ProductName).StandardReports.csproj" />
-    <ProjectToBuild Include="..\Reports\Excel\$(Company).$(ProductName).ExcelReports.csproj" />
     <ProjectToBuild Include="..\Reports\SSRS\$(Company).$(ProductName).SSRSReports.csproj" />
     <ProjectToBuild Include="..\Parameters\Standard\$(Company).$(ProductName).StandardParameters.csproj" />
     <ProjectToBuild Include="..\Parameters\Mobile\$(Company).$(ProductName).MobileParameters.csproj" />
@@ -19,19 +18,12 @@
     <MyResourceFiles Include="..\App_LocalResources\*.resx" />
     <MyResourceFiles Include="..\Controls\**\*.ascx" />
     
-    <MyResourceFiles Include="..\Reports\Standard\**\*.ascx"  Exclude="..\Reports\Standard\Report\GridView\*.*" />
-    <MyResourceFiles Include="..\Reports\Standard\**\*.resx"  Exclude="..\Reports\Standard\Report\GridView\*.*" />
+    <MyResourceFiles Include="..\Reports\Standard\**\*.ascx" />
+    <MyResourceFiles Include="..\Reports\Standard\**\*.resx" />
     <MyResourceFiles Include="..\Reports\Standard\**\*.js" />
     <MyResourceFiles Include="..\Reports\Standard\**\*.xap" />
     <MyResourceFiles Include="..\Reports\Standard\**\*.swf" />
     <MyResourceFiles Include="..\Reports\Standard\Settings\**\*.xml" />
-
-    <MyResourceFiles Include="..\Reports\Excel\**\*.ascx" />
-    <MyResourceFiles Include="..\Reports\Excel\**\*.resx" />
-    <MyResourceFiles Include="..\Reports\Excel\**\*.js" />
-    <MyResourceFiles Include="..\Reports\Excel\**\*.xap" />
-    <MyResourceFiles Include="..\Reports\Excel\**\*.swf" />
-    <MyResourceFiles Include="..\Reports\Excel\Settings\**\*.xml" />
 
     <MyResourceFiles Include="..\Reports\SSRS\**\*.ascx" />
     <MyResourceFiles Include="..\Reports\SSRS\**\*.resx" />
@@ -55,14 +47,12 @@
   <ItemGroup>
     <MyContentFiles Include="..\version\all\*.*" />
     <MyContentFiles Include="..\version\data\*.*" />
-    <MyContentFiles Include="$(DNNSTUFF_BIN_PATH)\Various\DNNStuff.Utilities.dll" />
-    <MyContentFiles Include="$(DNNSTUFF_BIN_PATH)\Various\Ciloci.Flee.dll" />
-    <MyContentFiles Include="$(DNNSTUFF_BIN_PATH)\FlexCell\NET35\FlexCel.dll" />
-    <MyContentFiles Include="$(DNNSTUFF_BIN_PATH)\SSRS\2012\Microsoft.ReportViewer.WebForms.dll" />
+    <MyContentFiles Include="..\refs\DNNStuff.Utilities.dll" />
+    <MyContentFiles Include="..\refs\Ciloci.Flee.dll" />
+    <MyContentFiles Include="..\packages\Microsoft.ReportViewer.Runtime.WebForms.11.0.3452.0\lib\Microsoft.ReportViewer.WebForms.dll" />
   </ItemGroup>
   <ItemGroup>
     <MySourceFiles Include="..\**\*.*" Exclude="..\**\obj\**;..\Build\**;..\.git\**;..\Skins\**\*_\**;..\_Resharper*\**;..\*.suo;..\Packages\**;..\node_modules\**;..\gulp*;..\package.json;" />
   </ItemGroup>
-  <Import Project="$(DNNSTUFF_TOOLS_PATH)\MsBuild\DNNInstall_CS.targets" />
-  <Import Project="$(DNNSTUFF_TOOLS_PATH)\MsBuild\DNNDeploy.targets" />
+  <Import Project="DNNInstall.targets" />
 </Project>

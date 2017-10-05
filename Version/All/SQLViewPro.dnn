@@ -5,16 +5,12 @@
       <description>SQLView Pro displays data from any database into grids, charts or anything else you can dream up</description>
       <owner>
         <name>Richard Edwards</name>
-        <organization>DNNStuff</organization>
-        <url>
-          <![CDATA[Web: <a href="http://www.dnnstuff.com/" target="_blank">www.dnnstuff.com</a>, Twitter: <a href="http://www.twitter.com/dnnstuff" target="_blank">http://www.twitter.com/dnnstuff</a>, Facebook: <a href="https://www.facebook.com/pages/DNNStuff/206502112775818" target="_blank">http://www.facebook.com/dnnstuff</a><br /><i><strong>(All links open in a new window and won't interupt your install!)</strong></i>]]>
-        </url>
-        <email>
-          <![CDATA[<a href="mailto:support@dnnstuff.com">support@dnnstuff.com</a>]]>
-        </email>
+				<organization>Red Tempo Software Inc.</organization>
+				<url>http://www.github.com/redtempo</url>
+				<email>richard@redtempo.com</email>
       </owner>
       <license src="License.html" />
-      <releaseNotes src="Version_Current.html" />
+      <releaseNotes src="Release.html" />
 	  <azureCompatible>true</azureCompatible>
       <dependencies>
         <dependency type="CoreVersion">06.00.03</dependency>
@@ -118,10 +114,6 @@
             <assembly>
               <name>Ciloci.Flee.dll</name>
               <sourceFileName>Ciloci.Flee.dll</sourceFileName>
-            </assembly>
-            <assembly>
-              <name>FlexCel.dll</name>
-              <sourceFileName>FlexCel.dll</sourceFileName>
             </assembly>
             <assembly>
               <name>Microsoft.ReportViewer.WebForms.dll</name>

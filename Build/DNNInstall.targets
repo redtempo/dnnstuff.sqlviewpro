@@ -3,21 +3,6 @@
 	<Import Project="..\packages\MSBuildTasks.1.5.0.235\tools\MSBuild.Community.Tasks.Targets"/>
 	<UsingTask TaskName="MarkdownTask" AssemblyFile="DNNStuff.CustomBuildTasks.dll" />
 	<UsingTask TaskName="InsertFileTask" AssemblyFile="DNNStuff.CustomBuildTasks.dll" />
-	<UsingTask TaskName="FileContains" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
-		<ParameterGroup>
-			<FileName ParameterType="System.String" Required="true" />
-			<Match ParameterType="System.String" Required="true" />
-			<ContainsText ParameterType="System.Boolean" Output="true" />
-		</ParameterGroup>
-		<Task>
-			<Using Namespace="System.IO"/>
-			<Code Type="Fragment" Language="cs">
-				<![CDATA[
-	this.ContainsText = File.ReadAllText(this.FileName).Contains(Match);
-	]]>
-			</Code>
-		</Task>
-	</UsingTask>	
 	<PropertyGroup>
       <DNNVersion Condition=" '$(DNNVersion)' == '' ">DNN7</DNNVersion>
       <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
@@ -94,20 +79,20 @@
 
     <WriteLinesToFile File="$(Version).txt" Lines="$(Version)" Overwrite="true" />
   </Target>
- 
+
   <Target Name="UpdateAssyVersion">
-    <AssemblyInfo CodeLanguage="VB"
-        OutputFile="..\AssemblyInfo.vb"
+    <AssemblyInfo CodeLanguage="CS"
+        OutputFile="..\AssemblyInfo.cs"
         AssemblyTitle="$(Company).$(ProductName)"
-        AssemblyDescription="$(Company).$(ProductName) - $(DNNVersion) Install"
+        AssemblyDescription="$(Company).$(ProductName) - Install"
         AssemblyConfiguration=""
         AssemblyCompany="$(Company)"
         AssemblyProduct="$(Company) $(ProductName)"
-        AssemblyCopyright="Copyright (c) $(Company) 2017"
+        AssemblyCopyright="Copyright (c) $(Company) 2013"
         AssemblyTrademark=""
         ComVisible="false"
         CLSCompliant="true"
         AssemblyVersion="$(Version)"
         AssemblyFileVersion="$(Version)" />
-  </Target>  
+  </Target>
 </Project>
