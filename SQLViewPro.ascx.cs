@@ -43,9 +43,6 @@ namespace DNNStuff.SQLViewPro
 
 			try
 			{
-#if TRIAL
-				Common.AddTrialNotice(this);
-#endif
 				
 				// PortalModuleControl base class settings for this module
 				HelpURL = "http://www.dnnstuff.com"; // a URL for support on the module

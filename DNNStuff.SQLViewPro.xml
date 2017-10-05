@@ -49,16 +49,6 @@
             To modify move field declaration from designer file to code-behind file.
             </remarks>
         </member>
-        <member name="M:DNNStuff.SQLViewPro.Common.TrialWarning">
-            <summary>
-            TrialWarning - builds up the Trial warning inserted when using the Trial version of the module
-            </summary>
-        </member>
-        <member name="M:DNNStuff.SQLViewPro.Common.AddTrialNotice(System.Web.UI.Control)">
-            <summary>
-            AddTrialNotice - returns a control containing the trial warning
-            </summary>
-        </member>
         <member name="T:DNNStuff.SQLViewPro.Controls.ConnectionPickerControl">
             <summary>
             ConnectionPickerControl class.
