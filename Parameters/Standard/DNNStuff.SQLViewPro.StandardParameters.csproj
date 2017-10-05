@@ -45,7 +45,7 @@
     <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
+    <OutputPath>..\..\..\..\sites\dnn7.dnndev.me\bin\</OutputPath>
     <DocumentationFile>DNNStuff.SQLViewPro.StandardParameters.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
@@ -63,7 +63,7 @@
     <DebugType>full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
+    <OutputPath>..\..\..\..\sites\dnn7.dnndev.me\bin\</OutputPath>
     <DocumentationFile>DNNStuff.SQLViewPro.StandardParameters.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
@@ -82,7 +82,7 @@
     <DebugType>none</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trial|AnyCPU' ">
-    <OutputPath>..\..\..\..\dnn7.dev.com\bin\</OutputPath>
+    <OutputPath>..\..\..\..\sites\dnn7.dnndev.me\bin\</OutputPath>
     <DocumentationFile>DNNStuff.SQLViewPro.StandardParameters.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
@@ -393,9 +393,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1550</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://dnn7.dev.com/DesktopModules/DNNStuff - SQLViewPro/Parameters/Standard</IISUrl>
+          <IISUrl>http://dnn7.dnndev.me/DesktopModules/DNNStuff - SQLViewPro/Parameters/Standard</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://dnn7.dev.com</IISAppRootUrl>
+          <IISAppRootUrl>http://dnn7.dnndev.me</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
