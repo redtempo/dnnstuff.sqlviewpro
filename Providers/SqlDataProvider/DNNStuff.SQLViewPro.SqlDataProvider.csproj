@@ -55,7 +55,7 @@
     <DebugType>full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\..\..\..\sites\dnn7.dnndev.me\bin\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DocumentationFile>DNNStuff.SQLViewPro.SqlDataProvider.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
@@ -72,18 +72,6 @@
     <WarningLevel>1</WarningLevel>
     <NOWARN>1591,660,661</NOWARN>
     <DebugType>none</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trial|AnyCPU' ">
-    <DefineTrace>true</DefineTrace>
-    <OutputPath>..\..\..\..\sites\dnn7.dnndev.me\bin\</OutputPath>
-    <BaseAddress>285212672</BaseAddress>
-    <DocumentationFile>DNNStuff.SQLViewPro.SqlDataProvider.xml</DocumentationFile>
-    <Optimize>true</Optimize>
-    <WarningLevel>1</WarningLevel>
-    <NOWARN>1591,660,661</NOWARN>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DefineConstants>
-    </DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetNuke, Version=7.2.0.613, Culture=neutral, processorArchitecture=MSIL">

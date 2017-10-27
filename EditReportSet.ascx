@@ -9,8 +9,6 @@
                 <%=Localization.GetString("TabCaption_Tab1", LocalResourceFile)%></span></a></li>
             <li><a href="#tab2"><span>
                 <%=Localization.GetString("TabCaption_Tab2", LocalResourceFile)%></span></a></li>
-            <li><a href="#help"><span>
-                <%=Localization.GetString("TabCaption_Help", LocalResourceFile)%></span></a></li>
         </ul>
         <div class="tabs-container">
             <div class="tab" id="tab1">
@@ -158,10 +156,6 @@
                     <dnn:Label ID="lblParameterLayout" runat="server" ControlName="txtParameterLayout" Suffix=":" />
                     <asp:TextBox ID="txtParameterLayout" runat="server" CssClass="NormalTextBox" TextMode="MultiLine" Columns="70" Rows="10" Width="100%"></asp:TextBox>
                 </div>
-            </div>
-            <div class="tab" id="help">
-                <div class="dnnFormItem">
-                    <%=Localization.GetString("DocumentationHelp.Text", LocalResourceFile)%></div>
             </div>
         </div>
     </div>

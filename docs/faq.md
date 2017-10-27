@@ -1,13 +1,4 @@
-﻿```
-title: SQLViewPro - Faq
-layout: page
-tags: ['faq','page']
-topNav: false
-topNavOrder: 1
-
-```
-
-## Showing Run/Back as Buttons
+﻿## Showing Run/Back as Buttons
 
 Each command including Run/Back/Export etc. are all rendered as anchor tags or ```<a />``` tags.
 

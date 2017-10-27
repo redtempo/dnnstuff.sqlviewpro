@@ -1,9 +1,3 @@
-```
-title: Decoding Html in a template report 
-layout: page
-tags: ['intro','page']
-```
-
 The current SQLView Pro data token library doesn't include the facility
 to decode html data fields but here is a technique you can use to do
 this. By the way, this technique assumes you have the jQuery library

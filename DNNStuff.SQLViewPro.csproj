@@ -65,7 +65,7 @@
     <DebugType>full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\..\sites\dnn7.dnndev.me\bin\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DocumentationFile>DNNStuff.SQLViewPro.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
@@ -82,18 +82,6 @@
     <WarningLevel>1</WarningLevel>
     <NOWARN>1591,660,661</NOWARN>
     <DebugType>none</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trial|AnyCPU' ">
-    <DefineTrace>true</DefineTrace>
-    <OutputPath>..\..\sites\dnn7.dnndev.me\bin\</OutputPath>
-    <BaseAddress>285212672</BaseAddress>
-    <DocumentationFile>DNNStuff.SQLViewPro.xml</DocumentationFile>
-    <Optimize>true</Optimize>
-    <WarningLevel>1</WarningLevel>
-    <NOWARN>1591,660,661</NOWARN>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DefineConstants>
-    </DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DNNStuff.Utilities, Version=1.1.0.34870, Culture=neutral, processorArchitecture=MSIL">
@@ -325,8 +313,7 @@
     <Content Include="README.md" />
     <Content Include="Build\DNNInstall.targets" />
     <None Include="packages.config" />
-    <Content Include="Version\All\icon_sqlviewpro_32px.gif" />
-    <Content Include="Version\All\License.html" />
+    <Content Include="Resources\application.gif" />
     <Content Include="App_LocalResources\EditConnection.ascx.resx">
       <SubType>Designer</SubType>
     </Content>
@@ -422,45 +409,45 @@
     <Content Include="Version\Data\04.02.00.SqlDataProvider" />
     <Content Include="Version\Data\04.00.18.SqlDataProvider" />
     <None Include="Version\Data\Uninstall.SqlDataProvider" />
-    <Content Include="Version\Documentation\Configuration.html.md" />
-    <Content Include="Version\Documentation\Connections.html.md" />
-    <Content Include="Version\Documentation\DecodingHtml.html.md" />
-    <Content Include="Version\Documentation\ExcelTemplate.html.md" />
-    <Content Include="Version\Documentation\Grid.html.md" />
-    <Content Include="Version\Documentation\images\EditConnection.png" />
-    <Content Include="Version\Documentation\images\EditConnections.png" />
-    <Content Include="Version\Documentation\images\EditParameter.png" />
-    <Content Include="Version\Documentation\images\EditReport.png" />
-    <Content Include="Version\Documentation\images\EditReportSet.png" />
-    <Content Include="Version\Documentation\images\EditReportSets.png" />
-    <Content Include="Version\Documentation\images\EditReportSet_Parameters.png" />
-    <Content Include="Version\Documentation\images\EditReportSet_Reports.png" />
-    <Content Include="Version\Documentation\images\EditReport_GridSettings.png" />
-    <Content Include="Version\Documentation\images\EditReport_XSLSettings.png" />
-    <Content Include="Version\Documentation\images\ModuleSettings.png" />
-    <Content Include="Version\Documentation\images\Parameter_Calendar.png" />
-    <Content Include="Version\Documentation\images\Parameter_Checkbox.png" />
-    <Content Include="Version\Documentation\images\Parameter_CheckboxList.png" />
-    <Content Include="Version\Documentation\images\Parameter_DropDownList.png" />
-    <Content Include="Version\Documentation\images\Parameter_LayoutResults1.png" />
-    <Content Include="Version\Documentation\images\Parameter_Listbox.png" />
-    <Content Include="Version\Documentation\images\Parameter_ListValues.png" />
-    <Content Include="Version\Documentation\images\Parameter_ListValues_Sample.png" />
-    <Content Include="Version\Documentation\images\Parameter_RadioButtonList.png" />
-    <Content Include="Version\Documentation\images\Parameter_TextBox.png" />
-    <Content Include="Version\Documentation\Index.html.md" />
-    <Content Include="Version\Documentation\Installation.html.md" />
-    <Content Include="Version\Documentation\ParameterLayout.html.md" />
-    <Content Include="Version\Documentation\Parameters.html.md" />
-    <Content Include="Version\Documentation\Queries.html.md" />
-    <Content Include="Version\Documentation\Releases.html.md" />
-    <Content Include="Version\Documentation\Reports.html.md" />
-    <Content Include="Version\Documentation\ReportSets.html.md" />
-    <Content Include="Version\Documentation\Skins.html.md" />
-    <Content Include="Version\Documentation\SSRS.html.md" />
-    <Content Include="Version\Documentation\Template.html.md" />
-    <Content Include="Version\Documentation\Tokens.html.md" />
-    <Content Include="Version\Documentation\Faq.html.md" />
+    <Content Include="docs\configuration.md" />
+    <Content Include="docs\connections.md" />
+    <Content Include="docs\decodinghtml.md" />
+    <Content Include="docs\exceltemplate.md" />
+    <Content Include="docs\grid.md" />
+    <Content Include="docs\images\EditConnection.png" />
+    <Content Include="docs\images\EditConnections.png" />
+    <Content Include="docs\images\EditParameter.png" />
+    <Content Include="docs\images\EditReport.png" />
+    <Content Include="docs\images\EditReportSet.png" />
+    <Content Include="docs\images\EditReportSets.png" />
+    <Content Include="docs\images\EditReportSet_Parameters.png" />
+    <Content Include="docs\images\EditReportSet_Reports.png" />
+    <Content Include="docs\images\EditReport_GridSettings.png" />
+    <Content Include="docs\images\EditReport_XSLSettings.png" />
+    <Content Include="docs\images\ModuleSettings.png" />
+    <Content Include="docs\images\Parameter_Calendar.png" />
+    <Content Include="docs\images\Parameter_Checkbox.png" />
+    <Content Include="docs\images\Parameter_CheckboxList.png" />
+    <Content Include="docs\images\Parameter_DropDownList.png" />
+    <Content Include="docs\images\Parameter_LayoutResults1.png" />
+    <Content Include="docs\images\Parameter_Listbox.png" />
+    <Content Include="docs\images\Parameter_ListValues.png" />
+    <Content Include="docs\images\Parameter_ListValues_Sample.png" />
+    <Content Include="docs\images\Parameter_RadioButtonList.png" />
+    <Content Include="docs\images\Parameter_TextBox.png" />
+    <Content Include="docs\index.md" />
+    <Content Include="docs\installation.md" />
+    <Content Include="docs\parameterlayout.md" />
+    <Content Include="docs\parameters.md" />
+    <Content Include="docs\queries.md" />
+    <Content Include="docs\releases.md" />
+    <Content Include="docs\reports.md" />
+    <Content Include="docs\reportsets.md" />
+    <Content Include="docs\skins.md" />
+    <Content Include="docs\ssrs.md" />
+    <Content Include="docs\template.md" />
+    <Content Include="docs\tokens.md" />
+    <Content Include="docs\faq.md" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

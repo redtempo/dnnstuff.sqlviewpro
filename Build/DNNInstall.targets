@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project DefaultTargets="Install" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
-	<Import Project="..\packages\MSBuildTasks.1.5.0.235\tools\MSBuild.Community.Tasks.Targets"/>
-	<UsingTask TaskName="MarkdownTask" AssemblyFile="DNNStuff.CustomBuildTasks.dll" />
-	<UsingTask TaskName="InsertFileTask" AssemblyFile="DNNStuff.CustomBuildTasks.dll" />
-	<PropertyGroup>
-      <DNNVersion Condition=" '$(DNNVersion)' == '' ">DNN7</DNNVersion>
-      <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
-      <Version Condition=" '$(Version)' == '' ">01.00.00</Version>
-      <TempPath>output\$(DNNVersion)</TempPath>
-      <InstallFile>$(Company).$(ProductName).$(Version).Install.zip</InstallFile>
-		  <DeployFolder>deploy\$(Configuration)</DeployFolder>
-	</PropertyGroup>
+  <Import Project="..\packages\MSBuildTasks.1.5.0.235\tools\MSBuild.Community.Tasks.Targets"/>
+  <UsingTask TaskName="MarkdownTask" AssemblyFile="DNNStuff.CustomBuildTasks.dll" />
+  <UsingTask TaskName="InsertFileTask" AssemblyFile="DNNStuff.CustomBuildTasks.dll" />
+  <UsingTask TaskName="FileContains" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      <FileName ParameterType="System.String" Required="true" />
+      <Match ParameterType="System.String" Required="true" />
+      <ContainsText ParameterType="System.Boolean" Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Using Namespace="System.IO"/>
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+	this.ContainsText = File.ReadAllText(this.FileName).Contains(Match);
+	]]>
+      </Code>
+    </Task>
+  </UsingTask>
+  <PropertyGroup>
+    <DNNVersion Condition=" '$(DNNVersion)' == '' ">DNN7</DNNVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Version Condition=" '$(Version)' == '' ">01.00.00</Version>
+    <TempPath>output\$(DNNVersion)</TempPath>
+    <InstallFile>$(Company).$(ProductName).$(Version).Install.zip</InstallFile>
+    <DeployFolder>deploy\$(Configuration)</DeployFolder>
+  </PropertyGroup>
 
   <Target Name="Clean">
-		<Message Text="Cleaning projects ... " />
-		<MSBuild Projects="@(ProjectToBuild)" Targets="Clean" >
-		    <Output
-				TaskParameter="TargetOutputs"
-				ItemName="AssembliesBuiltBySolution" />
-		</MSBuild>
-	</Target>
-				
-	<Target Name="Build">
-		<Message Text="Building projects ... " />
-		<MSBuild Projects="@(ProjectToBuild)" Targets="Build" Properties='DefineConstants=DNNVERSION="$(DNNVersion)"'>
-		    <Output
-				TaskParameter="TargetOutputs"
-				ItemName="AssembliesBuiltBySolution" />
-		</MSBuild>
-	</Target>
+    <Message Text="Cleaning projects ... " />
+    <MSBuild Projects="@(ProjectToBuild)" Targets="Clean" >
+      <Output
+      TaskParameter="TargetOutputs"
+      ItemName="AssembliesBuiltBySolution" />
+    </MSBuild>
+  </Target>
+
+  <Target Name="Build">
+    <Message Text="Building projects ... " />
+    <MSBuild Projects="@(ProjectToBuild)" Targets="Build">
+      <Output
+      TaskParameter="TargetOutputs"
+      ItemName="AssembliesBuiltBySolution" />
+    </MSBuild>
+  </Target>
 
   <Target Name="Initialize">
     <Message Text="Initializing folders ... " />
@@ -39,35 +54,35 @@
     <!-- Prepare local deployment folder -->
     <MakeDir Directories="$(DeployFolder)" />
 
-	</Target>
+  </Target>
 
   <Target Name="Install" DependsOnTargets="Initialize;Resources;WriteVersionText;UpdateAssyVersion;Clean;Build">
     <!-- Copy dll's -->
-		<Copy SourceFiles="@(AssembliesBuiltBySolution)" DestinationFolder="$(TempPath)"  />
+    <Copy SourceFiles="@(AssembliesBuiltBySolution)" DestinationFolder="$(TempPath)"  />
     <!-- Copy other content -->
     <Copy SourceFiles="@(MyContentFiles)" DestinationFolder="$(TempPath)"  />
-    
+
     <!-- Update dnn file with version number -->
-    <XmlUpdate Prefix="" Namespace="" 
+    <XmlUpdate Prefix="" Namespace=""
 					XPath="//dotnetnuke/packages/package/@version"
 					XmlFileName="$(TempPath)\$(ProductName).dnn"
 					Value="$(Version)" />
 
-		<!-- Create list of files to zip -->
+    <!-- Create list of files to zip -->
     <CreateItem Include="$(TempPath)\*.*">
-			<Output TaskParameter="Include" ItemName="MyInstallFiles" />
-		</CreateItem>
-    
+      <Output TaskParameter="Include" ItemName="MyInstallFiles" />
+    </CreateItem>
+
     <!-- Zip files -->
-		<Zip Files="@(MyInstallFiles)" 
-			Comment="" 
-			WorkingDirectory="$(TempPath)" 
+    <Zip Files="@(MyInstallFiles)"
+			Comment=""
+			WorkingDirectory="$(TempPath)"
 			ZipFileName="$(DeployFolder)\$(InstallFile)" />
-	</Target>
-  
+  </Target>
+
   <Target Name="Resources">
-    <Zip Files="@(MyResourceFiles)" 
-         ZipFileName="$(TempPath)\resources.zip" 
+    <Zip Files="@(MyResourceFiles)"
+         ZipFileName="$(TempPath)\resources.zip"
          WorkingDirectory="..\" />
   </Target>
 
@@ -84,11 +99,11 @@
     <AssemblyInfo CodeLanguage="CS"
         OutputFile="..\AssemblyInfo.cs"
         AssemblyTitle="$(Company).$(ProductName)"
-        AssemblyDescription="$(Company).$(ProductName) - Install"
+        AssemblyDescription="$(Company).$(ProductName) - $(DNNVersion) Install"
         AssemblyConfiguration=""
         AssemblyCompany="$(Company)"
         AssemblyProduct="$(Company) $(ProductName)"
-        AssemblyCopyright="Copyright (c) $(Company) 2013"
+        AssemblyCopyright="Copyright (c) $(Company) 2017"
         AssemblyTrademark=""
         ComVisible="false"
         CLSCompliant="true"

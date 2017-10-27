@@ -9,10 +9,10 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Reflection.AssemblyTitle("DNNStuff.SQLViewPro")]
-[assembly: System.Reflection.AssemblyDescription("DNNStuff.SQLViewPro - DNN7 Install - .NET 4.0")]
+[assembly: System.Reflection.AssemblyDescription("DNNStuff.SQLViewPro - DNN7 Install")]
 [assembly: System.Reflection.AssemblyCompany("DNNStuff")]
 [assembly: System.Reflection.AssemblyProduct("DNNStuff SQLViewPro")]
-[assembly: System.Reflection.AssemblyCopyright("Copyright (c) DNNStuff 2013")]
+[assembly: System.Reflection.AssemblyCopyright("Copyright (c) DNNStuff 2017")]
 [assembly: System.Runtime.InteropServices.ComVisible(false)]
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Reflection.AssemblyVersion("04.01.01")]

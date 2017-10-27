@@ -1,12 +1,3 @@
-```
-title: SQLView Pro
-layout: page
-tags: ['intro','page']
-topNav: true
-topNavOrder: 2
-
-```
-
 The SQLView Pro module is a DotNetNuke module that renders database
 query results into grids, graphs and other forms through various
 rendering methods.
@@ -14,7 +5,7 @@ rendering methods.
 Release History
 ---------------
 
-* [View the Release History](Releases)
+* [View the Release History](releases)
     -   Members can always download the most current version by logging
         onto their accounts at
         [1](http://www.dnnstuff.com?utm_source=dnnstuff&utm_medium=wiki&utm_campaign=sqlviewpro|www.dnnstuff.com)
@@ -23,22 +14,22 @@ Release History
 General Topics
 --------------
 
-* [Installation](Installation)
-* [Configuration](Configuration)
-    -   [Connections](Connections)
-    -   [Report Sets](ReportSets)
-    -   [Reports](Reports)
-    -   [Parameters](Parameters)
+* [Installation](installation)
+* [Configuration](configuration)
+    -   [Connections](connections)
+    -   [Report Sets](reportsets)
+    -   [Reports](reports)
+    -   [Parameters](parameters)
 
-* [Queries](Queries)
+* [Queries](queries)
 
 Report Types
 ------------
 
-* [Grid](Grid)
-* [Template](Template)
-* [Excel Template](ExcelTemplate)
-* [SQL Server Reporting Services (SSRS)](SSRS)
+* [Grid](grid)
+* [Template](template)
+* [Excel Template](exceltemplate)
+* [SQL Server Reporting Services (SSRS)](ssrs)
 
 Parameter Types
 ---------------
@@ -46,12 +37,12 @@ Parameter Types
 Advanced Topics
 ---------------
 
-* [Parameter Layout](ParameterLayout)
-* [Tokens](Tokens)
-* [Skins](Skins)
+* [Parameter Layout](parameterlayout)
+* [Tokens](tokens)
+* [Skins](skins)
 
 Other
 -----
 
-* [Decoding Html](DecodingHtml)
-* [Faq](Faq)
+* [Decoding Html](decodinghtml)
+* [Faq](faq)

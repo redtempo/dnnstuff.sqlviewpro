@@ -40,19 +40,16 @@
     <MyResourceFiles Include="..\Parameters\Mobile\**\Resources\*.*" />
     <MyResourceFiles Include="..\Parameters\Mobile\Settings\App_LocalResources\**\*.resx" />
 
-    <MyResourceFiles Include="..\Skins\**\*.*" Exclude="..\**\.svn\**"/>
+    <MyResourceFiles Include="..\Skins\**\*.*" />
     <MyResourceFiles Include="..\Repository\**\*.xml" />
-    <MyResourceFiles Include="..\Resources\**\*.*"  Exclude="..\Resources\**\.svn\**" />
+    <MyResourceFiles Include="..\Resources\**\*.*" />
   </ItemGroup>
   <ItemGroup>
     <MyContentFiles Include="..\version\all\*.*" />
     <MyContentFiles Include="..\version\data\*.*" />
-    <MyContentFiles Include="..\refs\DNNStuff.Utilities.dll" />
-    <MyContentFiles Include="..\refs\Ciloci.Flee.dll" />
+    <MyContentFiles Include="..\refs\*.*" />
+    <MyContentFiles Include="..\LICENSE" />    
     <MyContentFiles Include="..\packages\Microsoft.ReportViewer.Runtime.WebForms.11.0.3452.0\lib\Microsoft.ReportViewer.WebForms.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <MySourceFiles Include="..\**\*.*" Exclude="..\**\obj\**;..\Build\**;..\.git\**;..\Skins\**\*_\**;..\_Resharper*\**;..\*.suo;..\Packages\**;..\node_modules\**;..\gulp*;..\package.json;" />
   </ItemGroup>
   <Import Project="DNNInstall.targets" />
 </Project>

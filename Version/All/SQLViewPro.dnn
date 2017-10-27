@@ -3,17 +3,18 @@
     <package name="DNNStuff - SQLViewPro" type="Module" version="">
       <friendlyName>DNNStuff - SQLViewPro</friendlyName>
       <description>SQLView Pro displays data from any database into grids, charts or anything else you can dream up</description>
+      <iconFile>~/DesktopModules/DNNStuff - SqlViewPro/Resources/application.gif</iconFile>
       <owner>
         <name>Richard Edwards</name>
 				<organization>Red Tempo Software Inc.</organization>
 				<url>http://www.github.com/redtempo</url>
 				<email>richard@redtempo.com</email>
       </owner>
-      <license src="License.html" />
+      <license src="LICENSE" />
       <releaseNotes src="Release.html" />
 	  <azureCompatible>true</azureCompatible>
       <dependencies>
-        <dependency type="CoreVersion">06.00.03</dependency>
+        <dependency type="CoreVersion">07.02.00</dependency>
       </dependencies>
       <components>
         <component type="Module">
@@ -90,10 +91,6 @@
             <assembly>
               <name>DNNStuff.SQLViewPro.StandardParameters.dll</name>
               <sourceFileName>DNNStuff.SQLViewPro.StandardParameters.dll</sourceFileName>
-            </assembly>
-            <assembly>
-              <name>DNNStuff.SQLViewPro.ExcelReports.dll</name>
-              <sourceFileName>DNNStuff.SQLViewPro.ExcelReports.dll</sourceFileName>
             </assembly>
             <assembly>
               <name>DNNStuff.SQLViewPro.MobileParameters.dll</name>

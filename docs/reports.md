@@ -181,6 +181,3 @@ look like the following:
 		[/EACHROW]
 	</table>
 
-
-For more information about the available data tokens, please visit
-[Data Tokens](pages/tokens/tokens_data)

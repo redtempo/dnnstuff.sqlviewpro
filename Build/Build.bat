@@ -1,13 +1,17 @@
 @echo off
 echo.
 set version=%1
-set buildconfig=%2
 set path=C:\Program Files (x86)\MSBuild\14.0\Bin\;%path%
-set dnnversion=DNN8
-Msbuild.exe ModuleSpecific.targets /p:DNNVersion=%dnnversion%;Version=%version%;Configuration=%buildconfig%;TargetFrameworkVersion=v4.5 /t:Install /l:FileLogger,Microsoft.Build.Engine;logfile=Logs\Build_%buildconfig%_%dnnversion%.log;verbosity=detailed
-if ERRORLEVEL 1 goto end
 
-set dnnversion=DNN7
-Msbuild.exe ModuleSpecific.targets /p:DNNVersion=%dnnversion%;Version=%version%;Configuration=%buildconfig%;TargetFrameworkVersion=v4.0 /t:Install /l:FileLogger,Microsoft.Build.Engine;logfile=Logs\Build_%buildconfig%_%dnnversion%.log;verbosity=diagnostic
+mkdir logs
+
+set buildconfig=Release
+
+REM restore packages
+nuget.exe restore ..\
+
+REM build install zip file
+Msbuild.exe ModuleSpecific.targets /p:VisualStudioVersion=14.0;Version=%version%;Configuration=%buildconfig%;TargetFrameworkVersion=v4.5 /t:Install /l:FileLogger,Microsoft.Build.Engine;logfile=logs\Build_%buildconfig%.log;verbosity=diagnostic
+if ERRORLEVEL 1 goto end
 
 :end

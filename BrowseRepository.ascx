@@ -1,7 +1,6 @@
 <%@ Control Language="C#" CodeBehind="BrowseRepository.ascx.cs" AutoEventWireup="true" Explicit="True" Inherits="DNNStuff.SQLViewPro.BrowseRepository" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
-<div>
-    <%=Localization.GetString("DocumentationHelp.Text", LocalResourceFile)%></div>
+
 <div class="dnnForm dnnClear">
     <div class="dnnFormItem">
         <dnn:Label ID="lblRepository" CssClass="SubHead" runat="server" ControlName="cboRepository" Suffix=":" />

@@ -17,7 +17,7 @@ the report set you want to show. Before you do this though, you’ll need
 to define at least one report set with a single report. Connections and
 parameters are optional.
 
-![Module Settings](/images/sqlviewpro/ModuleSettings.png)
+![Module Settings](/images/ModuleSettings.png)
 
 Connections
 -----------
@@ -32,7 +32,7 @@ connection string for your particular database, take a look at
 [www.connectionstrings.com](http://www.connectionstrings.com/) for
 more information.
 
-See [Connections](Connections)
+See [Connections](connections)
 
 Report Sets
 -----------
@@ -46,7 +46,7 @@ grid of cities in that country and a graph that showed a breakdown of
 sales by region in that country, you would have a reportset that
 contained two reports and a single parameter.
 
-See [Report Sets](ReportSets)
+See [Report Sets](reportsets)
 
 Reports
 -------
@@ -54,7 +54,7 @@ Reports
 A report is a single displayable piece of information, such as a
 listing, graph, table etc. that is driven by a SQL query.
 
-See [Reports](Reports)
+See [Reports](reports)
 
 Parameters
 ----------
@@ -63,4 +63,4 @@ Parameters are used to enable the user to filter the results of a
 particular report set. For instance, you can create a parameter that
 displays a drop down list of countries.
 
-See [Parameters](Parameters)
+See [Parameters](parameters)

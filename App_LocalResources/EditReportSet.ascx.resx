@@ -207,9 +207,6 @@
   <data name="TabCaption_Tab2.Text" xml:space="preserve">
     <value>Advanced</value>
   </data>
-  <data name="DocumentationHelp.Text" xml:space="preserve">
-    <value>For documentation on all DNNStuff modules, please visit &lt;a style="text-decoration:underline"  href="http://wiki.dnnstuff.com"&gt;wiki.dnnstuff.com&lt;/a&gt;</value>
-  </data>
   <data name="lblBackCaption.Help" xml:space="preserve">
     <value>Enter the caption for the back link</value>
   </data>
