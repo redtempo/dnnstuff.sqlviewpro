@@ -17,7 +17,7 @@ using DotNetNuke.Common.Utilities;
 			public static DataSet RetrieveData(string queryText, string connectionString, int cacheTimeout, string cacheScheme)
 			{
 				return RetrieveData(queryText, connectionString, "SQLData", "Table", cacheTimeout, cacheScheme);
-		}
+		    }
 		
 		public static DataSet RetrieveData(string queryText, string connectionString, string dataSetName, string srcTable, int cacheTimeout, string cacheScheme)
 		{
