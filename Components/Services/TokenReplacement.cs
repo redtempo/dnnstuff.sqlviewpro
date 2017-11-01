@@ -26,22 +26,24 @@ namespace DNNStuff.SQLViewPro.Services.Data
 			{
 				sharedSettings = (Hashtable) (settings.Clone());
 			}
-			
-			// add querystring values
-			var qs = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.QueryString); // create a copy, some weird errors happening with url rewriters
-			var keyval = default(object);
-			foreach (string key in qs.Keys)
-			{
-				keyval = qs[key];
-				if (key != null && keyval != null)
-				{
-					sharedSettings.Add("QS:" + key.ToUpper(), keyval.ToString().Replace("\'", "\'\'"));
-					sharedSettings.Add("QUERYSTRING:" + key.ToUpper(), keyval.ToString().Replace("\'", "\'\'"));
-				}
-			}
-			
-			// add server variables
-			var sv = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.ServerVariables); // create a copy
+
+            // add querystring values
+            //var qs = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.QueryString); // create a copy, some weird errors happening with url rewriters
+            //var keyval = default(object);
+            //foreach (string key in qs.Keys)
+            //{
+            //	keyval = qs[key];
+            //	if (key != null && keyval != null)
+            //	{
+            //		sharedSettings.Add("QS:" + key.ToUpper(), keyval.ToString().Replace("\'", "\'\'"));
+            //		sharedSettings.Add("QUERYSTRING:" + key.ToUpper(), keyval.ToString().Replace("\'", "\'\'"));
+            //	}
+            //}
+
+            var keyval = default(object);
+
+            // add server variables
+            var sv = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.ServerVariables); // create a copy
 			foreach (string key in sv.Keys)
 			{
 				keyval = sv[key];
@@ -53,16 +55,16 @@ namespace DNNStuff.SQLViewPro.Services.Data
 			}
 			
 			// add form variables
-			var fv = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.Form); // create a copy
-			foreach (string key in fv.Keys)
-			{
-				keyval = fv[key];
-				if (key != null && keyval != null)
-				{
-					sharedSettings.Add("FV:" + key.ToUpper(), keyval.ToString().Replace("\'", "\'\'"));
-					sharedSettings.Add("FORMVAR:" + key.ToUpper(), keyval.ToString().Replace("\'", "\'\'"));
-				}
-			}
+			//var fv = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.Form); // create a copy
+			//foreach (string key in fv.Keys)
+			//{
+			//	keyval = fv[key];
+			//	if (key != null && keyval != null)
+			//	{
+			//		sharedSettings.Add("FV:" + key.ToUpper(), keyval.ToString().Replace("\'", "\'\'"));
+			//		sharedSettings.Add("FORMVAR:" + key.ToUpper(), keyval.ToString().Replace("\'", "\'\'"));
+			//	}
+			//}
 			
 			// do dataset replacements (if necessary)
 			if (ds != null)

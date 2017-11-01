@@ -40,7 +40,7 @@ namespace DNNStuff.SQLViewPro.Controls
 		/// <remarks></remarks>
 		public DataSet ReportData(string query)
 		{
-			return Services.Data.Query.RetrieveData(query, Report.ReportConnectionString, Report.ReportCommandCacheTimeout, Report.ReportCommandCacheScheme);
+			return Services.Data.Query.RetrieveData(query, Report.ReportConnectionString, Report.ReportCommandCacheTimeout, Report.ReportCommandCacheScheme, ReportParameters());
 		}
 		
 		/// <summary>
@@ -50,7 +50,7 @@ namespace DNNStuff.SQLViewPro.Controls
 		/// <remarks></remarks>
 		public DataSet ReportData()
 		{
-			return Services.Data.Query.RetrieveData(QueryText, Report.ReportConnectionString, Report.ReportCommandCacheTimeout, Report.ReportCommandCacheScheme);
+			return Services.Data.Query.RetrieveData(QueryText, Report.ReportConnectionString, Report.ReportCommandCacheTimeout, Report.ReportCommandCacheScheme, ReportParameters());
 		}
 		
 		/// <summary>
@@ -172,8 +172,45 @@ namespace DNNStuff.SQLViewPro.Controls
 		{
 			return Services.Data.TokenReplacement.ReplaceTokens(text, ReportTokenSettings(), ds);
 		}
-		
-		private Hashtable _reportTokens;
+
+        private Hashtable _reportParameters;
+        private Hashtable ReportParameters()
+        {
+            if (_reportParameters == null)
+            {
+                _reportParameters = (Hashtable)(new Hashtable());
+
+                // do parameters
+                foreach (ParameterInfo param in State.Parameters)
+                {
+                    var tokenValue = "";
+                    if (param.Values != null)
+                    {
+                        if (param.MultiValued)
+                        {
+                            tokenValue = "\'" + string.Join("\',\'", param.Values.ToArray()) + "\'";
+                        }
+                        else
+                        {
+                            tokenValue = (string)(param.Values[0].Replace("\'", "\'\'"));
+                        }
+                    }
+                    DNNUtilities.SafeHashtableAdd(ref _reportParameters, param.ParameterIdentifier.ToLower(), tokenValue);
+
+                    if (param.ExtraValues != null)
+                    {
+                        foreach (string key in param.ExtraValues.Keys)
+                        {
+                            DNNUtilities.SafeHashtableAdd(ref _reportParameters, "PARAMETER:" + param.ParameterIdentifier.ToLower() + ":" + key.ToLower(), param.ExtraValues[key]);
+                        }
+                    }
+                }
+            }
+
+            return _reportParameters;
+
+        }
+        private Hashtable _reportTokens;
 		private Hashtable ReportTokenSettings()
 		{
 			
@@ -181,34 +218,15 @@ namespace DNNStuff.SQLViewPro.Controls
 			{
 				_reportTokens = (Hashtable) (new Hashtable());
 				var fullScreenParameters = "";
-				// now do parameters
-				foreach (ParameterInfo param in State.Parameters)
-				{
-					var tokenValue = "";
-					if (param.Values != null)
-					{
-						if (param.MultiValued)
-						{
-							tokenValue = "\'" + string.Join("\',\'", param.Values.ToArray()) + "\'";
-						}
-						else
-						{
-							tokenValue = (string) (param.Values[0].Replace("\'", "\'\'"));
-						}
-					}
-					DNNUtilities.SafeHashtableAdd(ref _reportTokens, "PARAMETER:" + param.ParameterIdentifier.ToUpper(), tokenValue);
-					fullScreenParameters = fullScreenParameters + string.Format("&{0}={1}", param.ParameterIdentifier, tokenValue);
-					
-					if (param.ExtraValues != null)
-					{
-						foreach (string key in param.ExtraValues.Keys)
-						{
-							DNNUtilities.SafeHashtableAdd(ref _reportTokens, "PARAMETER:" + param.ParameterIdentifier.ToUpper() + ":" + key.ToUpper(), param.ExtraValues[key]);
-							fullScreenParameters = fullScreenParameters + string.Format("&{0}:{1}={2}", param.ParameterIdentifier, key, param.Values);
-						}
-					}
-				}
-				DNNUtilities.SafeHashtableAdd(ref _reportTokens, "REPORTNAME", Report.ReportName);
+
+                // fullscreen url
+                foreach (DictionaryEntry param in ReportParameters())
+                {
+                    fullScreenParameters = fullScreenParameters + string.Format("&{0}={1}", param.Key.ToString(), param.Value.ToString());
+                }
+                DNNUtilities.SafeHashtableAdd(ref _reportTokens, "FULLSCREENURL", string.Format("{0}{1}&hidebackbutton=1", FullScreenUrl, fullScreenParameters));
+
+                DNNUtilities.SafeHashtableAdd(ref _reportTokens, "REPORTNAME", Report.ReportName);
 				DNNUtilities.SafeHashtableAdd(ref _reportTokens, "REPORTTYPE", Report.ReportTypeId);
 				DNNUtilities.SafeHashtableAdd(ref _reportTokens, "REPORTTYPENAME", Report.ReportTypeName);
 				if (Request != null)
@@ -216,7 +234,6 @@ namespace DNNStuff.SQLViewPro.Controls
 					DNNUtilities.SafeHashtableAdd(ref _reportTokens, "PAGEURL", Request.Url.AbsoluteUri);
 				}
 				DNNUtilities.SafeHashtableAdd(ref _reportTokens, "IMAGEURL", ResolveUrl("~/images"));
-				DNNUtilities.SafeHashtableAdd(ref _reportTokens, "FULLSCREENURL", string.Format("{0}{1}&hidebackbutton=1", FullScreenUrl, fullScreenParameters));
 			}
 			
 			return _reportTokens;

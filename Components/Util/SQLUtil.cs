@@ -15,7 +15,7 @@ namespace DNNStuff.SQLViewPro
 		public static void AddOptionsFromQuery(ListControl list, string queryText, string connectionString, string defaultValue, int cacheTimeout)
 		{
 			
-			var ds = Services.Data.Query.RetrieveData(queryText, connectionString, cacheTimeout, "Absolute");
+			var ds = Services.Data.Query.RetrieveData(queryText, connectionString, cacheTimeout, "Absolute", null);
 			
 			if (ds.Tables.Count > 0)
 			{
