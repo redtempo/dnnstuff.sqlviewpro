@@ -188,7 +188,7 @@ namespace DNNStuff.SQLViewPro.Controls
                     {
                         if (param.MultiValued)
                         {
-                            tokenValue = "\'" + string.Join("\',\'", param.Values.ToArray()) + "\'";
+                            tokenValue = string.Join(",", param.Values.ToArray());
                         }
                         else
                         {
@@ -201,7 +201,7 @@ namespace DNNStuff.SQLViewPro.Controls
                     {
                         foreach (string key in param.ExtraValues.Keys)
                         {
-                            DNNUtilities.SafeHashtableAdd(ref _reportParameters, "PARAMETER:" + param.ParameterIdentifier.ToLower() + ":" + key.ToLower(), param.ExtraValues[key]);
+                            DNNUtilities.SafeHashtableAdd(ref _reportParameters, param.ParameterIdentifier.ToLower() + "_" + key.ToLower(), param.ExtraValues[key]);
                         }
                     }
                 }
@@ -218,6 +218,21 @@ namespace DNNStuff.SQLViewPro.Controls
 			{
 				_reportTokens = (Hashtable) (new Hashtable());
 				var fullScreenParameters = "";
+
+                // do parameters - we are replacing our parameters with the @value that will be used in a sql or oledb parameter name
+                foreach (ParameterInfo param in State.Parameters)
+                {
+                    DNNUtilities.SafeHashtableAdd(ref _reportTokens, "PARAMETER:" + param.ParameterIdentifier.ToUpper(), "@" + param.ParameterIdentifier.ToLower());
+
+                    if (param.ExtraValues != null)
+                    {
+                        foreach (string key in param.ExtraValues.Keys)
+                        {
+                            DNNUtilities.SafeHashtableAdd(ref _reportTokens, "PARAMETER:" + param.ParameterIdentifier.ToUpper() + ":" + key.ToUpper(), "@" + param.ParameterIdentifier.ToLower() + "_" + key.ToLower());
+                        }
+                    }
+                }
+                // TODO: querystring and form values
 
                 // fullscreen url
                 foreach (DictionaryEntry param in ReportParameters())

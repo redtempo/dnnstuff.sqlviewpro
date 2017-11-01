@@ -2,10 +2,15 @@
 
 ```Minimum configuration DNN 7.1.2+ (.NET 4.0) / DNN 8+ (.NET 4.5)```
 
-## 04.01.01
+## 05.00.00
 
-14/Sep/2016
+1/Nov/2017
 
+* Breaking Changes
+   * Quotes around report parameters, querystring parameters and form parameters
+    - for tokens starting with [PARAMETER], [QUERYSTRING] or [FORM] you no longer need single quotes around them
+   * Multi valued parameters
+	- multi-valued parameters will now need to be handled within a stored procedure. The multi-valued parameter will be passed as a single comma separated value
 
 ## 04.01.00
 

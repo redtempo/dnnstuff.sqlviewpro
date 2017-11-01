@@ -12,7 +12,9 @@ namespace DNNStuff.SQLViewPro
 {
 	
 #region  ReportSet
-	[Serializable()]public class ReportSetInfo
+
+	[Serializable()]
+    public class ReportSetInfo
 	{
 		
 		// initialization
@@ -21,15 +23,21 @@ namespace DNNStuff.SQLViewPro
 		}
 		
 		// public properties
-		public int ReportSetId { get; set; }= -1;
+		public int ReportSetId { get; set; } = -1;
 		public string ReportSetName {get; set;}
 		public string ReportSetTheme {get; set;}
 		public int ReportSetConnectionId {get; set;}
 		public string ReportSetConnectionString {get; set;}
 		public string ReportSetHeaderText {get; set;}
 		public string ReportSetFooterText {get; set;}
-		public bool ReportSetDebug {get; set;}
-		public string RunCaption {get; set;}
+#if DEBUG
+        public bool ReportSetDebug { get; } = true;
+
+#else
+        public bool ReportSetDebug { get; set; }
+
+#endif
+        public string RunCaption {get; set;}
 		public string BackCaption {get; set;}
 		public string ParameterLayout {get; set;}
 		public bool AlwaysShowParameters {get; set;}
