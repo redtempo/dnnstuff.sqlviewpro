@@ -195,14 +195,39 @@ namespace DNNStuff.SQLViewPro.Controls
                             tokenValue = (string)(param.Values[0].Replace("\'", "\'\'"));
                         }
                     }
-                    DNNUtilities.SafeHashtableAdd(ref _reportParameters, param.ParameterIdentifier.ToLower(), tokenValue);
+                    DNNUtilities.SafeHashtableAdd(ref _reportParameters, "PARAMETER_" + param.ParameterIdentifier.ToLower(), tokenValue);
 
                     if (param.ExtraValues != null)
                     {
                         foreach (string key in param.ExtraValues.Keys)
                         {
-                            DNNUtilities.SafeHashtableAdd(ref _reportParameters, param.ParameterIdentifier.ToLower() + "_" + key.ToLower(), param.ExtraValues[key]);
+                            DNNUtilities.SafeHashtableAdd(ref _reportParameters, "PARAMETER_" + param.ParameterIdentifier.ToLower() + "_" + key.ToLower(), param.ExtraValues[key]);
                         }
+                    }
+                }
+
+                var keyval = default(object);
+                // add querystring values
+                var qs = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.QueryString); // create a copy, some weird errors happening with url rewriters
+                foreach (string key in qs.Keys)
+                {
+                    keyval = qs[key];
+                    if (key != null && keyval != null)
+                    {
+                        DNNUtilities.SafeHashtableAdd(ref _reportParameters, "qs_" + key.ToLower(), keyval.ToString().Replace("\'", "\'\'"));
+                        DNNUtilities.SafeHashtableAdd(ref _reportParameters, "querystring_" + key.ToLower(), keyval.ToString().Replace("\'", "\'\'"));
+                    }
+                }
+
+                // add form variables
+                var fv = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.Form); // create a copy
+                foreach (string key in fv.Keys)
+                {
+                    keyval = fv[key];
+                    if (key != null && keyval != null)
+                    {
+                        DNNUtilities.SafeHashtableAdd(ref _reportParameters, "fv_" + key.ToLower(), keyval.ToString().Replace("\'", "\'\'"));
+                        DNNUtilities.SafeHashtableAdd(ref _reportParameters, "formval_" + key.ToLower(), keyval.ToString().Replace("\'", "\'\'"));
                     }
                 }
             }
@@ -222,17 +247,41 @@ namespace DNNStuff.SQLViewPro.Controls
                 // do parameters - we are replacing our parameters with the @value that will be used in a sql or oledb parameter name
                 foreach (ParameterInfo param in State.Parameters)
                 {
-                    DNNUtilities.SafeHashtableAdd(ref _reportTokens, "PARAMETER:" + param.ParameterIdentifier.ToUpper(), "@" + param.ParameterIdentifier.ToLower());
+                    DNNUtilities.SafeHashtableAdd(ref _reportTokens, "PARAMETER:" + param.ParameterIdentifier.ToUpper(), "@" + "parameter_" + param.ParameterIdentifier.ToLower());
 
                     if (param.ExtraValues != null)
                     {
                         foreach (string key in param.ExtraValues.Keys)
                         {
-                            DNNUtilities.SafeHashtableAdd(ref _reportTokens, "PARAMETER:" + param.ParameterIdentifier.ToUpper() + ":" + key.ToUpper(), "@" + param.ParameterIdentifier.ToLower() + "_" + key.ToLower());
+                            DNNUtilities.SafeHashtableAdd(ref _reportTokens, "PARAMETER:" + param.ParameterIdentifier.ToUpper() + ":" + key.ToUpper(), "@" + "parameter_" + param.ParameterIdentifier.ToLower() + "_" + key.ToLower());
                         }
                     }
                 }
-                // TODO: querystring and form values
+
+                // add querystring values
+                var qs = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.QueryString); // create a copy, some weird errors happening with url rewriters
+                var keyval = default(object);
+                foreach (string key in qs.Keys)
+                {
+                    keyval = qs[key];
+                    if (key != null && keyval != null)
+                    {
+                        DNNUtilities.SafeHashtableAdd(ref _reportTokens, "QS_" + key.ToLower(), "qs_" + key.ToLower());
+                        DNNUtilities.SafeHashtableAdd(ref _reportTokens, "QUERYSTRING" + key.ToLower(), "querystring_" + key.ToLower());
+                    }
+                }
+
+                // add form values
+                var fv = new System.Collections.Specialized.NameValueCollection(HttpContext.Current.Request.Form); // create a copy, some weird errors happening with url rewriters
+                foreach (string key in fv.Keys)
+                {
+                    keyval = fv[key];
+                    if (key != null && keyval != null)
+                    {
+                        DNNUtilities.SafeHashtableAdd(ref _reportTokens, "FV_" + key.ToLower(), "fv_" + key.ToLower());
+                        DNNUtilities.SafeHashtableAdd(ref _reportTokens, "FORMVAL" + key.ToLower(), "formval_" + key.ToLower());
+                    }
+                }
 
                 // fullscreen url
                 foreach (DictionaryEntry param in ReportParameters())
