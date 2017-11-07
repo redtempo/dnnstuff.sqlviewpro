@@ -8,7 +8,7 @@ namespace DNNStuff.SQLViewPro
 	{
 	    public int FromReportId { get; set; } = -1;
 	    public string FromReportColumn { get; set; } = "";
-		public ArrayList Parameters {get; set;}
+        public ArrayList Parameters { get; set; } = new ArrayList();
 		public ReportSetInfo ReportSet {get; set;}
 		public int PortalId {get; set;}
 		public int ModuleId {get; set;}

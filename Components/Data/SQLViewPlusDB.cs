@@ -30,13 +30,7 @@ namespace DNNStuff.SQLViewPro
 		public string ReportSetConnectionString {get; set;}
 		public string ReportSetHeaderText {get; set;}
 		public string ReportSetFooterText {get; set;}
-#if DEBUG
-        public bool ReportSetDebug { get; } = true;
-
-#else
         public bool ReportSetDebug { get; set; }
-
-#endif
         public string RunCaption {get; set;}
 		public string BackCaption {get; set;}
 		public string ParameterLayout {get; set;}

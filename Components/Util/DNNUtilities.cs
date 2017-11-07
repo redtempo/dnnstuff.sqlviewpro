@@ -9,7 +9,7 @@ using System.Web.UI;
 
 namespace DNNStuff.SQLViewPro
 {
-	public class DNNUtilities
+	public static class DNNUtilities
 	{
 		public static string GetSetting(Hashtable settings, string key, string @default = "")
 		{
@@ -33,7 +33,7 @@ namespace DNNStuff.SQLViewPro
 			return ret;
 		}
 		
-		public static void SafeHashtableAdd(ref Hashtable ht, object key, object value)
+		public static Hashtable SafeHashtableAdd(this Hashtable ht, object key, object value)
 		{
 			// checks for existing entry and overwrites data otherwise adding
 			if (ht.ContainsKey(key))
@@ -44,6 +44,7 @@ namespace DNNStuff.SQLViewPro
 			{
 				ht.Add(key, value);
 			}
+            return ht;
 		}
 		
 		public static string QueryStringDefault(HttpRequest req, string parameterName, string defaultValue)
