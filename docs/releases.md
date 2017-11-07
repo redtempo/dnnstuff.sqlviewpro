@@ -1,10 +1,12 @@
 # SQLView Pro Release History 
 
-```Minimum configuration DNN 7.1.2+ (.NET 4.0) / DNN 8+ (.NET 4.5)```
+```Minimum configuration DNN 7.2.0+ (.NET 4.0) / DNN 8+ (.NET 4.5)```
 
 ## 05.00.00
 
-1/Nov/2017
+7/Nov/2017
+
+Please test on a development server before upgrading your site to production!
 
 * Breaking Changes
    * Quotes around report parameters, querystring parameters and form parameters
