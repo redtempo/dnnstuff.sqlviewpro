@@ -101,7 +101,7 @@
   <ItemGroup>
     <Reference Include="DNNStuff.Utilities, Version=1.1.0.34870, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>refs\DNNStuff.Utilities.dll</HintPath>
+	  <HintPath>..\..\refs\DNNStuff.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="DotNetNuke, Version=7.2.0.613, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DotNetNuke.Core.7.2.0.613\lib\net40\DotNetNuke.dll</HintPath>
