@@ -46,7 +46,7 @@
     <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\..\..\..\sites\dnn7.dnndev.me\bin\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DocumentationFile>DNNStuff.SQLViewPro.StandardParameters.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
